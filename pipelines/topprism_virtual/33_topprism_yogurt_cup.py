@@ -1,4 +1,4 @@
-# 33_toprisma_yogurt_cup.py — 虚拟品牌 Toprisma 酸奶杯 3D + 渲染 (GitHub 展示)
+# 33_topprism_yogurt_cup.py — 虚拟品牌 Topprism 酸奶杯 3D + 渲染 (GitHub 展示)
 # 杯型: 160g 锥度圆杯 (顶Ø88 底Ø66 高98mm) + 铝箔易撕盖 (Ø94, 拱顶+褶边)
 # 复用已验证纪律: view_layer.update / FOV横向拟合(无-c.z) / AgX-Punchy / pixel-stat 验收
 import bpy, bmesh, math, os
@@ -10,7 +10,7 @@ LID_DOMe = 0.006
 WALL_T = 0.0012
 SEG = 96
 HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-OUT = os.path.join(HERE, "output", "github_toprisma")
+OUT = os.path.join(HERE, "output", "github_topprism")
 os.makedirs(OUT, exist_ok=True)
 
 for c in (bpy.data.objects, bpy.data.meshes, bpy.data.materials, bpy.data.cameras, bpy.data.lights, bpy.data.images):

@@ -1,9 +1,9 @@
-# 32_toprisma_yogurt_label.py — 虚拟品牌 Toprisma 酸奶杯标 (GitHub 展示用)
-# 品牌: 棱镜极智能 / Toprisma (公司自有品牌, 虚拟演示产品, 非在售)
+# 32_topprism_yogurt_label.py — 虚拟品牌 Topprism 酸奶杯标 (GitHub 展示用)
+# 品牌: 棱镜极智能 / Topprism (公司自有品牌, 虚拟演示产品, 非在售)
 # 设计语言: 白底 + 蓝紫渐变三角棱镜 logo (GitHub org avatar 同源) + 光谱色散条
 import math
+import os
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
-
 W, H = 2048, 560   # 杯侧展开 (杯面实比 ~3.66:1)
 BLUE, PURPLE, CYAN = (47, 107, 240), (139, 60, 240), (0, 144, 240)
 INK = (24, 28, 38)
@@ -53,7 +53,7 @@ d = ImageDraw.Draw(img)
 for x in range(W):
     t = x / W
     d.line([(x, 0), (x, 80)], fill=lerp(BLUE, PURPLE, t))
-d.text((W/2, 74), "T O P R I S M A", font=font(68), fill=(255, 255, 255), anchor="mm")
+d.text((W/2, 74), "T O P P R I S M", font=font(68), fill=(255, 255, 255), anchor="mm")
 # 棱镜 logo
 logo = grad_tri((250, 250))
 img.paste(logo, (int(W/2)-125, 92), logo)
@@ -77,7 +77,7 @@ for i in range(52):
     bw = 2 if i % 3 else 4
     d.rectangle([bx + i*4, by, bx + i*4 + bw, by + 56], fill=INK if i % 2 else (40, 44, 56))
 d.text((bx+38, by+68), "6 9 0 1 2 3  4 5 6 7 8", font=font(17), fill=INK, anchor="mm")
-img.save("output/github_toprisma/cup_label.png")
+img.save("output/github_topprism/cup_label.png")
 print("label ok")
 
 # ---------- 铝箔盖 ----------
@@ -91,8 +91,8 @@ for y in range(LID):
 dl.ellipse([LID/2-240, LID/2-320, LID/2+240, LID/2+200], fill=(250, 250, 251))
 logo2 = grad_tri((320, 320), thick=34)
 lid.paste(logo2, (LID//2-160, LID//2-290), logo2)
-dl.text((LID/2, LID/2+40), "T O P R I S M A", font=font(44), fill=(70, 74, 88), anchor="mm")
+dl.text((LID/2, LID/2+40), "T O P P R I S M", font=font(44), fill=(70, 74, 88), anchor="mm")
 dl.text((LID/2, LID/2+100), "希腊式酸奶 · 撕开即食", font=font(30), fill=(110, 114, 126), anchor="mm")
 dl.text((LID/2, LID-56), "△ 虚拟演示产品 · 非销售品", font=font(18), fill=(140, 144, 154), anchor="mm")
-lid.save("output/github_toprisma/lid_texture.png")
+lid.save("output/github_topprism/lid_texture.png")
 print("lid ok")

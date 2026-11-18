@@ -1,0 +1,11 @@
+Model Information:
+* title:	Mason Jar
+* source:	https://sketchfab.com/3d-models/mason-jar-6414d60acf08412abbf80ad0a60fcebe
+* author:	macintij (https://sketchfab.com/macintij)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Mason Jar" (https://sketchfab.com/3d-models/mason-jar-6414d60acf08412abbf80ad0a60fcebe) by macintij (https://sketchfab.com/macintij) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

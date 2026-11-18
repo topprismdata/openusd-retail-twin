@@ -13,7 +13,7 @@ run_pipeline.py - 全管线一键编排器 (fail-fast, 分阶段计时, 闸门�
   ecom       电商套图渲染 (Blender/Cycles Metal-RT)
   gate_ecom  套图排版五闸 (PIL, 退出码 0=PASS)
   sdg        货架合成数据+巡检仪表盘 (Blender)
-  toprisma   Toprisma 虚拟产品线: 标签生成 + 杯体渲染 (PIL + Blender)
+  topprism   Topprism 虚拟产品线: 标签生成 + 杯体渲染 (PIL + Blender)
   pack       刀版资产线: spec 加载 + 资产五闸 (qa-only 跳渲染)
   report     汇总 QA 报告 JSON + 阶段账目 -> output/pipeline_runs/
 
@@ -117,12 +117,12 @@ def _avail_mem_gb():
         return 999.0  # 无法探测时不阻拦
 
 
-@stage("toprisma")
-def st_toprisma(draft):
+@stage("topprism")
+def st_topprism(draft):
     r = []
-    r.append(([sys.executable, "pipelines/toprisma_virtual/32_toprisma_yogurt_label.py"], ROOT))
+    r.append(([sys.executable, "pipelines/topprism_virtual/32_topprism_yogurt_label.py"], ROOT))
     if not draft:
-        r.append(([BLENDER, "-b", "-P", "pipelines/toprisma_virtual/33_toprisma_yogurt_cup.py"], ROOT))
+        r.append(([BLENDER, "-b", "-P", "pipelines/topprism_virtual/33_topprism_yogurt_cup.py"], ROOT))
     return r
 
 
@@ -184,8 +184,8 @@ def main():
         sys.exit(f"Blender 不存在: {BLENDER} (可 env BLENDER_BIN 覆盖)")
 
     stages = {fn.stage_name: fn for fn in
-              [st_bootstrap, st_ecom, st_gate_ecom, st_sdg, st_train, st_toprisma, st_pack, st_report]}
-    order = ["bootstrap", "ecom", "gate_ecom", "sdg", "train", "toprisma", "pack", "report"]
+              [st_bootstrap, st_ecom, st_gate_ecom, st_sdg, st_train, st_topprism, st_pack, st_report]}
+    order = ["bootstrap", "ecom", "gate_ecom", "sdg", "train", "topprism", "pack", "report"]
     if not a.with_train:
         order.remove("train")
     if a.only:
