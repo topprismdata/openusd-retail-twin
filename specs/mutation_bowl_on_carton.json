@@ -1,0 +1,312 @@
+{
+  "name": "lifestyle_1l_highkey",
+  "schema": 1,
+  "reference": {
+    "path": "assets/reference/lifestyle_highkey_ref.png",
+    "md5": "e8c64c10440fa2a9241bd4b67d2b8659",
+    "note": "京东延世早餐场景; 复刻风格非品牌, 产品仍为伊利1L"
+  },
+  "frame": {
+    "res": 1920,
+    "aspect": 1.279
+  },
+  "color": {
+    "view_transform": "Khronos PBR Neutral",
+    "look": "None",
+    "exposure": -1.6,
+    "vignette": 0.06,
+    "grain": 0.0023
+  },
+  "world": {
+    "color": [
+      1.0,
+      0.99,
+      0.97
+    ],
+    "strength": 0.25
+  },
+  "table": {
+    "_note": "桌面反射率(唯一实测有效的接触阴影杠杆): 原0.72-0.86线性=sRGB221-239未计光照已近白; ×0.64后 away 185.8≈参照底部桌面189.9。灯具9档(world/主光/补光/背景洗光/光比/卡片)全无效, roughness 0.52→0.85亦无效",
+    "albedo_low": [
+      0.4608,
+      0.4224,
+      0.3712
+    ],
+    "albedo_high": [
+      0.5504,
+      0.5184,
+      0.4736
+    ],
+    "roughness": 0.52
+  },
+  "render": {
+    "_note": "clamp_indirect 护品牌印刷(台账389), 但同时削玻璃透射间接路径; 消融验证中",
+    "max_bounces": 12,
+    "diffuse_bounces": 4,
+    "clamp_indirect": 3.0
+  },
+  "camera": {
+    "loc": [
+      0.02,
+      -0.95,
+      0.38
+    ],
+    "target": [
+      0.005,
+      0.03,
+      0.1
+    ],
+    "lens": 78.0,
+    "fstop": 7.1,
+    "focus_on": "carton"
+  },
+  "constraints": {
+    "min_gap_mm": 4.0,
+    "frame_margin": 0.015,
+    "ground_tol_mm": 5.0
+  },
+  "_note_geometry": "足迹半径/高度/贴地量一律由 scene_runtime 实测子树顶点得出, 规格不写测量值 (手填 footprint_r=0.060 曾漏判吐司双片实测186x128mm)",
+  "objects": [
+    {
+      "id": "carton",
+      "select": {
+        "name": "Yili1L"
+      },
+      "xy": [
+        -0.085,
+        0.02
+      ],
+      "ground": true,
+      "brand_face": {
+        "local_axis": "y",
+        "local_max": -0.0374
+      },
+      "role": "hero"
+    },
+    {
+      "id": "glass",
+      "select": {
+        "material": "GLS0002_Glass"
+      },
+      "xy": [
+        -0.175,
+        0.145
+      ],
+      "ground": true,
+      "carry": [
+        {
+          "material": "Milk"
+        }
+      ],
+      "role": "prop"
+    },
+    {
+      "id": "plate",
+      "select": {
+        "name": "Plate"
+      },
+      "xy": [
+        -0.2,
+        0.31
+      ],
+      "ground": true,
+      "carry": [
+        {
+          "name_prefix": "croissant"
+        }
+      ],
+      "role": "prop"
+    }
+  ],
+  "props": [
+    {
+      "id": "napkin",
+      "fn": "napkin",
+      "xy": [
+        0.115,
+        -0.02
+      ],
+      "z": 0.0008,
+      "args": {
+        "w": 0.22,
+        "d": 0.16
+      },
+      "ground": false,
+      "role": "cloth",
+      "follow": "oat_bowl"
+    },
+    {
+      "id": "oat_bowl",
+      "fn": "oatmeal_bowl",
+      "xy": [
+        0.0,
+        0.0
+      ],
+      "z": 0.002,
+      "args": {
+        "r": 0.075,
+        "scan_berry": true,
+        "berry_tilt": 0.5,
+        "porridge_detail": 1.0,
+        "fruit": "strawberry"
+      },
+      "ground": true,
+      "role": "prop_near"
+    },
+    {
+      "id": "fruit_bowl",
+      "fn": "fruit_bowl",
+      "xy": [
+        0.17,
+        0.3
+      ],
+      "z": 0.0,
+      "args": {
+        "r": 0.09,
+        "n_chunk": 12,
+        "fill": 0.55
+      },
+      "ground": true,
+      "role": "prop_far"
+    },
+    {
+      "id": "toast",
+      "fn": "toast",
+      "xy": [
+        0.08,
+        0.13
+      ],
+      "z": 0.0,
+      "args": {
+        "n": 2
+      },
+      "ground": true,
+      "role": "prop_far"
+    },
+    {
+      "id": "sauce_jam",
+      "fn": "sauce_dish",
+      "xy": [
+        0.025,
+        0.235
+      ],
+      "z": 0.0,
+      "args": {
+        "r": 0.032,
+        "fill": [
+          0.85,
+          0.42,
+          0.12
+        ]
+      },
+      "ground": true,
+      "role": "prop_far"
+    },
+    {
+      "id": "sauce_honey",
+      "fn": "sauce_dish",
+      "xy": [
+        0.01,
+        0.35
+      ],
+      "z": 0.0,
+      "args": {
+        "r": 0.03,
+        "fill": [
+          0.9,
+          0.82,
+          0.62
+        ]
+      },
+      "ground": true,
+      "role": "prop_far"
+    }
+  ],
+  "carton_build": {
+    "_note": "纸盒构建期参数(在 lifestyle_scene.apply 之前生效, 由主脚本读本规格注入)。paper_deform: 实测原1.0位移 p50 0.573/max 2.373mm=盒高1.44%, 外部双序盲评两序均判'波浪状凹陷/结构坍塌'; 按台账E40(0.9mm约3px不可见)降至0.35→max约0.83mm。paper_normal: 1L材质原先漏接纸材法线(仅金典SKU路径已接)。",
+    "paper_deform": 0.35,
+    "paper_noise_det": true,
+    "paper_normal": true,
+    "paper_normal_strength": 0.45,
+    "_note_gloss": "v122 光泽三键已撤回(不采纳): 缎光0.18/0.25→哑光0.42/0.06 实测 mean abs diff 1.0691/255(SNR1527x, 差异真实), 但**高光区均亮 249.5→249.8 几乎不动**(std仅0.4=已削顶到~250), 即粗糙度改不动被判缺陷的量——那是被裁剪的白印刷面而非镜面波瓣。未验证目标缺陷被修好故不采纳; env门控保留(默认=原值)供后续标定。"
+  },
+  "lights": {
+    "demote": {
+      "Key": 0.5,
+      "Rim": 8.0,
+      "BgWash": 1.0,
+      "Bounce": 6.0
+    },
+    "rim_glossy": true,
+    "add": [
+      {
+        "name": "LS_Window",
+        "loc": [
+          0.85,
+          0.55,
+          0.95
+        ],
+        "w": 1.3,
+        "h": 1.6,
+        "energy": 180.0,
+        "color": [
+          1.0,
+          0.985,
+          0.96
+        ],
+        "target": [
+          0.0,
+          0.02,
+          0.1
+        ]
+      },
+      {
+        "name": "LS_Fill",
+        "loc": [
+          -0.55,
+          -0.9,
+          0.55
+        ],
+        "w": 1.6,
+        "h": 1.2,
+        "energy": 20.0,
+        "color": [
+          1.0,
+          0.99,
+          0.98
+        ],
+        "target": [
+          0.0,
+          0.02,
+          0.1
+        ]
+      },
+      {
+        "name": "LS_BgBright",
+        "loc": [
+          0.3,
+          1.1,
+          1.05
+        ],
+        "w": 2.2,
+        "h": 1.4,
+        "energy": 90.0,
+        "color": [
+          1.0,
+          0.99,
+          0.97
+        ],
+        "target": [
+          0.1,
+          2.2,
+          0.75
+        ]
+      }
+    ],
+    "_note_ratio": "v128 光比定标: 原 主60:补60=1:1平光 → 整场景高光std<=1.4(评审'白模感/塑料感'共同根因)。9:1(180:20)+expo-1.6 实测 carton高光std 1.11->2.85(2.6x), plate 0.27->0.41, 高光面积0.203->0.169(仍过G3门0.1461), mean 211.9(参照203.5), 640草稿 11/11 PASS。单调降曝光会同时压掉mean与高光面积(-1.6单变使面积0.135挂门), 故必须光比+曝光组合。"
+  },
+  "_note_params": {
+    "berry_tilt": "v133: 6颗共享扫描网格+仅Z自转致花萼全朝上='重复感/几何堆积'(评审两轮#2)。±0.5rad随机倾角, XY摆位不动(最小间距18.2mm不变,无新穿模)。同会话单图A/B: v12 29/50 > v11 26/50(参照同窗25)。glaze_bump同轮测试被否决(0.4mm bump在f/5.6虚焦下高频std 1.00x不可分辨),不入规格。",
+    "porridge_detail": "v134: 评审三轮#1缺陷'粥面平滑如糊/无燕麦颗粒'。真根因=3.3mm波长位移在48段旋转网格~7mm顶点间距上采样混叠不可见。shader bump三件套(细颗粒/roughness斑驳/色斑)两轮被视觉证伪(MAXIMUM压低频方差; roughness斑驳打碎明暗对比=读作柔化), 已撤。采纳几何杠杆: bmesh细分(384→~1500v, 间距→3.5mm)+11mm波长粥块octave(0.0022m)。视觉裁决: 疙瘩感增强/更像真粥/无伪影。同窗A/B: v13 29/50 > v12 26.5/50(食欲轴7vs5)。"
+  }
+}

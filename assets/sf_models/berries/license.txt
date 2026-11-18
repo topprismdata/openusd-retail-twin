@@ -1,0 +1,11 @@
+Model Information:
+* title:	A bowl of berries
+* source:	https://sketchfab.com/3d-models/a-bowl-of-berries-2e198e82d83d440e857d3a2251e767d8
+* author:	¡Jacques (https://sketchfab.com/iJacques)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "A bowl of berries" (https://sketchfab.com/3d-models/a-bowl-of-berries-2e198e82d83d440e857d3a2251e767d8) by ¡Jacques (https://sketchfab.com/iJacques) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

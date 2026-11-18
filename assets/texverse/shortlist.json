@@ -1,0 +1,602 @@
+[
+ {
+  "id": "a5c8e1dcc6314cb49f4784e2fce0be2c",
+  "name": "Golden Box",
+  "lic": "CC Attribution",
+  "tex": 8192,
+  "faces": 14999,
+  "glb": "glbs/glbs_8k/000-014/a5c8e1dcc6314cb49f4784e2fce0be2c_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/a5c8e1dcc6314cb49f4784e2fce0be2c/thumbnails/afb52baa7cc2429699de889ea004e497/a130104f89564ca08864531eec5e062a.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "4fcff03387154c6a969ed770e475282f",
+  "name": "Spray paint 2.0",
+  "lic": "CC Attribution",
+  "tex": 8192,
+  "faces": 12822,
+  "glb": "glbs/glbs_8k/000-003/4fcff03387154c6a969ed770e475282f_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/4fcff03387154c6a969ed770e475282f/thumbnails/2c313ee05fd24635b7ea5ea61272e256/0a0a25ab2c7d47b1a83b398ff5bea02a.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "927ed41888fc488a8a7c02e48051d771",
+  "name": "sci-fi box",
+  "lic": "CC Attribution",
+  "tex": 8192,
+  "faces": 10032,
+  "glb": "glbs/glbs_8k/000-014/927ed41888fc488a8a7c02e48051d771_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/927ed41888fc488a8a7c02e48051d771/thumbnails/adea8dcb57df4e1c8174fa6bdf16a014/47e2cb597044493ca80a94dead1cc3a3.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "003215849a81440cb7207291ac3f2bab",
+  "name": "Old police box in Japan",
+  "lic": "CC Attribution",
+  "tex": 8192,
+  "faces": 30560,
+  "glb": "glbs/glbs_8k/000-000/003215849a81440cb7207291ac3f2bab_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/003215849a81440cb7207291ac3f2bab/thumbnails/38669696d3784302a4f0546895cacbad/4dec5a6eeebf4a73a61e3959992ddc7b.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "36a9a7d9c76e4a7899383aabbf5b0d4b",
+  "name": "Bottle",
+  "lic": "CC Attribution",
+  "tex": 8192,
+  "faces": 8244,
+  "glb": "glbs/glbs_8k/000-002/36a9a7d9c76e4a7899383aabbf5b0d4b_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/36a9a7d9c76e4a7899383aabbf5b0d4b/thumbnails/6ee9b04e46b843bf8089acc6a13ad92d/68d63969f81941bd907f085276393f6d.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "03e22a6be2844afda94e056c830d6388",
+  "name": "Mizu bottle",
+  "lic": "CC Attribution",
+  "tex": 8192,
+  "faces": 8244,
+  "glb": "glbs/glbs_8k/000-000/03e22a6be2844afda94e056c830d6388_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/03e22a6be2844afda94e056c830d6388/thumbnails/9bbf4f7eac1c4baa98ae5c6c50bd9beb/7fa80b7a5bcb4787b5dd73285bf8a977.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "8accc73e88d24c1ca7d30bebcf30438c",
+  "name": "Old cough drop tin",
+  "lic": "CC Attribution",
+  "tex": 8192,
+  "faces": 5886,
+  "glb": "glbs/glbs_8k/000-006/8accc73e88d24c1ca7d30bebcf30438c_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/8accc73e88d24c1ca7d30bebcf30438c/thumbnails/3d46253b8038475f941d1e98ff5565fc/393ad7f55b804be99eb803498df2fe82.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "e24c57e44f0c42039de63b19b064b87c",
+  "name": "London Red Phone Box",
+  "lic": "CC Attribution",
+  "tex": 8192,
+  "faces": 5566,
+  "glb": "glbs/glbs_8k/000-010/e24c57e44f0c42039de63b19b064b87c_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/e24c57e44f0c42039de63b19b064b87c/thumbnails/0c090858cb33486994b8f91cfafe3dcd/0099021991744d3d9aa96776345e0d44.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "b29234a29c8441828dcc38093b6b41b6",
+  "name": "Best Friends Bottle",
+  "lic": "CC Attribution",
+  "tex": 8192,
+  "faces": 5292,
+  "glb": "glbs/glbs_8k/000-007/b29234a29c8441828dcc38093b6b41b6_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/b29234a29c8441828dcc38093b6b41b6/thumbnails/a282a89c323e481297be79a4c667824c/6b2c032034124d9a9c90d61a710bdd9d.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "ed2b8f6a219e4c71ab0d28276c77f4ec",
+  "name": "Bestfriend Bottle",
+  "lic": "CC Attribution",
+  "tex": 8192,
+  "faces": 5280,
+  "glb": "glbs/glbs_8k/000-010/ed2b8f6a219e4c71ab0d28276c77f4ec_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/ed2b8f6a219e4c71ab0d28276c77f4ec/thumbnails/4742203ea181451b8804487cdf7b9627/5d9cb98c7a4744499b7a0e54483a10aa.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "b16686cb9b284cf892c5a939d357f73c",
+  "name": "First Aid Box",
+  "lic": "CC Attribution",
+  "tex": 8192,
+  "faces": 1012,
+  "glb": "glbs/glbs_8k/000-014/b16686cb9b284cf892c5a939d357f73c_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/b16686cb9b284cf892c5a939d357f73c/thumbnails/0e5da76ccba043fda95d866bd293ec3d/70b3e86876324cfc8f7784016c9b5a1b.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "7d1db1d36f47449eb9e388d81669681b",
+  "name": "Trash Can",
+  "lic": "CC Attribution",
+  "tex": 8192,
+  "faces": 100,
+  "glb": "glbs/glbs_8k/000-005/7d1db1d36f47449eb9e388d81669681b_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/7d1db1d36f47449eb9e388d81669681b/thumbnails/b518802a8bfc4ceb9160cad46a3fb8aa/bcdaf41571c34f39aaefc41e98034f4f.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "2155224257084c0e84465009dff10518",
+  "name": "1998.285.a Covered Jar",
+  "lic": "CC Attribution",
+  "tex": 8192,
+  "faces": 54021,
+  "glb": "glbs/glbs_8k/000-001/2155224257084c0e84465009dff10518_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/2155224257084c0e84465009dff10518/thumbnails/21af4210e44d47808a3b52b30380dc86/ba711673782549e4844cd0a1ab3bace8.jpeg",
+  "pbr": "specular"
+ },
+ {
+  "id": "1b8eec5ed3864c68867e1fc9d825887e",
+  "name": "trash can in the park",
+  "lic": "CC Attribution",
+  "tex": 8192,
+  "faces": 54490,
+  "glb": "glbs/glbs_8k/000-001/1b8eec5ed3864c68867e1fc9d825887e_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/1b8eec5ed3864c68867e1fc9d825887e/thumbnails/21c5d9527272416eb80f60208e28e8a6/7dea973fe16649a791a82543c6a5af0d.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "364db1752efa44d1bd1308879f71bc57",
+  "name": "Snuff Bottle, c. 1780-1850 CE",
+  "lic": "CC Attribution-ShareAlike",
+  "tex": 8192,
+  "faces": 64000,
+  "glb": "glbs/glbs_8k/000-002/364db1752efa44d1bd1308879f71bc57_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/364db1752efa44d1bd1308879f71bc57/thumbnails/6ec9ff3e732c47a69d77f7f23fc5b80c/e3a5c30c3024443daa9478159148a470.jpeg",
+  "pbr": "specular"
+ },
+ {
+  "id": "4075bfb8788b4436aaadc8aaa40a8d7a",
+  "name": "Bank of Liverpool & Martins Ltd Money Box",
+  "lic": "CC Attribution",
+  "tex": 8192,
+  "faces": 100000,
+  "glb": "glbs/glbs_8k/000-002/4075bfb8788b4436aaadc8aaa40a8d7a_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/4075bfb8788b4436aaadc8aaa40a8d7a/thumbnails/86048d79d8554894a72c4f022744cc53/50b4a5c89d5c43eeaf4195f9b9a3f3cf.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "37af26962fde41d08a3975601f641a48",
+  "name": "Yogini with a jar, early 10th C CE",
+  "lic": "CC Attribution-ShareAlike",
+  "tex": 8192,
+  "faces": 125483,
+  "glb": "glbs/glbs_8k/000-002/37af26962fde41d08a3975601f641a48_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/37af26962fde41d08a3975601f641a48/thumbnails/99887dcdb9904320a36f6fa072fb19ba/bebfb97cc2ec4f34b815b281fa14b96a.jpeg",
+  "pbr": "specular"
+ },
+ {
+  "id": "dcda2657d0b846b6ad6671f57c1eefd7",
+  "name": "Trash Can",
+  "lic": "CC Attribution",
+  "tex": 8192,
+  "faces": 145408,
+  "glb": "glbs/glbs_8k/000-015/dcda2657d0b846b6ad6671f57c1eefd7_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/dcda2657d0b846b6ad6671f57c1eefd7/thumbnails/9c2075cb567542f4842f32348ed1050d/071bb7726a114cb49e4d8340af96b6be.jpeg",
+  "pbr": "specular"
+ },
+ {
+  "id": "794b730ae452424bb3a9ce3c6caaff7a",
+  "name": "Thermos - Hydration Bottle 24OZ",
+  "lic": "CC Attribution",
+  "tex": 8192,
+  "faces": 194404,
+  "glb": "glbs/glbs_8k/000-013/794b730ae452424bb3a9ce3c6caaff7a_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/794b730ae452424bb3a9ce3c6caaff7a/thumbnails/f47918e55b7747d9bd4f615938dc930f/c5f2fdc875d5422c902a4311d48e1b34.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "416e171114494ed7a57ad4c971ac5d91",
+  "name": "Bottle with roses",
+  "lic": "CC Attribution",
+  "tex": 8192,
+  "faces": 247100,
+  "glb": "glbs/glbs_8k/000-012/416e171114494ed7a57ad4c971ac5d91_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/416e171114494ed7a57ad4c971ac5d91/thumbnails/c93e0b593e0340e29cc4e24e7f06e4af/e48bab29e85a4485b460650cc4b182f5.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "64ae67759c734a86956cc9fa144fe481",
+  "name": "Tobacco tin inspired by Victor Hugo",
+  "lic": "CC Attribution",
+  "tex": 8192,
+  "faces": 300156,
+  "glb": "glbs/glbs_8k/000-004/64ae67759c734a86956cc9fa144fe481_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/64ae67759c734a86956cc9fa144fe481/thumbnails/1de4bb08681545908eb1e604eac28f0c/833e29826d9f449fa9fa1a91fb800989.jpeg",
+  "pbr": "specular"
+ },
+ {
+  "id": "a6beb7a318c246bf9fe79c6d13ecc7a3",
+  "name": "Lysol Bathroom Cleaner Bottle",
+  "lic": "CC Attribution",
+  "tex": 8192,
+  "faces": 366350,
+  "glb": "glbs/glbs_8k/000-007/a6beb7a318c246bf9fe79c6d13ecc7a3_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/a6beb7a318c246bf9fe79c6d13ecc7a3/thumbnails/6737b8b6ed3c47888c1be680a0d2a17a/fea905ecb36e45dfa00f7f639e426230.jpeg",
+  "pbr": "specular"
+ },
+ {
+  "id": "5551c3188f9249e58f718edb42245bba",
+  "name": "Sewing box",
+  "lic": "CC Attribution-ShareAlike",
+  "tex": 8192,
+  "faces": 476138,
+  "glb": "glbs/glbs_8k/000-013/5551c3188f9249e58f718edb42245bba_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/5551c3188f9249e58f718edb42245bba/thumbnails/52ed6ddbd0394e7bbd0dfacd478fbd8d/3b1da53011d14313ab6cead6a40059fb.jpeg",
+  "pbr": "specular"
+ },
+ {
+  "id": "1475761364e242a38eb52057be710ab4",
+  "name": "Dark Olive Green Bottle Base",
+  "lic": "CC Attribution",
+  "tex": 8192,
+  "faces": 975034,
+  "glb": "glbs/glbs_8k/000-011/1475761364e242a38eb52057be710ab4_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/1475761364e242a38eb52057be710ab4/thumbnails/f60540a639954ead907d4692d87ba79c/0a0254cd5aa749a488efc5ef5d5f60d0.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "ce3f124b571341faad863e6c3079982a",
+  "name": "Olive Jar Neck",
+  "lic": "CC Attribution",
+  "tex": 8192,
+  "faces": 999682,
+  "glb": "glbs/glbs_8k/000-015/ce3f124b571341faad863e6c3079982a_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/ce3f124b571341faad863e6c3079982a/thumbnails/9bbdd91e28c74ca48ec2f46d4fb4f077/bf230a22c726454390e70511cb012c50.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "2b7dd2b4d54a4ebda52e753805711150",
+  "name": "Jar with decoration of boat and peacocks",
+  "lic": "CC Attribution",
+  "tex": 8192,
+  "faces": 1199988,
+  "glb": "glbs/glbs_8k/000-012/2b7dd2b4d54a4ebda52e753805711150_8192.glb",
+  "thumb": "https://media.sketchfab.com/models/2b7dd2b4d54a4ebda52e753805711150/thumbnails/332e06e39a54462ba59c451a9620a0f8/ab5bb803701f4718b845cbd3ebab7176.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "5cd145dd698540b4a46b0ac780bc1cfe",
+  "name": "Old garbage can",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 19984,
+  "glb": "glbs/glbs_4k/000-007/5cd145dd698540b4a46b0ac780bc1cfe_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/5cd145dd698540b4a46b0ac780bc1cfe/thumbnails/1ce9745650b346119a40c650ddb803f2/9496cc7cd4354b0f8f2e861540147291.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "2e29cc2b02e24493aeba93f41473fe56",
+  "name": "Military/Tactical Cover Bag Bottle Pouch_01",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 20152,
+  "glb": "glbs/glbs_4k/000-003/2e29cc2b02e24493aeba93f41473fe56_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/2e29cc2b02e24493aeba93f41473fe56/thumbnails/2d76fcd8110645c59ff956c1e60c9cf2/bd9f44068779461dbc611a78dc3ba138.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "fe690b05578e4eed8981991cc7ebc1d3",
+  "name": "Soda Can (355ml) Reality Forge Cola",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 20384,
+  "glb": "glbs/glbs_4k/000-021/fe690b05578e4eed8981991cc7ebc1d3_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/fe690b05578e4eed8981991cc7ebc1d3/thumbnails/6edf6a74a8ba48aa97546f6d677faeb6/c102effafcef4d62872493ee3e46994c.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "4ad4054132954c62b6b3d60269fc4014",
+  "name": "wooden box",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 19292,
+  "glb": "glbs/glbs_4k/000-006/4ad4054132954c62b6b3d60269fc4014_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/4ad4054132954c62b6b3d60269fc4014/thumbnails/116fe6da573146c6888e824e3922701c/07c04b8b43204f78af1496e693c416fb.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "e196a09ad19f4683a8162541e786e993",
+  "name": "Cargo Box With Straps and Lifting Points Free",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 19268,
+  "glb": "glbs/glbs_4k/000-019/e196a09ad19f4683a8162541e786e993_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/e196a09ad19f4683a8162541e786e993/thumbnails/24da5f6a8f5945ea975fde40db523bff/897cd24640084e96b140dc1675989ba1.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "413854383f1848fab439915e429be258",
+  "name": "Spray Paint",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 20766,
+  "glb": "glbs/glbs_4k/000-005/413854383f1848fab439915e429be258_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/413854383f1848fab439915e429be258/thumbnails/e87dce8280df42c291f738deadbfc6d6/f10c92694b82452aaaaa05dcfbfbeac1.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "84d2ad37b0fa424089a005d1aa59a982",
+  "name": "Cyber Box \u2013 Sci-Fi Crate Low-Poly 3D Model (PBR)",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 19024,
+  "glb": "glbs/glbs_4k/000-011/84d2ad37b0fa424089a005d1aa59a982_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/84d2ad37b0fa424089a005d1aa59a982/thumbnails/13f813fba11344ccb34ce161ae5369f9/1d093436db83425d810306d8ebc30cee.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "e338964eeccb489cb7d488ddce631488",
+  "name": "bottle",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 18816,
+  "glb": "glbs/glbs_4k/000-019/e338964eeccb489cb7d488ddce631488_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/e338964eeccb489cb7d488ddce631488/thumbnails/3497e6a0a7d94ea8be0f297d927a8857/084ae5300e9b4947a36793dc419b227c.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "1b6b1bb376a844c7a958553df25bea84",
+  "name": "Power Box 01 4k",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 21272,
+  "glb": "glbs/glbs_4k/000-023/1b6b1bb376a844c7a958553df25bea84_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/1b6b1bb376a844c7a958553df25bea84/thumbnails/87d998e82b08401fb1fb892bae6c2d80/6093ad61c336474598e4fea03933b8d6.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "2e310775b5934cd885ed942c66af2469",
+  "name": "Oh Deer Diner Thermos bottle",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 18694,
+  "glb": "glbs/glbs_4k/000-003/2e310775b5934cd885ed942c66af2469_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/2e310775b5934cd885ed942c66af2469/thumbnails/c54779c36c9249c8aeb9a7e113eef006/2dfc39a227974249b1cfddd745ab1f62.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "74d4d49009214dbf990046dd7903ec75",
+  "name": "Vacuum bottle flask",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 18492,
+  "glb": "glbs/glbs_4k/000-009/74d4d49009214dbf990046dd7903ec75_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/74d4d49009214dbf990046dd7903ec75/thumbnails/e577bf7d1fce455ba5c0dd1c9b1e93c4/cd027801b6094d3fbe85a7351b5f63cc.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "154c2380655d42a28abf780737378ed2",
+  "name": "Box for Grenade",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 21576,
+  "glb": "glbs/glbs_4k/000-022/154c2380655d42a28abf780737378ed2_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/154c2380655d42a28abf780737378ed2/thumbnails/7558b6e25f59471a84cd0490b9b4f035/6324a28395e644e2bfcdfd0cd007dd01.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "94cc4174ae864e4ebc96ee389d7427b7",
+  "name": "Realistic Old Rusty Bottle Cap",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 18304,
+  "glb": "glbs/glbs_4k/000-012/94cc4174ae864e4ebc96ee389d7427b7_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/94cc4174ae864e4ebc96ee389d7427b7/thumbnails/c1d9ec90027947f58ca82291f85a355d/6130ab4c2c3245d4969647884bfc1530.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "32e412d3d68c42548a8e3de48febf11e",
+  "name": "Water Bottle",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 21792,
+  "glb": "glbs/glbs_4k/000-024/32e412d3d68c42548a8e3de48febf11e_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/32e412d3d68c42548a8e3de48febf11e/thumbnails/3c10521c89744efc90aa21d266f3bf9f/afce70d5728d4973909b7a405d3cda8c.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "48474fb27164463a9a0ce1db48a1bfbe",
+  "name": "Adrenaline Rush Can 3D Model",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 21922,
+  "glb": "glbs/glbs_4k/000-006/48474fb27164463a9a0ce1db48a1bfbe_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/48474fb27164463a9a0ce1db48a1bfbe/thumbnails/251003e56e594e798d64ceda4d9094cc/c748289e20324f4eb60dc76d47e89ef2.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "2fc8cba435bd42c298a430899a3c8d72",
+  "name": "Vampire Hunting Box",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 18040,
+  "glb": "glbs/glbs_4k/000-004/2fc8cba435bd42c298a430899a3c8d72_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/2fc8cba435bd42c298a430899a3c8d72/thumbnails/afb641285488473096d9300397d3504d/e3d0d5faab894921be219b68139bd8e4.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "8493814366bd40838cf0c192aa16141e",
+  "name": "Soda Can",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 17984,
+  "glb": "glbs/glbs_4k/000-011/8493814366bd40838cf0c192aa16141e_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/8493814366bd40838cf0c192aa16141e/thumbnails/61ad2d2e39774b2a8ddaac4f0d65b9e0/df94a6edf4084d65845a6cdf282e4741.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "3a491b5710674107a0f0b9e79d28dd3f",
+  "name": "Tool Box",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 17931,
+  "glb": "glbs/glbs_4k/000-025/3a491b5710674107a0f0b9e79d28dd3f_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/3a491b5710674107a0f0b9e79d28dd3f/thumbnails/565789b3ee294cdab2ee9d2ee8d386a5/ed6d1c25b8b546ddbb22aa0743419299.jpeg",
+  "pbr": "specular"
+ },
+ {
+  "id": "add0734487bd419d9fb77ba22ef30ea6",
+  "name": "Fruit Box",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 17820,
+  "glb": "glbs/glbs_4k/000-014/add0734487bd419d9fb77ba22ef30ea6_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/add0734487bd419d9fb77ba22ef30ea6/thumbnails/cdf62636a30e4e5a8b2f5088f5288d2a/76e10126cce04568aad4dae123b1f5f8.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "760d4060748e4329ae908ee752fac8a0",
+  "name": "Mage Dungeon Box",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 17812,
+  "glb": "glbs/glbs_4k/000-028/760d4060748e4329ae908ee752fac8a0_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/760d4060748e4329ae908ee752fac8a0/thumbnails/cc84af1081f34b928490d715efc59ecc/7e5c1538b96641f7a2096d8fcbbd1180.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "79c9129722e140ffb931eb7655eec2eb",
+  "name": "Vintage Winged Wine Bottle Opener",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 22245,
+  "glb": "glbs/glbs_4k/000-010/79c9129722e140ffb931eb7655eec2eb_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/79c9129722e140ffb931eb7655eec2eb/thumbnails/c64b1d9e667040f6ac6e5fbfbaf30ad7/e92058dea64140f381dda9e773f64824.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "0d7999325e6d4007b17e6c57e9464bdb",
+  "name": "Ammo Box 9MM",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 17688,
+  "glb": "glbs/glbs_4k/000-001/0d7999325e6d4007b17e6c57e9464bdb_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/0d7999325e6d4007b17e6c57e9464bdb/thumbnails/642615ba4ff54184b44f9de8634499e2/2c4b3545be1a4db2b5c2a11929039095.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "9f0aa9cf04af44519d549581f30c2f03",
+  "name": "Gut in a jar",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 17321,
+  "glb": "glbs/glbs_4k/000-030/9f0aa9cf04af44519d549581f30c2f03_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/9f0aa9cf04af44519d549581f30c2f03/thumbnails/d10151bede06482ba03182af8e84d375/e7e4056363f8427e9a2a96630727f078.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "28fea94e02dc4465a696bf3eb821c05e",
+  "name": "Hydro Flask\u00ae, Red Hydroflask Water Bottle",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 17288,
+  "glb": "glbs/glbs_4k/000-003/28fea94e02dc4465a696bf3eb821c05e_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/28fea94e02dc4465a696bf3eb821c05e/thumbnails/e1b7db122e624f4ead2800d767aaa35a/359af4897f484368b248ed27749a5242.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "bce0dc97816e4b5a9a47eea4e7353807",
+  "name": "Mushroom bottle",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 17280,
+  "glb": "glbs/glbs_4k/000-032/bce0dc97816e4b5a9a47eea4e7353807_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/bce0dc97816e4b5a9a47eea4e7353807/thumbnails/bcc0d4652d7e4ec4a43fb7a3a648ef20/a06d6882d1594940833ebb7ecbaf1edb.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "86878ee6e7bb4effa928fe438a24e528",
+  "name": "Weeb Box 9000",
+  "lic": "CC Attribution-ShareAlike",
+  "tex": 4096,
+  "faces": 22824,
+  "glb": "glbs/glbs_4k/000-029/86878ee6e7bb4effa928fe438a24e528_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/86878ee6e7bb4effa928fe438a24e528/thumbnails/71ce2dffb6534fc49fa8d27a3ca5c2e2/616e1366fff3419396be4fdabf808b3b.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "58d421222f434d4a9a45da3bd4fcdc16",
+  "name": "Ammo Box",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 17094,
+  "glb": "glbs/glbs_4k/000-026/58d421222f434d4a9a45da3bd4fcdc16_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/58d421222f434d4a9a45da3bd4fcdc16/thumbnails/cc1415eccce44dde8a2c9b0fa196fda0/c269885ac5944a61ac8225a311ec34da.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "9f8ecd6269904c9590420c15eb6c7f09",
+  "name": "Trash Can with Lid",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 17048,
+  "glb": "glbs/glbs_4k/000-013/9f8ecd6269904c9590420c15eb6c7f09_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/9f8ecd6269904c9590420c15eb6c7f09/thumbnails/476cee7e88634439827202fb6009dd25/b742ddf4c3c147708b20a2a285dfba8b.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "14a0cdcced7c4e69b70c24f2f98c9bde",
+  "name": "Water Bottle",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 22976,
+  "glb": "glbs/glbs_4k/000-001/14a0cdcced7c4e69b70c24f2f98c9bde_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/14a0cdcced7c4e69b70c24f2f98c9bde/thumbnails/a16f33e98b6e4429b4cc016b2fb0d8d7/0ccd5c5e0b024f58a45dca0724c1a0d1.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "5f1dc10ac0594be2a86cc34e49ded645",
+  "name": "Glass Bottle Collection - 3D Model with Textures",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 16920,
+  "glb": "glbs/glbs_4k/000-008/5f1dc10ac0594be2a86cc34e49ded645_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/5f1dc10ac0594be2a86cc34e49ded645/thumbnails/570e25b7480341619e4afcb3cf24031d/fc2a5c86588644a599b7f1b74c9f9885.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "7f019f3e16354f7ba807252a1fc890a5",
+  "name": "Sci Fi Box",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 23085,
+  "glb": "glbs/glbs_4k/000-029/7f019f3e16354f7ba807252a1fc890a5_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/7f019f3e16354f7ba807252a1fc890a5/thumbnails/44bc60564cea427c9a73986a0a6c27a7/00bfd457a406476e8e2320035883a06a.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "a5d5928697864a2e8cccbda8bf533b93",
+  "name": "Wooden Box",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 16900,
+  "glb": "glbs/glbs_4k/000-031/a5d5928697864a2e8cccbda8bf533b93_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/a5d5928697864a2e8cccbda8bf533b93/thumbnails/a3bad2d1719f4e4fabfcbc3fe3dfaef5/5e12edab3119492a97837e03d9695fda.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "f041d221be864f03913e5c19d9c77f75",
+  "name": "storage box",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 16764,
+  "glb": "glbs/glbs_4k/000-020/f041d221be864f03913e5c19d9c77f75_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/f041d221be864f03913e5c19d9c77f75/thumbnails/7dfa17638e6b45fbaf961a3a7c5a4f98/891f03bd66414aa4a8b764fa567a5de9.jpeg",
+  "pbr": "metalness"
+ },
+ {
+  "id": "6e58cd19fb4f49829411c7f97df14f6e",
+  "name": "3D Perfume Bottle for Product Visualizations",
+  "lic": "CC Attribution",
+  "tex": 4096,
+  "faces": 16754,
+  "glb": "glbs/glbs_4k/000-009/6e58cd19fb4f49829411c7f97df14f6e_4096.glb",
+  "thumb": "https://media.sketchfab.com/models/6e58cd19fb4f49829411c7f97df14f6e/thumbnails/a4e1bb05751a4c7b8bb2919c3bc83ca3/2f7077ffb51744e682026def0fb89e3b.jpeg",
+  "pbr": "metalness"
+ }
+]

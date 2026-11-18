@@ -1,0 +1,20 @@
+{
+  "arm": "r0",
+  "protocol": {
+    "model": "yolo11n.pt",
+    "imgsz": 640,
+    "epochs": 10,
+    "batch": 4,
+    "workers": 2,
+    "cache": false,
+    "seed": 42,
+    "max_det": 1000,
+    "device": "mps"
+  },
+  "protocol_hash": "aa5970ead1ee6b76",
+  "epochs_trained": 10,
+  "map50": 0.8855368588680753,
+  "map50_95": 0.527574902946793,
+  "precision": 0.8834830700576336,
+  "recall": 0.8068426433546112
+}

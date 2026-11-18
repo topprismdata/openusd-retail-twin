@@ -1,0 +1,21 @@
+{
+  "arm": "r1",
+  "protocol": {
+    "model": "yolo11n.pt",
+    "imgsz": 640,
+    "epochs": 10,
+    "batch": 4,
+    "workers": 2,
+    "cache": false,
+    "seed": 42,
+    "max_det": 1000,
+    "device": "mps"
+  },
+  "protocol_hash": "aa5970ead1ee6b76",
+  "map50": 0.13302622591891744,
+  "map50_95": 0.050334908530652436,
+  "precision": 0.38119299185785704,
+  "recall": 0.16440397849886074,
+  "wall_sec": 1801.1,
+  "note": "counting metrics (MAE/MAPE/Pearson) 见后续 count_eval 步骤"
+}

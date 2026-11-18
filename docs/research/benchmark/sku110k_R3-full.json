@@ -1,0 +1,23 @@
+{
+  "arm": "R3-full",
+  "factors": {
+    "num": 400,
+    "cam_mult": 1.6,
+    "lens": 40,
+    "misalign": 0.35,
+    "bays": 5
+  },
+  "protocol": {
+    "model": "yolo11n.pt",
+    "imgsz": 640,
+    "epochs": 10,
+    "batch": 4,
+    "workers": 2,
+    "cache": false,
+    "seed": 42,
+    "max_det": 1000,
+    "device": "mps"
+  },
+  "map50": 0.18182819273141407,
+  "map50_95": 0.06760889638609749
+}

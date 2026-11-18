@@ -1,0 +1,30 @@
+{
+  "frame": {
+    "res": 2400,
+    "aspect": 1.0
+  },
+  "fill_target": 0.82,
+  "light": {
+    "side_w": 1,
+    "top_w": 1
+  },
+  "world": {
+    "color": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "strength": 1.0,
+    "lit_strength": 0.85
+  },
+  "color": {
+    "view_transform": "Standard",
+    "look": "None",
+    "exposure": 0.0,
+    "gamma": 1.0
+  },
+  "brand_policy": "print-only, 不得生成式重绘 (硬约束资产)",
+  "carton_build": {
+    "paper_deform": 0.35
+  }
+}
