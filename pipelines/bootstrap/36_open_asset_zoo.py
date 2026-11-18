@@ -8,6 +8,28 @@ tuple bbox·自动定向(最长轴→X, glTF 导入已 Z-up)·真实尺度定标
 """
 import bpy, bmesh, math, os, sys, json
 from mathutils import Vector
+from PIL import Image, ImageDraw, ImageFont
+
+def font(sz):
+    """CJK 安全字体链 (index=0 防 tofu)"""
+    for path in ("/System/Library/Fonts/PingFang.ttc",
+                 "/System/Library/Fonts/Hiragino Sans GB.ttc",
+                 "/System/Library/Fonts/Helvetica.ttc"):
+        try:
+            return ImageFont.truetype(path, sz, index=0)
+        except Exception:
+            continue
+    return ImageFont.load_default()
+
+def _set(bsdf, name, val):
+    """兼容 Blender 4/5 Principled 输入改名 (Transmission→Transmission Weight 等)"""
+    for k in (name, name + " Weight"):
+        try:
+            bsdf.inputs[k].default_value = val
+            return True
+        except Exception:
+            continue
+    return False
 
 HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SCRATCH = "/Volumes/ghb/ai3d-pipeline/scratch/zoo"
@@ -68,17 +90,131 @@ def badge_texture(gltf_dir):
     return True
 
 def rebuild(mat):
+    """收割原 BSDF 的 factor 值与贴图/顶点色布线后再重建, 不丢原贴图信息"""
     nt = mat.node_tree
     tex = [n for n in nt.nodes if n.type == 'TEX_IMAGE']
     out = [n for n in nt.nodes if n.type == 'OUTPUT_MATERIAL']
+    old = next((n for n in nt.nodes if n.type == 'BSDF_PRINCIPLED'), None)
+    keep = {"Base Color", "Metallic", "Roughness", "Transmission", "IOR"}
+    factors, links, vcols = {}, [], []
+    if old:
+        for i in old.inputs:
+            if i.name in keep:
+                try:
+                    factors[i.name] = list(i.default_value) if hasattr(i.default_value, "__len__") else float(i.default_value)
+                except Exception:
+                    pass
+        for l in nt.links:
+            if l.to_node != old or l.to_socket.name not in keep:
+                continue
+            if l.from_node.type == 'TEX_IMAGE':
+                links.append((l.from_node, l.to_socket.name))
+            elif l.from_node.type == 'COLOR_ATTRIBUTE':
+                vcols.append((l.from_node.attribute_name, l.to_socket.name))
     for n in list(nt.nodes):
         if n not in out and n not in tex:
             nt.nodes.remove(n)
     bsdf = nt.nodes.new("ShaderNodeBsdfPrincipled")
     bsdf.inputs["Alpha"].default_value = 1.0   # glTF BLEND 透明壳防隐形
-    if tex and tex[0].image:
-        nt.links.new(tex[0].outputs["Color"], bsdf.inputs["Base Color"])
+    # 回填 baseColorFactor / metal / rough / transmission (素色材质不失色)
+    for k, v in factors.items():
+        try:
+            if k == "Base Color":
+                bsdf.inputs[k].default_value = v + [1.0]*(4-len(v)) if len(v) < 4 else v
+            elif k == "IOR":
+                bsdf.inputs[k].default_value = max(1.0, min(2.5, v))
+            else:
+                bsdf.inputs[k].default_value = max(0.0, min(1.0, v))
+        except Exception:
+            pass
+    # 重放贴图布线 (tex[0] 任取会拿错贴图, 按原图原连接恢复)
+    got = set()
+    for tn, tgt in links:
+        try:
+            if tn.image:
+                nt.links.new(tn.outputs["Color"], bsdf.inputs[tgt])
+                got.add(tgt)
+        except ReferenceError:
+            pass
+    # 顶点色重放 (扫描件常见: 颜色全在 COLOR_0)
+    for attr, tgt in vcols:
+        try:
+            ca = nt.nodes.new("ShaderNodeColorAttribute")
+        except Exception:
+            ca = nt.nodes.new("ShaderNodeVertexColor")
+        ca.attribute_name = attr or ""
+        nt.links.new(ca.outputs["Color" if hasattr(ca.outputs[0], 'name') and ca.outputs[0].name == 'Color' else "Color"], bsdf.inputs[tgt])
+        got.add(tgt)
+    # Base Color 无任何来源时: 最大贴图兜底
+    if "Base Color" not in got:
+        cands = [n for n in tex if n.image and min(n.image.size) >= 64]
+        if cands:
+            big = max(cands, key=lambda n: n.image.size[0] * n.image.size[1])
+            nt.links.new(big.outputs["Color"], bsdf.inputs["Base Color"])
+    # 玻璃: 名字或透射因子识别, 补透射防"灰石头罐"
+    glassy = factors.get("Transmission", 0) > 0.5 or "glass" in mat.name.lower()
+    if glassy:
+        _set(bsdf, "Transmission", 1.0)
+        _set(bsdf, "Roughness", min(factors.get("Roughness", 0.1), 0.15))
+        _set(bsdf, "IOR", factors.get("IOR", 1.45))
     nt.links.new(bsdf.outputs["BSDF"], out[0].inputs["Surface"])
+
+GLASS_KEYS = {"mason_jar"}
+LABEL_KEYS = {"spray_bottle"}
+
+def wrap_label(objs, key):
+    """无贴图商品: 程序化 TOPPRISM 全包标签印到最大网格(圆柱 smart UV 单岛适合全包)"""
+    tgt = max(objs, key=lambda o: len(o.data.polygons))
+    W, H = 1024, 512
+    im = Image.new("RGB", (W, H), (247, 247, 244))
+    d = ImageDraw.Draw(im)
+    d.rectangle([0, 0, W, 26], fill=(24, 28, 38))
+    cx, cy, r = 130, 170, 66
+    pts = [(cx, cy - r*0.58), (cx - r*0.5, cy + r*0.34), (cx + r*0.5, cy + r*0.34)]
+    for i in range(3):
+        d.line([pts[i], pts[(i+1) % 3]], fill=[(47, 107, 240), (139, 60, 240), (0, 144, 240)][i], width=10)
+    d.text((cx + 84, cy - 22), "TOPPRISM", font=font(64), fill=(24, 28, 38))
+    d.text((cx + 84, cy + 30), "SURFACE CLEANER", font=font(30), fill=(96, 100, 110))
+    d.line([64, 270, W - 64, 270], fill=(208, 211, 216), width=3)
+    d.text((64, 300), "MULTI-ACTION · 500 mL", font=font(40), fill=(38, 42, 50))
+    import random
+    random.seed(hash(key) & 0xffff)
+    x = 64
+    while x < 470:
+        w = random.choice((3, 5, 8))
+        d.rectangle([x, 386, x + w, 472], fill=(18, 18, 22))
+        x += w + random.choice((4, 6, 9))
+    lp = os.path.join(SCRATCH, f"label_{key}.png")
+    im.save(lp)
+    # 实体标签环带: 原生圆柱 UV 保证文字正立环绕, 不碰原网格
+    tgt = max(objs, key=lambda o: len(o.data.polygons))
+    (mn, mx) = bbox([tgt])
+    cx, cy = (mn[0] + mx[0]) / 2, (mn[1] + mx[1]) / 2
+    rad = max(mx[0] - mn[0], mx[1] - mn[1]) / 2 + 0.004
+    h = mx[2] - mn[2]
+    z0 = mn[2] + h * 0.30
+    bh = h * 0.34
+    bpy.ops.mesh.primitive_cylinder_add(radius=rad, depth=bh, vertices=64,
+                                        location=(cx, cy, z0 + bh / 2))
+    band = bpy.context.active_object
+    band.name = f"label_{key}"
+    # 删上下盖面, 只留侧面环带
+    bm = bmesh.new(); bm.from_mesh(band.data)
+    bmesh.ops.delete(bm, geom=[f for f in bm.faces if abs(f.normal.z) > 0.7], context='FACES')
+    bm.to_mesh(band.data); bm.free()
+    mat = bpy.data.materials.new(f"lbl_{key}")
+    mat.use_nodes = True
+    nt = mat.node_tree
+    tex = nt.nodes.new("ShaderNodeTexImage")
+    tex.image = bpy.data.images.load(lp)
+    b = nt.nodes["Principled BSDF"]
+    nt.links.new(tex.outputs["Color"], b.inputs["Base Color"])
+    _set(b, "Roughness", 0.35)
+    band.data.materials.append(mat)
+    if tgt.parent:
+        mw = band.matrix_world.copy()
+        band.parent = tgt.parent
+        band.matrix_world = mw
 
 def bbox(objs):
     pts = []
@@ -136,6 +272,19 @@ def process(key, disp, uid, target_len):
         for m in o.data.materials:
             if m and m.use_nodes:
                 rebuild(m)
+    # 无贴图资产补课: 玻璃透射(罐) + 程序化 TOPPRISM 全包标签(瓶)
+    if key in GLASS_KEYS:
+        body = max(imports, key=lambda o: len(o.data.polygons))
+        for m in body.data.materials:
+            if m and m.use_nodes:
+                b = next((n for n in m.node_tree.nodes if n.type == 'BSDF_PRINCIPLED'), None)
+                if b:
+                    _set(b, "Transmission", 1.0)
+                    _set(b, "Roughness", 0.06)
+                    _set(b, "IOR", 1.45)
+                    _set(b, "Metallic", 0.0)
+    if key in LABEL_KEYS:
+        wrap_label(imports, key)
     # 法线重算 (铁罐黑斑修)
     for o in imports:
         try:
