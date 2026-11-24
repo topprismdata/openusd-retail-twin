@@ -1,0 +1,70 @@
+# USDCraft 思路研究 — NVIDIA LLM 写资产程序 → SimReady USD (2026-11-25)
+
+> 研究对象: nvidia/USDCraft-10K 数据集 (Apache-2.0) + NVlabs/USDCraft 代码仓 (Apache-2.0) +
+> arXiv 2610.11322。本地: `~/usdcraft_study/{dataset,code}`。验证 harness: `scripts/usdcraft_gate.py`。
+> 北极星关联: ESR (Evidence-Simulation-Ready) 框架 — 见 photo-dieline `docs/esr/ESR-measurement-v0.1.md`。
+
+## 一、他们是什么 (2026-10-08 发布)
+
+LLM 写 Python 资产程序 (`model.py`, 基于自带几何 SDK: CADQuery 辅助/铰链/扫掠/壳体库) →
+编译为 USD/URDF/USDZ + PhysX/Newton 物理 → agent 对照渲染与几何测量自检修复 → SimReady 包。
+两模式: **Generation** (文/图→新资产) 与 **Reconstruction** (扫描网格+一张实物照→带关节资产)。
+10K 资产 (8222 关节 + 1778 刚体) / 1000 类, Z-up 米/kg, Isaac Sim 免调加载; 数据集用
+DeepSeek-V4.1-Flash 写, 代码仓默认 GPT-6 Astra low effort。
+
+## 二、可学的思路 (架构文档逐条提炼)
+
+1. **语义质量指令先行, 无语义评审**: 语义/功能质量由 Author (LLM) 在 `model.py` 可编辑期用
+   焦点测试+诊断修复; **刻意拒绝**第二评审员/评分/最佳候选选择器/多 agent 审批层。
+2. **Host 门窄且机械可复现 (fail-closed)**: 可执行可导出源/schema 结构/数值有限性/必需文件/
+   依赖闭包/哈希/规范绑定。新 blocker 必须落在这个边界内。
+3. **门禁证据诚实性 (关键, 与 ESR 同认识论)**: "静态检查只建立它们实际测量的证据;
+   不建立 Isaac Sim 导入、运行时启动、求解器稳定性"。候选渲染是**输出反馈, 不是目标证据**。
+4. **Reconstruction 证据契约**: 源网格=度量权威 (它可靠解析的属性); 图像固定身份/形态/姿态类;
+   未解析的度量属性=**受限假设 (constrained hypotheses)**; 任何 agent 动作前做原子输入快照
+   (哈希清单); Generation 的单图尺寸估计明确标注为 Author 假设而非源测量。
+5. **产品分离**: Generation 与 Reconstruction 的请求语义/图像角色/证据权威不合并; Edit 不实现。
+6. **单一策略源**: 物理创作政策 (柔性件规则/质量/材料/接触/关节限位/弧度) 是一份文本
+   (`pipeline/policy.py`) 渲染进两个产品的 Author 任务。
+7. **机器自有清单**: SDK 文档是 Author 机器清单的一部分 (`sdk/_profiles.py` 所有), 仓库散文
+   改动不改变 Author 行为。
+
+## 三、实测证据 (梅森罐 R040_01 解剖)
+
+- **三方对账通**: prompt "9×9×15cm" = `model.json.asset_extents [0.09,0.09,0.15]` =
+  pxr 实测 bbox [0.09,0.09,0.15] — "geometrically grounded" 在此件上数值成立。
+- 质量 3 刚体可加和 (0.2863+0.0290+0.0218 = 0.3371kg = 侧车 mass) ✓
+- 交互标注: customData["usdcraft"].features 每部件带 graspable/function/prim 路径/面数。
+- 包完整性: packaging.json 含 content_hash/package_hash + 三个 .metadata 哈希;
+  conformance 记录 = 特征制 (FET_030/031/032/033_STANDARD, 版本+passed+failing_requirements+依赖)。
+- 验证器命名检查清单 (`_usd_validate.py`): stage_open / default_prim=/Asset / z_up / meters /
+  kilograms / reusable_asset_no_scene / finite_authored_values / dependencies_resolved /
+  relative_asset_paths / vendor_namespace_isolation / physics_graph_acyclic /
+  joint_parent_child_order / articulation_root_coverage / articulation_root_body_binding /
+  physx|newton_schema_consistency / mass_inertia_or_collision_derivation /
+  collider_dimensions / collider_scale。
+
+## 四、我们的缺口清单 (`scripts/usdcraft_gate.py` 实测 4 件)
+
+| 检查 | geometry.usdc ×2 | giftbox | ar usdz |
+|---|---|---|---|
+| 结构 9 项 (单位/有限值/依赖/无场景…) | PASS | PASS | PASS |
+| **default_prim = /Asset** | **FAIL** | **FAIL** | **FAIL** |
+| 物理 (joints/rigid/mass) | 全空 | 全空 | 全空 |
+
+- 结构层唯一硬缺口: default prim 未设 `/Asset` (导出时加一行)。
+- **证据缺口实例 (ESR 价值证明)**: `output/usd/*/geometry.usdc` 实测高 **141.4mm** vs
+  TWIN_ASSET_SPEC §1 声明利乐砖 **136mm**, 差 5.4mm 无人对账 (屋顶坡口径? 需冻结口径并回填)。
+  声明 vs 实测对账正是 ESR 测量层的定义域 — USDCraft 记 extents 但无不确定度/无对账门。
+- ar usdz 实测 56.6×49.8×117.5 (包装层 rotX+scale 后) — 与源层口径需分层对账。
+
+## 五、采纳计划
+
+| 项 | 状态 | 说明 |
+|---|---|---|
+| usdcraft_gate.py 兼容门 | ✅ 已建 | 命名检查复刻 + ESR 证据字段 (bbox/mass/joints); 接入 12_asset_spec_gate 待做 |
+| default_prim=/Asset | 待做 | 导出管线 (01 compositor / 13_usd_asset) 设 defaultPrim |
+| 尺寸证据对账 | 待做 | 声明 mm (SPEC) vs stage 实测 vs USDZ 包装层 三方对账 + 容差门 (复用 R5 compare 语义 max(tol,k·u)) |
+| 包结构约定 | 待做 | packaging.json (id/许可/sha256) + qcode 语义锚 + extents/mass 侧车 + 双缩略图 az45/el30 朝 −Y |
+| Reconstruction 桥 (R5→仿真) | 远期 | R5 真实实物 → USDCraft reconstruction → 带测量溯源 (u_ref) 的数字孪生 — ESR 活演示 |
+| ESR 继承记账 | ✅ photo-dieline §1 | "候选渲染≠目标证据"与 inverse-crime 禁令同类认识论, 记入继承映射 |
