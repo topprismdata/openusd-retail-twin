@@ -45,6 +45,38 @@ Lightwheel 243 件) 只覆盖 ~百件级; 10K 库发布的是**生成时机械�
 **论文自报局限**: 细网格 (球拍线/购物车钢丝) 重建失真; 柔性件仅静态标注态 (Isaac 未验证
 柔性动力学)。零售包装不在其失败集也不在其覆盖集。
 
+## 〇b、代码精读补正 (2026-11-25 三次修订)
+
+诚实覆盖度: 已读 architecture.md/AGENTS.md/EVIDENCE.md/policy.py/_usd_validate.py(核心段)/
+hinges.py; **未读** axial.py (1987 行)、observation.py (1341)、geometry_qc.py (1732)、
+compile/storage/viewer 全部、_mesh/ 27 文件大部 — 下述结论仅覆盖已读部分。
+
+1. **policy.py = 教义即代码范本**: 物理创作纪律是一段带 `__PRODUCT__` 槽位的字符串模板渲染进
+   两产品 Author 任务 (漂移不可能)。内容深到: 接触摩擦系数表按材质 (metal .25/.18, painted
+   .40/.30, rubber .90/.70, static≥dynamic≥0)、质量推导纪律 (`estimate_mass_from_density` +
+   fill_fraction, **area×thickness×density 论证式** — 与我们纸板克重物理同款, 直接引用其表述)、
+   重力保持力臂公式逐项写出 (axis_world·((COM−joint)×(m·g)))、惯量比 100:1 筛选明确标注
+   "untested, not an NVIDIA threshold"、弧度合同、PhysX/Newton 摩擦模型非等价声明。
+   **采纳**: pack-zoo 契约的门禁纪律渲染成同样的一份 policy 文本进生成管线。
+2. **EVIDENCE.md = 开源最严证据权威矩阵**: 八通道正/负权威表 (语义图像不给度量、源渲染不能
+   变第二语义图、候选渲染无回溯权威); 表面即证据模型 (非表面一律 UNKNOWN, 闭壳内部≠实体);
+   AXIAL 字节预算 (32KiB 核心/56KiB 熔断 — "runaway fuse 不是截断触发器, 放不进就大声失败");
+   FACE_FEATURES 物理阈值 (pitch=max(2mm, 延展/400), 凸起 8–120mm/≥3mm 高); "readings 永远
+   不是 discrepancies"; recall 是参考线不是目标; 每次检查记源/候选哈希并标 current/stale/
+   unverified (只述绑定不述质量)。全部是**结构证据** — 仍无计量/不确定度, 楔子再证。
+3. **_usd_validate.py 实现质量 (生产级)**: /Asset 须带 Physics 变体集 {none, physics, physx,
+   newton} 且默认 physx, 逐变体验组合/有限值/物理图; 有限值走查带环保护 (id set)、TimeCode
+   解包、Vt/Gf 数组向量化 + 逐元素错误定位 "[i][j]"; 依赖闭包用 ComputeAllDependencies;
+   flattened 入口禁保留组合弧。**我们 usdcraft_gate.py 是子集复刻** — 真合规直接跑他们的验证器
+   (已验证可跑通我们资产), P0-① 同时补 Physics 变体集接口。
+4. **hinges.py 源自 Articraft (Apache-2.0 署名保留)** — 论文基线之一与其 SDK 有代码血缘;
+   SDK 原语 = CadQuery 可组合领域件 (桶铰/钢琴铰带孔位 pattern), 我们同类物 = 模板家族,
+   抽象层级一致。
+
+**对 P0 的三处修订**: ① 真合规用他们验证器而非自刻; ② /Asset 除 defaultPrim 外补 Physics
+变体集; ③ 质量推导措辞照引 "area×thickness×density + fill_fraction 论证" 进我们的
+纸板物理 (克重表 × 展开面积), 来源注释强制。
+
 ## 一、他们是什么 (2026-10-08 发布)
 
 LLM 写 Python 资产程序 (`model.py`, 基于自带几何 SDK: CADQuery 辅助/铰链/扫掠/壳体库) →
