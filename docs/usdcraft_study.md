@@ -4,13 +4,54 @@
 > arXiv 2610.11322。本地: `~/usdcraft_study/{dataset,code}`。验证 harness: `scripts/usdcraft_gate.py`。
 > 北极星关联: ESR (Evidence-Simulation-Ready) 框架 — 见 photo-dieline `docs/esr/ESR-measurement-v0.1.md`。
 
+## 〇、论文精读补正 (2026-11-25 二次修订; 首版仅凭摘要+代码仓, 本节以正文+附录 A–G 为准)
+
+**成本实测 (附录 D.7, 替代首版瞎估)**: 单件 API 成本 USDCraft–Astra **$0.851** (560K input tokens,
+缓存重), Sol $0.97, Claude Opus 5 $4.51, Gemini 3.8 Flash $0.86。10K ≈ **$8.5K** (Astra)。
+时间: 生成中位 4.9 min (Astra), 重建 4.2 min, 源分析+复检加价 1–2 min — 首版"5–10 分钟"正确。
+
+**作者模型矛盾 (卡 vs 论文, 如实记录)**: HF 卡称数据集用 DeepSeek-V4.1-Flash 写;
+论文 §4.5 称 10k "produced entirely with USDCraft–Astra" (GPT-6 Astra low)。
+两处必有一处过时/不实 — 引用时注明出处分歧。
+
+**评测口径 = 无量纲相似度, 非计量学 (首版推断获正文证实)**: 附录 C.1 — 预测与参照各自
+中心化+归一化到单位最长边后比较 (gIoU/Chamfer 均在 normalized coordinates); 距离误差
+AE/LE 也是归一化坐标。**全文无 mm 级计量口径, 无不确定度, 无参考测量链** — ESR 楔子成立。
+
+**绝对尺度的证据地位 (附录 A.3, ESR 楔子的最硬实证)**: 疑似单位归一化网格的物理尺度来自
+**图像估计的"尺度假设", 建模期间冻结**; D.6 参照系评测显示该误差被保留 (USDCraft 影响小,
+纯图像法崩盘)。即: 他们的绝对尺度 = 未验证假设传播进资产, 无卡尺/无 u_ref/无对账门。
+论文原话纪律: "Distinguish measured dimensions from hypotheses; missing surfaces do not
+establish empty space" (G.1 prompt) — 认识论与我们同源, 但**只到声明级, 未到测量级**。
+
+**10K 本身无逐件质量审计 (重要诚实点)**: 论文严格评测 (USDCraft-bench 60+40 件, 48 类;
+Lightwheel 243 件) 只覆盖 ~百件级; 10K 库发布的是**生成时机械检查 + SimReady 结构合规**,
+无逐件几何证据审计。我们的反超轴: 确定性门链可以对**全部** 10K 逐件出 mm 级闭合/尺寸
+对账/物理推导证据 — 质量覆盖本身就是差异化。
+
+**消融验证架构选择 (Table 6/7)**: 作者 harness 贡献最大增益 (SDK 关节定义 vs 裸 USD 坐标),
+**工具支持比骨干模型更重要** (USDCraft–Sol 全指标胜 Mini Workflow–Astra);
+**独立观察 agent 使全部指标下降** (Table 7) — 单循环作者优于分离批评者, 与我们
+"家族级单作者 + 确定性门禁"架构互证。
+
+**可学走的三件**:
+1. **b/e_profile 残差分解** (式 2): median 偏移 vs Q0.9 形状残差区分"错位"vs"变形" —
+   两个修复动作不同。我们门禁是精确闭合不需拟合, 但 TDE 缺陷诊断可借此二分法;
+2. **观测面 vs 未知空间**的轴向编码 (192 格细分, 32/24/16 切片文本预算) — R05 形变实物
+   测量中"可靠观测 vs 假设补全"的表述可直接借用;
+3. **G.2 baseline prompt 里的 PhysX/Newton 物理创作条款** (重力保持分析/关节阻力三态/
+   摩擦静态≥动态/验证 json 契约) — 我们 USD 物理层 (P0-①) 的条款清单直接抄结构。
+
+**论文自报局限**: 细网格 (球拍线/购物车钢丝) 重建失真; 柔性件仅静态标注态 (Isaac 未验证
+柔性动力学)。零售包装不在其失败集也不在其覆盖集。
+
 ## 一、他们是什么 (2026-10-08 发布)
 
 LLM 写 Python 资产程序 (`model.py`, 基于自带几何 SDK: CADQuery 辅助/铰链/扫掠/壳体库) →
 编译为 USD/URDF/USDZ + PhysX/Newton 物理 → agent 对照渲染与几何测量自检修复 → SimReady 包。
 两模式: **Generation** (文/图→新资产) 与 **Reconstruction** (扫描网格+一张实物照→带关节资产)。
 10K 资产 (8222 关节 + 1778 刚体) / 1000 类, Z-up 米/kg, Isaac Sim 免调加载; 数据集用
-DeepSeek-V4.1-Flash 写, 代码仓默认 GPT-6 Astra low effort。
+DeepSeek-V4.1-Flash 写, 代码仓默认 GPT-6 Astra low effort (与论文 §4.5 矛盾, 见 §〇)。
 
 ## 二、可学的思路 (架构文档逐条提炼)
 
