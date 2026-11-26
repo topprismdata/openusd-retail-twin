@@ -52,10 +52,13 @@ def gate(path: Path):
     # 可复用资产不得带 PhysicsScene
     checks["reusable_asset_no_scene"] = not any(
         prim.IsA(UsdPhysics.Scene) for prim in stage.Traverse())
-    # 有限数值
+    # 有限数值 — 对齐 NVIDIA 原版 _validate_finite_usd_values: 仅查 HasAuthoredValueOpinion
+    # (schema fallback 如 breakForce=inf 是 USD Physics 合法缺省, 不计 FAIL)
     bad = 0
     for prim in stage.Traverse():
         for attr in prim.GetAttributes():
+            if not attr.HasAuthoredValueOpinion():
+                continue
             v = attr.Get()
             if v is None:
                 continue

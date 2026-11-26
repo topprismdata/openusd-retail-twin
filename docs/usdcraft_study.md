@@ -141,3 +141,22 @@ DeepSeek-V4.1-Flash 写, 代码仓默认 GPT-6 Astra low effort (与论文 §4.5
 | 包结构约定 | 待做 | packaging.json (id/许可/sha256) + qcode 语义锚 + extents/mass 侧车 + 双缩略图 az45/el30 朝 −Y |
 | Reconstruction 桥 (R5→仿真) | 远期 | R5 真实实物 → USDCraft reconstruction → 带测量溯源 (u_ref) 的数字孪生 — ESR 活演示 |
 | ESR 继承记账 | ✅ photo-dieline §1 | "候选渲染≠目标证据"与 inverse-crime 禁令同类认识论, 记入继承映射 |
+
+## 〇c、真合规闭环补正 (2026-11-27; 首版凭复刻 gate, 本节以 NVIDIA 原验证器实测为准)
+
+**采纳计划三项全部关闭**:
+
+1. **真合规验证**: `hfpackage` 全部 15 usdc 资产过 NVIDIA 原版 `_validate_usd_asset
+   (backend='physx')` **15/15 PASS** — 含 default_prim/单位/无场景/有限值/依赖/供应商命名空间/
+   物理图无环/articulation 绑定/PhysX schema 一致性全链。
+2. **COM 哨兵修复**: 42 个 `physics:centerOfMass=(-inf,-inf,-inf)` 显式 authored 意见 →
+   按 Link 网格顶点质心重写 (均匀密度近似, derived 口径; `photo-dieline/scripts/fix_com_finite.py`)。
+   根因: 失传的内联结构化步骤写哨兵值; 我方复刻 gate 先抓出 (原版 `HasAuthoredValueOpinion`
+   口径下同判 — COM 是显式 authored, 两验证器一致)。
+3. **复刻 gate 语义修正**: finite 检查补 `HasAuthoredValueOpinion` 限定 (对齐原版 187-227 行);
+   关节 `breakForce/Torque=inf` 是 USD Physics 合法 fallback (inf=不可断, 未 authored),
+   非哨兵 bug — 复刻版曾误判 3 件 legacy 族。
+
+**证据歧义教训**: 复刻 gate 无 authorship 限定 → schema fallback 被当坏值 (假阳性);
+独立 pxr 遍历带 `IsAuthored()` → 又漏掉 API 写入的 COM (IsAuthored 对 API fallback 返回 False
+但 `HasAuthoredValueOpinion` 为 True)。正确口径只有一种: 原版源码为准, 逐行对齐。
