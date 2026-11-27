@@ -160,3 +160,13 @@ DeepSeek-V4.1-Flash 写, 代码仓默认 GPT-6 Astra low effort (与论文 §4.5
 **证据歧义教训**: 复刻 gate 无 authorship 限定 → schema fallback 被当坏值 (假阳性);
 独立 pxr 遍历带 `IsAuthored()` → 又漏掉 API 写入的 COM (IsAuthored 对 API fallback 返回 False
 但 `HasAuthoredValueOpinion` 为 True)。正确口径只有一种: 原版源码为准, 逐行对齐。
+
+## 〇d、合规面扩至零售设备 (2026-11-27; 采纳线延伸)
+
+nv960_fixture 20 类 (购物车/篮/陈列架/分配器×7/流利架/丝网容器系/果篮/桶) 全部经
+author_compile 门禁 + NVIDIA 原版 `_validate_usd_asset(physx)` **20/20 PASS**。
+资产合规总面 = **35/35** (15 包装 + 20 设备)。
+
+对标亮点: shopping_cart (293 部件, 含钢丝网格) 是 NVIDIA 论文自报的 Reconstruction 失败
+案例类型 ("细网格购物车钢丝重建失真") — 我方参数化 authoring 路径一次过其全量校验。
+方法面全程 NVIDIA 同构 (参数化 authoring → USD → 其验证器), 未越用户指令边界。
