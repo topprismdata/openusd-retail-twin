@@ -46,7 +46,7 @@ Unilever OpenUSD 商品孪生库官方口径（提速 ~2× / 成本 −50%）、
 **⑥b NVIDIA USDCraft 工具链合规实证（精选 202/202 + 10K 构建全量普查 9386/9386）**
 用 NVIDIA USDCraft **原版验证器**（arXiv 2610.11322 官方 SDK `_validate_usd_asset`, PhysX 后端）逐件校验：酒饮包装 16（含结构轴扩容）+ 乳品 1 + 刚体 legacy 4 + 零售设备 20 + 参数变体 60 + TDE 纸包装试点 100 = **202/202 PASS**；10K 生产构建 **9,386 件全量普查 9,386/9,386 PASS（52.4s，非抽检）**（[台账](https://github.com/topprismdata/photo-dieline/blob/main/docs/nvidia_compliance_ledger.md)，研究笔记 [docs/usdcraft_study.md](docs/usdcraft_study.md)）。三个证据级发现：
 - **方言模型逐字同构**：对照实验证明 NVIDIA 自家发行按后端分目录、单文件单方言——我方 PhysX 方言选择与其发行惯例一致；
-- **失败域反超点 + 铰接实证**：shopping_cart（293 部件钢丝网格）是 NVIDIA 论文自报的 Reconstruction 失败案例类型，我方参数化 authoring 一次过其全量校验并完成真参数化（H 驱动 620/775/969mm 三档）；铰接化后（4 真滚动轮 revolute + 4 叉架焊接 = 8 关节，ArticulationRootAPI）仍过原版验证器，MuJoCo 下游 1200 步四轮驱动滚动**稳定 PASS**（100% 四轮触地、净位移 0.81m、穿透 1.2mm、零爆炸，[评测脚本](https://github.com/topprismdata/photo-dieline/blob/main/scripts/mujoco_downstream_eval.py)）；
+- **失败域反超点 + 铰接实证（双资产下游 PASS）**：shopping_cart（293 部件钢丝网格）是 NVIDIA 论文自报的 Reconstruction 失败案例类型，我方参数化 authoring 一次过其全量校验并完成真参数化（H 驱动 620/775/969mm 三档）；铰接化后（4 真滚动轮 revolute + 4 叉架焊接 = 8 关节）仍过原版验证器，MuJoCo 下游 1200 步四轮驱动滚动稳定 PASS（100% 四轮触地、净位移 0.81m、穿透 1.2mm）；rotating_display_stand 铰接化（4 层货架极轴轴承旋转）同样验证器 PASS + 下游真旋转 PASS（≈17.8 圈，零爆炸），[评测脚本](https://github.com/topprismdata/photo-dieline/blob/main/scripts/mujoco_downstream_eval.py)；
 - **逐件对账证据层**：G-F4 声明 mm vs 实测 bbox 门禁（容差 max(1mm,1%)）逐件仲裁参数真实性，变体扫实截 25 个假参数——NVIDIA 10K 无逐件对账（bench 仅抽检 ~百件）。
 另有 **8 文件打包契约对齐**（meta/包清单哈希链/BOM/双 conformance，202/202 fail-closed 实跑判决）与参数族产能（1 次 authoring → N 件验证背书实例，~2s/件）。
 
