@@ -43,6 +43,13 @@ Unilever OpenUSD 商品孪生库官方口径（提速 ~2× / 成本 −50%）、
 **⑥ 资产规范与 USD 容器化**
 [docs/TWIN_ASSET_SPEC.md](docs/TWIN_ASSET_SPEC.md)：坐标尺度/UV atlas 32px 间隙/材质贴图契约/SimReady 元数据；`12_asset_spec_gate.py` 五闸（origin/topology/uv/atlas/export）+ 渲染五闸（stray geometry BFS/血缘 mtime）。
 
+**⑥b NVIDIA USDCraft 工具链合规实证（170/170）**
+用 NVIDIA USDCraft **原版验证器**（arXiv 2610.11322 官方 SDK `_validate_usd_asset`, PhysX 后端）逐件校验本系资产：酒饮包装 11 + 刚体 legacy 4 + 零售设备 20 + 参数变体 35 + TDE 纸包装试点 100 = **170/170 PASS**（[台账](https://github.com/topprismdata/photo-dieline/blob/main/docs/nvidia_compliance_ledger.md)，研究笔记 [docs/usdcraft_study.md](docs/usdcraft_study.md)）。三个证据级发现：
+- **方言模型逐字同构**：对照实验证明 NVIDIA 自家发行按后端分目录、单文件单方言——我方 PhysX 方言选择与其发行惯例一致；
+- **失败域反超点**：shopping_cart（293 部件钢丝网格）是 NVIDIA 论文自报的 Reconstruction 失败案例类型，我方参数化 authoring 一次过其全量校验并完成真参数化（H 驱动 620/775/969mm 三档）；
+- **逐件对账证据层**：G-F4 声明 mm vs 实测 bbox 门禁（容差 max(1mm,1%)）逐件仲裁参数真实性，变体扫实截 25 个假参数——NVIDIA 10K 无逐件对账（bench 仅抽检 ~百件）。
+另有 **8 文件打包契约对齐**（meta/包清单哈希链/BOM/双 conformance，170/170 fail-closed 实跑判决）与参数族产能（1 次 authoring → N 件验证背书实例，~2s/件）。
+
 **⑦ 开源资产动物园 — Sketchfab CC × Topprism 徽章化**
 <p><img src="docs/images/cases/zoo/zoo_board.png" width="640" alt="开源资产动物园"/></p>
 6 类零售品类（咖啡袋扫描/喷雾瓶/时装人台/糖果组 CC0/谷物盒/梅森玻璃罐）批量接入：Emission→Principled 重建、真实尺度定标、焦距感知取景、**TOPPRISM 徽章化**（贴图级+角标级）。全链采购-验货-清洗-定标-渲染-署名存证于 `output/zoo/zoo_manifest.json`（源 URL 可复取，大包不入库）。管线：`pipelines/bootstrap/36_open_asset_zoo.py`。
