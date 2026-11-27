@@ -170,3 +170,17 @@ author_compile 门禁 + NVIDIA 原版 `_validate_usd_asset(physx)` **20/20 PASS*
 对标亮点: shopping_cart (293 部件, 含钢丝网格) 是 NVIDIA 论文自报的 Reconstruction 失败
 案例类型 ("细网格购物车钢丝重建失真") — 我方参数化 authoring 路径一次过其全量校验。
 方法面全程 NVIDIA 同构 (参数化 authoring → USD → 其验证器), 未越用户指令边界。
+
+## 〇e、后端方言对照实验 (2026-11-27; Newton 32/35 疑点裁决)
+
+**疑点**: 我方 35 资产过 physx 35/35, 但 Newton 后端 32/35 — 3 个带关节 legacy 件
+(beverage_can_330/food_container_1l/rsc_rsc_closed) 报 "conflicting vendor schema"。
+
+**对照实验** (NVIDIA 自家数据集本地子集, R168 带关节 cube shelf 09, 4 关节):
+generic FAIL / physx PASS / **newton FAIL — 同款冲突错误, 同一 prim 位形**。
+其发行结构 = `rigid/<域>/<资产>/physx/model.usdc` — **按后端分目录, 单文件单方言**;
+vendor schema (PhysxJointAPI 类) 由其 authoring harness 施加进对应后端文件, 非消费者运行时。
+
+**裁决**: 我方 3 件 Newton "失败" = PhysX 方言文件配错后端验证, 与 NVIDIA 自家资产行为逐字一致。
+真合规姿态 = 35/35 physx (我方方言), 与其发行模型同构。Newton 方言导出 = 独立分发产物
+(其模型隐含, 当前范围外, 不作缺陷计)。
