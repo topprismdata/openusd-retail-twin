@@ -190,3 +190,8 @@ vendor schema (PhysxJointAPI 类) 由其 authoring harness 施加进对应后端
 参数族模式 (1 次 authoring → N 验证背书实例): nv960 20 类 × 参数扫 → 35/35 变体过 NVIDIA
 原版验证器。合计 **70/70 usdc** 验证背书 (15 包装 + 20 设备正典 + 35 变体)。
 G-F4 尺寸对账门禁截下 25 个假参数变体 — 尺寸对账是我方证据层, NVIDIA 10K 无逐件对账。
+
+## 〇g、合规总面 (2026-11-27)
+
+TDE 纸包装试点 100 件 (gable/clv/cone/food 四族) 过 NVIDIA 原版验证器 **100/100 PASS 零修复**。
+合规台账: photo-dieline `docs/nvidia_compliance_ledger.md` — 五域合计 **170/170**。
