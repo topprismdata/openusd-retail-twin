@@ -195,3 +195,10 @@ G-F4 尺寸对账门禁截下 25 个假参数变体 — 尺寸对账是我方证
 
 TDE 纸包装试点 100 件 (gable/clv/cone/food 四族) 过 NVIDIA 原版验证器 **100/100 PASS 零修复**。
 合规台账: photo-dieline `docs/nvidia_compliance_ledger.md` — 五域合计 **170/170**。
+
+## 〇h、10K 全量普查 (2026-11-27; 规模维度终态)
+
+Pack10K-Retail 10K 生产构建 (output/pack10k_scale10k, 9,386 件) **全量**过 NVIDIA 原版
+验证器 (physx): **9,386/9,386 PASS, 52.4 秒** (非抽检; photo-dieline
+docs/scale10k_full_validation.json)。产能对照终局: NVIDIA $0.851/4.9min×10K ≈ $8.5K
+vs 我方 API $0 + 16.4min 构建 + 52.4s 全量验证背书。
