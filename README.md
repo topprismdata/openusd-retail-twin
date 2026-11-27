@@ -43,8 +43,8 @@ Unilever OpenUSD 商品孪生库官方口径（提速 ~2× / 成本 −50%）、
 **⑥ 资产规范与 USD 容器化**
 [docs/TWIN_ASSET_SPEC.md](docs/TWIN_ASSET_SPEC.md)：坐标尺度/UV atlas 32px 间隙/材质贴图契约/SimReady 元数据；`12_asset_spec_gate.py` 五闸（origin/topology/uv/atlas/export）+ 渲染五闸（stray geometry BFS/血缘 mtime）。
 
-**⑥b NVIDIA USDCraft 工具链合规实证（170/170）**
-用 NVIDIA USDCraft **原版验证器**（arXiv 2610.11322 官方 SDK `_validate_usd_asset`, PhysX 后端）逐件校验本系资产：酒饮包装 11 + 刚体 legacy 4 + 零售设备 20 + 参数变体 35 + TDE 纸包装试点 100 = **170/170 PASS**（[台账](https://github.com/topprismdata/photo-dieline/blob/main/docs/nvidia_compliance_ledger.md)，研究笔记 [docs/usdcraft_study.md](docs/usdcraft_study.md)）。三个证据级发现：
+**⑥b NVIDIA USDCraft 工具链合规实证（精选 176/176 + 10K 构建全量普查 9386/9386）**
+用 NVIDIA USDCraft **原版验证器**（arXiv 2610.11322 官方 SDK `_validate_usd_asset`, PhysX 后端）逐件校验：酒饮包装 16（含结构轴扩容）+ 乳品 1 + 刚体 legacy 4 + 零售设备 20 + 参数变体 35 + TDE 纸包装试点 100 = **176/176 PASS**；10K 生产构建 **9,386 件全量普查 9,386/9,386 PASS（52.4s，非抽检）**（[台账](https://github.com/topprismdata/photo-dieline/blob/main/docs/nvidia_compliance_ledger.md)，研究笔记 [docs/usdcraft_study.md](docs/usdcraft_study.md)）。三个证据级发现：
 - **方言模型逐字同构**：对照实验证明 NVIDIA 自家发行按后端分目录、单文件单方言——我方 PhysX 方言选择与其发行惯例一致；
 - **失败域反超点**：shopping_cart（293 部件钢丝网格）是 NVIDIA 论文自报的 Reconstruction 失败案例类型，我方参数化 authoring 一次过其全量校验并完成真参数化（H 驱动 620/775/969mm 三档）；
 - **逐件对账证据层**：G-F4 声明 mm vs 实测 bbox 门禁（容差 max(1mm,1%)）逐件仲裁参数真实性，变体扫实截 25 个假参数——NVIDIA 10K 无逐件对账（bench 仅抽检 ~百件）。
