@@ -695,12 +695,12 @@ Unilever OpenUSD 商品孪生库官方口径（提速 ~2× / 成本 −50%）、
 
 **标志性实证 F-L3-002（容差通过 ≠ 决策一致）**：派生件外尺寸 66.8583mm vs 文档 67mm（Δ=0.1417mm≈0.21%，通过 1mm 研究容差），但在 133.8mm 货架宽的临界场景中双件 133.7166 vs 134.0mm 一侧放得下一侧放不下——**容量计算 +100% 翻面**。尺寸误差与业务决策误差是两回事。
 
-**NEG-T1-MSR（限定负结果）**：在测试的单排货架容量任务上，"可信规格 + 简单 BBox" 6/6 胜过参数化适配件 5/6——三维编译不是所有任务类别的必要前置。评审特别认可："能证明技术什么时候无效，同样是研发体系的能力。"
+**NEG-T1-MSR（限定负结果）**：在测试的单排货架容量任务上，"可信规格 + 简单 BBox" 6/6 胜过参数化适配件 5/6——三维编译不是所有任务类别的必要前置。R53 终裁原文：「优秀的研发体系，不仅要能够证明一项技术什么时候有效，也要能够证明它什么时候没有必要使用。」
 
 **沉淀的五项架构原则 v1.0**：真实知识优先 / 任务导向保真 / 最低充分表示 / 独立业务验收 / 时间有效性治理。
 **战略定位修正（终裁采纳）**：零售数字资产生成平台 → **零售任务驱动的数字表示引擎**。
 
-治理制度沉淀：判决原文逐轮归档（50+ 份）/ 八终态语义 / 负证据 sha256 登记（VOID 存储隔离禁止消费）/ 运行预算与产物预算两分 / 零虚构登记（NOT_RECORDED·NULL·0/48 照实报）/ 证据清单哈希索引。
+治理制度沉淀：判决原文逐轮归档（gpt_* 裁决/评审文件 64 份）/ 八终态语义 / 负证据 sha256 登记（VOID 存储隔离禁止消费）/ 运行预算与产物预算两分 / 零虚构登记（NOT_RECORDED·NULL·0/48 照实报）/ 证据清单哈希索引。
 
 完整链路（外部评审于 [photo-dieline 研究仓](https://github.com/topprismdata/photo-dieline/tree/main/docs/research/evidence)）：[总汇报 rwi_overall_report_l1_l2_l3.md](https://github.com/topprismdata/photo-dieline/blob/main/docs/research/evidence/rwi_overall_report_l1_l2_l3.md) · [执行摘要](https://github.com/topprismdata/photo-dieline/blob/main/docs/research/evidence/rwi_l3_executive_summary.md) · [29 文件证据清单](https://github.com/topprismdata/photo-dieline/blob/main/docs/research/evidence/rwi_l3_final_evidence_manifest.json)。
 
