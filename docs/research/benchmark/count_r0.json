@@ -1,0 +1,41 @@
+{
+  "arm": "r0",
+  "n_images": 600,
+  "conf": 0.35,
+  "count_mae": 18.45,
+  "count_mape_pct": 12.31,
+  "pearson_r": 0.746,
+  "mean_pred": 132.3,
+  "mean_gt": 146.1,
+  "conf_sweep": [
+    {
+      "conf": 0.35,
+      "count_mae": 18.45,
+      "count_mape_pct": 12.31,
+      "pearson_r": 0.746,
+      "mean_pred": 132.3
+    }
+  ],
+  "sample": {
+    "seed": 20261120,
+    "n_pool": 2936,
+    "n_sampled": 600,
+    "names_sha256": "439017496399f6de51903168a77bfa0f90e619e3b9bff5f756b6781265c077ee",
+    "list_path": "output/benchmark/count_sample_r0.txt",
+    "list_sha256": "4c90859c0561fd5c3502f4b93a931847e999d6d5b04debe790b45ffb9d5ace0e",
+    "policy": "random sample with fixed seed (2026-11-20 替代'排序取前600')"
+  },
+  "weights": {
+    "path": "output/benchmark/runs_r0_s45/train/weights/best.pt",
+    "sha256": "25405921ce041a57e5f3d4ea2afca01fe34797f46dc72b73cb96437f0b02a94f"
+  },
+  "device": "cuda",
+  "deps": {
+    "python": "3.13.12",
+    "platform": "win32",
+    "torch": "2.6.0+cu124",
+    "ultralytics": "8.4.216",
+    "numpy": "2.5.5",
+    "PIL": "13.0.0"
+  }
+}

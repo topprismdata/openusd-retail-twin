@@ -262,6 +262,9 @@ def _post_solve_inject(scene, spec, reg, meas):
 def apply(scene, carton):
     """LIFESTYLE=1 主入口: 读规格 → 环境/材质/布光/机位 → 摆位 → 几何闸 → 溯源."""
     spec_path = os.environ.get("LS_SPEC", os.path.join(BASE_DIR, "specs", "lifestyle_1l.json"))
+    # 相对路径一律相对仓库根解析 (cwd 可能是 pipelines/commercial)
+    if not os.path.isabs(spec_path):
+        spec_path = os.path.join(BASE_DIR, spec_path)
     spec = rt.load(spec_path)
     # 参照溯源: 规格声明的参照图必须与磁盘一致 (防换了参照却沿用旧门)
     ref = spec["reference"]

@@ -1,0 +1,548 @@
+{
+  "schema": "pretrain_finetune_arm/1",
+  "generated_by": "pipelines/shelf_sdg/68_pretrain_finetune_arm.py",
+  "measured_at": "2026-11-27",
+  "question": "合成数据当预训练、真实标注做微调, 能不能比只用真实标注更好?",
+  "design": {
+    "arm": "yolo11n -> 合成池 10 ep -> 真实子集 10 ep",
+    "ctrl_a": "yolo11n -> 只在真实子集上训 10 ep (与臂的真实曝光相同)",
+    "ctrl_b": "yolo11n -> 只在真实子集上训 20 ep (与臂的总步数相同)",
+    "real_subset": "output\\benchmark\\budget\\real0.05_synth0_real.txt",
+    "real_frac": 0.05,
+    "synth_pool": "output\\benchmark\\synth_single",
+    "train_cfg": {
+      "imgsz": 640,
+      "batch": 4,
+      "workers": 2,
+      "device": "0",
+      "pretrained": true,
+      "optimizer": "auto",
+      "close_mosaic": 10
+    },
+    "eval": "SKU-110K test split (与所有臂同一份), last-vs-last",
+    "seeds": [
+      43,
+      44,
+      45
+    ]
+  },
+  "per_seed": {
+    "43": {
+      "arm_last": {
+        "map50": 0.7555191026648962,
+        "map50_95": 0.4154071454559438,
+        "precision": 0.7822378159824609,
+        "recall": 0.6881100404917081
+      },
+      "ctrl_a_last": {
+        "map50": 0.7744348336752732,
+        "map50_95": 0.42634826813189725,
+        "precision": 0.8001186155110717,
+        "recall": 0.703979194240402
+      },
+      "ctrl_b_last": {
+        "map50": 0.8198685163526097,
+        "map50_95": 0.4634618857092144,
+        "precision": 0.8302150645103612,
+        "recall": 0.7467900323925055
+      }
+    },
+    "44": {
+      "arm_last": {
+        "map50": 0.7668427045638262,
+        "map50_95": 0.4221293917791119,
+        "precision": 0.7900486017095235,
+        "recall": 0.700337722724312
+      },
+      "ctrl_a_last": {
+        "map50": 0.785814616084471,
+        "map50_95": 0.4357749882059596,
+        "precision": 0.8058865547126547,
+        "recall": 0.7162443488856024
+      },
+      "ctrl_b_last": {
+        "map50": 0.8151400847307252,
+        "map50_95": 0.4596652964489697,
+        "precision": 0.8259126492308696,
+        "recall": 0.7423595159230354
+      }
+    },
+    "45": {
+      "arm_last": {
+        "map50": 0.7665043213094047,
+        "map50_95": 0.41931011123852746,
+        "precision": 0.7912544617393037,
+        "recall": 0.6964806835118528
+      },
+      "ctrl_a_last": {
+        "map50": 0.7887654185395131,
+        "map50_95": 0.432035631493081,
+        "precision": 0.800857822582516,
+        "recall": 0.7185782161438549
+      },
+      "ctrl_b_last": {
+        "map50": 0.8220546775032488,
+        "map50_95": 0.46558504268531953,
+        "precision": 0.8322368576500022,
+        "recall": 0.749531198208702
+      }
+    }
+  },
+  "paired": {
+    "arm_vs_ctrl_a": {
+      "n": 3,
+      "mean_pp": -2.005,
+      "per_seed_pp": [
+        -1.8916,
+        -1.8972,
+        -2.2261
+      ],
+      "ci95_pp": [
+        -2.4808,
+        -1.5291
+      ]
+    },
+    "arm_vs_ctrl_b": {
+      "n": 3,
+      "mean_pp": -5.6065,
+      "per_seed_pp": [
+        -6.4349,
+        -4.8297,
+        -5.555
+      ],
+      "ci95_pp": [
+        -7.6035,
+        -3.6095
+      ]
+    },
+    "arm_vs_ctrl_a_pr_decomposition": {
+      "map50": {
+        "n": 3,
+        "mean_pp": -2.005,
+        "per_seed_pp": [
+          -1.8916,
+          -1.8972,
+          -2.2261
+        ],
+        "ci95_pp": [
+          -2.4808,
+          -1.5291
+        ]
+      },
+      "map50_95": {
+        "n": 3,
+        "mean_pp": -1.2438,
+        "per_seed_pp": [
+          -1.0941,
+          -1.3646,
+          -1.2726
+        ],
+        "ci95_pp": [
+          -1.5855,
+          -0.9021
+        ]
+      },
+      "precision": {
+        "n": 3,
+        "mean_pp": -1.4441,
+        "per_seed_pp": [
+          -1.7881,
+          -1.5838,
+          -0.9603
+        ],
+        "ci95_pp": [
+          -2.5154,
+          -0.3728
+        ]
+      },
+      "recall": {
+        "n": 3,
+        "mean_pp": -1.7958,
+        "per_seed_pp": [
+          -1.5869,
+          -1.5907,
+          -2.2098
+        ],
+        "ci95_pp": [
+          -2.6865,
+          -0.9051
+        ]
+      }
+    },
+    "arm_vs_ctrl_b_pr_decomposition": {
+      "map50": {
+        "n": 3,
+        "mean_pp": -5.6065,
+        "per_seed_pp": [
+          -6.4349,
+          -4.8297,
+          -5.555
+        ],
+        "ci95_pp": [
+          -7.6035,
+          -3.6095
+        ]
+      },
+      "map50_95": {
+        "n": 3,
+        "mean_pp": -4.3955,
+        "per_seed_pp": [
+          -4.8055,
+          -3.7536,
+          -4.6275
+        ],
+        "ci95_pp": [
+          -5.7942,
+          -2.9968
+        ]
+      },
+      "precision": {
+        "n": 3,
+        "mean_pp": -4.1608,
+        "per_seed_pp": [
+          -4.7977,
+          -3.5864,
+          -4.0982
+        ],
+        "ci95_pp": [
+          -5.6714,
+          -2.6501
+        ]
+      },
+      "recall": {
+        "n": 3,
+        "mean_pp": -5.1251,
+        "per_seed_pp": [
+          -5.868,
+          -4.2022,
+          -5.3051
+        ],
+        "ci95_pp": [
+          -7.2302,
+          -3.02
+        ]
+      }
+    },
+    "ctrl_b_vs_ctrl_a": {
+      "n": 3,
+      "mean_pp": 3.6016,
+      "per_seed_pp": [
+        4.5434,
+        2.9325,
+        3.3289
+      ],
+      "ci95_pp": [
+        1.5163,
+        5.6869
+      ]
+    }
+  },
+  "actual_train_config": {
+    "runs_pf_pre_s43": {
+      "imgsz": "640",
+      "batch": "4",
+      "workers": "2",
+      "device": "0",
+      "optimizer": "auto",
+      "close_mosaic": "10",
+      "pretrained": "true",
+      "epochs": "10",
+      "model": "yolo11n.pt",
+      "data": "output\\benchmark\\synth_single\\dataset.yaml",
+      "seed": "43"
+    },
+    "runs_pf_ft_s43": {
+      "imgsz": "640",
+      "batch": "4",
+      "workers": "2",
+      "device": "0",
+      "optimizer": "auto",
+      "close_mosaic": "10",
+      "pretrained": "true",
+      "epochs": "10",
+      "model": "output\\benchmark\\runs_pf_pre_s43\\train\\weights\\last.pt",
+      "data": "output\\benchmark\\budget\\i20_real.yaml",
+      "seed": "43"
+    },
+    "runs_pf_ctrla_s43": {
+      "imgsz": "640",
+      "batch": "4",
+      "workers": "2",
+      "device": "0",
+      "optimizer": "auto",
+      "close_mosaic": "10",
+      "pretrained": "true",
+      "epochs": "10",
+      "model": "yolo11n.pt",
+      "data": "output\\benchmark\\budget\\i20_real.yaml",
+      "seed": "43"
+    },
+    "runs_pf_ctrlb_s43": {
+      "imgsz": "640",
+      "batch": "4",
+      "workers": "2",
+      "device": "0",
+      "optimizer": "auto",
+      "close_mosaic": "10",
+      "pretrained": "true",
+      "epochs": "20",
+      "model": "yolo11n.pt",
+      "data": "output\\benchmark\\budget\\i20_real.yaml",
+      "seed": "43"
+    },
+    "runs_pf_pre_s44": {
+      "imgsz": "640",
+      "batch": "4",
+      "workers": "2",
+      "device": "0",
+      "optimizer": "auto",
+      "close_mosaic": "10",
+      "pretrained": "true",
+      "epochs": "10",
+      "model": "yolo11n.pt",
+      "data": "output\\benchmark\\synth_single\\dataset.yaml",
+      "seed": "44"
+    },
+    "runs_pf_ft_s44": {
+      "imgsz": "640",
+      "batch": "4",
+      "workers": "2",
+      "device": "0",
+      "optimizer": "auto",
+      "close_mosaic": "10",
+      "pretrained": "true",
+      "epochs": "10",
+      "model": "output\\benchmark\\runs_pf_pre_s44\\train\\weights\\last.pt",
+      "data": "output\\benchmark\\budget\\i20_real.yaml",
+      "seed": "44"
+    },
+    "runs_pf_ctrla_s44": {
+      "imgsz": "640",
+      "batch": "4",
+      "workers": "2",
+      "device": "0",
+      "optimizer": "auto",
+      "close_mosaic": "10",
+      "pretrained": "true",
+      "epochs": "10",
+      "model": "yolo11n.pt",
+      "data": "output\\benchmark\\budget\\i20_real.yaml",
+      "seed": "44"
+    },
+    "runs_pf_ctrlb_s44": {
+      "imgsz": "640",
+      "batch": "4",
+      "workers": "2",
+      "device": "0",
+      "optimizer": "auto",
+      "close_mosaic": "10",
+      "pretrained": "true",
+      "epochs": "20",
+      "model": "yolo11n.pt",
+      "data": "output\\benchmark\\budget\\i20_real.yaml",
+      "seed": "44"
+    },
+    "runs_pf_pre_s45": {
+      "imgsz": "640",
+      "batch": "4",
+      "workers": "2",
+      "device": "0",
+      "optimizer": "auto",
+      "close_mosaic": "10",
+      "pretrained": "true",
+      "epochs": "10",
+      "model": "yolo11n.pt",
+      "data": "output\\benchmark\\synth_single\\dataset.yaml",
+      "seed": "45"
+    },
+    "runs_pf_ft_s45": {
+      "imgsz": "640",
+      "batch": "4",
+      "workers": "2",
+      "device": "0",
+      "optimizer": "auto",
+      "close_mosaic": "10",
+      "pretrained": "true",
+      "epochs": "10",
+      "model": "output\\benchmark\\runs_pf_pre_s45\\train\\weights\\last.pt",
+      "data": "output\\benchmark\\budget\\i20_real.yaml",
+      "seed": "45"
+    },
+    "runs_pf_ctrla_s45": {
+      "imgsz": "640",
+      "batch": "4",
+      "workers": "2",
+      "device": "0",
+      "optimizer": "auto",
+      "close_mosaic": "10",
+      "pretrained": "true",
+      "epochs": "10",
+      "model": "yolo11n.pt",
+      "data": "output\\benchmark\\budget\\i20_real.yaml",
+      "seed": "45"
+    },
+    "runs_pf_ctrlb_s45": {
+      "imgsz": "640",
+      "batch": "4",
+      "workers": "2",
+      "device": "0",
+      "optimizer": "auto",
+      "close_mosaic": "10",
+      "pretrained": "true",
+      "epochs": "20",
+      "model": "yolo11n.pt",
+      "data": "output\\benchmark\\budget\\i20_real.yaml",
+      "seed": "45"
+    }
+  },
+  "protocol_audit": {
+    "generated_by": "pipelines/shelf_sdg/75_protocol_audit.py",
+    "compared_fields": [
+      "imgsz",
+      "batch",
+      "workers",
+      "device",
+      "optimizer",
+      "close_mosaic",
+      "pretrained"
+    ],
+    "allowed_differences": [
+      "epochs",
+      "model",
+      "data",
+      "name",
+      "project",
+      "seed",
+      "exist_ok",
+      "verbose"
+    ],
+    "status": "clean",
+    "deviations": [],
+    "baseline_comparison": {
+      "run": "budget_runs_real0.05_synth0",
+      "cfg": {
+        "imgsz": "640",
+        "batch": "4",
+        "workers": "2",
+        "device": "0",
+        "optimizer": "auto",
+        "close_mosaic": "10",
+        "pretrained": "true",
+        "epochs": "10",
+        "model": "yolo11n.pt",
+        "data": "output\\benchmark\\budget\\real0.05_synth0.yaml",
+        "seed": "42"
+      },
+      "diffs": {
+        "runs_pf_pre_s43": {
+          "data": {
+            "baseline": "output\\benchmark\\budget\\real0.05_synth0.yaml",
+            "arm": "output\\benchmark\\synth_single\\dataset.yaml"
+          },
+          "seed": {
+            "baseline": "42",
+            "arm": "43"
+          }
+        },
+        "runs_pf_ft_s43": {
+          "model": {
+            "baseline": "yolo11n.pt",
+            "arm": "output\\benchmark\\runs_pf_pre_s43\\train\\weights\\last.pt"
+          },
+          "seed": {
+            "baseline": "42",
+            "arm": "43"
+          }
+        },
+        "runs_pf_ctrla_s43": {
+          "seed": {
+            "baseline": "42",
+            "arm": "43"
+          }
+        },
+        "runs_pf_ctrlb_s43": {
+          "epochs": {
+            "baseline": "10",
+            "arm": "20"
+          },
+          "seed": {
+            "baseline": "42",
+            "arm": "43"
+          }
+        },
+        "runs_pf_pre_s44": {
+          "data": {
+            "baseline": "output\\benchmark\\budget\\real0.05_synth0.yaml",
+            "arm": "output\\benchmark\\synth_single\\dataset.yaml"
+          },
+          "seed": {
+            "baseline": "42",
+            "arm": "44"
+          }
+        },
+        "runs_pf_ft_s44": {
+          "model": {
+            "baseline": "yolo11n.pt",
+            "arm": "output\\benchmark\\runs_pf_pre_s44\\train\\weights\\last.pt"
+          },
+          "seed": {
+            "baseline": "42",
+            "arm": "44"
+          }
+        },
+        "runs_pf_ctrla_s44": {
+          "seed": {
+            "baseline": "42",
+            "arm": "44"
+          }
+        },
+        "runs_pf_ctrlb_s44": {
+          "epochs": {
+            "baseline": "10",
+            "arm": "20"
+          },
+          "seed": {
+            "baseline": "42",
+            "arm": "44"
+          }
+        },
+        "runs_pf_pre_s45": {
+          "data": {
+            "baseline": "output\\benchmark\\budget\\real0.05_synth0.yaml",
+            "arm": "output\\benchmark\\synth_single\\dataset.yaml"
+          },
+          "seed": {
+            "baseline": "42",
+            "arm": "45"
+          }
+        },
+        "runs_pf_ft_s45": {
+          "model": {
+            "baseline": "yolo11n.pt",
+            "arm": "output\\benchmark\\runs_pf_pre_s45\\train\\weights\\last.pt"
+          },
+          "seed": {
+            "baseline": "42",
+            "arm": "45"
+          }
+        },
+        "runs_pf_ctrla_s45": {
+          "seed": {
+            "baseline": "42",
+            "arm": "45"
+          }
+        },
+        "runs_pf_ctrlb_s45": {
+          "epochs": {
+            "baseline": "10",
+            "arm": "20"
+          },
+          "seed": {
+            "baseline": "42",
+            "arm": "45"
+          }
+        }
+      }
+    }
+  }
+}

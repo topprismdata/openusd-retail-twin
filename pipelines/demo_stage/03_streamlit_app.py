@@ -15,7 +15,10 @@ from PIL import Image, ImageDraw, ImageFilter
 st.set_page_config(page_title="零售商品数字孪生与视觉 AI 平台", layout="wide")
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-BLENDER_BIN = "/Applications/Blender.app/Contents/MacOS/Blender"
+sys.path.insert(0, BASE_DIR)
+from pipelines.common.runtime_env import blender_bin  # noqa: E402
+
+BLENDER_BIN = blender_bin()
 OUT_MULTI = os.path.join(BASE_DIR, "output", "multi_platform")
 OUT_SDG = os.path.join(BASE_DIR, "output", "sdg_shelf")
 
@@ -74,7 +77,7 @@ with st.sidebar:
         st.success("PBR 印刷刀模资产库已就绪!")
 
     if st.button("⚡ 2. 一键渲染 4 大平台展示图 + .usdz", type="primary", use_container_width=True):
-        with st.spinner(f"Mac Metal-RT 渲染 {sku_choice} 全渠道套图 (~1 分钟)..."):
+        with st.spinner(f"Blender/Cycles 渲染 {sku_choice} 全渠道套图 (~1 分钟)..."):
             subprocess.run([BLENDER_BIN, "-b", "-P",
                             os.path.join(BASE_DIR, "pipelines/ecommerce/01_comfy_usd_compositor.py"),
                             "--", "--sku", sku_choice, "--scene", scene_choice],

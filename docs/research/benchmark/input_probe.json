@@ -1,0 +1,120 @@
+{
+  "schema": "input_probe/1",
+  "generated_by": "pipelines/shelf_sdg/55_input_probe.py",
+  "measured_at": "2026-11-25",
+  "n_images": 800,
+  "variants": {
+    "orig": "原图 (参照)",
+    "blur2": "高斯模糊 σ=2 (削高频)",
+    "blur4": "高斯模糊 σ=4 (削更多高频)",
+    "jpeg30": "JPEG 质量 30 重编码 (丢高频+块效应)",
+    "noise20": "加高斯噪声 σ=20 (补高频)",
+    "half_res": "降采样到 50% 再放大 (丢细节)"
+  },
+  "models": {
+    "synth_R1": "output\\benchmark\\runs_r1_s43\\train\\weights\\best.pt",
+    "real_411": "output\\benchmark\\budget_runs_real0.05_synth0\\train\\weights\\last.pt"
+  },
+  "results": {
+    "synth_R1|orig": {
+      "model": "synth_R1",
+      "variant": "orig",
+      "map50": 0.23051498111851831,
+      "map50_95": 0.08380167507275907
+    },
+    "real_411|orig": {
+      "model": "real_411",
+      "variant": "orig",
+      "map50": 0.7869782000452578,
+      "map50_95": 0.43131496037864486
+    },
+    "synth_R1|blur2": {
+      "model": "synth_R1",
+      "variant": "blur2",
+      "map50": 0.24780022000741742,
+      "map50_95": 0.09136215903404891
+    },
+    "real_411|blur2": {
+      "model": "real_411",
+      "variant": "blur2",
+      "map50": 0.7893489810335459,
+      "map50_95": 0.43373541217629114
+    },
+    "synth_R1|blur4": {
+      "model": "synth_R1",
+      "variant": "blur4",
+      "map50": 0.24269768276816478,
+      "map50_95": 0.0896071468584417
+    },
+    "real_411|blur4": {
+      "model": "real_411",
+      "variant": "blur4",
+      "map50": 0.7714071918928227,
+      "map50_95": 0.4178928090465286
+    },
+    "synth_R1|jpeg30": {
+      "model": "synth_R1",
+      "variant": "jpeg30",
+      "map50": 0.23045088130671662,
+      "map50_95": 0.08369127367156137
+    },
+    "real_411|jpeg30": {
+      "model": "real_411",
+      "variant": "jpeg30",
+      "map50": 0.785783709475966,
+      "map50_95": 0.43035847165205654
+    },
+    "synth_R1|noise20": {
+      "model": "synth_R1",
+      "variant": "noise20",
+      "map50": 0.19632257985964038,
+      "map50_95": 0.07051418466428694
+    },
+    "real_411|noise20": {
+      "model": "real_411",
+      "variant": "noise20",
+      "map50": 0.7556338030485417,
+      "map50_95": 0.40921720947019374
+    },
+    "synth_R1|half_res": {
+      "model": "synth_R1",
+      "variant": "half_res",
+      "map50": 0.24373808918077638,
+      "map50_95": 0.08945140542624022
+    },
+    "real_411|half_res": {
+      "model": "real_411",
+      "variant": "half_res",
+      "map50": 0.7907213210239877,
+      "map50_95": 0.4346028490138357
+    }
+  },
+  "verdict": {
+    "synth_R1": {
+      "orig_map50": 0.23051498111851831,
+      "delta_pp": {
+        "blur2": 1.73,
+        "blur4": 1.22,
+        "jpeg30": -0.01,
+        "noise20": -3.42,
+        "half_res": 1.32
+      },
+      "best_variant": "blur2",
+      "best_delta_pp": 1.73
+    },
+    "real_411": {
+      "orig_map50": 0.7869782000452578,
+      "delta_pp": {
+        "blur2": 0.24,
+        "blur4": -1.56,
+        "jpeg30": -0.12,
+        "noise20": -3.13,
+        "half_res": 0.37
+      },
+      "best_variant": "half_res",
+      "best_delta_pp": 0.37
+    }
+  },
+  "conclusion": "合成模型在扰动后的真实图上**涨分** -> 卡点在**高频/纹理通道**: 真实照片的高频细节在误导它 -> 该做的是给合成图补高频 (PASTA/照片退化)",
+  "note": "只扰动输入, 不重训; 标签原样 -> mAP 变化纯粹来自输入分布。合成模型与真实模型对同一扰动的反应差异是判读依据。所有版本 (含 orig) 都按 JPEG q95 重存一次, 所以 orig 与各扰动版之间只差扰动本身 (重编码对所有版本一致)。"
+}

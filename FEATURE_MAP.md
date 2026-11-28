@@ -25,12 +25,13 @@ Index only. Read it, then open the file it names. Do not scan the tree.
 | Contract | Where it lives | Invariant |
 | --- | --- | --- |
 | SDG dataset | `output/sdg_shelf/{images,labels,annotations}/{train,val}` | label line = `class_id cx cy w h`, 5 decimals, normalized; classes `0 COMPLIANT / 1 OOS_GAP / 2 MISALIGNED / 3 INTRUSION` |
-| Split provenance | `split_manifest.json` | schema `sdg_split_manifest/2`; scene-level holdout; `png_sha256` + `label_sha256` per image |
-| Run identity | `dataset_summary.json`, `train_manifest.json` | renderer device, recipe, seed, and `protocol_hash` recorded in the artifact, not only in prose |
+| Split provenance | `output/sdg_shelf/split_manifest.json` | schema `sdg_split_manifest/2`; scene-level holdout; `png_sha256` + `label_sha256` per image |
+| Run identity | `output/sdg_shelf/dataset_summary.json`, `output/sdg_shelf/train_manifest.json` | renderer device, recipe, seed, and `protocol_hash` recorded in the artifact, not only in prose |
 | Arm results | `output/benchmark/sku110k_{arm}_s{seed}.json` | `protocol`, `protocol_hash`, `weights.sha256`, `actual_train_config` all present; drifted runs live in `quarantine/` and never enter a summary |
-| Published copies | `docs/research/benchmark/` + `MANIFEST.json` | copy, then publish, then manifest — order matters |
+| Published copies | `docs/research/benchmark/` + `docs/research/benchmark/MANIFEST.json` | copy, then publish, then manifest — order matters; published copies are path-scrubbed (no local absolute paths) |
 | CI math | `pipelines/common/protocol.py` | `ci95_t` / `T_CRIT_95` are defined **once**; import them, never copy the table |
 | Blender CLI | `tools/blender_shim.py` | arguments go **after** `--`; the flag is `--out`, not `--out-dir` |
+| Path scrubbing | `pipelines/common/publish_paths.py` | published artifacts must not carry local absolute paths; scrubbed at publish time, compared with the same rules in the manifest |
 
 ## Acceptance commands
 
@@ -40,7 +41,7 @@ Index only. Read it, then open the file it names. Do not scan the tree.
 | `python pipelines/common/selftest_protocol.py` | protocol hash stability, split seed-disjointness, fingerprint sensitivity |
 | `python pipelines/common/selftest_runtime_env.py` | Blender path, Cycles backend, memory probe, torch device |
 | `python pipelines/shelf_sdg/91_delivery_audit.py` | manifest integrity + clean-room open |
-| `python pipelines/shelf_sdg/75_protocol_audit.py --artifact output/benchmark/<arm>.json` | actual train config vs declared protocol |
+| `python pipelines/shelf_sdg/75_protocol_audit.py --artifact output/benchmark/<arm>.json` | actual train config (`output/benchmark/<run>/train/args.yaml`) vs declared protocol |
 | `python pipelines/shelf_sdg/90_simready_package_pipeline.py -- --sku demo_classic` | SimReady package + official validate + consume check |
 
 Run the gate after any change that moves a published number, an arm, a seed, or a

@@ -1,0 +1,336 @@
+{
+  "schema": "r3_protocol_matched/1",
+  "measured_at": "2026-11-23",
+  "treatment": {
+    "cam_mult": 1.6,
+    "lens": 40.0,
+    "misalign": 0.35,
+    "bays": 5
+  },
+  "split_protocol": {
+    "num_images": 200,
+    "seed": 42,
+    "val_ratio": 0.2,
+    "images_per_scene": 4,
+    "split_mode": "scene",
+    "samples": 64
+  },
+  "control_note": "对照 = 当前协议的 R1 (同 200 图 / 同场景级留出 / 同训练协议 / 同 seed)",
+  "per_seed": {
+    "42": {
+      "r3pm": 0.18947488624140196,
+      "r3pm_95": 0.05336354268312454,
+      "r1": 0.2265046586434746,
+      "r1_artifact": "sku110k_r1_scenebest.json"
+    },
+    "43": {
+      "r3pm": 0.13586980993788758,
+      "r3pm_95": 0.03637920063460755,
+      "r1": 0.24365231713822955,
+      "r1_artifact": "sku110k_r1_s43.json"
+    },
+    "44": {
+      "r3pm": 0.17644445377022316,
+      "r3pm_95": 0.05339817151924742,
+      "r1": 0.25316970903213226,
+      "r1_artifact": "sku110k_r1_s44.json"
+    },
+    "45": {
+      "r3pm": 0.07035301374976066,
+      "r3pm_95": 0.01584793743719005,
+      "r1": 0.22938846584529976,
+      "r1_artifact": "sku110k_r1_s45.json"
+    },
+    "46": {
+      "r3pm": 0.08300873983243957,
+      "r3pm_95": 0.020981640639866572,
+      "r1": 0.2598065287859736,
+      "r1_artifact": "sku110k_r1_s46.json"
+    },
+    "47": {
+      "r3pm": 0.2055731260860576,
+      "r3pm_95": 0.058595810721152074,
+      "r1": 0.24364835010909658,
+      "r1_artifact": "sku110k_r1_s47.json"
+    }
+  },
+  "r3pm_mean": 0.1435,
+  "r3pm_std": 0.0568,
+  "r1_mean": 0.2427,
+  "raw_paired_diff_pp": [
+    -3.703,
+    -10.778,
+    -7.673,
+    -15.904,
+    -17.68,
+    -3.808
+  ],
+  "paired_diff_pp": -9.924,
+  "paired_diff_ci95_pp": [
+    -16.184,
+    -3.665
+  ],
+  "paired_stats_source": "docs/research/benchmark/fourarm_seed_variance.json (36 号脚本算)",
+  "domain_gap_r3pm": {
+    "synth_dir": "output/benchmark/synth_single_R3pm",
+    "synth": {
+      "n_images": 160,
+      "boxes_per_image": {
+        "n": 160,
+        "mean": 30,
+        "std": 14.4784,
+        "p10": 15,
+        "p50": 30,
+        "p90": 49
+      },
+      "mean_box_area": {
+        "n": 160,
+        "mean": 0.0038,
+        "std": 0.0009,
+        "p10": 0.0031,
+        "p50": 0.0038,
+        "p90": 0.0048
+      },
+      "median_aspect_ratio": {
+        "n": 160,
+        "mean": 0.3007,
+        "std": 0.0574,
+        "p10": 0.2813,
+        "p50": 0.312,
+        "p90": 0.3329
+      },
+      "image_res": [
+        [
+          1440,
+          1080
+        ]
+      ],
+      "total_boxes": 4800
+    },
+    "real": {
+      "n_images": 8219,
+      "boxes_per_image": {
+        "n": 8219,
+        "mean": 147.0352,
+        "std": 42.7591,
+        "p10": 111,
+        "p50": 138,
+        "p90": 195
+      },
+      "area_sum_per_image": {
+        "n": 8219,
+        "mean": 0.4214,
+        "std": 0.1077,
+        "p10": 0.2812,
+        "p50": 0.4263,
+        "p90": 0.5547
+      },
+      "mean_box_area": {
+        "n": 8219,
+        "mean": 0.003,
+        "std": 0.0011,
+        "p10": 0.0017,
+        "p50": 0.003,
+        "p90": 0.0043
+      },
+      "median_aspect_ratio": {
+        "n": 8219,
+        "mean": 1.0544,
+        "std": 1.1358,
+        "p10": 0.3831,
+        "p50": 0.6779,
+        "p90": 1.9199
+      },
+      "image_res": [
+        [
+          480,
+          640
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          1152,
+          1920
+        ],
+        [
+          1836,
+          3264
+        ],
+        [
+          1920,
+          2560
+        ]
+      ],
+      "total_boxes": 1208482,
+      "layout_similarity": {
+        "n_images": 8219,
+        "n_pairs_sampled": 4000,
+        "mean_layout_similarity": 0.6961,
+        "std": 0.1248
+      }
+    },
+    "source_note": "合成侧用 23 号脚本的同一套度量; 真实侧取已发布的 domain_gap_measure.json"
+  },
+  "domain_gap_r1": {
+    "synth_dir": "output/benchmark/synth_single",
+    "synth": {
+      "n_images": 160,
+      "boxes_per_image": {
+        "n": 160,
+        "mean": 21.825,
+        "std": 4.6858,
+        "p10": 16,
+        "p50": 24,
+        "p90": 27
+      },
+      "mean_box_area": {
+        "n": 160,
+        "mean": 0.0053,
+        "std": 0.0009,
+        "p10": 0.0042,
+        "p50": 0.0051,
+        "p90": 0.0068
+      },
+      "median_aspect_ratio": {
+        "n": 160,
+        "mean": 0.3232,
+        "std": 0.0249,
+        "p10": 0.3035,
+        "p50": 0.3196,
+        "p90": 0.3421
+      },
+      "image_res": [
+        [
+          1440,
+          1080
+        ]
+      ],
+      "total_boxes": 3492
+    },
+    "real": {
+      "n_images": 8219,
+      "boxes_per_image": {
+        "n": 8219,
+        "mean": 147.0352,
+        "std": 42.7591,
+        "p10": 111,
+        "p50": 138,
+        "p90": 195
+      },
+      "area_sum_per_image": {
+        "n": 8219,
+        "mean": 0.4214,
+        "std": 0.1077,
+        "p10": 0.2812,
+        "p50": 0.4263,
+        "p90": 0.5547
+      },
+      "mean_box_area": {
+        "n": 8219,
+        "mean": 0.003,
+        "std": 0.0011,
+        "p10": 0.0017,
+        "p50": 0.003,
+        "p90": 0.0043
+      },
+      "median_aspect_ratio": {
+        "n": 8219,
+        "mean": 1.0544,
+        "std": 1.1358,
+        "p10": 0.3831,
+        "p50": 0.6779,
+        "p90": 1.9199
+      },
+      "image_res": [
+        [
+          480,
+          640
+        ],
+        [
+          720,
+          1280
+        ],
+        [
+          1152,
+          1920
+        ],
+        [
+          1836,
+          3264
+        ],
+        [
+          1920,
+          2560
+        ]
+      ],
+      "total_boxes": 1208482,
+      "layout_similarity": {
+        "n_images": 8219,
+        "n_pairs_sampled": 4000,
+        "mean_layout_similarity": 0.6961,
+        "std": 0.1248
+      }
+    },
+    "source_note": "合成侧用 23 号脚本的同一套度量; 真实侧取已发布的 domain_gap_measure.json"
+  },
+  "composition_r3pm": {
+    "n_objects": 6986,
+    "class_hist": {
+      "0": 3048,
+      "2": 2488,
+      "3": 356,
+      "1": 1094
+    },
+    "class_share": {
+      "0": 0.4363,
+      "1": 0.1566,
+      "2": 0.3561,
+      "3": 0.051
+    },
+    "kept_objects": 5892,
+    "misaligned_share_of_kept": 0.4223,
+    "noncompliant_share_of_kept": 0.4827,
+    "mean_visible_frac": 0.8792,
+    "note": "class 2=朝向错位, class 3=竞品入侵; 两者在单类化后都算 product"
+  },
+  "composition_r1": {
+    "n_objects": 5240,
+    "class_hist": {
+      "0": 3601,
+      "3": 273,
+      "1": 824,
+      "2": 542
+    },
+    "class_share": {
+      "0": 0.6872,
+      "1": 0.1573,
+      "2": 0.1034,
+      "3": 0.0521
+    },
+    "kept_objects": 4416,
+    "misaligned_share_of_kept": 0.1227,
+    "noncompliant_share_of_kept": 0.1846,
+    "mean_visible_frac": null,
+    "note": "class 2=朝向错位, class 3=竞品入侵; 两者在单类化后都算 product"
+  },
+  "paired_n": 6,
+  "domain_gap_comparison": {
+    "boxes_per_image_mean": {
+      "r1": 21.825,
+      "r3pm": 30,
+      "real": 147.0352
+    },
+    "mean_box_area_mean": {
+      "r1": 0.0053,
+      "r3pm": 0.0038,
+      "real": 0.003
+    },
+    "median_aspect_ratio_mean": {
+      "r1": 0.3232,
+      "r3pm": 0.3007,
+      "real": 1.0544
+    }
+  }
+}

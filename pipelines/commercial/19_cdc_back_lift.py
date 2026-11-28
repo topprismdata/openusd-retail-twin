@@ -3,7 +3,7 @@
 坑: 旧程序层透过掩膜显影=重影 (v99a); 掩膜用原图距离阈值收紧; BACK UV 镜像→整区水平翻转."""
 import numpy as np
 from PIL import Image, ImageFilter
-import os
+import os, tempfile
 
 BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 REF = os.path.join(BASE, "assets/reference/milk_back")
@@ -66,7 +66,7 @@ def main():
     back = back[:, ::-1]
     atlas[by0:by1, bx0:bx1] = back
     Image.fromarray(atlas).save(OUT)
-    Image.fromarray(back).resize((440, 920)).save("/tmp/atlas_back_v68b.png")
+    Image.fromarray(back).resize((440, 920)).save(os.path.join(tempfile.gettempdir(), "atlas_back_v68b.png"))
     print("saved", OUT)
 
 if __name__ == "__main__":

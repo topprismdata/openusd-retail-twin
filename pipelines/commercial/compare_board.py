@@ -20,7 +20,8 @@ import numpy as np
 from PIL import Image, ImageDraw
 
 
-def build(ref_path, cand_path, out_path, blind=False, height=760, seed=7, left=None):
+def build(ref_path, cand_path, out_path, blind=False, height=760, seed=7, left=None,
+          key_dir=None):
     ref = Image.open(ref_path).convert("RGB")
     cand = Image.open(cand_path).convert("RGB")
 
@@ -54,7 +55,12 @@ def build(ref_path, cand_path, out_path, blind=False, height=760, seed=7, left=N
     meta = {"left": order[0], "right": order[1], "blind": blind, "seed": seed,
             "ref": ref_path, "cand": cand_path,
             "ref_size": list(ref.size), "cand_size": list(cand.size)}
-    with open(os.path.splitext(out_path)[0] + "_map.json", "w") as fh:
+    # 2026-11-23 (审计 F10): 盲评板的"哪边是哪边"是答案钥匙, **不能和板放在同一个
+    # 目录** —— 评审者打开目录就看到了位置答案, 盲评当场失效。默认写到 <板名>_key/。
+    key_dir = key_dir or (os.path.splitext(out_path)[0] + "_key")
+    os.makedirs(key_dir, exist_ok=True)
+    map_path = os.path.join(key_dir, os.path.basename(os.path.splitext(out_path)[0]) + "_map.json")
+    with open(map_path, "w") as fh:
         json.dump(meta, fh, indent=1)
     # 对账: 板内两图与源图逐像素一致性(缩放后) — 证明未被重绘
     ok = True
@@ -79,8 +85,10 @@ def main():
     p.add_argument("--seed", type=int, default=7)
     p.add_argument("--left", choices=("ref", "cand"), default=None,
                    help="显式指定左图(位置偏倚对照必须用它, 不靠seed)")
+    p.add_argument("--key-dir", default=None,
+                   help="答案钥匙目录 (默认 <板名>_key/; **不要指到评审者可见的目录**)")
     a = p.parse_args()
-    build(a.ref, a.cand, a.out, a.blind, a.height, a.seed, a.left)
+    build(a.ref, a.cand, a.out, a.blind, a.height, a.seed, a.left, a.key_dir)
 
 
 if __name__ == "__main__":

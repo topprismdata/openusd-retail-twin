@@ -1,0 +1,135 @@
+{
+  "schema": "exclusion_chain/1",
+  "generated_by": "pipelines/shelf_sdg/74_exclusion_chain_figure.py",
+  "measured_at": "2026-11-27",
+  "question": "本仓已实测的各条路线在同一个轴上是怎么分布的",
+  "rows": [
+    {
+      "label": "I-14 商品表面 (印刷包装)",
+      "group": "改合成域",
+      "artifact": "texture_arm.json",
+      "pair_key": "texture_last_minus_control_last",
+      "n": 3,
+      "mean_pp": -13.2015,
+      "ci95_pp": [
+        -18.1262,
+        -8.2769
+      ],
+      "per_seed_pp": [
+        -12.2565,
+        -15.4795,
+        -11.8686
+      ]
+    },
+    {
+      "label": "I-17 整域重写 (真实货架墙)",
+      "group": "改合成域",
+      "artifact": "shelfwall_arm.json",
+      "pair_key": "wall_last_vs_control_last",
+      "n": 5,
+      "mean_pp": -23.5309,
+      "ci95_pp": [
+        -24.7237,
+        -22.3381
+      ],
+      "per_seed_pp": [
+        -23.1591,
+        -24.59,
+        -22.0838,
+        -24.0684,
+        -23.7532
+      ]
+    },
+    {
+      "label": "I-18 只改上下文",
+      "group": "改合成域",
+      "artifact": "shelfwall_arm_ctx.json",
+      "pair_key": "wall_last_vs_control_last",
+      "n": 5,
+      "mean_pp": -10.1004,
+      "ci95_pp": [
+        -15.5313,
+        -4.6695
+      ],
+      "per_seed_pp": [
+        -11.1348,
+        -15.0828,
+        -3.2583,
+        -9.1904,
+        -11.8358
+      ]
+    },
+    {
+      "label": "I-19 训练时抑制上下文依赖",
+      "group": "改训练",
+      "artifact": "context_suppress_arm.json",
+      "pair_key": "arm_last_vs_control_last",
+      "n": 5,
+      "mean_pp": 1.5078,
+      "ci95_pp": [
+        -0.7757,
+        3.7913
+      ],
+      "per_seed_pp": [
+        -0.722,
+        4.3462,
+        1.6493,
+        0.8141,
+        1.4515
+      ]
+    },
+    {
+      "label": "I-20 合成预训练 + 真实微调",
+      "group": "改分工",
+      "artifact": "pretrain_finetune_arm.json",
+      "pair_key": "arm_vs_ctrl_a",
+      "n": 3,
+      "mean_pp": -2.005,
+      "ci95_pp": [
+        -2.4808,
+        -1.5291
+      ],
+      "per_seed_pp": [
+        -1.8916,
+        -1.8972,
+        -2.2261
+      ]
+    },
+    {
+      "label": "I-22 MixStyle (特征级多样化)",
+      "group": "变化性",
+      "artifact": "mixstyle_arm.json",
+      "pair_key": "arm_last_vs_control_last",
+      "n": 5,
+      "mean_pp": -1.0833,
+      "ci95_pp": [
+        -2.3257,
+        0.1591
+      ],
+      "per_seed_pp": [
+        -1.9094,
+        -0.9836,
+        -2.1983,
+        -0.5959,
+        0.2706
+      ]
+    },
+    {
+      "label": "I-26 合成预训练 + 足量真实预算 (洗)",
+      "group": "改分工",
+      "artifact": "real_budget_epoch_arm.json",
+      "pair_key": "wash_vs_ctrl_b",
+      "n": 3,
+      "mean_pp": -1.0133,
+      "ci95_pp": [
+        -1.6276,
+        -0.3991
+      ],
+      "per_seed_pp": [
+        -0.9068,
+        -0.8372,
+        -1.296
+      ]
+    }
+  ]
+}

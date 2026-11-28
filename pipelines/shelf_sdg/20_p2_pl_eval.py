@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """P2 代理验收: 在 shelfwise SKUs_on_shelves_PL (CC-BY-4.0, 真实门店货架) 上评我们的模型。
 
-数据在移动硬盘: /Volumes/ghb/datasets/SKUs_on_shelves_PL/ (解压后, COCO 格式)
+数据在外部盘: 用环境变量 `SKUPL_ROOT` 指向 SKUs_on_shelves_PL 解压后的目录 (COCO 格式)
 流程: COCO json -> YOLO 目录 (单类 product, 折叠所有 SKU 类) -> 用 R0/R2 best.pt 评 mAP + 计数指标
 产出: output/benchmark/p2_proxy_<arm>.json
-用法: python3 20_p2_pl_eval.py --arm r0 [--limit 2000]
+用法: export SKUPL_ROOT=/Volumes/<disk>/datasets/SKUs_on_shelves_PL
+      python3 20_p2_pl_eval.py --arm r0 [--limit 2000]
 """
 import json
 import os
@@ -14,7 +15,12 @@ import numpy as np
 
 BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 BENCH = os.path.join(BASE, "output", "benchmark")
-PL = "/Volumes/ghb/datasets/SKUs_on_shelves_PL"
+PL = os.environ.get("SKUPL_ROOT", "").strip()
+if not PL:
+    raise SystemExit(
+        "[P2] 缺环境变量 SKUPL_ROOT —— 指向 SKUs_on_shelves_PL 解压后的根目录 "
+        "(含 COCO json), 例如:\n"
+        '    export SKUPL_ROOT="/Volumes/<disk>/datasets/SKUs_on_shelves_PL"')
 
 
 def find_coco():

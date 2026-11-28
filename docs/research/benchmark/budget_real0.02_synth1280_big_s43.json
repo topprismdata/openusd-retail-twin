@@ -1,0 +1,113 @@
+{
+  "arm": "budget:real0.02_synth1280_big_s43",
+  "dataset": {
+    "cell": {
+      "real_frac": 0.02,
+      "synth_n": 1280
+    },
+    "n_real": 164,
+    "n_synth": 1280,
+    "real_subset_sha256": "393fee7ad7bac7a0af3060f70138347bff4688a67b3225cf483fe8adb681f249",
+    "synth_subset_sha256": "54a990f4d23c63e1b46c1d562d7efd85a4d3af43842af0e785fa746fa55b57b7",
+    "synth_pool": {
+      "path": "output\\benchmark\\synth_bigpool\\images\\train",
+      "n_images": 2240,
+      "names_sha256": "9f15b624a77d3509eef16811ff10fc1c51c90d66bdd5dd4a8ab3e2c72eb20493"
+    },
+    "budget_seed": 20261120,
+    "eval_split": "test",
+    "eval_dir": "<SKU110K_ROOT>\\test.txt",
+    "eval_yaml_sha256": "e469320c2e05f7c9222f3e708d288edd4e242e872660155e26486553d286378a"
+  },
+  "actual_train_config": {
+    "epochs": 10,
+    "batch": 4,
+    "workers": 2,
+    "device": "cuda",
+    "mem_need_gb": 8.0,
+    "protocol_batch": 4,
+    "batch_downgraded": false
+  },
+  "protocol": {
+    "model": "yolo11n.pt",
+    "imgsz": 640,
+    "epochs": 10,
+    "batch": 4,
+    "workers": 2,
+    "cache": false,
+    "seed": 43,
+    "max_det": 1000,
+    "device": "auto",
+    "real_frac": 0.02,
+    "synth_n": 1280,
+    "budget_seed": 20261120,
+    "select": "last"
+  },
+  "map50": 0.7417636185853715,
+  "map50_95": 0.39359283570262016,
+  "precision": 0.7633600442981103,
+  "recall": 0.6714648052701083,
+  "wall_sec": 2883.9,
+  "checkpoint": {
+    "selection": "last",
+    "path": "output\\benchmark\\budget_runs_real0.02_synth1280_big_s43\\train\\weights\\last.pt",
+    "sha256": "5cc34058c675d35555ca30e209364e8f517ee8783a6e416cc55cbe27bcc0889d"
+  },
+  "protocol_manifest": {
+    "protocol": {
+      "model": "yolo11n.pt",
+      "imgsz": 640,
+      "epochs": 10,
+      "batch": 4,
+      "workers": 2,
+      "cache": false,
+      "seed": 43,
+      "max_det": 1000,
+      "device": "auto",
+      "real_frac": 0.02,
+      "synth_n": 1280,
+      "budget_seed": 20261120,
+      "select": "last"
+    },
+    "data": {
+      "cell": {
+        "real_frac": 0.02,
+        "synth_n": 1280
+      },
+      "n_real": 164,
+      "n_synth": 1280,
+      "real_subset_sha256": "393fee7ad7bac7a0af3060f70138347bff4688a67b3225cf483fe8adb681f249",
+      "synth_subset_sha256": "54a990f4d23c63e1b46c1d562d7efd85a4d3af43842af0e785fa746fa55b57b7",
+      "synth_pool": {
+        "path": "output\\benchmark\\synth_bigpool\\images\\train",
+        "n_images": 2240,
+        "names_sha256": "9f15b624a77d3509eef16811ff10fc1c51c90d66bdd5dd4a8ab3e2c72eb20493"
+      },
+      "budget_seed": 20261120,
+      "eval_split": "test",
+      "eval_dir": "<SKU110K_ROOT>\\test.txt",
+      "eval_yaml_sha256": "e469320c2e05f7c9222f3e708d288edd4e242e872660155e26486553d286378a"
+    },
+    "splits": {},
+    "actual": {
+      "epochs": 10,
+      "batch": 4,
+      "workers": 2,
+      "device": "cuda",
+      "wall_sec": 2883.9
+    },
+    "deps": {
+      "python": "3.13.12",
+      "platform": "win32",
+      "torch": "2.6.0+cu124",
+      "ultralytics": "8.4.216",
+      "numpy": "2.5.5",
+      "PIL": "13.0.0"
+    },
+    "checkpoint": {},
+    "extra": {},
+    "protocol_hash": "25bc57cd1a8f52bb",
+    "protocol_hash_legacy": "b37c5add86461389"
+  },
+  "protocol_hash": "25bc57cd1a8f52bb"
+}

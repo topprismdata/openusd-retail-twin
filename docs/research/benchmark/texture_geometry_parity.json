@@ -1,0 +1,17 @@
+{
+  "schema": "texture_geometry_parity/1",
+  "generated_by": "pipelines/shelf_sdg/61_verify_texture_geometry.py",
+  "checked": {
+    "control_labels": "output/benchmark/synth_single/labels/train",
+    "texture_labels": "output/benchmark/sdg_shelf_tex/labels/train",
+    "drop_classes": [
+      1
+    ]
+  },
+  "n_images": 124,
+  "identical": 124,
+  "different": 0,
+  "missing_in_control": 0,
+  "examples": [],
+  "verdict": "几何逐帧相同 -> 纹理臂确实是**只改商品表面**的单变量对照"
+}

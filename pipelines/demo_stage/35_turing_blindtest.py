@@ -30,6 +30,8 @@ def main():
     ap.add_argument("--cg", required=True)
     ap.add_argument("--out", default="output/turing")
     ap.add_argument("--seed", type=int, default=7)
+    ap.add_argument("--key-dir", default=None,
+                    help="答案钥匙目录 (默认 <out>_key/; **不要指到评审者可见的目录**)")
     args = ap.parse_args()
     os.makedirs(args.out, exist_ok=True)
     items = []
@@ -44,12 +46,19 @@ def main():
         it["idx"] = i
         it["b64"] = b64(it["file"])
     manifest = [{"idx": it["idx"], "file": it["file"], "label": it["label"]} for it in items]
-    with open(os.path.join(args.out, "manifest.json"), "w") as f:
+    # 2026-11-23 (审计 F10): 答案钥匙**不能和评审板同目录** —— 评审者打开目录就看到了
+    # 每张图的真假标签, 盲评当场失效。默认写到 <out>_key/ (兄弟目录), 可用 --key-dir 改。
+    key_dir = args.key_dir or (args.out.rstrip("/\\") + "_key")
+    os.makedirs(key_dir, exist_ok=True)
+    with open(os.path.join(key_dir, "manifest.json"), "w") as f:
         json.dump({"seed": args.seed, "items": manifest}, f, indent=1)
-    html = HTML.replace("__ITEMS__", json.dumps([{k: it[k] for k in ("idx", "label", "b64")} for it in items]))
+    # 另一个更隐蔽的漏: 之前把整个 items (含 label) 塞进 HTML 的 JS 常量 —— 页面里
+    # 一搜就有真值。现在只给 idx + b64 (JS 本来也只用这两个)。
+    html = HTML.replace("__ITEMS__", json.dumps([{k: it[k] for k in ("idx", "b64")} for it in items]))
     with open(os.path.join(args.out, "blind_board.html"), "w") as f:
         f.write(html)
     print(f"[TURING] {len(items)} stimuli -> {args.out}/blind_board.html")
+    print(f"[TURING] 答案钥匙 -> {key_dir}/manifest.json (**不在评审目录里**, 评审完再取)")
 
 
 HTML = """<!doctype html><meta charset=utf-8><title>乳品商业图 真/CG 盲测</title>

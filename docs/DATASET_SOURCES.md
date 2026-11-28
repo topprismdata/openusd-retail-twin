@@ -6,7 +6,7 @@
 
 | 源 | 许可 | 体积 | 状态 | 用途 |
 |---|---|---|---|---|
-| shelfwise-by-form/SKUs_on_shelves_PL (HF) | **CC-BY-4.0** | 10.9GB zip | 🏃 下载中 → /Volumes/ghb/datasets/ | **P2 主源**：真实门店货架 27k 图/2M 框/8k SKU，COCO 格式 |
+| shelfwise-by-form/SKUs_on_shelves_PL (HF) | **CC-BY-4.0** | 10.9GB zip | 🏃 下载中 → /Volumes/<disk>/datasets/ | **P2 主源**：真实门店货架 27k 图/2M 框/8k SKU，COCO 格式 |
 | neurolaboratories/reshelf-detection (GitHub) | BSD-3-Clause | 仓库 800KB | ✅ 已克隆 cpgdet129_repo/ | postprocess.py 的可见性/面积过滤参数（与本项目 P0-2 闸互参）+ 样张对（jpeg+掩膜） |
 | Voxel51/sku110k_test 等 (HF) | 原 SKU-110K 许可 | 中 | 已有官方副本 | 仅镜像备用 |
 

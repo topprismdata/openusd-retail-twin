@@ -1,0 +1,219 @@
+{
+  "schema": "domain_gap_measure/1",
+  "generated_by": "pipelines/shelf_sdg/23_domain_gap_measure.py",
+  "note": "标签统计口径: YOLO 归一化框; area_sum = 单图所有框面积占比之和; layout_similarity = (n_boxes, mean_area, area_sum, median_ar) 签名的成对相似度均值 (越高=布局越雷同, 有效样本量越低)",
+  "real": {
+    "n_images": 8219,
+    "boxes_per_image": {
+      "n": 8219,
+      "mean": 147.0352,
+      "std": 42.7591,
+      "p10": 111,
+      "p50": 138,
+      "p90": 195
+    },
+    "area_sum_per_image": {
+      "n": 8219,
+      "mean": 0.4214,
+      "std": 0.1077,
+      "p10": 0.2812,
+      "p50": 0.4263,
+      "p90": 0.5547
+    },
+    "mean_box_area": {
+      "n": 8219,
+      "mean": 0.003,
+      "std": 0.0011,
+      "p10": 0.0017,
+      "p50": 0.003,
+      "p90": 0.0043
+    },
+    "median_aspect_ratio": {
+      "n": 8219,
+      "mean": 1.0544,
+      "std": 1.1358,
+      "p10": 0.3831,
+      "p50": 0.6779,
+      "p90": 1.9199
+    },
+    "image_res": [
+      [
+        480,
+        640
+      ],
+      [
+        720,
+        1280
+      ],
+      [
+        1152,
+        1920
+      ],
+      [
+        1836,
+        3264
+      ],
+      [
+        1920,
+        2560
+      ]
+    ],
+    "total_boxes": 1208482,
+    "layout_similarity": {
+      "n_images": 8219,
+      "n_pairs_sampled": 4000,
+      "mean_layout_similarity": 0.6961,
+      "std": 0.1248
+    }
+  },
+  "synth": {
+    "n_images": 160,
+    "boxes_per_image": {
+      "n": 160,
+      "mean": 21.825,
+      "std": 4.6858,
+      "p10": 16,
+      "p50": 24,
+      "p90": 27
+    },
+    "area_sum_per_image": {
+      "n": 160,
+      "mean": 0.1164,
+      "std": 0.0343,
+      "p10": 0.0722,
+      "p50": 0.117,
+      "p90": 0.1653
+    },
+    "mean_box_area": {
+      "n": 160,
+      "mean": 0.0053,
+      "std": 0.0009,
+      "p10": 0.0042,
+      "p50": 0.0051,
+      "p90": 0.0068
+    },
+    "median_aspect_ratio": {
+      "n": 160,
+      "mean": 0.3232,
+      "std": 0.0249,
+      "p10": 0.3035,
+      "p50": 0.3196,
+      "p90": 0.3421
+    },
+    "image_res": [
+      [
+        1440,
+        1080
+      ]
+    ],
+    "total_boxes": 3492,
+    "layout_similarity": {
+      "n_images": 160,
+      "n_pairs_sampled": 3971,
+      "mean_layout_similarity": 0.8228,
+      "std": 0.0857
+    }
+  },
+  "gaps": {
+    "boxes_per_image_ratio_synth_over_real": 0.1484,
+    "mean_box_area_ratio_synth_over_real": 1.7667,
+    "area_sum_ratio_synth_over_real": 0.2762,
+    "layout_similarity_gap_synth_minus_real": 0.1267
+  },
+  "synth_render_throughput_measured": {
+    "total_sec": 3702.32,
+    "n_images": 200,
+    "sec_per_image": 18.51,
+    "images_per_min": 3.24,
+    "note": "实测值 (含渲染 + 射线标注); 万图产能属水平外推, 非实测"
+  },
+  "break_even_box_mass_equivalent": [
+    {
+      "real_frac": 0.02,
+      "n_real": 164,
+      "real_box_mass": 24114,
+      "synth_images_for_equal_box_mass": 1105,
+      "render_hours_at_measured_rate": 5.68,
+      "synth_images_actually_used": 0,
+      "ratio_used_over_needed": 0.0
+    },
+    {
+      "real_frac": 0.02,
+      "n_real": 164,
+      "real_box_mass": 24114,
+      "synth_images_for_equal_box_mass": 1105,
+      "render_hours_at_measured_rate": 5.68,
+      "synth_images_actually_used": 160,
+      "ratio_used_over_needed": 0.1448
+    },
+    {
+      "real_frac": 0.02,
+      "n_real": 164,
+      "real_box_mass": 24114,
+      "synth_images_for_equal_box_mass": 1105,
+      "render_hours_at_measured_rate": 5.68,
+      "synth_images_actually_used": 40,
+      "ratio_used_over_needed": 0.0362
+    },
+    {
+      "real_frac": 0.02,
+      "n_real": 164,
+      "real_box_mass": 24114,
+      "synth_images_for_equal_box_mass": 1105,
+      "render_hours_at_measured_rate": 5.68,
+      "synth_images_actually_used": 80,
+      "ratio_used_over_needed": 0.0724
+    },
+    {
+      "real_frac": 0.05,
+      "n_real": 411,
+      "real_box_mass": 60431,
+      "synth_images_for_equal_box_mass": 2769,
+      "render_hours_at_measured_rate": 14.24,
+      "synth_images_actually_used": 0,
+      "ratio_used_over_needed": 0.0
+    },
+    {
+      "real_frac": 0.05,
+      "n_real": 411,
+      "real_box_mass": 60431,
+      "synth_images_for_equal_box_mass": 2769,
+      "render_hours_at_measured_rate": 14.24,
+      "synth_images_actually_used": 160,
+      "ratio_used_over_needed": 0.0578
+    },
+    {
+      "real_frac": 0.05,
+      "n_real": 411,
+      "real_box_mass": 60431,
+      "synth_images_for_equal_box_mass": 2769,
+      "render_hours_at_measured_rate": 14.24,
+      "synth_images_actually_used": 40,
+      "ratio_used_over_needed": 0.0144
+    },
+    {
+      "real_frac": 0.05,
+      "n_real": 411,
+      "real_box_mass": 60431,
+      "synth_images_for_equal_box_mass": 2769,
+      "render_hours_at_measured_rate": 14.24,
+      "synth_images_actually_used": 80,
+      "ratio_used_over_needed": 0.0289
+    },
+    {
+      "real_frac": 1.0,
+      "n_real": 8219,
+      "real_box_mass": 1208482,
+      "synth_images_for_equal_box_mass": 55371,
+      "render_hours_at_measured_rate": 284.7,
+      "synth_images_actually_used": 0,
+      "ratio_used_over_needed": 0.0
+    }
+  ],
+  "limits": [
+    "标签统计只说明**分布形状**的差距, 不等于特征空间的距离; 特征级差距需另测 (未做)",
+    "合成集只有一套货架模板的参数化变体, 与真实 SKU-110K 的门店实拍不是同一生成过程",
+    "layout_similarity 是签名的代理量, 不是像素/特征距离",
+    "break_even 是一阶估算 (假设框数是唯一瓶颈): 更多合成是否反而更差**未测**, 本文件只用于给量级, 不作为'加大合成就能替代'的依据"
+  ]
+}

@@ -77,16 +77,21 @@ credited ... copy paste this credit wherever you share it" —— 署名只放�
 - 蓝莓 / 玻璃杯: 授权原文在仓, credit line 已核对一致 → **可随交付发布**。
 - 可颂: **授权凭据待补**(见第 3 项), 发布前须闭合。
 - 布纹: Pexels 记载在台账, 无强制署名义务。
-## 4. Strawberry (v137, in production)
+- 开源资产动物园 8 个模型: 许可为 CC-BY-4.0 (允许商用, 必须署名), 此前未列入本清单 →
+  credit line 已补入 `NOTICE.md` 第 4 节, **发布前须随交付物附带**。
+- `assets/models/sneaker_trellis/input_photo.jpg`: Dreamstime 图库预览图已随仓分发,
+  免费下载通常仅限编辑用途 → **建议从仓库移除该 JPG** (保留 sha256 与来源 URL), 商用前补授权证明。
+
+## 7. Strawberry (v137, in production)
 - Source: Innerscene 3D Parts Library, "Strawberry" (https://www.innerscene.com/tools/library/3d-parts/strawberry-3ff8e17e)
 - License: CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/) — snapshot: assets/models/strawberry/license_page.html
 - Usage: oat bowl fruit (specs/lifestyle_1l.json oat_bowl.args.fruit="strawberry"); extracted via extract_scan_strawberry.py
 
-## 4. 桌面纹理 (v141)
+## 8. 桌面纹理 (v141)
 - **wood_table_worn** (diff/nor/rough, 2048²): Poly Haven, CC0. 下载于 2026-11-14.
   https://polyhaven.com/a/wood_table_worn — 白洗处理(sat .75 + 20%白 + BrightContrast)后作生活方式场景桌面。
 
-## 5. HDRI 棚拍环境 (R18, 四阶段板与实拍同机位渲染)
+## 9. HDRI 棚拍环境 (R18, 四阶段板与实拍同机位渲染)
 - **studio_small_09** (2k HDR, 6.3MB): Poly Haven, CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/)
 - 下载于 2026-11-16, dl.polyhaven.org 直链; 文件 assets/hdri/studio_small_09_2k.hdr
 - 用途: specs/pack_458.json match_view.rig 环境底光 (strength 0.05) + 包装四阶段板 ③④阶段

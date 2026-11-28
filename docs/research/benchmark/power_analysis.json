@@ -1,0 +1,112 @@
+{
+  "schema": "power_analysis/1",
+  "generated_by": "pipelines/shelf_sdg/29_power_analysis.py",
+  "alpha": 0.05,
+  "side": "two-sided",
+  "budgets": {
+    "0.05": {
+      "n_seeds": 3,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "paired_diff_pp": [
+        -0.905,
+        1.001,
+        0.199
+      ],
+      "mean_pp": 0.098,
+      "sd_pp": 0.957,
+      "ci95_halfwidth_pp": 2.378,
+      "ci95_pp": [
+        -2.28,
+        2.477
+      ],
+      "gap_to_full_real_pp": 10.12,
+      "max_recovery_excluded_pp": 2.378,
+      "recoverable_share_of_gap_excluded_pct": 23.5,
+      "decision_threshold_pp": 5.06,
+      "decision_threshold_covered": true,
+      "seeds_needed_80pct_power": {
+        "1pp": 8,
+        "2pp": 2,
+        "5pp": 2,
+        "10pp": 2
+      }
+    },
+    "0.02": {
+      "n_seeds": 3,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "paired_diff_pp": [
+        -2.994,
+        0.344,
+        0.054
+      ],
+      "mean_pp": -0.866,
+      "sd_pp": 1.849,
+      "ci95_halfwidth_pp": 4.593,
+      "ci95_pp": [
+        -5.459,
+        3.728
+      ],
+      "gap_to_full_real_pp": 17.36,
+      "max_recovery_excluded_pp": 4.593,
+      "recoverable_share_of_gap_excluded_pct": 26.5,
+      "decision_threshold_pp": 8.68,
+      "decision_threshold_covered": true,
+      "seeds_needed_80pct_power": {
+        "1pp": 27,
+        "2pp": 7,
+        "5pp": 2,
+        "10pp": 2
+      }
+    }
+  },
+  "evaluation_side": {
+    "runs": [
+      {
+        "file": "paired_image_eval_real0.02.json",
+        "n_images": 2936,
+        "diff_pp": -2.501,
+        "t": -21.96,
+        "ci95_halfwidth_pp": 0.223
+      },
+      {
+        "file": "paired_image_eval_real0.02_s44.json",
+        "n_images": 2936,
+        "diff_pp": 0.656,
+        "t": 5.49,
+        "ci95_halfwidth_pp": 0.234
+      },
+      {
+        "file": "paired_image_eval_real0.05.json",
+        "n_images": 2936,
+        "diff_pp": -1.019,
+        "t": -13.4,
+        "ci95_halfwidth_pp": 0.149
+      },
+      {
+        "file": "paired_image_eval_real0.05_s43.json",
+        "n_images": 2936,
+        "diff_pp": 0.798,
+        "t": 9.48,
+        "ci95_halfwidth_pp": 0.165
+      },
+      {
+        "file": "paired_image_eval_real0.05_s44.json",
+        "n_images": 2936,
+        "diff_pp": 0.327,
+        "t": 4.67,
+        "ci95_halfwidth_pp": 0.137
+      }
+    ],
+    "note": "逐图配对的 CI 半宽远小于训练 seed 间散布 -> 任何单对模型的逐图检验都必然'检出'一个其实属于训练噪声的差异",
+    "train_side_sd_pp": 1.849,
+    "precision_ratio_vs_train_noise": 13.5
+  }
+}

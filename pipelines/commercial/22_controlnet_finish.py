@@ -16,8 +16,11 @@ CN_SCALE = float(os.environ.get("CN_SCALE", "0.8"))
 RES = int(os.environ.get("CN_RES", "1024"))
 SEED = int(os.environ.get("CN_SEED", "42"))
 
-device = "mps" if torch.backends.mps.is_available() else "cpu"
-dtype = torch.float32   # MPS fp16 VAE decode溢出NaN→黑图(实测), SD1.5须fp32
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+from pipelines.common.runtime_env import torch_device  # noqa: E402
+
+device = torch_device()
+dtype = torch.float32 if device == "mps" else torch.float16   # MPS fp16 VAE decode溢出NaN→黑图(实测)
 print(f"device={device} dtype={dtype} strength={STRENGTH} cn_scale={CN_SCALE} res={RES}")
 
 t0 = time.time()

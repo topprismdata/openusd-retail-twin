@@ -5,7 +5,7 @@
 # 版式佐证: SIG Artwork Manual V7 p8-10 · 尺寸: DM 默认 70×70×195 · 印刷: 纯空白
 # 端部: 塞入式(fold band + recessed triangle + corner ears) — 修掉品慕线单三角简化
 # 许可: 自研参数化实现, 公开资源仅作结构参照, 不复制任何图纸(docs/DIELINE_SOURCES.md)
-import bpy, bmesh, math, os
+import bpy, bmesh, math, os, sys
 from mathutils import Vector
 
 W, D, HB = 0.070, 0.070, 0.195
@@ -17,6 +17,9 @@ HALFGAP = 0.0015
 BAND = 0.002
 EAR = 0.008
 HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, HERE)
+from pipelines.common.runtime_env import configure_cycles  # noqa: E402
+
 OUT = os.path.join(HERE, "output", "pack", "generic")
 os.makedirs(OUT, exist_ok=True)
 
@@ -175,13 +178,8 @@ try:
 except Exception as e:
     print("look:", e)
 try:
-    prefs = bpy.context.preferences.addons['cycles'].preferences
-    prefs.compute_device_type = 'METAL'
-    prefs.get_devices()
-    for d in prefs.devices:
-        d.use = (d.type == 'METAL')
-    sc.cycles.device = 'GPU'
-    print("METAL GPU on")
+    backend, ndev = configure_cycles(scene=sc, denoise=True)
+    print(f"Cycles backend={backend} devices={ndev}")
 except Exception as e:
     print("GPU fail, CPU:", e)
 

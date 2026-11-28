@@ -11,7 +11,11 @@ import bpy, bmesh, math, os, sys
 from mathutils import Vector, Matrix
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-SRC = "/Volumes/ghb/ai3d-pipeline/scratch/sneaker/extracted/scene.gltf"
+SRC = os.environ.get("SNEAKER_SCENE", "").strip()
+if not SRC:
+    raise SystemExit(
+        "[SNEAKER] 缺环境变量 SNEAKER_SCENE —— 指向解包后的 scene.gltf, 例如:\n"
+        '    export SNEAKER_SCENE="/Volumes/<disk>/scratch/sneaker/extracted/scene.gltf"')
 OUT_DIR = os.path.join(ROOT, "output/sneaker")
 os.makedirs(OUT_DIR, exist_ok=True)
 

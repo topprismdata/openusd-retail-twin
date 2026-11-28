@@ -1,0 +1,196 @@
+{
+  "arm": "r2",
+  "run_id": "r2_s44",
+  "dataset": {
+    "arm": "r2",
+    "sources": [
+      {
+        "kind": "real",
+        "split": "train",
+        "path": "output\\benchmark\\real_train_sym\\images",
+        "n_images": 8219,
+        "yaml": "<SKU110K_ROOT>\\SKU-110K.yaml",
+        "fingerprint": {
+          "path": "output\\benchmark\\real_train_sym\\images",
+          "exists": true,
+          "n_files": 8219,
+          "total_bytes": 10515137327,
+          "sha256": "de31c1c5b50c5de3c982567d1e2b0ae2fafc4b261dca1db883da4be2d0a99ce1",
+          "sampled": false
+        }
+      },
+      {
+        "kind": "synthetic",
+        "path": "output\\benchmark\\synth_single\\images\\train",
+        "n_images": 160,
+        "fingerprint": {
+          "path": "output\\benchmark\\synth_single\\images\\train",
+          "exists": true,
+          "n_files": 160,
+          "total_bytes": 249472555,
+          "sha256": "e78ba33a70edadbc084951648b49a43a48f9158e255c5c1d17e3f284a6cc36a9",
+          "sampled": false
+        }
+      }
+    ],
+    "n_total_train": 8379,
+    "synth_ratio": 0.019095,
+    "synth_split_manifest": {
+      "path": "output\\sdg_shelf\\split_manifest.json",
+      "sha256": "f198f984426ff49082a75fe11d0f7bf10c910078a1091a424993b267b5126ab8"
+    },
+    "note": "n_images 为本地可数到的图数; SKU-110K 的 split 定义在仓外, 真实总量需以 SKU-110K.yaml / <split>.txt 为准 (审计 F4)"
+  },
+  "protocol_hash_full": "c2464da958277d27",
+  "actual_train_config": {
+    "epochs": 10,
+    "batch": 4,
+    "workers": 2,
+    "device": "cuda"
+  },
+  "protocol": {
+    "model": "yolo11n.pt",
+    "imgsz": 640,
+    "epochs": 10,
+    "batch": 4,
+    "workers": 2,
+    "cache": false,
+    "seed": 44,
+    "max_det": 1000,
+    "device": "auto"
+  },
+  "protocol_hash": "525dcc1d9044fc6d",
+  "map50": 0.8849935229842212,
+  "map50_95": 0.5268764105052164,
+  "precision": 0.8847950971539834,
+  "recall": 0.8046400367160463,
+  "wall_sec": 6198.0,
+  "checkpoint": {
+    "selection": "best",
+    "path": "output/benchmark/weights/r2_s44/best.pt",
+    "sha256": "cfc420913f81c2f16516b4787555bca62818180e3763c54222afc90a241ff8e5",
+    "bytes": 5476371,
+    "exists": true
+  },
+  "model_weights": {
+    "path": "yolo11n.pt",
+    "name": "yolo11n.pt",
+    "exists": true,
+    "sha256": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1",
+    "bytes": 5613764
+  },
+  "protocol_manifest": {
+    "protocol": {
+      "model": "yolo11n.pt",
+      "imgsz": 640,
+      "epochs": 10,
+      "batch": 4,
+      "workers": 2,
+      "cache": false,
+      "seed": 44,
+      "max_det": 1000,
+      "device": "auto"
+    },
+    "data": {
+      "arm": "r2",
+      "sources": [
+        {
+          "kind": "real",
+          "split": "train",
+          "path": "output\\benchmark\\real_train_sym\\images",
+          "n_images": 8219,
+          "yaml": "<SKU110K_ROOT>\\SKU-110K.yaml",
+          "fingerprint": {
+            "path": "output\\benchmark\\real_train_sym\\images",
+            "exists": true,
+            "n_files": 8219,
+            "total_bytes": 10515137327,
+            "sha256": "de31c1c5b50c5de3c982567d1e2b0ae2fafc4b261dca1db883da4be2d0a99ce1",
+            "sampled": false
+          }
+        },
+        {
+          "kind": "synthetic",
+          "path": "output\\benchmark\\synth_single\\images\\train",
+          "n_images": 160,
+          "fingerprint": {
+            "path": "output\\benchmark\\synth_single\\images\\train",
+            "exists": true,
+            "n_files": 160,
+            "total_bytes": 249472555,
+            "sha256": "e78ba33a70edadbc084951648b49a43a48f9158e255c5c1d17e3f284a6cc36a9",
+            "sampled": false
+          }
+        }
+      ],
+      "n_total_train": 8379,
+      "synth_ratio": 0.019095,
+      "synth_split_manifest": {
+        "path": "output\\sdg_shelf\\split_manifest.json",
+        "sha256": "f198f984426ff49082a75fe11d0f7bf10c910078a1091a424993b267b5126ab8"
+      },
+      "note": "n_images 为本地可数到的图数; SKU-110K 的 split 定义在仓外, 真实总量需以 SKU-110K.yaml / <split>.txt 为准 (审计 F4)"
+    },
+    "splits": {
+      "train": {
+        "n": 160,
+        "total_bytes": 249472555,
+        "names_sha256": "435ec95446986f390d436f83c093811bde0512320334b7a18dd29680d8a82bc5",
+        "sha256": "fcdd485f8782e0d7ea1d2c852d03d5c80a7902b6f73dea9cf83e667f34b015b1"
+      },
+      "val": {
+        "n": 40,
+        "total_bytes": 62164428,
+        "names_sha256": "fcdf897ba741d55c85d4f48062569d058c3dccf6dc88e008a8be3a552c5d67e1",
+        "sha256": "cf29270dd55e70229f44c5f11baf15a5f14280b5b967c2a1fd310e545e27a49b"
+      }
+    },
+    "actual": {
+      "epochs": 10,
+      "batch": 4,
+      "workers": 2,
+      "device": "cuda",
+      "wall_sec": 6198.0,
+      "checkpoint_selection": "best"
+    },
+    "deps": {
+      "python": "3.13.12",
+      "platform": "win32",
+      "torch": "2.6.0+cu124",
+      "ultralytics": "8.4.216",
+      "numpy": "2.5.5",
+      "PIL": "13.0.0"
+    },
+    "checkpoint": {
+      "selection": "best",
+      "path": "output/benchmark/weights/r2_s44/best.pt",
+      "sha256": "cfc420913f81c2f16516b4787555bca62818180e3763c54222afc90a241ff8e5",
+      "bytes": 5476371,
+      "exists": true
+    },
+    "extra": {
+      "protocol_v1": {
+        "model": "yolo11n.pt",
+        "imgsz": 640,
+        "epochs": 10,
+        "batch": 4,
+        "workers": 2,
+        "cache": false,
+        "seed": 42,
+        "max_det": 1000,
+        "device": "mps"
+      },
+      "model_weights": {
+        "path": "yolo11n.pt",
+        "name": "yolo11n.pt",
+        "exists": true,
+        "sha256": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1",
+        "bytes": 5613764
+      },
+      "note": "protocol_hash 覆盖协议+数据+划分+实跑配置+依赖+权重+模型权重文件; protocol_hash_legacy 对应 2026-11-08 历史数字"
+    },
+    "protocol_hash": "c2464da958277d27",
+    "protocol_hash_legacy": "525dcc1d9044fc6d"
+  },
+  "note": "counting metrics (MAE/MAPE/Pearson) 见后续 count_eval 步骤"
+}

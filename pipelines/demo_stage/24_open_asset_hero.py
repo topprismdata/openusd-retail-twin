@@ -12,6 +12,9 @@ import sys
 import bpy
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, BASE_DIR)
+from pipelines.common.runtime_env import configure_cycles  # noqa: E402
+
 OUT_DIR = os.path.join(BASE_DIR, "output", "open_assets")
 
 
@@ -102,14 +105,7 @@ def setup_ground():
 
 def render(out_path, res=1600, samples=128, transparent=False):
     sc = bpy.context.scene
-    sc.render.engine = "CYCLES"
-    prefs = bpy.context.preferences.addons["cycles"].preferences
-    prefs.compute_device_type = "METAL"
-    prefs.get_devices()
-    for d in prefs.devices:
-        d.use = d.type == "METAL"
-    sc.cycles.device = "GPU"
-    sc.cycles.samples = samples
+    configure_cycles(scene=sc, samples=samples, denoise=False)
     sc.render.resolution_x = res
     sc.render.resolution_y = res
     sc.render.film_transparent = transparent

@@ -1,0 +1,381 @@
+{
+  "schema": "real_budget_epoch_arm/1",
+  "generated_by": "pipelines/shelf_sdg/73_real_budget_epoch_arm.py",
+  "measured_at": "2026-11-27",
+  "question": "合成先验能否被更多真实轮数洗掉? 真实标注的训练轮数轴能补回多少缺口?",
+  "design": {
+    "arm_wash": "yolo11n -> 合成池预训练 10 ep -> 真实子集 20 ep (复用 I-20 的预训练权重 ✓)",
+    "ctrl_b": "yolo11n -> 只在真实子集上训 20 ep (真实曝光与 arm_wash 相同 ✓, 数字取自 I-20 产物 ✓)",
+    "ctrl_c": "yolo11n -> 只在真实子集上训 40 ep (轮数轴的下一档 ✓)",
+    "real_subset": "output\\benchmark\\budget\\real0.05_synth0_real.txt",
+    "real_frac": 0.05,
+    "train_cfg": {
+      "imgsz": 640,
+      "batch": 4,
+      "workers": 2,
+      "device": "0",
+      "pretrained": true,
+      "optimizer": "auto",
+      "close_mosaic": 10
+    },
+    "eval": "SKU-110K test split (与所有臂同一份), last-vs-last",
+    "seeds": [
+      43,
+      44,
+      45
+    ]
+  },
+  "per_seed": {
+    "43": {
+      "ctrl_b_last": {
+        "map50": 0.8198685163526097,
+        "map50_95": 0.4634618857092144,
+        "precision": 0.8302150645103612,
+        "recall": 0.7467900323925055
+      },
+      "wash_last": {
+        "map50": 0.8108006706223657,
+        "map50_95": 0.45474866689646304,
+        "precision": 0.8229116933791129,
+        "recall": 0.7365832288332225
+      },
+      "ctrl_c_last": {
+        "map50": 0.842576992093939,
+        "map50_95": 0.48358950631674524,
+        "precision": 0.8464797624999468,
+        "recall": 0.7725343575503165
+      }
+    },
+    "44": {
+      "ctrl_b_last": {
+        "map50": 0.8151400847307252,
+        "map50_95": 0.4596652964489697,
+        "precision": 0.8259126492308696,
+        "recall": 0.7423595159230354
+      },
+      "wash_last": {
+        "map50": 0.8067679644277712,
+        "map50_95": 0.45185421626137295,
+        "precision": 0.8183165586169003,
+        "recall": 0.7330993767080263
+      },
+      "ctrl_c_last": {
+        "map50": 0.843709680372932,
+        "map50_95": 0.48344133340947304,
+        "precision": 0.8477077375432315,
+        "recall": 0.7711760492699673
+      }
+    },
+    "45": {
+      "ctrl_b_last": {
+        "map50": 0.8220546775032488,
+        "map50_95": 0.46558504268531953,
+        "precision": 0.8322368576500022,
+        "recall": 0.749531198208702
+      },
+      "wash_last": {
+        "map50": 0.809094866699738,
+        "map50_95": 0.4528071959300452,
+        "precision": 0.8192998806083628,
+        "recall": 0.7362483282085546
+      },
+      "ctrl_c_last": {
+        "map50": 0.8421835214075982,
+        "map50_95": 0.48343274069035935,
+        "precision": 0.8461335991476534,
+        "recall": 0.7688859322375695
+      }
+    }
+  },
+  "paired": {
+    "wash_vs_ctrl_b": {
+      "n": 3,
+      "mean_pp": -1.0133,
+      "per_seed_pp": [
+        -0.9068,
+        -0.8372,
+        -1.296
+      ],
+      "ci95_pp": [
+        -1.6276,
+        -0.3991
+      ]
+    },
+    "ctrl_c_vs_ctrl_b": {
+      "n": 3,
+      "mean_pp": 2.3802,
+      "per_seed_pp": [
+        2.2708,
+        2.857,
+        2.0129
+      ],
+      "ci95_pp": [
+        1.3056,
+        3.4549
+      ]
+    }
+  },
+  "actual_train_config": {
+    "runs_pf_wash_s43": {
+      "imgsz": "640",
+      "batch": "4",
+      "workers": "2",
+      "device": "0",
+      "optimizer": "auto",
+      "close_mosaic": "10",
+      "pretrained": "true",
+      "epochs": "20",
+      "model": "output\\benchmark\\runs_pf_pre_s43\\train\\weights\\last.pt",
+      "data": "output\\benchmark\\budget\\i20_real.yaml",
+      "seed": "43"
+    },
+    "runs_pf_ctrlc_s43": {
+      "imgsz": "640",
+      "batch": "4",
+      "workers": "2",
+      "device": "0",
+      "optimizer": "auto",
+      "close_mosaic": "10",
+      "pretrained": "true",
+      "epochs": "40",
+      "model": "yolo11n.pt",
+      "data": "output\\benchmark\\budget\\i20_real.yaml",
+      "seed": "43"
+    },
+    "runs_pf_ctrlb_s43": {
+      "imgsz": "640",
+      "batch": "4",
+      "workers": "2",
+      "device": "0",
+      "optimizer": "auto",
+      "close_mosaic": "10",
+      "pretrained": "true",
+      "epochs": "20",
+      "model": "yolo11n.pt",
+      "data": "output\\benchmark\\budget\\i20_real.yaml",
+      "seed": "43"
+    },
+    "runs_pf_wash_s44": {
+      "imgsz": "640",
+      "batch": "4",
+      "workers": "2",
+      "device": "0",
+      "optimizer": "auto",
+      "close_mosaic": "10",
+      "pretrained": "true",
+      "epochs": "20",
+      "model": "output\\benchmark\\runs_pf_pre_s44\\train\\weights\\last.pt",
+      "data": "output\\benchmark\\budget\\i20_real.yaml",
+      "seed": "44"
+    },
+    "runs_pf_ctrlc_s44": {
+      "imgsz": "640",
+      "batch": "4",
+      "workers": "2",
+      "device": "0",
+      "optimizer": "auto",
+      "close_mosaic": "10",
+      "pretrained": "true",
+      "epochs": "40",
+      "model": "yolo11n.pt",
+      "data": "output\\benchmark\\budget\\i20_real.yaml",
+      "seed": "44"
+    },
+    "runs_pf_ctrlb_s44": {
+      "imgsz": "640",
+      "batch": "4",
+      "workers": "2",
+      "device": "0",
+      "optimizer": "auto",
+      "close_mosaic": "10",
+      "pretrained": "true",
+      "epochs": "20",
+      "model": "yolo11n.pt",
+      "data": "output\\benchmark\\budget\\i20_real.yaml",
+      "seed": "44"
+    },
+    "runs_pf_wash_s45": {
+      "imgsz": "640",
+      "batch": "4",
+      "workers": "2",
+      "device": "0",
+      "optimizer": "auto",
+      "close_mosaic": "10",
+      "pretrained": "true",
+      "epochs": "20",
+      "model": "output\\benchmark\\runs_pf_pre_s45\\train\\weights\\last.pt",
+      "data": "output\\benchmark\\budget\\i20_real.yaml",
+      "seed": "45"
+    },
+    "runs_pf_ctrlc_s45": {
+      "imgsz": "640",
+      "batch": "4",
+      "workers": "2",
+      "device": "0",
+      "optimizer": "auto",
+      "close_mosaic": "10",
+      "pretrained": "true",
+      "epochs": "40",
+      "model": "yolo11n.pt",
+      "data": "output\\benchmark\\budget\\i20_real.yaml",
+      "seed": "45"
+    },
+    "runs_pf_ctrlb_s45": {
+      "imgsz": "640",
+      "batch": "4",
+      "workers": "2",
+      "device": "0",
+      "optimizer": "auto",
+      "close_mosaic": "10",
+      "pretrained": "true",
+      "epochs": "20",
+      "model": "yolo11n.pt",
+      "data": "output\\benchmark\\budget\\i20_real.yaml",
+      "seed": "45"
+    }
+  },
+  "protocol_audit": {
+    "generated_by": "pipelines/shelf_sdg/75_protocol_audit.py",
+    "compared_fields": [
+      "imgsz",
+      "batch",
+      "workers",
+      "device",
+      "optimizer",
+      "close_mosaic",
+      "pretrained"
+    ],
+    "allowed_differences": [
+      "epochs",
+      "model",
+      "data",
+      "name",
+      "project",
+      "seed",
+      "exist_ok",
+      "verbose"
+    ],
+    "status": "clean",
+    "deviations": [],
+    "baseline_comparison": {
+      "run": "budget_runs_real0.05_synth0",
+      "cfg": {
+        "imgsz": "640",
+        "batch": "4",
+        "workers": "2",
+        "device": "0",
+        "optimizer": "auto",
+        "close_mosaic": "10",
+        "pretrained": "true",
+        "epochs": "10",
+        "model": "yolo11n.pt",
+        "data": "output\\benchmark\\budget\\real0.05_synth0.yaml",
+        "seed": "42"
+      },
+      "diffs": {
+        "runs_pf_wash_s43": {
+          "epochs": {
+            "baseline": "10",
+            "arm": "20"
+          },
+          "model": {
+            "baseline": "yolo11n.pt",
+            "arm": "output\\benchmark\\runs_pf_pre_s43\\train\\weights\\last.pt"
+          },
+          "seed": {
+            "baseline": "42",
+            "arm": "43"
+          }
+        },
+        "runs_pf_ctrlc_s43": {
+          "epochs": {
+            "baseline": "10",
+            "arm": "40"
+          },
+          "seed": {
+            "baseline": "42",
+            "arm": "43"
+          }
+        },
+        "runs_pf_ctrlb_s43": {
+          "epochs": {
+            "baseline": "10",
+            "arm": "20"
+          },
+          "seed": {
+            "baseline": "42",
+            "arm": "43"
+          }
+        },
+        "runs_pf_wash_s44": {
+          "epochs": {
+            "baseline": "10",
+            "arm": "20"
+          },
+          "model": {
+            "baseline": "yolo11n.pt",
+            "arm": "output\\benchmark\\runs_pf_pre_s44\\train\\weights\\last.pt"
+          },
+          "seed": {
+            "baseline": "42",
+            "arm": "44"
+          }
+        },
+        "runs_pf_ctrlc_s44": {
+          "epochs": {
+            "baseline": "10",
+            "arm": "40"
+          },
+          "seed": {
+            "baseline": "42",
+            "arm": "44"
+          }
+        },
+        "runs_pf_ctrlb_s44": {
+          "epochs": {
+            "baseline": "10",
+            "arm": "20"
+          },
+          "seed": {
+            "baseline": "42",
+            "arm": "44"
+          }
+        },
+        "runs_pf_wash_s45": {
+          "epochs": {
+            "baseline": "10",
+            "arm": "20"
+          },
+          "model": {
+            "baseline": "yolo11n.pt",
+            "arm": "output\\benchmark\\runs_pf_pre_s45\\train\\weights\\last.pt"
+          },
+          "seed": {
+            "baseline": "42",
+            "arm": "45"
+          }
+        },
+        "runs_pf_ctrlc_s45": {
+          "epochs": {
+            "baseline": "10",
+            "arm": "40"
+          },
+          "seed": {
+            "baseline": "42",
+            "arm": "45"
+          }
+        },
+        "runs_pf_ctrlb_s45": {
+          "epochs": {
+            "baseline": "10",
+            "arm": "20"
+          },
+          "seed": {
+            "baseline": "42",
+            "arm": "45"
+          }
+        }
+      }
+    }
+  }
+}

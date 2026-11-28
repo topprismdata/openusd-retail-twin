@@ -1,0 +1,106 @@
+{
+  "schema": "texture_arm/1",
+  "generated_by": "pipelines/shelf_sdg/57_texture_arm.py",
+  "measured_at": "2026-11-25",
+  "question": "同一配方/同 seed/同场景布局, 只把商品表面从无纹理白盒换成程序化印刷包装 -> 跨域 mAP 会动吗?",
+  "recipe": {
+    "num_images": 200,
+    "seed": 42,
+    "val_ratio": 0.2,
+    "images_per_scene": 4,
+    "split_mode": "scene",
+    "samples": 64,
+    "cam_mult": 1.0,
+    "lens": 28.0,
+    "misalign": 0.1,
+    "bays": 1
+  },
+  "train_cfg": {
+    "epochs": 10,
+    "imgsz": 640,
+    "batch": 4,
+    "workers": 2,
+    "device": "0",
+    "pretrained": true,
+    "optimizer": "auto",
+    "close_mosaic": 10
+  },
+  "seeds": [
+    43,
+    44,
+    45
+  ],
+  "pool": "output\\benchmark\\synth_tex",
+  "per_seed": {
+    "43": {
+      "control_last": {
+        "map50": 0.2436427600965972,
+        "map50_95": 0.08997437329530268
+      },
+      "texture_best": {
+        "map50": 0.12107755539360619,
+        "map50_95": 0.0447761742760978
+      },
+      "texture_last": {
+        "map50": 0.12107755539360619,
+        "map50_95": 0.0447761742760978
+      }
+    },
+    "44": {
+      "control_last": {
+        "map50": 0.253163202268554,
+        "map50_95": 0.09023937265739465
+      },
+      "texture_best": {
+        "map50": 0.09836774870154212,
+        "map50_95": 0.03782708870308463
+      },
+      "texture_last": {
+        "map50": 0.09836774870154212,
+        "map50_95": 0.03782708870308463
+      }
+    },
+    "45": {
+      "control_last": {
+        "map50": 0.22937867101811107,
+        "map50_95": 0.08098119243869588
+      },
+      "texture_best": {
+        "map50": 0.12230349789858859,
+        "map50_95": 0.0433141730894207
+      },
+      "texture_last": {
+        "map50": 0.11069282791448715,
+        "map50_95": 0.03920911704602782
+      }
+    }
+  },
+  "paired": {
+    "texture_last_minus_control_last": {
+      "n": 3,
+      "mean_pp": -13.2015,
+      "ci95_pp": [
+        -18.1262,
+        -8.2769
+      ],
+      "per_seed_pp": [
+        -12.2565,
+        -15.4795,
+        -11.8686
+      ]
+    },
+    "texture_best_minus_control_last": {
+      "n": 3,
+      "mean_pp": -12.8145,
+      "ci95_pp": [
+        -18.8625,
+        -6.7665
+      ],
+      "per_seed_pp": [
+        -12.2565,
+        -15.4795,
+        -10.7075
+      ]
+    }
+  }
+}

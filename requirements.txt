@@ -1,0 +1,80 @@
+# 依赖清单 —— 由全仓 import 实测反推 + 版本论证 (2026-11-18 审计)
+#
+# 安装:
+#   python -m pip install -r requirements.txt
+#
+# ⚠️ 两套解释器 (重要):
+#   - 系统 Python: 跑纯 Python 脚本 (bootstrap / ecommerce 闸门 / shelf_sdg 训练 / 评估)
+#   - Blender 自带 Python: 跑 .bpy 脚本 (Blender 5.x 内置 bpy/bmesh/mathutils);
+#     另需在该解释器里装 usd-core (pxr, 见 pipelines/ecommerce/13_usd_asset.py)
+#   - Windows 可用 PyPI 的 bpy wheel 代替官方安装包 (见 tools/blender_shim.py)
+#
+# 许可提醒 (商用必读):
+#   ultralytics        -> AGPL-3.0     闭源/对外服务需商业授权; 与 Apache-2.0 不兼容 (专利条款)
+#   diffusers/transformers/accelerate -> Apache-2.0
+#   open_clip_torch    -> MIT
+#   lpips              -> BSD-2-Clause
+#   usd-core (pxr)     -> Apache-2.0
+#   numpy/Pillow/scipy/scikit-image/opencv-python/streamlit -> BSD/MIT/PSF 类许可
+#   Blender / bpy      -> GPL (独立进程调用, 不随本仓分发)
+#   权重 (yolo11n.pt / SD1.5 / control_v11f1e_sd15_tile) 均为运行时下载, 不随本仓分发
+#
+# 版本上下限说明:
+#   下限按"本仓用到的 API 在该版本仍存在"论证; 上限按"本仓尚未在该版本上跑过全量"给出。
+#   生产化前请用 pip-tools / uv lock 固定 lockfile。
+
+# --- 基础: 贴图自举 / 电商套图 / 货架 SDG / 刀版 ---
+numpy>=2.1,<3          # 08_photo_dieline.py:175 用函数形式 np.ptp (numpy2 保留);
+                       # 全仓无 numpy<2 已移除别名 (np.float_/np.NaN/... 均 0 命中)
+                       # 已实测: numpy 2.5.5 + Python 3.12/3.13 可跑通贴图自举与渲染
+Pillow>=10.4           # 保留 Image.LANCZOS / Image.BICUBIC; 未用 10.0 移除的 ANTIALIAS/LINEAR/CUBIC
+                       # 已实测: Pillow 13.0.0
+
+# --- 渲染侧 ---
+# Blender 5.x 的 bpy / mathutils / bmesh 随 Blender 发行, 不走 pip:
+#   macOS  : /Applications/Blender.app/Contents/MacOS/Blender
+#   Windows: "C:\Program Files\Blender Foundation\Blender <ver>\blender.exe"
+#            或 PyPI wheel: pip install bpy==5.2.4 (已实测, Cycles+OptiX 可用)
+#   Linux  : /usr/bin/blender
+#   代价: 11 处 `from pxr import ...` 需在 Blender 解释器内单独装 usd-core
+
+# --- 评估/对比工具 (可选: img_compare_v2.py / img_compare_std.py / 21_hybrid_texture_transfer.py) ---
+opencv-python>=4.10    # 4.10+ 才有 numpy2 wheel; 用到 SIFT_create / findHomography / warpPerspective
+scipy>=1.11            # scipy.ndimage.gaussian_filter / uniform_filter
+scikit-image>=0.22     # skimage.metrics.structural_similarity
+
+# --- 感知指标 (可选: img_compare_std.py 的 LPIPS / CLIP) ---
+torch>=2.5             # numpy2 兼容下限 (torch<2.3 的 wheel 未针对 numpy2 编译)
+torchvision>=0.20
+lpips>=0.1.4
+open_clip_torch>=2.24
+
+# --- 扩散模型臂 (可选: commercial/22_controlnet_finish.py, commercial/pilot_r2.py) ---
+# 注意: 这两个脚本首次运行会联网下载 SD1.5 / ControlNet 权重 (README 的"离线可跑"已按此更正)
+diffusers>=0.27
+transformers>=4.38
+accelerate>=0.28
+safetensors>=0.4
+huggingface-hub>=0.25
+
+# --- 目标检测臂 (阶段: shelf_sdg / train) ---
+ultralytics>=8.3       # >=8.3.0 才有 yolo11n.pt; AGPL-3.0 —— 闭源商用需商业授权
+
+# --- USD 资产导出 (阶段: ecommerce / 13_usd_asset.py) ---
+usd-core>=24.11        # 提供 pxr 模块; 需装进 Blender 的解释器, 版本需与 Blender 内置 USD 兼容
+
+# --- 交互演示 (阶段: demo_stage / 03_streamlit_app.py) ---
+streamlit>=1.36
+
+# --- 系统信息 (内存门, 可选; 缺失时回落各平台原生实现) ---
+psutil>=5.9
+
+# --- 传递依赖显式化 (离线复现必需; 否则 ultralytics/diffusers/open_clip 在离线机上装不齐) ---
+PyYAML>=6.0
+matplotlib>=3.8
+pandas>=2.2
+tqdm>=4.66
+requests>=2.31
+py-cpuinfo>=9.0
+timm>=1.0
+ftfy>=6.3

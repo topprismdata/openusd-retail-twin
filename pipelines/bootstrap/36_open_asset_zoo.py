@@ -6,7 +6,7 @@ tuple bbox·自动定向(最长轴→X, glTF 导入已 Z-up)·真实尺度定标
 新增: 主贴图 TOPPRISM 徽章(蓝紫渐变三角+字标, 右下角 12% 区域) — 无品牌开源资产统一 Topprism 化。
 用法: Blender -b -P pipelines/bootstrap/36_open_asset_zoo.py [--only name1,name2]
 """
-import bpy, bmesh, math, os, sys, json
+import bpy, bmesh, math, os, sys, json, zlib
 from mathutils import Vector
 from PIL import Image, ImageDraw, ImageFont
 
@@ -32,7 +32,11 @@ def _set(bsdf, name, val):
     return False
 
 HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-SCRATCH = "/Volumes/ghb/ai3d-pipeline/scratch/zoo"
+SCRATCH = os.environ.get("ASSET_ZOO_SCRATCH", "").strip()
+if not SCRATCH:
+    raise SystemExit(
+        "[ASSET-ZOO] 缺环境变量 ASSET_ZOO_SCRATCH —— 指向解包好的资产库根目录, 例如:\n"
+        '    export ASSET_ZOO_SCRATCH="/Volumes/<disk>/scratch/zoo"')
 OUT_DIR = os.path.join(HERE, "output/zoo")
 os.makedirs(OUT_DIR, exist_ok=True)
 
@@ -178,7 +182,9 @@ def wrap_label(objs, key):
     d.line([64, 270, W - 64, 270], fill=(208, 211, 216), width=3)
     d.text((64, 300), "MULTI-ACTION · 500 mL", font=font(40), fill=(38, 42, 50))
     import random
-    random.seed(hash(key) & 0xffff)
+    # 稳定哈希: Python 内置 hash() 对 str 按进程加盐 (PYTHONHASHSEED), 跨进程不稳定,
+    # 会让条码图案每次都变 (破坏仓内"确定性"纪律)。改用 crc32。
+    random.seed(zlib.crc32(key.encode("utf-8")) & 0xffff)
     x = 64
     while x < 470:
         w = random.choice((3, 5, 8))

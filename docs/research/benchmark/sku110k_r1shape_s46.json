@@ -1,0 +1,147 @@
+{
+  "arm": "r1shape",
+  "run_id": "r1shape_s46",
+  "dataset": {
+    "arm": "r1shape",
+    "sources": [
+      {
+        "kind": "synthetic_only",
+        "path": "output\\benchmark\\synth_single_shape\\images\\train",
+        "n_images": 160,
+        "fingerprint": {
+          "path": "output\\benchmark\\synth_single_shape\\images\\train",
+          "exists": true,
+          "n_files": 160,
+          "total_bytes": 247902886,
+          "sha256": "f6462c80840a9622190abf55713ee880a08b054027fb5529e39384bfb5f41544",
+          "sampled": false
+        }
+      }
+    ],
+    "note": "R1 对照配方 + 形状先验 (只动朝向因子; 面积不变); 对照臂 = 同配方无形状先验的 R1"
+  },
+  "protocol": {
+    "model": "yolo11n.pt",
+    "imgsz": 640,
+    "epochs": 10,
+    "batch": 4,
+    "workers": 2,
+    "cache": false,
+    "seed": 46,
+    "max_det": 1000,
+    "device": "auto"
+  },
+  "protocol_hash": "09a64aa57d92a131",
+  "actual_train_config": {
+    "epochs": 10,
+    "batch": 4,
+    "workers": 2,
+    "device": "cuda"
+  },
+  "map50": 0.10144559132493418,
+  "map50_95": 0.03219877347855655,
+  "precision": 0.1877681565405204,
+  "recall": 0.224244891733899,
+  "checkpoint": {
+    "selection": "best",
+    "path": "output/benchmark/weights/r1shape/best_s46.pt",
+    "sha256": "c67ab5b37623a071f66701a4f6d27ba23b4d0e785d3b7ee39df82ef918e8b66f",
+    "bytes": 5486931,
+    "exists": true
+  },
+  "model_weights": {
+    "path": "yolo11n.pt",
+    "name": "yolo11n.pt",
+    "exists": true,
+    "sha256": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1",
+    "bytes": 5613764
+  },
+  "protocol_manifest": {
+    "protocol": {
+      "model": "yolo11n.pt",
+      "imgsz": 640,
+      "epochs": 10,
+      "batch": 4,
+      "workers": 2,
+      "cache": false,
+      "seed": 46,
+      "max_det": 1000,
+      "device": "auto"
+    },
+    "data": {
+      "treatment": {
+        "shape_profile": "real",
+        "shape_aspect_gain": 1.214
+      },
+      "split_protocol": {
+        "num_images": 200,
+        "seed": 42,
+        "val_ratio": 0.2,
+        "images_per_scene": 4,
+        "split_mode": "scene",
+        "samples": 64,
+        "cam_mult": 1.0,
+        "lens": 28.0,
+        "misalign": 0.1,
+        "bays": 1
+      },
+      "synth_dir": "output/benchmark/synth_single_shape"
+    },
+    "splits": {
+      "train": {
+        "n": 160,
+        "total_bytes": 247902886,
+        "names_sha256": "435ec95446986f390d436f83c093811bde0512320334b7a18dd29680d8a82bc5",
+        "sha256": "c3fc84eb444dfb6b97965ca19890efdd206b621708019b17e1c7d0e2a0f27752"
+      },
+      "val": {
+        "n": 40,
+        "total_bytes": 61854320,
+        "names_sha256": "fcdf897ba741d55c85d4f48062569d058c3dccf6dc88e008a8be3a552c5d67e1",
+        "sha256": "e0c48539036bf4dd3ca8b3e9edb2ba64c849475656dca93d9ee6a144a769192c"
+      }
+    },
+    "actual": {
+      "epochs": 10,
+      "batch": 4,
+      "workers": 2,
+      "device": "cuda"
+    },
+    "deps": {
+      "python": "3.13.12",
+      "platform": "win32",
+      "torch": "2.6.0+cu124",
+      "ultralytics": "8.4.216",
+      "numpy": "2.5.5",
+      "PIL": "13.0.0"
+    },
+    "checkpoint": {},
+    "extra": {
+      "model_weights": {
+        "path": "yolo11n.pt",
+        "name": "yolo11n.pt",
+        "exists": true,
+        "sha256": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1",
+        "bytes": 5613764
+      }
+    },
+    "protocol_hash": "f38b91547037655b",
+    "protocol_hash_legacy": "09a64aa57d92a131"
+  },
+  "treatment": {
+    "shape_profile": "real",
+    "shape_aspect_gain": 1.214
+  },
+  "split_protocol": {
+    "num_images": 200,
+    "seed": 42,
+    "val_ratio": 0.2,
+    "images_per_scene": 4,
+    "split_mode": "scene",
+    "samples": 64,
+    "cam_mult": 1.0,
+    "lens": 28.0,
+    "misalign": 0.1,
+    "bays": 1
+  }
+}

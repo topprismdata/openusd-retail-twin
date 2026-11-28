@@ -23,6 +23,9 @@ import bpy
 from mathutils import Matrix, Vector
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, BASE_DIR)
+from pipelines.common.runtime_env import configure_cycles  # noqa: E402
+
 import importlib.util as _ilu_boot
 _boot_spec = _ilu_boot.spec_from_file_location("retail_boot", os.path.join(BASE_DIR, "pipelines/bootstrap/00_bootstrap_textures.py"))
 _boot = _ilu_boot.module_from_spec(_boot_spec)
@@ -134,16 +137,14 @@ def extract_ibl_lighting_from_bg(bg_path):
 
 # ---------------------------------------------------------------- Blender 场景
 def setup_metal_engine(samples=96):
+    """渲染引擎初始化。
+
+    历史名 setup_metal_engine 保留以兼容既有调用点; 实际后端由
+    runtime_env.configure_cycles 自动选择 (macOS=METAL, Win/Linux=OPTIX/CUDA/HIP/ONEAPI,
+    无 GPU 时回落 CPU)。可用 CYCLES_DEVICE / FORCE_CPU_RENDER 覆盖。
+    """
     scene = bpy.context.scene
-    scene.render.engine = "CYCLES"
-    prefs = bpy.context.preferences.addons["cycles"].preferences
-    prefs.compute_device_type = "METAL"
-    prefs.get_devices()
-    for d in prefs.devices:
-        d.use = True
-    scene.cycles.device = "GPU"
-    scene.cycles.samples = samples
-    scene.cycles.use_denoising = True
+    configure_cycles(scene=scene, samples=samples, denoise=True)
     # 产品摄影: Standard 视图变换保住品牌饱和色 (AgX 会把深绿洗成灰绿)
     scene.view_settings.view_transform = "Standard"
     # 注意: 逐张切换 hide_render 时不能开 persistent_data (陈旧可见性 bug)
@@ -406,8 +407,12 @@ def build_lowcarbon_city():
     scene.view_settings.gamma = 1.04
     try:
         scene.view_settings.look = "AgX - Punchy"
-    except Exception:
-        pass
+    except Exception as e:
+        # 2026-11-18 审计 B-4: Look 静默失败 -> 实际色彩管线与门禁标定值错配, 闸仍可能 PASS。
+        # Look 是门禁阈值的标定前提, 失败必须显式暴露。
+        print(f"[FATAL] view_settings.look='AgX - Punchy' 设置失败: {type(e).__name__}: {e}")
+        print("        门禁阈值按 AgX-Punchy 标定, 色彩管线不一致时判定无效 -> 中止渲染")
+        raise
     for L in bpy.data.objects:
         if L.type == "LIGHT" and L.name.startswith(("Key", "Fill")):
             pass
@@ -790,7 +795,18 @@ def run_pipeline():
     if os.path.exists(_mpath):
         try:
             _man = _json.load(open(_mpath))
-        except Exception:
+        except Exception as e:
+            # 2026-11-18 审计 B-3: 损坏的 manifest 不能被 {} 静默覆盖 (旧血缘丢失)。
+            # 处理: 保留损坏副本另存, 用空血缘继续渲染, 但门禁侧 (10_layout_qa_gate.py) 判 FAIL。
+            import shutil as _shutil
+            import time as _time
+            _bak = _mpath + ".corrupt-" + str(int(_time.time()))
+            try:
+                _shutil.move(_mpath, _bak)
+                print(f"[WARN] render_manifest.json 读取失败 ({type(e).__name__}: {e})")
+                print(f"       已另存为 {_bak}, 本次渲染从空血缘开始; 门禁将判 FAIL 直到血缘重建")
+            except Exception as _e2:
+                print(f"[WARN] render_manifest.json 读取失败 ({type(e).__name__}: {e}); 备份失败: {_e2}")
             _man = {}
     _tex0 = os.path.join(TEX_DIR, f"{args.sku}_albedo.png")
     _sha0 = _hashlib0.sha256(open(_tex0, "rb").read()).hexdigest()[:16] if os.path.exists(_tex0) else "-"
@@ -961,8 +977,10 @@ def run_pipeline():
                 try:
                     import json as _json_m
                     _man_now = _json_m.load(open(_man_f))
-                except Exception:
-                    _man_now = {}
+                except Exception as e:
+                    # 同 B-3: 血缘读不出来就不许把闸门当"无血缘"跑 (本次渲染刚写过 manifest, 读失败=异常)
+                    print(f"[FATAL] render_manifest.json 读取失败: {type(e).__name__}: {e}")
+                    raise
             _rep = _gate.run_gate(out_file, _man_now)
             _vs = " ".join(f"{k}={v['verdict']}" for k, v in _rep["checks"].items())
             print(f"[QA-GATE] {_rep['overall']} {os.path.basename(out_file)}: {_vs}")
@@ -977,8 +995,10 @@ def run_pipeline():
         if os.path.exists(_rpath):
             try:
                 _merged = _json.load(open(_rpath))
-            except Exception:
-                _merged = {}
+            except Exception as e:
+                # 同 B-3: 旧 QA 记录不能被 {} 覆盖 (历史 PASS 记录会丢)
+                print(f"[FATAL] qa_gate_report.json 读取失败: {type(e).__name__}: {e}")
+                raise
         for _r in _gate_records:
             _merged[_r.get("key", _r["image"])] = _r
         _json.dump(_merged, open(_rpath, "w"), ensure_ascii=False, indent=2)

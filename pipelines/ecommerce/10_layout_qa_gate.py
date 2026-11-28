@@ -303,8 +303,12 @@ def main():
     if os.path.exists(mpath):
         try:
             manifest = json.load(open(mpath))
-        except Exception:
-            manifest = {}
+        except Exception as e:
+            # 2026-11-18 审计 B-3: manifest 损坏被吞成 {} -> 血缘闸整体 SKIP 却仍判 PASS。
+            # 血缘是"渲染与声明一致"的唯一凭据, 读不出就必须 FAIL, 不能降级成"没有记录"。
+            print(f"[FAIL] manifest 读取失败 ({mpath}): {type(e).__name__}: {e}")
+            print("       血缘闸不可验证 -> 判 FAIL (禁止把损坏当'无记录'降级为 SKIP)")
+            sys.exit(2)   # 退出码必须真正传出去 (main() 的 return 不会被 __main__ 捕获)
     n_fail = 0
     for p in paths:
         if not os.path.exists(p):

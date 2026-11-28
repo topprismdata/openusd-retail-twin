@@ -23,6 +23,9 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, BASE_DIR)
+from pipelines.common.fonts import load_font as _load_font  # noqa: E402
+
 OUTPUT_DIR = os.path.join(BASE_DIR, "assets", "textures")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -189,26 +192,17 @@ SKU_PROFILES = {
 }
 
 
-_SERIF = "/System/Library/Fonts/Supplemental/Songti.ttc"
+_SERIF = "/System/Library/Fonts/Supplemental/Songti.ttc"  # 仅保留作旧引用; 实际解析见 pipelines/common/fonts.py
 
 
 def get_serif_font(size):
-    from PIL import ImageFont
-    try:
-        return ImageFont.truetype(_SERIF, size, index=1)
-    except Exception:
-        return get_font(size)
+    """衬线中文字体 (跨平台)。"""
+    return _load_font(size, kind="serif", index=1)
 
 
 def get_font(size):
-    for path in [
-        "/System/Library/Fonts/PingFang.ttc",
-        "/System/Library/Fonts/STHeiti Medium.ttc",
-        "/System/Library/Fonts/Hiragino Sans GB.ttc",
-    ]:
-        if os.path.exists(path):
-            return ImageFont.truetype(path, size)
-    return ImageFont.load_default()
+    """中文黑体字体 (跨平台)。"""
+    return _load_font(size, kind="cjk")
 
 
 def generate_crease_normal_map():

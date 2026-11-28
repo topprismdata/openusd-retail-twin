@@ -19,7 +19,9 @@
 #
 # 用法: bash render_1l_lifestyle.sh [draft|final]
 set -e
-cd "$(dirname "$0")"
+# 仓库根 (不是脚本所在目录): LS_SPEC / 输出路径都相对仓库根解析
+ROOT_DIR="$(cd "$(dirname "$0")/../.." && pwd)"
+cd "$ROOT_DIR"
 
 MODE="${1:-final}"
 # v106 版本化输出名: 原固定 lifestyle_v1 会**覆盖**上一版(与KV配方同类缺陷, 已自曝)。
@@ -40,9 +42,9 @@ POUR=0 \
 POUR_1L=1 \
 WALL_FIX=1 \
 LIFESTYLE=1 \
-LS_SPEC="${LS_SPEC:-specs/lifestyle_1l.json}" \
+LS_SPEC="${LS_SPEC:-$ROOT_DIR/specs/lifestyle_1l.json}" \
 LS_RES="$RES" \
-  /Applications/Blender.app/Contents/MacOS/Blender -b -P 34_commercial_repro.py \
+  "${BLENDER_BIN:-/Applications/Blender.app/Contents/MacOS/Blender}" -b -P pipelines/commercial/34_commercial_repro.py \
   -- --res "$RES" --samples "$SAMPLES" --out "$OUT"
 
 echo "出图: output/commercial/repro_${OUT}.png"

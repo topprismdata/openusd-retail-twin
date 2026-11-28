@@ -5,9 +5,11 @@
 UV: FRONT(60,104,940,1944) BACK(1112,104,1992,1944) SIDE_L(972,104,1010,1944) SIDE_R(1042,104,1080,1944) TOP(60,8,940,72) BOTTOM(1112,8,1992,72)."""
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
-import os, math
+import os, math, sys, tempfile
 
 BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, BASE)
+from pipelines.common.fonts import load_font  # noqa: E402
 OUT = os.path.join(BASE, "assets/textures/carton_1l_albedo.png")
 W = H = 2048
 BLUE = (20, 55, 130)
@@ -17,15 +19,8 @@ WHITE = (250, 250, 248)
 GOLD = (210, 170, 60)
 
 def font(sz, bold=False):
-    paths = ["/System/Library/Fonts/PingFang.ttc", "/System/Library/Fonts/STHeiti Medium.ttc",
-             "/System/Library/Fonts/Hiragino Sans GB.ttc"]
-    for p in paths:
-        if os.path.exists(p):
-            try:
-                return ImageFont.truetype(p, sz, index=0)
-            except Exception:
-                pass
-    return ImageFont.load_default()
+    """中文字体 (跨平台; 见 pipelines/common/fonts.py)。"""
+    return load_font(sz, kind="cjk")
 
 def main():
     img = Image.new("RGB", (W, H), WHITE)
@@ -124,8 +119,8 @@ def main():
     img.save(OUT)
     print("saved", OUT, img.size)
     # 预览
-    img.crop((60,104,940,1944)).resize((440,920)).save("/tmp/carton1l_front.png")
-    img.crop((1112,104,1992,1944)).resize((440,920)).save("/tmp/carton1l_back.png")
+    img.crop((60,104,940,1944)).resize((440,920)).save(os.path.join(tempfile.gettempdir(), "carton1l_front.png"))
+    img.crop((1112,104,1992,1944)).resize((440,920)).save(os.path.join(tempfile.gettempdir(), "carton1l_back.png"))
 
 if __name__ == "__main__":
     main()

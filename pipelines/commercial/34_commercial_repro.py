@@ -1304,9 +1304,10 @@ def main():
     args = parse_args()
     os.makedirs(OUT_DIR, exist_ok=True)
     scene = fresh(args)
-    scene.cycles.max_bounces = 12
+    # 协议真源在 fresh(): max_bounces=12 / transparent_max_bounces=24 (多层玻璃折射不发黑)。
+    # 这里只补 transmission_bounces, 不再把 transparent_max_bounces 静默降回 12
+    # (2026-11-18 审计 B-2: 覆盖使文件头声明与门禁标定值同时失效)。
     scene.cycles.transmission_bounces = 12
-    scene.cycles.transparent_max_bounces = 12
     WHITE = os.environ.get("WHITE", "0") == "1"   # JD 白底主图: 白世界+平光+单盒正视+无DOF+渲染前清场
     if WHITE:
         bpy.data.worlds["Env"].node_tree.nodes.get("Background").inputs["Strength"].default_value = 0.05   # world 压暗: 背景=独立 emission 白板 (摄影棚背景纸法), 产品光比由灯全权
@@ -1326,6 +1327,9 @@ def main():
         if os.environ.get("LIFESTYLE", "0") == "1":
             import json as _cjson
             _sp = os.environ.get("LS_SPEC", os.path.join(BASE_DIR, "specs", "lifestyle_1l.json"))
+            # 相对路径一律相对仓库根解析 (cwd 可能是 pipelines/commercial)
+            if not os.path.isabs(_sp):
+                _sp = os.path.join(BASE_DIR, _sp)
             with open(_sp) as _cf:
                 _cb = _cjson.load(_cf).get("carton_build", {})
             if "paper_deform" in _cb:

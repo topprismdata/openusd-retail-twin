@@ -4,6 +4,7 @@
 用法: python3 pilot_r2.py S1 11  (scene∈{S1,S2}, seed∈{11,22,33})
 """
 import json
+import os
 import sys
 import time
 
@@ -13,6 +14,9 @@ sys.modules["tensorflow"] = None
 import torch
 from PIL import Image
 from diffusers import StableDiffusionControlNetPipeline, ControlNetModel
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+from pipelines.common.runtime_env import torch_device, torch_generator  # noqa: E402
 
 BASE = "assets/reference/milk_1l"
 PROMPTS = {
@@ -38,17 +42,21 @@ def main():
     scale = 768 / max(w, h)
     base = base.resize((int(w * scale) // 8 * 8, int(h * scale) // 8 * 8), Image.LANCZOS)
 
+    # 设备: CUDA (NVIDIA) > MPS (Apple Silicon) > CPU; MPS 的 fp16 VAE 解码会出 NaN 黑图, 故 MPS 走 fp32
+    device = torch_device()
+    dtype = torch.float32 if device == "mps" else torch.float16
+
     # RV5.1下载卡死(网络) → 回退本仓已缓存完整SD1.5(4.0G, 离线local_files_only)
     cn = ControlNetModel.from_pretrained(
-        "lllyasviel/control_v11f1e_sd15_tile", torch_dtype=torch.float16,
+        "lllyasviel/control_v11f1e_sd15_tile", torch_dtype=dtype,
         local_files_only=True)
     pipe = StableDiffusionControlNetPipeline.from_pretrained(
         "stable-diffusion-v1-5/stable-diffusion-v1-5",
-        controlnet=cn, torch_dtype=torch.float16, safety_checker=None,
+        controlnet=cn, torch_dtype=dtype, safety_checker=None,
         local_files_only=True)
-    pipe.to("mps")
+    pipe.to(device)
     pipe.set_progress_bar_config(disable=True)
-    g = torch.Generator("mps").manual_seed(seed)
+    g = torch_generator(device, seed)
     img = pipe(PROMPTS[scene], base, num_inference_steps=28,
                controlnet_conditioning_scale=0.55, strength=0.62,
                guidance_scale=7.0, negative_prompt=NEG, generator=g).images[0]

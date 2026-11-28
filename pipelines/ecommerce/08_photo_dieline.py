@@ -7,10 +7,13 @@ P0 资产修复 (GPT/Gemini 双评审收敛项): 字体/插画/徽章改用品�
 输出: assets/textures/{demo_classic,demo_organic}_albedo.png 被原位增强
 """
 import os
+import sys
 import numpy as np
 from PIL import Image, ImageFilter, ImageEnhance
 
 BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, BASE)
+from pipelines.common.fonts import load_font  # noqa: E402
 TEX = os.path.join(BASE, "assets", "textures")
 REF = os.path.join(BASE, "references")
 
@@ -160,10 +163,10 @@ def enhance_classic():
     _am[:12] *= _ramp[:, None]; _am[-12:] *= _ramp[::-1][:, None]
     atlas.paste(_src, (fx0, fy1 - 192), Image.fromarray((_am * 255).astype(np.uint8)))
     d.text(((fx0 + fx1) // 2, fy1 - 125), "净含量: 250mL", fill=(38, 31, 20),
-           font=ImageFont.truetype("/System/Library/Fonts/Hiragino Sans GB.ttc", int((fx1 - fx0) * 0.058)),
+           font=load_font(int((fx1 - fx0) * 0.058), kind="cjk"),
            anchor="mm")
     d.text(((fx0 + fx1) // 2, fy1 - 48), "生产日期/保质期至: 见盒顶部喷码", fill=(58, 49, 33),
-           font=ImageFont.truetype("/System/Library/Fonts/Hiragino Sans GB.ttc", int((fx1 - fx0) * 0.035)),
+           font=load_font(int((fx1 - fx0) * 0.035), kind="cjk"),
            anchor="mm")
 
     # 3.5) 纸面印刷颗粒: 全脸 2.5% 亮度噪声 + 极轻水平纤维条纹 (纸感)

@@ -1,0 +1,460 @@
+{
+  "generated_at": "2026-11-27T23:27:11",
+  "script": "pipelines/shelf_sdg/85_simready_packaging_effect.py",
+  "asset_dir": "output/usd/demo_classic",
+  "steps": [
+    {
+      "step": "step0_original",
+      "asset": "Product.usda",
+      "statuses": {
+        "Assembly": "FAIL",
+        "Material": "FAIL",
+        "NuRec": "FAIL",
+        "Open-Taxonomy-ADE20K": "FAIL",
+        "Open-Taxonomy-COCO": "FAIL",
+        "Open-Taxonomy-Cityscapes": "FAIL",
+        "Open-Taxonomy-ImageNet1K": "FAIL",
+        "Open-Taxonomy-PascalVOC": "FAIL",
+        "Open-Taxonomy-SUNRGBD": "FAIL",
+        "Package": "UNAVAILABLE",
+        "Package-Candidate": "FAIL",
+        "Package-NoBOM": "UNAVAILABLE",
+        "Robot-Assembly": "FAIL",
+        "Robot-Body": "FAIL",
+        "Robot-Gripper": "FAIL",
+        "Robotics-Prop": "FAIL"
+      },
+      "gaps_of_interest": {
+        "RB.001": [
+          "Assembly/FET003_RigidBody.0-2-0",
+          "Assembly/FET004_Multibody.0-2-0",
+          "Robot-Assembly/FET003_RigidBody.0-2-0",
+          "Robot-Assembly/FET004_Multibody.0-2-0",
+          "Robot-Assembly/FET022_DrivenJoints.0-2-0",
+          "Robot-Body/CAP003_RigidBody.MuJoCo.0-1-0",
+          "Robot-Body/CAP004_Multibody.MuJoCo.0-1-0",
+          "Robot-Body/CAP004_Multibody.RobotMuJoCo.0-1-0",
+          "Robot-Body/CAP022_DrivenJoints.MuJoCo.0-1-0",
+          "Robot-Body/FET003_RigidBody.0-2-0",
+          "Robot-Body/FET003_RigidBody.Newton.0-1-0",
+          "Robot-Body/FET003_RigidBody.PhysX.0-4-0",
+          "Robot-Body/FET004_Multibody.0-2-0",
+          "Robot-Body/FET004_Multibody.Newton.0-1-0",
+          "Robot-Body/FET004_Multibody.PhysX.0-4-0",
+          "Robot-Body/FET004_Multibody.RobotNewton.0-1-0",
+          "Robot-Body/FET022_DrivenJoints.0-2-0",
+          "Robot-Body/FET022_DrivenJoints.Isaac.0-2-0",
+          "Robot-Body/FET022_DrivenJoints.Newton.0-1-0",
+          "Robot-Body/FET022_DrivenJoints.PhysX.0-2-0",
+          "Robot-Gripper/CAP003_RigidBody.MuJoCo.0-1-0",
+          "Robot-Gripper/CAP004_Multibody.MuJoCo.0-1-0",
+          "Robot-Gripper/CAP004_Multibody.RobotMuJoCo.0-1-0",
+          "Robot-Gripper/CAP022_DrivenJoints.MuJoCo.0-1-0",
+          "Robot-Gripper/CAP028_Gripper.MuJoCo.0-1-0",
+          "Robot-Gripper/FET003_RigidBody.0-2-0",
+          "Robot-Gripper/FET003_RigidBody.Newton.0-1-0",
+          "Robot-Gripper/FET003_RigidBody.PhysX.0-4-0",
+          "Robot-Gripper/FET004_Multibody.0-2-0",
+          "Robot-Gripper/FET004_Multibody.Newton.0-1-0",
+          "Robot-Gripper/FET004_Multibody.PhysX.0-4-0",
+          "Robot-Gripper/FET004_Multibody.RobotNewton.0-1-0",
+          "Robot-Gripper/FET004_Multibody.RobotPhysX.0-1-0",
+          "Robot-Gripper/FET022_DrivenJoints.0-2-0",
+          "Robot-Gripper/FET022_DrivenJoints.Isaac.0-1-0",
+          "Robot-Gripper/FET022_DrivenJoints.Isaac.0-2-0",
+          "Robot-Gripper/FET022_DrivenJoints.Newton.0-1-0",
+          "Robot-Gripper/FET022_DrivenJoints.PhysX.0-1-0",
+          "Robot-Gripper/FET022_DrivenJoints.PhysX.0-2-0",
+          "Robot-Gripper/FET028_Gripper.Isaac.0-1-0",
+          "Robotics-Prop/CAP003_RigidBody.MuJoCo.0-1-0",
+          "Robotics-Prop/CAP004_Multibody.MuJoCo.0-1-0",
+          "Robotics-Prop/FET003_RigidBody.0-2-0",
+          "Robotics-Prop/FET003_RigidBody.Newton.0-1-0",
+          "Robotics-Prop/FET003_RigidBody.PhysX.0-4-0",
+          "Robotics-Prop/FET004_Multibody.0-2-0",
+          "Robotics-Prop/FET004_Multibody.Newton.0-1-0",
+          "Robotics-Prop/FET004_Multibody.PhysX.0-4-0"
+        ],
+        "NP.005": [
+          "Material/CAP000_Core.0-2-0",
+          "NuRec/CAP000_Core.0-2-0",
+          "Open-Taxonomy-ADE20K/CAP000_Core.0-1-0",
+          "Open-Taxonomy-COCO/CAP000_Core.0-1-0",
+          "Open-Taxonomy-Cityscapes/CAP000_Core.0-1-0",
+          "Open-Taxonomy-ImageNet1K/CAP000_Core.0-1-0",
+          "Open-Taxonomy-PascalVOC/CAP000_Core.0-1-0",
+          "Open-Taxonomy-SUNRGBD/CAP000_Core.0-1-0",
+          "Robot-Body/CAP000_Core.0-2-0",
+          "Robot-Body/CAP000_Core.Isaac.0-2-0",
+          "Robot-Body/CAP000_Core.MuJoCo.0-2-0",
+          "Robot-Body/CAP000_Core.Newton.0-2-0",
+          "Robot-Body/CAP000_Core.PhysX.0-2-0",
+          "Robot-Gripper/CAP000_Core.0-2-0",
+          "Robot-Gripper/CAP000_Core.MuJoCo.0-2-0",
+          "Robot-Gripper/CAP000_Core.Newton.0-2-0",
+          "Robot-Gripper/CAP000_Core.PhysX.0-2-0",
+          "Robotics-Prop/CAP000_Core.0-2-0",
+          "Robotics-Prop/CAP000_Core.MuJoCo.0-2-0",
+          "Robotics-Prop/CAP000_Core.Newton.0-2-0",
+          "Robotics-Prop/CAP000_Core.PhysX.0-2-0"
+        ],
+        "AA.001": [
+          "Material/CAP031_SelfContainedPackage.0-1-0",
+          "Material/CAP033_SimReadyPackage.0-4-0",
+          "NuRec/FET012_GaussianSplat.0-1-0",
+          "Package-Candidate/CAP031_SelfContainedPackage.0-1-0",
+          "Package-Candidate/CAP033_SimReadyPackage.0-4-0",
+          "Robot-Body/CAP031_SelfContainedPackage.0-1-0",
+          "Robot-Body/CAP033_SimReadyPackage.0-4-0",
+          "Robot-Body/FET001_MinimalPlaceableVisual.1-0-1",
+          "Robot-Body/FET008_ObjectForward.0-1-0",
+          "Robot-Gripper/CAP031_SelfContainedPackage.0-1-0",
+          "Robot-Gripper/CAP033_SimReadyPackage.0-4-0",
+          "Robot-Gripper/FET001_MinimalPlaceableVisual.1-0-1",
+          "Robotics-Prop/CAP031_SelfContainedPackage.0-1-0",
+          "Robotics-Prop/CAP033_SimReadyPackage.0-4-0",
+          "Robotics-Prop/FET001_MinimalPlaceableVisual.1-0-1",
+          "Robotics-Prop/FET008_ObjectForward.0-1-0"
+        ],
+        "SR.002": [
+          "Material/CAP033_SimReadyPackage.0-4-0",
+          "Package-Candidate/CAP033_SimReadyPackage.0-4-0",
+          "Robot-Body/CAP033_SimReadyPackage.0-4-0",
+          "Robot-Gripper/CAP033_SimReadyPackage.0-4-0",
+          "Robotics-Prop/CAP033_SimReadyPackage.0-4-0"
+        ],
+        "SR.004": [
+          "Material/CAP033_SimReadyPackage.0-4-0",
+          "Package-Candidate/CAP033_SimReadyPackage.0-4-0",
+          "Robot-Body/CAP033_SimReadyPackage.0-4-0",
+          "Robot-Gripper/CAP033_SimReadyPackage.0-4-0",
+          "Robotics-Prop/CAP033_SimReadyPackage.0-4-0"
+        ],
+        "SL.001": [
+          "Open-Taxonomy-ADE20K/FET011_SemanticLabels.0-2-0",
+          "Open-Taxonomy-COCO/FET011_SemanticLabels.0-2-0",
+          "Open-Taxonomy-Cityscapes/FET011_SemanticLabels.0-2-0",
+          "Open-Taxonomy-ImageNet1K/FET011_SemanticLabels.0-2-0",
+          "Open-Taxonomy-PascalVOC/FET011_SemanticLabels.0-2-0",
+          "Open-Taxonomy-SUNRGBD/FET011_SemanticLabels.0-2-0",
+          "Robotics-Prop/FET011_SemanticLabels.0-2-0",
+          "Robotics-Prop/FET011_SemanticLabels.RTX.0-1-0"
+        ]
+      },
+      "gap_messages": {
+        "RB.001": [
+          "No physics rigid bodies found under the default prim."
+        ],
+        "NP.005": [
+          "Exactly one USD file is allowed in the intermediate folder 'demo_classic' (the main asset file). Found 3: Product.usda, geometry.usdc, materials.usda"
+        ],
+        "AA.001": [
+          "Dependent Reference \"../../../assets/textures/demo_classic_albedo.png\" (resolved to \"assets\\textures\\demo_classic_albedo.png\") is outside of the asset root."
+        ],
+        "SR.002": [
+          "No thumbnail found at output/usd/demo_classic/.thumbs/256x256/Product.usda.png for SimReady asset <output/usd/demo_classic/Product.usda>"
+        ],
+        "SR.004": [
+          "Required metadata fields are missing: author, asset_name, asset_type, asset_license, category, source_file, usd_date_generated, qcode, rigid_body_count, asset_extents, mass. Fields may be authored in "
+        ],
+        "SL.001": [
+          "Unlabeled prim: no SemanticsLabelsAPI semantics found on the prim, its ancestors, its bound material, or its GeomSubsets."
+        ]
+      },
+      "n_gaps": 180
+    },
+    {
+      "step": "step1_flattened",
+      "asset": "output/usd/_simready_work/flattened/Product.usda",
+      "statuses": {
+        "Assembly": "FAIL",
+        "Material": "FAIL",
+        "NuRec": "FAIL",
+        "Open-Taxonomy-ADE20K": "FAIL",
+        "Open-Taxonomy-COCO": "FAIL",
+        "Open-Taxonomy-Cityscapes": "FAIL",
+        "Open-Taxonomy-ImageNet1K": "FAIL",
+        "Open-Taxonomy-PascalVOC": "FAIL",
+        "Open-Taxonomy-SUNRGBD": "FAIL",
+        "Package": "UNAVAILABLE",
+        "Package-Candidate": "FAIL",
+        "Package-NoBOM": "UNAVAILABLE",
+        "Robot-Assembly": "FAIL",
+        "Robot-Body": "FAIL",
+        "Robot-Gripper": "FAIL",
+        "Robotics-Prop": "FAIL"
+      },
+      "gaps_of_interest": {
+        "RB.001": [
+          "Assembly/FET003_RigidBody.0-2-0",
+          "Assembly/FET004_Multibody.0-2-0",
+          "Robot-Assembly/FET003_RigidBody.0-2-0",
+          "Robot-Assembly/FET004_Multibody.0-2-0",
+          "Robot-Assembly/FET022_DrivenJoints.0-2-0",
+          "Robot-Body/CAP003_RigidBody.MuJoCo.0-1-0",
+          "Robot-Body/CAP004_Multibody.MuJoCo.0-1-0",
+          "Robot-Body/CAP004_Multibody.RobotMuJoCo.0-1-0",
+          "Robot-Body/CAP022_DrivenJoints.MuJoCo.0-1-0",
+          "Robot-Body/FET003_RigidBody.0-2-0",
+          "Robot-Body/FET003_RigidBody.Newton.0-1-0",
+          "Robot-Body/FET003_RigidBody.PhysX.0-4-0",
+          "Robot-Body/FET004_Multibody.0-2-0",
+          "Robot-Body/FET004_Multibody.Newton.0-1-0",
+          "Robot-Body/FET004_Multibody.PhysX.0-4-0",
+          "Robot-Body/FET004_Multibody.RobotNewton.0-1-0",
+          "Robot-Body/FET022_DrivenJoints.0-2-0",
+          "Robot-Body/FET022_DrivenJoints.Isaac.0-2-0",
+          "Robot-Body/FET022_DrivenJoints.Newton.0-1-0",
+          "Robot-Body/FET022_DrivenJoints.PhysX.0-2-0",
+          "Robot-Gripper/CAP003_RigidBody.MuJoCo.0-1-0",
+          "Robot-Gripper/CAP004_Multibody.MuJoCo.0-1-0",
+          "Robot-Gripper/CAP004_Multibody.RobotMuJoCo.0-1-0",
+          "Robot-Gripper/CAP022_DrivenJoints.MuJoCo.0-1-0",
+          "Robot-Gripper/CAP028_Gripper.MuJoCo.0-1-0",
+          "Robot-Gripper/FET003_RigidBody.0-2-0",
+          "Robot-Gripper/FET003_RigidBody.Newton.0-1-0",
+          "Robot-Gripper/FET003_RigidBody.PhysX.0-4-0",
+          "Robot-Gripper/FET004_Multibody.0-2-0",
+          "Robot-Gripper/FET004_Multibody.Newton.0-1-0",
+          "Robot-Gripper/FET004_Multibody.PhysX.0-4-0",
+          "Robot-Gripper/FET004_Multibody.RobotNewton.0-1-0",
+          "Robot-Gripper/FET004_Multibody.RobotPhysX.0-1-0",
+          "Robot-Gripper/FET022_DrivenJoints.0-2-0",
+          "Robot-Gripper/FET022_DrivenJoints.Isaac.0-1-0",
+          "Robot-Gripper/FET022_DrivenJoints.Isaac.0-2-0",
+          "Robot-Gripper/FET022_DrivenJoints.Newton.0-1-0",
+          "Robot-Gripper/FET022_DrivenJoints.PhysX.0-1-0",
+          "Robot-Gripper/FET022_DrivenJoints.PhysX.0-2-0",
+          "Robot-Gripper/FET028_Gripper.Isaac.0-1-0",
+          "Robotics-Prop/CAP003_RigidBody.MuJoCo.0-1-0",
+          "Robotics-Prop/CAP004_Multibody.MuJoCo.0-1-0",
+          "Robotics-Prop/FET003_RigidBody.0-2-0",
+          "Robotics-Prop/FET003_RigidBody.Newton.0-1-0",
+          "Robotics-Prop/FET003_RigidBody.PhysX.0-4-0",
+          "Robotics-Prop/FET004_Multibody.0-2-0",
+          "Robotics-Prop/FET004_Multibody.Newton.0-1-0",
+          "Robotics-Prop/FET004_Multibody.PhysX.0-4-0"
+        ],
+        "AA.001": [
+          "Material/CAP031_SelfContainedPackage.0-1-0",
+          "Material/CAP033_SimReadyPackage.0-4-0",
+          "NuRec/FET012_GaussianSplat.0-1-0",
+          "Package-Candidate/CAP031_SelfContainedPackage.0-1-0",
+          "Package-Candidate/CAP033_SimReadyPackage.0-4-0",
+          "Robot-Body/CAP031_SelfContainedPackage.0-1-0",
+          "Robot-Body/CAP033_SimReadyPackage.0-4-0",
+          "Robot-Body/FET001_MinimalPlaceableVisual.1-0-1",
+          "Robot-Body/FET008_ObjectForward.0-1-0",
+          "Robot-Gripper/CAP031_SelfContainedPackage.0-1-0",
+          "Robot-Gripper/CAP033_SimReadyPackage.0-4-0",
+          "Robot-Gripper/FET001_MinimalPlaceableVisual.1-0-1",
+          "Robotics-Prop/CAP031_SelfContainedPackage.0-1-0",
+          "Robotics-Prop/CAP033_SimReadyPackage.0-4-0",
+          "Robotics-Prop/FET001_MinimalPlaceableVisual.1-0-1",
+          "Robotics-Prop/FET008_ObjectForward.0-1-0"
+        ],
+        "SR.002": [
+          "Material/CAP033_SimReadyPackage.0-4-0",
+          "Package-Candidate/CAP033_SimReadyPackage.0-4-0",
+          "Robot-Body/CAP033_SimReadyPackage.0-4-0",
+          "Robot-Gripper/CAP033_SimReadyPackage.0-4-0",
+          "Robotics-Prop/CAP033_SimReadyPackage.0-4-0"
+        ],
+        "SR.004": [
+          "Material/CAP033_SimReadyPackage.0-4-0",
+          "Package-Candidate/CAP033_SimReadyPackage.0-4-0",
+          "Robot-Body/CAP033_SimReadyPackage.0-4-0",
+          "Robot-Gripper/CAP033_SimReadyPackage.0-4-0",
+          "Robotics-Prop/CAP033_SimReadyPackage.0-4-0"
+        ]
+      },
+      "gap_messages": {
+        "RB.001": [
+          "No physics rigid bodies found under the default prim."
+        ],
+        "AA.001": [
+          "Dependent Reference \"../../../assets/textures/demo_classic_albedo.png\" cannot be resolved."
+        ],
+        "SR.002": [
+          "No thumbnail found at output/usd/_simready_work/flattened/.thumbs/256x256/Product.usda.png for SimReady asset <output/usd/_simready_work/f"
+        ],
+        "SR.004": [
+          "Required metadata fields are missing: author, asset_name, asset_type, asset_license, category, source_file, usd_date_generated, qcode, rigid_body_count, asset_extents, mass. Fields may be authored in "
+        ]
+      },
+      "n_gaps": 181
+    },
+    {
+      "step": "step1b_selfcontained",
+      "asset": "output/usd/_simready_work/selfcontained/Product.usda",
+      "textures_moved": [
+        {
+          "from": "../../../assets/textures/demo_classic_albedo.png",
+          "to": "./textures/demo_classic_albedo.png"
+        },
+        {
+          "from": "../../../assets/textures/demo_classic_orm.png",
+          "to": "./textures/demo_classic_orm.png"
+        },
+        {
+          "from": "../../../assets/textures/demo_organic_albedo.png",
+          "to": "./textures/demo_organic_albedo.png"
+        },
+        {
+          "from": "../../../assets/textures/demo_classic_orm.png",
+          "to": "./textures/demo_classic_orm.png"
+        }
+      ],
+      "statuses": {
+        "Assembly": "FAIL",
+        "Material": "FAIL",
+        "NuRec": "FAIL",
+        "Open-Taxonomy-ADE20K": "FAIL",
+        "Open-Taxonomy-COCO": "FAIL",
+        "Open-Taxonomy-Cityscapes": "FAIL",
+        "Open-Taxonomy-ImageNet1K": "FAIL",
+        "Open-Taxonomy-PascalVOC": "FAIL",
+        "Open-Taxonomy-SUNRGBD": "FAIL",
+        "Package": "UNAVAILABLE",
+        "Package-Candidate": "FAIL",
+        "Package-NoBOM": "UNAVAILABLE",
+        "Robot-Assembly": "FAIL",
+        "Robot-Body": "FAIL",
+        "Robot-Gripper": "FAIL",
+        "Robotics-Prop": "FAIL"
+      },
+      "gaps_of_interest": {
+        "RB.001": [
+          "Assembly/FET003_RigidBody.0-2-0",
+          "Assembly/FET004_Multibody.0-2-0",
+          "Robot-Assembly/FET003_RigidBody.0-2-0",
+          "Robot-Assembly/FET004_Multibody.0-2-0",
+          "Robot-Assembly/FET022_DrivenJoints.0-2-0",
+          "Robot-Body/CAP003_RigidBody.MuJoCo.0-1-0",
+          "Robot-Body/CAP004_Multibody.MuJoCo.0-1-0",
+          "Robot-Body/CAP004_Multibody.RobotMuJoCo.0-1-0",
+          "Robot-Body/CAP022_DrivenJoints.MuJoCo.0-1-0",
+          "Robot-Body/FET003_RigidBody.0-2-0",
+          "Robot-Body/FET003_RigidBody.Newton.0-1-0",
+          "Robot-Body/FET003_RigidBody.PhysX.0-4-0",
+          "Robot-Body/FET004_Multibody.0-2-0",
+          "Robot-Body/FET004_Multibody.Newton.0-1-0",
+          "Robot-Body/FET004_Multibody.PhysX.0-4-0",
+          "Robot-Body/FET004_Multibody.RobotNewton.0-1-0",
+          "Robot-Body/FET022_DrivenJoints.0-2-0",
+          "Robot-Body/FET022_DrivenJoints.Isaac.0-2-0",
+          "Robot-Body/FET022_DrivenJoints.Newton.0-1-0",
+          "Robot-Body/FET022_DrivenJoints.PhysX.0-2-0",
+          "Robot-Gripper/CAP003_RigidBody.MuJoCo.0-1-0",
+          "Robot-Gripper/CAP004_Multibody.MuJoCo.0-1-0",
+          "Robot-Gripper/CAP004_Multibody.RobotMuJoCo.0-1-0",
+          "Robot-Gripper/CAP022_DrivenJoints.MuJoCo.0-1-0",
+          "Robot-Gripper/CAP028_Gripper.MuJoCo.0-1-0",
+          "Robot-Gripper/FET003_RigidBody.0-2-0",
+          "Robot-Gripper/FET003_RigidBody.Newton.0-1-0",
+          "Robot-Gripper/FET003_RigidBody.PhysX.0-4-0",
+          "Robot-Gripper/FET004_Multibody.0-2-0",
+          "Robot-Gripper/FET004_Multibody.Newton.0-1-0",
+          "Robot-Gripper/FET004_Multibody.PhysX.0-4-0",
+          "Robot-Gripper/FET004_Multibody.RobotNewton.0-1-0",
+          "Robot-Gripper/FET004_Multibody.RobotPhysX.0-1-0",
+          "Robot-Gripper/FET022_DrivenJoints.0-2-0",
+          "Robot-Gripper/FET022_DrivenJoints.Isaac.0-1-0",
+          "Robot-Gripper/FET022_DrivenJoints.Isaac.0-2-0",
+          "Robot-Gripper/FET022_DrivenJoints.Newton.0-1-0",
+          "Robot-Gripper/FET022_DrivenJoints.PhysX.0-1-0",
+          "Robot-Gripper/FET022_DrivenJoints.PhysX.0-2-0",
+          "Robot-Gripper/FET028_Gripper.Isaac.0-1-0",
+          "Robotics-Prop/CAP003_RigidBody.MuJoCo.0-1-0",
+          "Robotics-Prop/CAP004_Multibody.MuJoCo.0-1-0",
+          "Robotics-Prop/FET003_RigidBody.0-2-0",
+          "Robotics-Prop/FET003_RigidBody.Newton.0-1-0",
+          "Robotics-Prop/FET003_RigidBody.PhysX.0-4-0",
+          "Robotics-Prop/FET004_Multibody.0-2-0",
+          "Robotics-Prop/FET004_Multibody.Newton.0-1-0",
+          "Robotics-Prop/FET004_Multibody.PhysX.0-4-0"
+        ],
+        "AA.001": [
+          "Material/CAP031_SelfContainedPackage.0-1-0",
+          "Material/CAP033_SimReadyPackage.0-4-0",
+          "NuRec/FET012_GaussianSplat.0-1-0",
+          "Package-Candidate/CAP031_SelfContainedPackage.0-1-0",
+          "Package-Candidate/CAP033_SimReadyPackage.0-4-0",
+          "Robot-Body/CAP031_SelfContainedPackage.0-1-0",
+          "Robot-Body/CAP033_SimReadyPackage.0-4-0",
+          "Robot-Body/FET001_MinimalPlaceableVisual.1-0-1",
+          "Robot-Body/FET008_ObjectForward.0-1-0",
+          "Robot-Gripper/CAP031_SelfContainedPackage.0-1-0",
+          "Robot-Gripper/CAP033_SimReadyPackage.0-4-0",
+          "Robot-Gripper/FET001_MinimalPlaceableVisual.1-0-1",
+          "Robotics-Prop/CAP031_SelfContainedPackage.0-1-0",
+          "Robotics-Prop/CAP033_SimReadyPackage.0-4-0",
+          "Robotics-Prop/FET001_MinimalPlaceableVisual.1-0-1",
+          "Robotics-Prop/FET008_ObjectForward.0-1-0"
+        ],
+        "SR.002": [
+          "Material/CAP033_SimReadyPackage.0-4-0",
+          "Package-Candidate/CAP033_SimReadyPackage.0-4-0",
+          "Robot-Body/CAP033_SimReadyPackage.0-4-0",
+          "Robot-Gripper/CAP033_SimReadyPackage.0-4-0",
+          "Robotics-Prop/CAP033_SimReadyPackage.0-4-0"
+        ],
+        "SR.004": [
+          "Material/CAP033_SimReadyPackage.0-4-0",
+          "Package-Candidate/CAP033_SimReadyPackage.0-4-0",
+          "Robot-Body/CAP033_SimReadyPackage.0-4-0",
+          "Robot-Gripper/CAP033_SimReadyPackage.0-4-0",
+          "Robotics-Prop/CAP033_SimReadyPackage.0-4-0"
+        ]
+      },
+      "gap_messages": {
+        "RB.001": [
+          "No physics rigid bodies found under the default prim."
+        ],
+        "AA.001": [
+          "Dependent Reference \"../../../assets/textures/demo_classic_albedo.png\" cannot be resolved."
+        ],
+        "SR.002": [
+          "No thumbnail found at output/usd/_simready_work/selfcontained/.thumbs/256x256/Product.usda.png for SimReady asset <output/usd/_simready_wo"
+        ],
+        "SR.004": [
+          "Required metadata fields are missing: author, asset_name, asset_type, asset_license, category, source_file, usd_date_generated, qcode, rigid_body_count, asset_extents, mass. Fields may be authored in "
+        ]
+      },
+      "n_gaps": 181
+    },
+    {
+      "step": "step2_official_package",
+      "commands": [
+        {
+          "cmd": "<VENV>\\Scripts\\simready-package.exe package output/usd/_simready_work\\selfcontained --root-usd Product.usda --name demo_classic --license CC-BY-4.0 --out output/usd/_simready_work\\package",
+          "rc": 1,
+          "out_tail": "pre-validation [Package-Candidate 1.3.0]: failed (Product.usda)\n",
+          "err_tail": "Warning: in _ReportErrors at line 3326 of D:\\a\\OpenUSD\\OpenUSD\\pxr\\usd\\usd\\stage.cpp -- In </Product>: Could not open asset @output/usd/_simready_work/.tmp-28296-66769ebe1065/geometry.usdc@ for reference introduced by @output/usd/_simready_work/.tmp-28296-66769ebe1065/Product.usda@</Product>. (instantiating stage on stage @output/usd/_simready_work/.tmp-28296-66769ebe1065/Product.usda@ <00000191C9C233E0>)\nWarning: in _ReportErrors at line 3326 of D:\\a\\OpenUSD\\OpenUSD\\pxr\\usd\\usd\\stage.cpp -- In </Product>: Could not open asset @output/usd/_simready_work/.tmp-28296-66769ebe1065/materials.usda@ for reference introduced by @output/usd/_simready_work/.tmp-28296-66769ebe1065/Product.usda@</Product>. (instantiating stage on stage @output/usd/_simready_work/.tmp-28296-66769ebe1065/Product.usda@ <00000191C9C233E0>)\nerror: The root USDs did not pass [Package-Candidate 1.3.0]: CAP031_SelfContainedPackage.0-1-0, CAP033_SimReadyPackage.0-4-0\n"
+        }
+      ],
+      "out": null
+    },
+    {
+      "step": "control_official_package_nvidia_asset",
+      "src": "assets/usdcraft/rigid/bath_laundry_hardware/R232_soap_dispenser/01_pump_soap_dispenser/physx",
+      "rc": 0,
+      "out_tail": "pre-validation [Package-Candidate 1.3.0]: passed (model.usdc)\npost-validation [Package 1.0.0]: passed\ncreated usdc_demo@1.0.0 in output\\usd\\_simready_work\\control_package\n",
+      "package_files": [
+        ".metadata/com.nvidia.simready.conformance.Package-Candidate@1.3.0.json",
+        ".metadata/com.nvidia.simready.conformance.Package@1.0.0.json",
+        ".metadata/com.nvidia.simready.packaging.bom.json",
+        ".metadata/com.nvidia.simready.root_usds.json",
+        ".thumbs/256x256/model.usdc.png",
+        ".thumbs/256x256/model.usdc_light.png",
+        "com.nvidia.simready.packaging.json",
+        "model.json",
+        "model.usdc",
+        "textures/decal_e9c5639682ef1202.png"
+      ]
+    }
+  ],
+  "not_done": [
+    "官方打包失败 (见 step2 commands)"
+  ]
+}

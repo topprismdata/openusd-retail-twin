@@ -16,10 +16,13 @@ import subprocess
 import sys
 
 BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, BASE)
+from pipelines.common.runtime_env import blender_bin  # noqa: E402
+
 AR_DIR = os.path.join(BASE, "output", "ar_models")
 TEX_DIR = os.path.join(BASE, "assets", "textures")
 OUT_HTML = os.path.join(BASE, "output", "twin_3d_viewer.html")
-BLENDER = "/Applications/Blender.app/Contents/MacOS/Blender"
+BLENDER = blender_bin()
 
 _spec = ilu.spec_from_file_location("boot", os.path.join(BASE, "pipelines/bootstrap/00_bootstrap_textures.py"))
 _boot = ilu.module_from_spec(_spec)

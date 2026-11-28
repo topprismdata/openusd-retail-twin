@@ -13,12 +13,16 @@ import json
 import os
 import shutil
 import subprocess
+import sys
 import datetime
 
 BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, BASE)
+from pipelines.common.runtime_env import blender_bin, temp_dir  # noqa: E402
+
 OUT = os.path.join(BASE, "output")
 MP = os.path.join(OUT, "multi_platform")
-BLENDER = "/Applications/Blender.app/Contents/MacOS/Blender"
+BLENDER = blender_bin()
 import os as _os
 RENDER_SKUS = _os.environ.get("RENDER_SKUS", "").split(",") if _os.environ.get("RENDER_SKUS") else None
 SKUS = RENDER_SKUS or ["demo_organic", "demo_classic", "demo_jersey", "demo_cny",
@@ -44,7 +48,7 @@ def sha256(path):
 
 def render_sku(sku, scene):
     """跑 01 生成单 SKU 全平台图, 归档到 multi_platform/<sku>/"""
-    log = f"/tmp/matrix_{sku}.log"
+    log = os.path.join(temp_dir(), f"matrix_{sku}.log")
     r = subprocess.run(
         [BLENDER, "-b", "-P", os.path.join(BASE, "pipelines/ecommerce/01_comfy_usd_compositor.py"),
          "--", "--sku", sku, "--scene", scene],

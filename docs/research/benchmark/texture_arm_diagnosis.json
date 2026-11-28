@@ -1,0 +1,250 @@
+{
+  "schema": "texture_arm_diagnosis/1",
+  "generated_by": "pipelines/shelf_sdg/62_texture_arm_diagnose.py",
+  "measured_at": "2026-11-25",
+  "question": "纹理臂掉 13 pp 是'模型学成找 logo'(recall 崩)、'标签变成误检触发器'(precision 崩), 还是'贴图把域整体推歪'?",
+  "per_seed": {
+    "43": {
+      "control_last": {
+        "real_test": {
+          "map50": 0.2436427600965972,
+          "map50_95": 0.08997437329530268,
+          "precision": 0.38339795647969654,
+          "recall": 0.29342935753872684,
+          "n_images": 0
+        },
+        "whitebox_val": {
+          "map50": 0.995,
+          "map50_95": 0.9676156810944665,
+          "precision": 0.9999326233157888,
+          "recall": 1.0,
+          "n_images": 0
+        }
+      },
+      "texture_last": {
+        "real_test": {
+          "map50": 0.12107755539360619,
+          "map50_95": 0.0447761742760978,
+          "precision": 0.39297043589217995,
+          "recall": 0.13175358526165978,
+          "n_images": 0
+        },
+        "whitebox_val": {
+          "map50": 0.995,
+          "map50_95": 0.9596960045308297,
+          "precision": 0.9988811108849831,
+          "recall": 1.0,
+          "n_images": 0
+        }
+      }
+    },
+    "44": {
+      "control_last": {
+        "real_test": {
+          "map50": 0.253163202268554,
+          "map50_95": 0.09023937265739465,
+          "precision": 0.3642569024226015,
+          "recall": 0.3290722012706904,
+          "n_images": 0
+        },
+        "whitebox_val": {
+          "map50": 0.995,
+          "map50_95": 0.9705347509633249,
+          "precision": 0.9999213495711007,
+          "recall": 1.0,
+          "n_images": 0
+        }
+      },
+      "texture_last": {
+        "real_test": {
+          "map50": 0.09836774870154212,
+          "map50_95": 0.03782708870308463,
+          "precision": 0.4128834390535776,
+          "recall": 0.10058666864463549,
+          "n_images": 0
+        },
+        "whitebox_val": {
+          "map50": 0.995,
+          "map50_95": 0.9613761640854197,
+          "precision": 0.9998781248012891,
+          "recall": 1.0,
+          "n_images": 0
+        }
+      }
+    },
+    "45": {
+      "control_last": {
+        "real_test": {
+          "map50": 0.22937867101811107,
+          "map50_95": 0.08098119243869588,
+          "precision": 0.3599271883881575,
+          "recall": 0.28855474608211507,
+          "n_images": 0
+        },
+        "whitebox_val": {
+          "map50": 0.995,
+          "map50_95": 0.9666698651342511,
+          "precision": 0.9999353882272406,
+          "recall": 1.0,
+          "n_images": 0
+        }
+      },
+      "texture_last": {
+        "real_test": {
+          "map50": 0.11069282791448715,
+          "map50_95": 0.03920911704602782,
+          "precision": 0.3382906242555529,
+          "recall": 0.13729576119735107,
+          "n_images": 0
+        },
+        "whitebox_val": {
+          "map50": 0.995,
+          "map50_95": 0.9439472560365934,
+          "precision": 0.998841705566525,
+          "recall": 1.0,
+          "n_images": 0
+        }
+      }
+    }
+  },
+  "visualizations": {
+    "control_last_s43": [
+      "test_0.jpg",
+      "test_1.jpg",
+      "test_10.jpg"
+    ],
+    "texture_last_s43": [
+      "test_0.jpg",
+      "test_1.jpg",
+      "test_10.jpg"
+    ],
+    "control_last_s44": [
+      "test_0.jpg",
+      "test_1.jpg",
+      "test_10.jpg"
+    ],
+    "texture_last_s44": [
+      "test_0.jpg",
+      "test_1.jpg",
+      "test_10.jpg"
+    ],
+    "control_last_s45": [
+      "test_0.jpg",
+      "test_1.jpg",
+      "test_10.jpg"
+    ],
+    "texture_last_s45": [
+      "test_0.jpg",
+      "test_1.jpg",
+      "test_10.jpg"
+    ]
+  },
+  "summary": {
+    "real_test": [
+      {
+        "delta_map50_pp": -12.257,
+        "delta_precision_pp": 0.957,
+        "delta_recall_pp": -16.168,
+        "ctrl": {
+          "map50": 0.2436,
+          "map50_95": 0.09,
+          "precision": 0.3834,
+          "recall": 0.2934
+        },
+        "tex": {
+          "map50": 0.1211,
+          "map50_95": 0.0448,
+          "precision": 0.393,
+          "recall": 0.1318
+        }
+      },
+      {
+        "delta_map50_pp": -15.48,
+        "delta_precision_pp": 4.863,
+        "delta_recall_pp": -22.849,
+        "ctrl": {
+          "map50": 0.2532,
+          "map50_95": 0.0902,
+          "precision": 0.3643,
+          "recall": 0.3291
+        },
+        "tex": {
+          "map50": 0.0984,
+          "map50_95": 0.0378,
+          "precision": 0.4129,
+          "recall": 0.1006
+        }
+      },
+      {
+        "delta_map50_pp": -11.869,
+        "delta_precision_pp": -2.164,
+        "delta_recall_pp": -15.126,
+        "ctrl": {
+          "map50": 0.2294,
+          "map50_95": 0.081,
+          "precision": 0.3599,
+          "recall": 0.2886
+        },
+        "tex": {
+          "map50": 0.1107,
+          "map50_95": 0.0392,
+          "precision": 0.3383,
+          "recall": 0.1373
+        }
+      }
+    ],
+    "whitebox_val": [
+      {
+        "delta_map50_pp": 0.0,
+        "delta_precision_pp": -0.105,
+        "delta_recall_pp": 0.0,
+        "ctrl": {
+          "map50": 0.995,
+          "map50_95": 0.9676,
+          "precision": 0.9999,
+          "recall": 1.0
+        },
+        "tex": {
+          "map50": 0.995,
+          "map50_95": 0.9597,
+          "precision": 0.9989,
+          "recall": 1.0
+        }
+      },
+      {
+        "delta_map50_pp": 0.0,
+        "delta_precision_pp": -0.004,
+        "delta_recall_pp": 0.0,
+        "ctrl": {
+          "map50": 0.995,
+          "map50_95": 0.9705,
+          "precision": 0.9999,
+          "recall": 1.0
+        },
+        "tex": {
+          "map50": 0.995,
+          "map50_95": 0.9614,
+          "precision": 0.9999,
+          "recall": 1.0
+        }
+      },
+      {
+        "delta_map50_pp": 0.0,
+        "delta_precision_pp": -0.109,
+        "delta_recall_pp": 0.0,
+        "ctrl": {
+          "map50": 0.995,
+          "map50_95": 0.9667,
+          "precision": 0.9999,
+          "recall": 1.0
+        },
+        "tex": {
+          "map50": 0.995,
+          "map50_95": 0.9439,
+          "precision": 0.9988,
+          "recall": 1.0
+        }
+      }
+    ]
+  }
+}

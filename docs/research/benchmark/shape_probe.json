@@ -1,0 +1,120 @@
+{
+  "schema": "shape_probe/1",
+  "measured_at": "2026-11-23",
+  "probe_recipe": {
+    "cam_mult": 1.0,
+    "lens": 28.0,
+    "misalign": 0.1,
+    "bays": 1,
+    "num_images": 200,
+    "seed": 42,
+    "val_ratio": 0.2,
+    "images_per_scene": 4,
+    "split_mode": "scene",
+    "samples": 64,
+    "shape_profile": "real",
+    "shape_aspect_gain": 1.1,
+    "n_probe_images": 4
+  },
+  "probe_train": {
+    "n_images": 4,
+    "n_boxes": 120,
+    "per_image_median_aspect": {
+      "mean": 0.559,
+      "std": 0.1046,
+      "p10": 0.41765,
+      "p50": 0.64923,
+      "p90": 0.66932
+    },
+    "per_box_aspect": {
+      "mean": 0.575,
+      "p50": 0.58166
+    },
+    "per_box_area": {
+      "mean": 0.004948,
+      "p50": 0.00498
+    }
+  },
+  "probe_all_splits": {
+    "n_images": 0,
+    "n_boxes": 0,
+    "per_image_median_aspect": {
+      "mean": null,
+      "std": null,
+      "p10": null,
+      "p50": null,
+      "p90": null
+    },
+    "per_box_aspect": {
+      "mean": null,
+      "p50": null
+    },
+    "per_box_area": {
+      "mean": null,
+      "p50": null
+    }
+  },
+  "control_r1_train": {
+    "n_images": 160,
+    "n_boxes": 4160,
+    "per_image_median_aspect": {
+      "mean": 0.3231,
+      "std": 0.0198,
+      "p10": 0.30429,
+      "p50": 0.3202,
+      "p90": 0.33838
+    },
+    "per_box_aspect": {
+      "mean": 0.3343,
+      "p50": 0.31851
+    },
+    "per_box_area": {
+      "mean": 0.005346,
+      "p50": 0.00515
+    }
+  },
+  "real_train": {
+    "n_images": 8219,
+    "per_image_median_aspect": {
+      "mean": 1.0544,
+      "std": 1.1357,
+      "p1": 0.20799,
+      "p5": 0.30266,
+      "p10": 0.38314,
+      "p25": 0.49723,
+      "p50": 0.67791,
+      "p75": 1.12915,
+      "p90": 1.91993,
+      "p95": 2.96205,
+      "p99": 6.27589
+    },
+    "per_box_aspect": {
+      "mean": 1.2681,
+      "std": 1.5149,
+      "p1": 0.15525,
+      "p5": 0.23961,
+      "p10": 0.30594,
+      "p25": 0.44636,
+      "p50": 0.70437,
+      "p75": 1.45694,
+      "p90": 2.69499,
+      "p95": 4.64309,
+      "p99": 7.61986
+    },
+    "per_box_area": {
+      "mean": 0.002866,
+      "std": 0.002116,
+      "p1": 0.00028,
+      "p5": 0.00059,
+      "p10": 0.00085,
+      "p25": 0.00148,
+      "p50": 0.00244,
+      "p75": 0.0037,
+      "p90": 0.00524,
+      "p95": 0.00649,
+      "p99": 0.01019
+    }
+  },
+  "gain_used": 1.1,
+  "gain_note": "gain = 目标投影宽高比 -> 世界宽高比 的系数。若探针的逐图中位宽高比系统性偏离真实域, 就调这个系数再渲一次。"
+}

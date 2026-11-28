@@ -1,0 +1,976 @@
+{
+  "schema": "fourarm_seed_variance/1",
+  "generated_by": "pipelines/shelf_sdg/36_fourarm_seed_variance.py",
+  "groups": {
+    "r0": {
+      "n": 5,
+      "seeds": [
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "map50_mean": 0.8830933899966815,
+      "map50_std": 0.0011004735889706125,
+      "map50_95_mean": 0.5270337376408794,
+      "map50_95_std": 0.0014260162321305101,
+      "n_legacy_excluded": 0,
+      "runs": [
+        {
+          "arm": "r0",
+          "seed": 43,
+          "tag": "s43",
+          "map50": 0.8817305966926205,
+          "map50_95": 0.5260525590406911,
+          "precision": 0.8847476655278502,
+          "recall": 0.8005996174429545,
+          "protocol_hash": "ff51a317d8943776",
+          "ckpt_sha256": "4fee0c4e687adf1edac19cafd68eb84f9a4562066b912a2aa239fed3d4910cc0",
+          "wall_sec": 7082.5,
+          "file": "sku110k_r0_s43.json",
+          "ckpt_selection": "best",
+          "data_fp": [
+            [
+              "real",
+              null
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        },
+        {
+          "arm": "r0",
+          "seed": 44,
+          "tag": "s44",
+          "map50": 0.8846120938922174,
+          "map50_95": 0.529474962763598,
+          "precision": 0.8858500055939715,
+          "recall": 0.8059079456398536,
+          "protocol_hash": "525dcc1d9044fc6d",
+          "ckpt_sha256": "55b52a8fbe6fc80e8622828e9a418d2eebf77e9aff686d22755de4a7a8491dc3",
+          "wall_sec": 5366.7,
+          "file": "sku110k_r0_s44.json",
+          "ckpt_selection": "best",
+          "data_fp": [
+            [
+              "real",
+              null
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        },
+        {
+          "arm": "r0",
+          "seed": 45,
+          "tag": "s45",
+          "map50": 0.8832585401574986,
+          "map50_95": 0.5261197998963113,
+          "precision": 0.8866769536808432,
+          "recall": 0.8051233218932705,
+          "protocol_hash": "9e1acd44a599ecd2",
+          "ckpt_sha256": "25405921ce041a57e5f3d4ea2afca01fe34797f46dc72b73cb96437f0b02a94f",
+          "wall_sec": 5333.3,
+          "file": "sku110k_r0_s45.json",
+          "ckpt_selection": "best",
+          "data_fp": [
+            [
+              "real",
+              null
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        },
+        {
+          "arm": "r0",
+          "seed": 46,
+          "tag": "s46",
+          "map50": 0.8834813515481102,
+          "map50_95": 0.5270978760990267,
+          "precision": 0.8859533694033812,
+          "recall": 0.8046561542519977,
+          "protocol_hash": "09a64aa57d92a131",
+          "ckpt_sha256": "e450a6c374345e935ab2e1c0fd3585d73eb5fd20d5d80a5e8d1ac07bce40d0f5",
+          "wall_sec": 5379.7,
+          "file": "sku110k_r0_s46.json",
+          "ckpt_selection": "best",
+          "data_fp": [
+            [
+              "real",
+              null
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        },
+        {
+          "arm": "r0",
+          "seed": 47,
+          "tag": "s47",
+          "map50": 0.8823843676929609,
+          "map50_95": 0.5264234904047698,
+          "precision": 0.8852685541837064,
+          "recall": 0.8054258157382962,
+          "protocol_hash": "d063922d1d874c20",
+          "ckpt_sha256": "56299c8fa9093c0a38fe3da2d3451479793a837793faae990f749558deb9e8bc",
+          "wall_sec": 5505.7,
+          "file": "sku110k_r0_s47.json",
+          "ckpt_selection": "best",
+          "data_fp": [
+            [
+              "real",
+              null
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        }
+      ]
+    },
+    "r1": {
+      "n": 6,
+      "seeds": [
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "map50_mean": 0.24269500492570106,
+      "map50_std": 0.012988766559497279,
+      "map50_95_mean": 0.08718415122550946,
+      "map50_95_std": 0.005328832607319626,
+      "n_legacy_excluded": 0,
+      "runs": [
+        {
+          "arm": "r1",
+          "seed": 42,
+          "tag": "scenebest",
+          "map50": 0.2265046586434746,
+          "map50_95": 0.08055438174916069,
+          "precision": 0.35390670027732685,
+          "recall": 0.32071837355332056,
+          "protocol_hash": "a8eb80b147a5ca5f",
+          "ckpt_sha256": "2685a38e6a81b0f6345c392a7074dc8ec3fa30f048af36ade2e5d44e4ebc6385",
+          "wall_sec": 249.6,
+          "file": "sku110k_r1_scenebest.json",
+          "ckpt_selection": "best",
+          "data_fp": [
+            [
+              "synthetic_only",
+              "e78ba33a70edadbc084951648b49a43a48f9158e255c5c1d17e3f284a6cc36a9"
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        },
+        {
+          "arm": "r1",
+          "seed": 43,
+          "tag": "s43",
+          "map50": 0.24365231713822955,
+          "map50_95": 0.08997014892036735,
+          "precision": 0.3833669198640759,
+          "recall": 0.2934687623864503,
+          "protocol_hash": "ff51a317d8943776",
+          "ckpt_sha256": "91b93bb5a03816b99a4ab238d54b58475ebaa60bed0b82d64d7cb317d2a7d717",
+          "wall_sec": 290.4,
+          "file": "sku110k_r1_s43.json",
+          "ckpt_selection": "best",
+          "data_fp": [
+            [
+              "synthetic_only",
+              "e78ba33a70edadbc084951648b49a43a48f9158e255c5c1d17e3f284a6cc36a9"
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        },
+        {
+          "arm": "r1",
+          "seed": 44,
+          "tag": "s44",
+          "map50": 0.25316970903213226,
+          "map50_95": 0.09024118943949794,
+          "precision": 0.36423451129726275,
+          "recall": 0.32908842679622363,
+          "protocol_hash": "525dcc1d9044fc6d",
+          "ckpt_sha256": "9b697f4df09e9e33434c218142f0ec12b80d311a7246cf0a6ccd2ef9f4dc3d37",
+          "wall_sec": 218.8,
+          "file": "sku110k_r1_s44.json",
+          "ckpt_selection": "best",
+          "data_fp": [
+            [
+              "synthetic_only",
+              "e78ba33a70edadbc084951648b49a43a48f9158e255c5c1d17e3f284a6cc36a9"
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        },
+        {
+          "arm": "r1",
+          "seed": 45,
+          "tag": "s45",
+          "map50": 0.22938846584529976,
+          "map50_95": 0.08097406176428376,
+          "precision": 0.359881392645044,
+          "recall": 0.28858719713318143,
+          "protocol_hash": "9e1acd44a599ecd2",
+          "ckpt_sha256": "963ce126c5a4aec65ecd916be973efc6599a4ec1b6e1906a14185746f97c6032",
+          "wall_sec": 218.7,
+          "file": "sku110k_r1_s45.json",
+          "ckpt_selection": "best",
+          "data_fp": [
+            [
+              "synthetic_only",
+              "e78ba33a70edadbc084951648b49a43a48f9158e255c5c1d17e3f284a6cc36a9"
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        },
+        {
+          "arm": "r1",
+          "seed": 46,
+          "tag": "s46",
+          "map50": 0.2598065287859736,
+          "map50_95": 0.09367239537005558,
+          "precision": 0.3636197835814267,
+          "recall": 0.3459027071130386,
+          "protocol_hash": "09a64aa57d92a131",
+          "ckpt_sha256": "a1785aa4f04be2c80885a99fe214766db4862e5bd7fe45a61eb1f4b429a88923",
+          "wall_sec": 353.6,
+          "file": "sku110k_r1_s46.json",
+          "ckpt_selection": "best",
+          "data_fp": [
+            [
+              "synthetic_only",
+              "e78ba33a70edadbc084951648b49a43a48f9158e255c5c1d17e3f284a6cc36a9"
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        },
+        {
+          "arm": "r1",
+          "seed": 47,
+          "tag": "s47",
+          "map50": 0.24364835010909658,
+          "map50_95": 0.0876927301096914,
+          "precision": 0.35596090748951853,
+          "recall": 0.32126463761849644,
+          "protocol_hash": "d063922d1d874c20",
+          "ckpt_sha256": "3840f5c0a7f70eaeffa922033a12118824f914b462f3c016f584608b2ef90ca3",
+          "wall_sec": 219.0,
+          "file": "sku110k_r1_s47.json",
+          "ckpt_selection": "best",
+          "data_fp": [
+            [
+              "synthetic_only",
+              "e78ba33a70edadbc084951648b49a43a48f9158e255c5c1d17e3f284a6cc36a9"
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        }
+      ]
+    },
+    "r1shape": {
+      "n": 6,
+      "seeds": [
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "map50_mean": 0.13613910004456553,
+      "map50_std": 0.04500367370753943,
+      "map50_95_mean": 0.045547457727800694,
+      "map50_95_std": 0.01755846219882924,
+      "n_legacy_excluded": 0,
+      "runs": [
+        {
+          "arm": "r1shape",
+          "seed": 42,
+          "tag": "s42",
+          "map50": 0.2067964388908274,
+          "map50_95": 0.0730557232049863,
+          "precision": 0.3078334836986257,
+          "recall": 0.2894564217153162,
+          "protocol_hash": "a8eb80b147a5ca5f",
+          "ckpt_sha256": "b1228e5c2546fd24db12e6a4bdd20fd1cd90ffcfdd8d608780e471f8c9283b2b",
+          "wall_sec": null,
+          "file": "sku110k_r1shape_s42.json",
+          "ckpt_selection": null,
+          "data_fp": [
+            [
+              "synthetic_only",
+              "f6462c80840a9622190abf55713ee880a08b054027fb5529e39384bfb5f41544"
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        },
+        {
+          "arm": "r1shape",
+          "seed": 43,
+          "tag": "s43",
+          "map50": 0.10133327617403398,
+          "map50_95": 0.03260513763887337,
+          "precision": 0.20021010720109675,
+          "recall": 0.20294887336904494,
+          "protocol_hash": "ff51a317d8943776",
+          "ckpt_sha256": "c4544d8fe4a197375fa2116ac2f80dea10e4af36b8b00be49eb50fe02c80e6c8",
+          "wall_sec": null,
+          "file": "sku110k_r1shape_s43.json",
+          "ckpt_selection": null,
+          "data_fp": [
+            [
+              "synthetic_only",
+              "f6462c80840a9622190abf55713ee880a08b054027fb5529e39384bfb5f41544"
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        },
+        {
+          "arm": "r1shape",
+          "seed": 44,
+          "tag": "s44",
+          "map50": 0.0964204546264206,
+          "map50_95": 0.030040340203368633,
+          "precision": 0.1849565854663093,
+          "recall": 0.20945988464572488,
+          "protocol_hash": "525dcc1d9044fc6d",
+          "ckpt_sha256": "3b12ea7866077cc1d74c8c675ca3f497d6cc1e43710584220121fe31ebdb4ebb",
+          "wall_sec": null,
+          "file": "sku110k_r1shape_s44.json",
+          "ckpt_selection": null,
+          "data_fp": [
+            [
+              "synthetic_only",
+              "f6462c80840a9622190abf55713ee880a08b054027fb5529e39384bfb5f41544"
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        },
+        {
+          "arm": "r1shape",
+          "seed": 45,
+          "tag": "s45",
+          "map50": 0.14131132726150128,
+          "map50_95": 0.045745026989574035,
+          "precision": 0.22921664286831472,
+          "recall": 0.2724196199054747,
+          "protocol_hash": "9e1acd44a599ecd2",
+          "ckpt_sha256": "f56e95f0fc43c6940c609d619f3f854dc274d72665f10c601dda6c3b109de7b6",
+          "wall_sec": null,
+          "file": "sku110k_r1shape_s45.json",
+          "ckpt_selection": null,
+          "data_fp": [
+            [
+              "synthetic_only",
+              "f6462c80840a9622190abf55713ee880a08b054027fb5529e39384bfb5f41544"
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        },
+        {
+          "arm": "r1shape",
+          "seed": 46,
+          "tag": "s46",
+          "map50": 0.10144559132493418,
+          "map50_95": 0.03219877347855655,
+          "precision": 0.1877681565405204,
+          "recall": 0.224244891733899,
+          "protocol_hash": "09a64aa57d92a131",
+          "ckpt_sha256": "c67ab5b37623a071f66701a4f6d27ba23b4d0e785d3b7ee39df82ef918e8b66f",
+          "wall_sec": null,
+          "file": "sku110k_r1shape_s46.json",
+          "ckpt_selection": null,
+          "data_fp": [
+            [
+              "synthetic_only",
+              "f6462c80840a9622190abf55713ee880a08b054027fb5529e39384bfb5f41544"
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        },
+        {
+          "arm": "r1shape",
+          "seed": 47,
+          "tag": "s47",
+          "map50": 0.1695275119896757,
+          "map50_95": 0.0596397448514453,
+          "precision": 0.27689796022428415,
+          "recall": 0.25036681277366085,
+          "protocol_hash": "d063922d1d874c20",
+          "ckpt_sha256": "fd9d206beeee312526adbe6d9e92a40ec16be1156182fee11eac97d8776bcc6e",
+          "wall_sec": null,
+          "file": "sku110k_r1shape_s47.json",
+          "ckpt_selection": null,
+          "data_fp": [
+            [
+              "synthetic_only",
+              "f6462c80840a9622190abf55713ee880a08b054027fb5529e39384bfb5f41544"
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        }
+      ]
+    },
+    "r2": {
+      "n": 5,
+      "seeds": [
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "map50_mean": 0.884667183591994,
+      "map50_std": 0.0012392309522424602,
+      "map50_95_mean": 0.5282036254194782,
+      "map50_95_std": 0.0011259862787277382,
+      "n_legacy_excluded": 0,
+      "runs": [
+        {
+          "arm": "r2",
+          "seed": 43,
+          "tag": "s43",
+          "map50": 0.8828309597074846,
+          "map50_95": 0.5276944653518518,
+          "precision": 0.8850736147055804,
+          "recall": 0.8045450014950662,
+          "protocol_hash": "ff51a317d8943776",
+          "ckpt_sha256": "8acdd5b64889ca2db8fb28fb1d554e4c2e84baf3d67e526f9f926fced942d216",
+          "wall_sec": 6976.9,
+          "file": "sku110k_r2_s43.json",
+          "ckpt_selection": "best",
+          "data_fp": [
+            [
+              "real",
+              "de31c1c5b50c5de3c982567d1e2b0ae2fafc4b261dca1db883da4be2d0a99ce1"
+            ],
+            [
+              "synthetic",
+              "e78ba33a70edadbc084951648b49a43a48f9158e255c5c1d17e3f284a6cc36a9"
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        },
+        {
+          "arm": "r2",
+          "seed": 44,
+          "tag": "s44",
+          "map50": 0.8849935229842212,
+          "map50_95": 0.5268764105052164,
+          "precision": 0.8847950971539834,
+          "recall": 0.8046400367160463,
+          "protocol_hash": "525dcc1d9044fc6d",
+          "ckpt_sha256": "cfc420913f81c2f16516b4787555bca62818180e3763c54222afc90a241ff8e5",
+          "wall_sec": 6198.0,
+          "file": "sku110k_r2_s44.json",
+          "ckpt_selection": "best",
+          "data_fp": [
+            [
+              "real",
+              "de31c1c5b50c5de3c982567d1e2b0ae2fafc4b261dca1db883da4be2d0a99ce1"
+            ],
+            [
+              "synthetic",
+              "e78ba33a70edadbc084951648b49a43a48f9158e255c5c1d17e3f284a6cc36a9"
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        },
+        {
+          "arm": "r2",
+          "seed": 45,
+          "tag": "s45",
+          "map50": 0.8857250691892197,
+          "map50_95": 0.52975937197885,
+          "precision": 0.8854205932036282,
+          "recall": 0.8078040141950169,
+          "protocol_hash": "9e1acd44a599ecd2",
+          "ckpt_sha256": "eef6546b9ee617a042c87334fe3e8866a1d7987e3e32c878456611dce50d17d9",
+          "wall_sec": 5756.4,
+          "file": "sku110k_r2_s45.json",
+          "ckpt_selection": "best",
+          "data_fp": [
+            [
+              "real",
+              "de31c1c5b50c5de3c982567d1e2b0ae2fafc4b261dca1db883da4be2d0a99ce1"
+            ],
+            [
+              "synthetic",
+              "e78ba33a70edadbc084951648b49a43a48f9158e255c5c1d17e3f284a6cc36a9"
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        },
+        {
+          "arm": "r2",
+          "seed": 46,
+          "tag": "s46",
+          "map50": 0.8857426783077955,
+          "map50_95": 0.5278003803038598,
+          "precision": 0.8858505175750845,
+          "recall": 0.809055697593291,
+          "protocol_hash": "09a64aa57d92a131",
+          "ckpt_sha256": "5222d88eddb9c0afb8ad11a4dbb148935879d15b518b762e87ed2e7cd29526ba",
+          "wall_sec": 5462.9,
+          "file": "sku110k_r2_s46.json",
+          "ckpt_selection": "best",
+          "data_fp": [
+            [
+              "real",
+              "de31c1c5b50c5de3c982567d1e2b0ae2fafc4b261dca1db883da4be2d0a99ce1"
+            ],
+            [
+              "synthetic",
+              "e78ba33a70edadbc084951648b49a43a48f9158e255c5c1d17e3f284a6cc36a9"
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        },
+        {
+          "arm": "r2",
+          "seed": 47,
+          "tag": "s47",
+          "map50": 0.884043687771249,
+          "map50_95": 0.5288874989576129,
+          "precision": 0.8858176008769143,
+          "recall": 0.8050248134644047,
+          "protocol_hash": "d063922d1d874c20",
+          "ckpt_sha256": "434b6df00236495f0c543a01ef75b4bb6e8f8766e6e225af2651f4429957de58",
+          "wall_sec": 5599.3,
+          "file": "sku110k_r2_s47.json",
+          "ckpt_selection": "best",
+          "data_fp": [
+            [
+              "real",
+              "de31c1c5b50c5de3c982567d1e2b0ae2fafc4b261dca1db883da4be2d0a99ce1"
+            ],
+            [
+              "synthetic",
+              "e78ba33a70edadbc084951648b49a43a48f9158e255c5c1d17e3f284a6cc36a9"
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        }
+      ]
+    },
+    "r3pm": {
+      "n": 6,
+      "seeds": [
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "map50_mean": 0.1434540049362951,
+      "map50_std": 0.05678024558327423,
+      "map50_95_mean": 0.0397610506058647,
+      "map50_95_std": 0.018230124384850038,
+      "n_legacy_excluded": 0,
+      "runs": [
+        {
+          "arm": "r3pm",
+          "seed": 42,
+          "tag": "s42",
+          "map50": 0.18947488624140196,
+          "map50_95": 0.05336354268312454,
+          "precision": 0.32263699419112696,
+          "recall": 0.2538112600511336,
+          "protocol_hash": "a8eb80b147a5ca5f",
+          "ckpt_sha256": "22f3c12a7d6b4c22dbbc690b5780ae129ba01a2ed65b2af5d8a1beb41c3387b9",
+          "wall_sec": null,
+          "file": "sku110k_r3pm_s42.json",
+          "ckpt_selection": null,
+          "data_fp": [
+            [
+              "synthetic_only",
+              "15b3d9951efe8e6d71ba739eda21d0a8f8169fbb353515c2c76940a38d5d78b3"
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        },
+        {
+          "arm": "r3pm",
+          "seed": 43,
+          "tag": "s43",
+          "map50": 0.13586980993788758,
+          "map50_95": 0.03637920063460755,
+          "precision": 0.292229762527556,
+          "recall": 0.18695745898998423,
+          "protocol_hash": "ff51a317d8943776",
+          "ckpt_sha256": "9ce2737c62bd5690b70fe022762829fe0e36486309b3fcfa810a36515ca6d0a1",
+          "wall_sec": null,
+          "file": "sku110k_r3pm_s43.json",
+          "ckpt_selection": null,
+          "data_fp": [
+            [
+              "synthetic_only",
+              "15b3d9951efe8e6d71ba739eda21d0a8f8169fbb353515c2c76940a38d5d78b3"
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        },
+        {
+          "arm": "r3pm",
+          "seed": 44,
+          "tag": "s44",
+          "map50": 0.17644445377022316,
+          "map50_95": 0.05339817151924742,
+          "precision": 0.40564112933305135,
+          "recall": 0.18736035379355892,
+          "protocol_hash": "525dcc1d9044fc6d",
+          "ckpt_sha256": "1806ac74c44447f560e91cdd9f8de509e461d2c4a2737b7235207a281e06a921",
+          "wall_sec": null,
+          "file": "sku110k_r3pm_s44.json",
+          "ckpt_selection": null,
+          "data_fp": [
+            [
+              "synthetic_only",
+              "15b3d9951efe8e6d71ba739eda21d0a8f8169fbb353515c2c76940a38d5d78b3"
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        },
+        {
+          "arm": "r3pm",
+          "seed": 45,
+          "tag": "s45",
+          "map50": 0.07035301374976066,
+          "map50_95": 0.01584793743719005,
+          "precision": 0.18135415296626764,
+          "recall": 0.15485177982425438,
+          "protocol_hash": "9e1acd44a599ecd2",
+          "ckpt_sha256": "50958ac15abdec01b270f5fe3dfea69fc5b503fb1321f7296c3649fd38302245",
+          "wall_sec": null,
+          "file": "sku110k_r3pm_s45.json",
+          "ckpt_selection": null,
+          "data_fp": [
+            [
+              "synthetic_only",
+              "15b3d9951efe8e6d71ba739eda21d0a8f8169fbb353515c2c76940a38d5d78b3"
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        },
+        {
+          "arm": "r3pm",
+          "seed": 46,
+          "tag": "s46",
+          "map50": 0.08300873983243957,
+          "map50_95": 0.020981640639866572,
+          "precision": 0.18911854391002758,
+          "recall": 0.18220801587319985,
+          "protocol_hash": "09a64aa57d92a131",
+          "ckpt_sha256": "adee6053f104ac4c5471ded80d9f7e1deac1acc9fe3a73b9d0fe59292aa16c80",
+          "wall_sec": null,
+          "file": "sku110k_r3pm_s46.json",
+          "ckpt_selection": null,
+          "data_fp": [
+            [
+              "synthetic_only",
+              "15b3d9951efe8e6d71ba739eda21d0a8f8169fbb353515c2c76940a38d5d78b3"
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        },
+        {
+          "arm": "r3pm",
+          "seed": 47,
+          "tag": "s47",
+          "map50": 0.2055731260860576,
+          "map50_95": 0.058595810721152074,
+          "precision": 0.31991556347552624,
+          "recall": 0.2897043467602484,
+          "protocol_hash": "d063922d1d874c20",
+          "ckpt_sha256": "44319b12f4887fcfb229ca520e3648eb656561400a8debe986b06316a1d9a553",
+          "wall_sec": null,
+          "file": "sku110k_r3pm_s47.json",
+          "ckpt_selection": null,
+          "data_fp": [
+            [
+              "synthetic_only",
+              "15b3d9951efe8e6d71ba739eda21d0a8f8169fbb353515c2c76940a38d5d78b3"
+            ]
+          ],
+          "proto_key": "{\"batch\": 4, \"cache\": false, \"device\": \"auto\", \"epochs\": 10, \"imgsz\": 640, \"max_det\": 1000, \"model\": \"yolo11n.pt\", \"workers\": 2}",
+          "legacy": false
+        }
+      ]
+    }
+  },
+  "paired": [
+    {
+      "a": "r0",
+      "b": "r2",
+      "n_pairs": 5,
+      "rows": [
+        {
+          "seed": 43,
+          "map50_diff_pp": 0.11,
+          "map50_95_diff_pp": 0.164
+        },
+        {
+          "seed": 44,
+          "map50_diff_pp": 0.038,
+          "map50_95_diff_pp": -0.26
+        },
+        {
+          "seed": 45,
+          "map50_diff_pp": 0.247,
+          "map50_95_diff_pp": 0.364
+        },
+        {
+          "seed": 46,
+          "map50_diff_pp": 0.226,
+          "map50_95_diff_pp": 0.07
+        },
+        {
+          "seed": 47,
+          "map50_diff_pp": 0.166,
+          "map50_95_diff_pp": 0.246
+        }
+      ],
+      "seeds": [
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "map50_diff_mean_pp": 0.157,
+      "map50_diff_std_pp": 0.086,
+      "map50_diff_t": 4.112,
+      "map50_diff_df": 4,
+      "map50_diff_p": "<0.05 (双尾)",
+      "map50_diff_ci95": [
+        0.051,
+        0.264
+      ],
+      "map50_95_diff_mean_pp": 0.117,
+      "map50_95_diff_std_pp": 0.237,
+      "map50_95_diff_t": 1.103,
+      "map50_95_diff_df": 4,
+      "map50_95_diff_p": ">0.05 (双尾)",
+      "map50_95_diff_ci95": [
+        -0.177,
+        0.411
+      ],
+      "min_improvement_pp": 0.051
+    },
+    {
+      "a": "r0",
+      "b": "r1",
+      "n_pairs": 5,
+      "rows": [
+        {
+          "seed": 43,
+          "map50_diff_pp": -63.808,
+          "map50_95_diff_pp": -43.608
+        },
+        {
+          "seed": 44,
+          "map50_diff_pp": -63.144,
+          "map50_95_diff_pp": -43.923
+        },
+        {
+          "seed": 45,
+          "map50_diff_pp": -65.387,
+          "map50_95_diff_pp": -44.515
+        },
+        {
+          "seed": 46,
+          "map50_diff_pp": -62.367,
+          "map50_95_diff_pp": -43.343
+        },
+        {
+          "seed": 47,
+          "map50_diff_pp": -63.874,
+          "map50_95_diff_pp": -43.873
+        }
+      ],
+      "seeds": [
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "map50_diff_mean_pp": -63.716,
+      "map50_diff_std_pp": 1.115,
+      "map50_diff_t": -127.782,
+      "map50_diff_df": 4,
+      "map50_diff_p": "<0.05 (双尾)",
+      "map50_diff_ci95": [
+        -65.1,
+        -62.332
+      ],
+      "map50_95_diff_mean_pp": -43.852,
+      "map50_95_diff_std_pp": 0.437,
+      "map50_95_diff_t": -224.417,
+      "map50_95_diff_df": 4,
+      "map50_95_diff_p": "<0.05 (双尾)",
+      "map50_95_diff_ci95": [
+        -44.395,
+        -43.31
+      ],
+      "min_degradation_pp": 62.332
+    },
+    {
+      "a": "r1",
+      "b": "r3pm",
+      "n_pairs": 6,
+      "rows": [
+        {
+          "seed": 42,
+          "map50_diff_pp": -3.703,
+          "map50_95_diff_pp": -2.719
+        },
+        {
+          "seed": 43,
+          "map50_diff_pp": -10.778,
+          "map50_95_diff_pp": -5.359
+        },
+        {
+          "seed": 44,
+          "map50_diff_pp": -7.673,
+          "map50_95_diff_pp": -3.684
+        },
+        {
+          "seed": 45,
+          "map50_diff_pp": -15.904,
+          "map50_95_diff_pp": -6.513
+        },
+        {
+          "seed": 46,
+          "map50_diff_pp": -17.68,
+          "map50_95_diff_pp": -7.269
+        },
+        {
+          "seed": 47,
+          "map50_diff_pp": -3.808,
+          "map50_95_diff_pp": -2.91
+        }
+      ],
+      "seeds": [
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "map50_diff_mean_pp": -9.924,
+      "map50_diff_std_pp": 5.964,
+      "map50_diff_t": -4.076,
+      "map50_diff_df": 5,
+      "map50_diff_p": "<0.05 (双尾)",
+      "map50_diff_ci95": [
+        -16.184,
+        -3.665
+      ],
+      "map50_95_diff_mean_pp": -4.742,
+      "map50_95_diff_std_pp": 1.922,
+      "map50_95_diff_t": -6.044,
+      "map50_95_diff_df": 5,
+      "map50_95_diff_p": "<0.05 (双尾)",
+      "map50_95_diff_ci95": [
+        -6.76,
+        -2.725
+      ],
+      "min_degradation_pp": 3.665
+    },
+    {
+      "a": "r1",
+      "b": "r1shape",
+      "n_pairs": 6,
+      "rows": [
+        {
+          "seed": 42,
+          "map50_diff_pp": -1.971,
+          "map50_95_diff_pp": -0.75
+        },
+        {
+          "seed": 43,
+          "map50_diff_pp": -14.232,
+          "map50_95_diff_pp": -5.737
+        },
+        {
+          "seed": 44,
+          "map50_diff_pp": -15.675,
+          "map50_95_diff_pp": -6.02
+        },
+        {
+          "seed": 45,
+          "map50_diff_pp": -8.808,
+          "map50_95_diff_pp": -3.523
+        },
+        {
+          "seed": 46,
+          "map50_diff_pp": -15.836,
+          "map50_95_diff_pp": -6.147
+        },
+        {
+          "seed": 47,
+          "map50_diff_pp": -7.412,
+          "map50_95_diff_pp": -2.805
+        }
+      ],
+      "seeds": [
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "map50_diff_mean_pp": -10.656,
+      "map50_diff_std_pp": 5.553,
+      "map50_diff_t": -4.7,
+      "map50_diff_df": 5,
+      "map50_diff_p": "<0.05 (双尾)",
+      "map50_diff_ci95": [
+        -16.484,
+        -4.827
+      ],
+      "map50_95_diff_mean_pp": -4.164,
+      "map50_95_diff_std_pp": 2.18,
+      "map50_95_diff_t": -4.678,
+      "map50_95_diff_df": 5,
+      "map50_95_diff_p": "<0.05 (双尾)",
+      "map50_95_diff_ci95": [
+        -6.452,
+        -1.875
+      ],
+      "min_degradation_pp": 4.827
+    }
+  ]
+}

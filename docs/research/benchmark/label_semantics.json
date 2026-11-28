@@ -1,0 +1,60 @@
+{
+  "measured_at": "2026-11-23",
+  "sdg_set": "output/sdg_shelf",
+  "n_images": 200,
+  "n_images_train": 160,
+  "n_images_val": 40,
+  "records_total": 5240,
+  "label_lines_total": 5240,
+  "dropped_low_visibility": 0,
+  "dropped_low_visibility_rate": 0.0,
+  "dropped_class1_oos_gap": 824,
+  "dropped_class1_rate_of_records": 0.157252,
+  "class_hist": {
+    "0": 3601,
+    "3": 273,
+    "1": 824,
+    "2": 542
+  },
+  "bbox_source_hist": {
+    "object_index_mask": 5240
+  },
+  "per_image_consistent": true,
+  "per_image_inconsistent": [],
+  "synth_effective_boxes_per_image_train": 21.82,
+  "synth_raw_boxes_per_image_train": 26.0,
+  "synth_effective_boxes_total": 4416,
+  "real_sku110k": {
+    "root": "<SKU110K_ROOT>",
+    "available": true,
+    "source": "prep_summary.json",
+    "train": {
+      "n_images_found": 8219,
+      "n_boxes": 1208482,
+      "boxes_per_image": 147.04
+    },
+    "val": {
+      "n_images_found": 588,
+      "n_boxes": 90968,
+      "boxes_per_image": 154.71
+    },
+    "test": {
+      "n_images_found": 2936,
+      "n_boxes": 431546,
+      "boxes_per_image": 146.98
+    }
+  },
+  "r2_synth_ratio": {
+    "artifact": "sku110k_r2_s44.json",
+    "synth_ratio": 0.019095,
+    "n_real": 8219,
+    "n_synth": 160,
+    "n_total_train": 8379,
+    "synth_ratio_note": "合成在 R2 训练集里的占比 —— 口径差能污染的信号上界"
+  },
+  "verdict": {
+    "f7_visibility_filter_fires": false,
+    "f7_visibility_drop_rate": 0.0,
+    "confound_bound_note": "合成口径差最多只能污染 R2 训练信号里 '合成占比' 那一部分; 占比见 r2_synth_ratio.synth_ratio"
+  }
+}

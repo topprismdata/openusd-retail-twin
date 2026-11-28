@@ -1,0 +1,704 @@
+{
+  "generated_at": "2026-11-28T07:30:44",
+  "script": "pipelines/shelf_sdg/86_simready_compliant_package.py",
+  "sku": "demo_classic",
+  "asset_dir": "output/usd/demo_classic",
+  "package": {
+    "mass_cross_check": {
+      "from_generator_phys_mass_g": 206.1,
+      "from_pxr_volume_kg": 0.2129,
+      "delta_pct": 3.19,
+      "used_kg": 0.2061
+    },
+    "physics_layer": {
+      "rigid_body": true,
+      "colliders": 3,
+      "mass": 0.2061,
+      "dialect_apis": [
+        "MjcCollisionAPI",
+        "NewtonMeshCollisionAPI"
+      ]
+    },
+    "semantics_layer": {
+      "instance": "wikidata_qcode",
+      "labels": [
+        "Q1395006"
+      ],
+      "materials_labeled": 4
+    },
+    "pkg_dir": "output/usd/demo_classic_pkg",
+    "root_usd": "demo_classic.usda",
+    "textures": [
+      "demo_classic_albedo.png",
+      "demo_classic_orm.png",
+      "demo_organic_albedo.png"
+    ],
+    "sidecar": {
+      "author": "Topprism",
+      "asset_name": "demo_classic",
+      "asset_type": "prop",
+      "asset_license": "CC-BY-4.0",
+      "category": "Beverage Carton",
+      "source_file": "./demo_classic.usda",
+      "usd_date_generated": "2026-11-28",
+      "qcode": "Q1395006",
+      "rigid_body_count": 1,
+      "asset_extents": [
+        0.048,
+        0.038,
+        0.11752
+      ],
+      "mass": 0.2061,
+      "mass_basis": "来自生成器的 phys:mass (206.1 g = 网格体积 x 水密度 1 g/cm^3, 未计包装); 86 号用 pxr 重算体积 212.9 cm^3 交叉核对 (差 3.19%) —— **未实测称重**",
+      "qcode_basis": "Wikidata Q1395006 = cardboard box",
+      "asset_source": "ortho_work pipelines/ecommerce/13_usd_asset.py (Blender 参数化利乐包数字母本)"
+    },
+    "sidecar_missing_fields": [],
+    "mesh_volume_m3": 0.00021292
+  },
+  "checks": {
+    "defaultPrim": "Product",
+    "kind": "component",
+    "variantSets": [
+      "colorway"
+    ],
+    "references_in_file": false,
+    "default_binding": {
+      "ok": true,
+      "msg": "默认态: OK (1 个绑定)"
+    },
+    "variants": [
+      {
+        "variant": "kraft_lowcarbon",
+        "albedo": "@./textures/demo_classic_albedo.png@",
+        "ok": true,
+        "msg": "variant kraft_lowcarbon: OK (1 个绑定)"
+      },
+      {
+        "variant": "white_laminated",
+        "albedo": "@./textures/demo_organic_albedo.png@",
+        "ok": true,
+        "msg": "variant white_laminated: OK (1 个绑定)"
+      }
+    ],
+    "non_anchored_asset_paths": []
+  },
+  "official_validate_pkg": [
+    {
+      "profile": "Assembly",
+      "profile_version": "0.1.0",
+      "passed": false,
+      "blocking_failures": [
+        "CAP027_Connections.0-1-0",
+        "CAP029_ConnectionJoint.0-1-0",
+        "CAP029_ConnectionJoint.MuJoCo.0-1-0",
+        "CAP029_ConnectionJoint.Newton.0-1-0",
+        "CAP029_ConnectionJoint.PhysX.0-1-0"
+      ],
+      "failed_features": [
+        "CAP027_Connections.0-1-0",
+        "CAP029_ConnectionJoint.0-1-0",
+        "CAP029_ConnectionJoint.MuJoCo.0-1-0",
+        "CAP029_ConnectionJoint.Newton.0-1-0",
+        "CAP029_ConnectionJoint.PhysX.0-1-0",
+        "FET004_Multibody.0-2-0"
+      ],
+      "elapsed_s": 0.262
+    },
+    {
+      "profile": "Material",
+      "profile_version": "1.0.0",
+      "passed": true,
+      "blocking_failures": [],
+      "failed_features": [
+        "FET006_Materials.MDL.0-3-0",
+        "FET006_Materials.Openpbr.0-2-0"
+      ],
+      "elapsed_s": 1.161
+    },
+    {
+      "profile": "NuRec",
+      "profile_version": "1.0.0",
+      "passed": false,
+      "blocking_failures": [
+        "FET012_GaussianSplat.0-1-0"
+      ],
+      "failed_features": [
+        "FET012_GaussianSplat.0-1-0"
+      ],
+      "elapsed_s": 0.148
+    },
+    {
+      "profile": "Open-Taxonomy-ADE20K",
+      "profile_version": "0.1.0",
+      "passed": false,
+      "blocking_failures": [
+        "CAP000_Core.0-1-0"
+      ],
+      "failed_features": [
+        "CAP000_Core.0-1-0"
+      ],
+      "elapsed_s": 0.094
+    },
+    {
+      "profile": "Open-Taxonomy-COCO",
+      "profile_version": "0.1.0",
+      "passed": false,
+      "blocking_failures": [
+        "CAP000_Core.0-1-0"
+      ],
+      "failed_features": [
+        "CAP000_Core.0-1-0"
+      ],
+      "elapsed_s": 0.091
+    },
+    {
+      "profile": "Open-Taxonomy-Cityscapes",
+      "profile_version": "0.1.0",
+      "passed": false,
+      "blocking_failures": [
+        "CAP000_Core.0-1-0"
+      ],
+      "failed_features": [
+        "CAP000_Core.0-1-0"
+      ],
+      "elapsed_s": 0.103
+    },
+    {
+      "profile": "Open-Taxonomy-ImageNet1K",
+      "profile_version": "0.1.0",
+      "passed": false,
+      "blocking_failures": [
+        "CAP000_Core.0-1-0"
+      ],
+      "failed_features": [
+        "CAP000_Core.0-1-0"
+      ],
+      "elapsed_s": 0.087
+    },
+    {
+      "profile": "Open-Taxonomy-PascalVOC",
+      "profile_version": "0.1.0",
+      "passed": false,
+      "blocking_failures": [
+        "CAP000_Core.0-1-0"
+      ],
+      "failed_features": [
+        "CAP000_Core.0-1-0"
+      ],
+      "elapsed_s": 0.149
+    },
+    {
+      "profile": "Open-Taxonomy-SUNRGBD",
+      "profile_version": "0.1.0",
+      "passed": false,
+      "blocking_failures": [
+        "CAP000_Core.0-1-0"
+      ],
+      "failed_features": [
+        "CAP000_Core.0-1-0"
+      ],
+      "elapsed_s": 0.122
+    },
+    {
+      "profile": "Package",
+      "result": null,
+      "note": "unavailable_execution (不是 measured failure)"
+    },
+    {
+      "profile": "Package-Candidate",
+      "profile_version": "1.3.0",
+      "passed": true,
+      "blocking_failures": [],
+      "failed_features": [],
+      "elapsed_s": 0.053
+    },
+    {
+      "profile": "Package-NoBOM",
+      "result": null,
+      "note": "unavailable_execution (不是 measured failure)"
+    },
+    {
+      "profile": "Robot-Assembly",
+      "profile_version": "0.1.0",
+      "passed": false,
+      "blocking_failures": [
+        "CAP027_Connections.0-1-0",
+        "CAP029_ConnectionJoint.0-1-0",
+        "FET004_Multibody.0-2-0",
+        "FET022_DrivenJoints.0-2-0"
+      ],
+      "failed_features": [
+        "CAP027_Connections.0-1-0",
+        "CAP029_ConnectionJoint.0-1-0",
+        "FET004_Multibody.0-2-0",
+        "FET022_DrivenJoints.0-2-0"
+      ],
+      "elapsed_s": 0.232
+    },
+    {
+      "profile": "Robot-Body",
+      "profile_version": "4.0.0",
+      "passed": false,
+      "blocking_failures": [
+        "CAP000_Core.Newton.0-2-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP004_Multibody.RobotMuJoCo.0-1-0",
+        "CAP022_DrivenJoints.MuJoCo.0-1-0",
+        "CAP024_BaseArticulation.Newton.0-1-0",
+        "FET004_Multibody.0-2-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.PhysX.0-4-0",
+        "FET004_Multibody.RobotNewton.0-1-0",
+        "FET022_DrivenJoints.0-2-0",
+        "FET022_DrivenJoints.Isaac.0-2-0",
+        "FET022_DrivenJoints.PhysX.0-2-0",
+        "FET022_DrivenJoints.Newton.0-1-0"
+      ],
+      "failed_features": [
+        "CAP000_Core.Isaac.0-2-0",
+        "CAP000_Core.MuJoCo.0-2-0",
+        "CAP000_Core.Newton.0-2-0",
+        "CAP000_Core.PhysX.0-2-0",
+        "CAP003_RigidBody.MuJoCo.0-1-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP004_Multibody.RobotMuJoCo.0-1-0",
+        "CAP021_RobotCore.Isaac.0-3-0",
+        "CAP022_DrivenJoints.MuJoCo.0-1-0",
+        "CAP024_BaseArticulation.Newton.0-1-0",
+        "CAP025_RosBridge.Ros.0-1-0",
+        "CAP100_IsaacComposition.Isaac.0-3-0",
+        "FET004_Multibody.0-2-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.PhysX.0-4-0",
+        "FET004_Multibody.RobotNewton.0-1-0",
+        "FET006_Materials.MDL.0-3-0",
+        "FET006_Materials.Openpbr.0-2-0",
+        "FET010_DisplayColor.0-1-0",
+        "FET022_DrivenJoints.0-2-0",
+        "FET022_DrivenJoints.Isaac.0-2-0",
+        "FET022_DrivenJoints.PhysX.0-2-0",
+        "FET022_DrivenJoints.Newton.0-1-0"
+      ],
+      "elapsed_s": 1.05
+    },
+    {
+      "profile": "Robot-Gripper",
+      "profile_version": "4.0.0",
+      "passed": false,
+      "blocking_failures": [
+        "CAP000_Core.Newton.0-2-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP004_Multibody.RobotMuJoCo.0-1-0",
+        "CAP022_DrivenJoints.MuJoCo.0-1-0",
+        "CAP024_BaseArticulation.Newton.0-1-0",
+        "CAP028_Gripper.MuJoCo.0-1-0",
+        "FET004_Multibody.0-2-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.PhysX.0-4-0",
+        "FET004_Multibody.RobotNewton.0-1-0",
+        "FET004_Multibody.RobotPhysX.0-1-0",
+        "FET022_DrivenJoints.0-2-0",
+        "FET022_DrivenJoints.Isaac.0-1-0",
+        "FET022_DrivenJoints.PhysX.0-1-0",
+        "FET022_DrivenJoints.Isaac.0-2-0",
+        "FET022_DrivenJoints.PhysX.0-2-0",
+        "FET022_DrivenJoints.Newton.0-1-0",
+        "FET028_Gripper.Isaac.0-1-0"
+      ],
+      "failed_features": [
+        "CAP000_Core.MuJoCo.0-2-0",
+        "CAP000_Core.Newton.0-2-0",
+        "CAP000_Core.PhysX.0-2-0",
+        "CAP003_RigidBody.MuJoCo.0-1-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP004_Multibody.RobotMuJoCo.0-1-0",
+        "CAP021_RobotCore.Isaac.0-2-0",
+        "CAP022_DrivenJoints.MuJoCo.0-1-0",
+        "CAP024_BaseArticulation.Newton.0-1-0",
+        "CAP028_Gripper.MuJoCo.0-1-0",
+        "CAP100_IsaacComposition.Isaac.0-3-0",
+        "FET004_Multibody.0-2-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.PhysX.0-4-0",
+        "FET004_Multibody.RobotNewton.0-1-0",
+        "FET004_Multibody.RobotPhysX.0-1-0",
+        "FET006_Materials.MDL.0-3-0",
+        "FET006_Materials.Openpbr.0-2-0",
+        "FET010_DisplayColor.0-1-0",
+        "FET022_DrivenJoints.0-2-0",
+        "FET022_DrivenJoints.Isaac.0-1-0",
+        "FET022_DrivenJoints.PhysX.0-1-0",
+        "FET022_DrivenJoints.Isaac.0-2-0",
+        "FET022_DrivenJoints.PhysX.0-2-0",
+        "FET022_DrivenJoints.Newton.0-1-0",
+        "FET028_Gripper.Isaac.0-1-0"
+      ],
+      "elapsed_s": 1.005
+    },
+    {
+      "profile": "Robotics-Prop",
+      "profile_version": "5.0.0",
+      "passed": true,
+      "blocking_failures": [],
+      "failed_features": [
+        "CAP000_Core.MuJoCo.0-2-0",
+        "CAP000_Core.Newton.0-2-0",
+        "CAP000_Core.PhysX.0-2-0",
+        "CAP003_RigidBody.MuJoCo.0-1-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP007_NonVisualMaterials.0-2-0",
+        "CAP100_IsaacComposition.Isaac.0-4-0",
+        "FET004_Multibody.0-2-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.PhysX.0-4-0",
+        "FET005_Grasp.0-1-0",
+        "FET006_Materials.MDL.0-3-0",
+        "FET006_Materials.Openpbr.0-2-0",
+        "FET010_DisplayColor.0-1-0"
+      ],
+      "elapsed_s": 0.979
+    }
+  ],
+  "official_package": {
+    "rc": 0,
+    "stdout_tail": "pre-validation [Package-Candidate 1.3.0]: passed (demo_classic.usda)\npost-validation [Package 1.0.0]: passed\ncreated demo_classic@1.0.0 in output\\usd\\_simready_work\\demo_classic_package\n",
+    "stderr_tail": "",
+    "package_files": [
+      ".metadata/com.nvidia.simready.conformance.Package-Candidate@1.3.0.json",
+      ".metadata/com.nvidia.simready.conformance.Package@1.0.0.json",
+      ".metadata/com.nvidia.simready.packaging.bom.json",
+      ".metadata/com.nvidia.simready.root_usds.json",
+      ".thumbs/256x256/demo_classic.usda.png",
+      ".thumbs/256x256/demo_classic.usda_light.png",
+      "com.nvidia.simready.packaging.json",
+      "demo_classic.json",
+      "demo_classic.usda",
+      "textures/demo_classic_albedo.png",
+      "textures/demo_classic_orm.png",
+      "textures/demo_organic_albedo.png"
+    ]
+  },
+  "package_level_evidence": {
+    "conformance_files": {
+      "com.nvidia.simready.conformance.Package-Candidate@1.3.0.json": {
+        "profile": "Package-Candidate",
+        "profile_version": "1.3.0",
+        "features": {
+          "CAP031_SelfContainedPackage.0-1-0": {
+            "passed": true,
+            "failing_requirements": []
+          },
+          "CAP033_SimReadyPackage.0-4-0": {
+            "passed": true,
+            "failing_requirements": []
+          }
+        }
+      },
+      "com.nvidia.simready.conformance.Package@1.0.0.json": {
+        "profile": "Package",
+        "profile_version": "1.0.0",
+        "features": {
+          "CAP030_PackagingCore.0-1-0": {
+            "passed": true,
+            "failing_requirements": []
+          },
+          "CAP032_PackagingIntrospection.0-1-0": {
+            "passed": true,
+            "failing_requirements": []
+          }
+        }
+      }
+    },
+    "package_no_bom": {
+      "profile_version": "1.0.0",
+      "features": {
+        "CAP030_PackagingCore.0-1-0": {
+          "passed": true
+        }
+      }
+    }
+  },
+  "official_validate_package": [
+    {
+      "profile": "Assembly",
+      "profile_version": "0.1.0",
+      "passed": false,
+      "blocking_failures": [
+        "CAP027_Connections.0-1-0",
+        "CAP029_ConnectionJoint.0-1-0",
+        "CAP029_ConnectionJoint.MuJoCo.0-1-0",
+        "CAP029_ConnectionJoint.Newton.0-1-0",
+        "CAP029_ConnectionJoint.PhysX.0-1-0"
+      ],
+      "failed_features": [
+        "CAP027_Connections.0-1-0",
+        "CAP029_ConnectionJoint.0-1-0",
+        "CAP029_ConnectionJoint.MuJoCo.0-1-0",
+        "CAP029_ConnectionJoint.Newton.0-1-0",
+        "CAP029_ConnectionJoint.PhysX.0-1-0",
+        "FET004_Multibody.0-2-0"
+      ],
+      "elapsed_s": 0.124
+    },
+    {
+      "profile": "Material",
+      "profile_version": "1.0.0",
+      "passed": true,
+      "blocking_failures": [],
+      "failed_features": [
+        "FET006_Materials.MDL.0-3-0",
+        "FET006_Materials.Openpbr.0-2-0"
+      ],
+      "elapsed_s": 0.394
+    },
+    {
+      "profile": "NuRec",
+      "profile_version": "1.0.0",
+      "passed": false,
+      "blocking_failures": [
+        "FET012_GaussianSplat.0-1-0"
+      ],
+      "failed_features": [
+        "FET012_GaussianSplat.0-1-0"
+      ],
+      "elapsed_s": 0.067
+    },
+    {
+      "profile": "Open-Taxonomy-ADE20K",
+      "profile_version": "0.1.0",
+      "passed": false,
+      "blocking_failures": [
+        "CAP000_Core.0-1-0"
+      ],
+      "failed_features": [
+        "CAP000_Core.0-1-0"
+      ],
+      "elapsed_s": 0.048
+    },
+    {
+      "profile": "Open-Taxonomy-COCO",
+      "profile_version": "0.1.0",
+      "passed": false,
+      "blocking_failures": [
+        "CAP000_Core.0-1-0"
+      ],
+      "failed_features": [
+        "CAP000_Core.0-1-0"
+      ],
+      "elapsed_s": 0.032
+    },
+    {
+      "profile": "Open-Taxonomy-Cityscapes",
+      "profile_version": "0.1.0",
+      "passed": false,
+      "blocking_failures": [
+        "CAP000_Core.0-1-0"
+      ],
+      "failed_features": [
+        "CAP000_Core.0-1-0"
+      ],
+      "elapsed_s": 0.035
+    },
+    {
+      "profile": "Open-Taxonomy-ImageNet1K",
+      "profile_version": "0.1.0",
+      "passed": false,
+      "blocking_failures": [
+        "CAP000_Core.0-1-0"
+      ],
+      "failed_features": [
+        "CAP000_Core.0-1-0"
+      ],
+      "elapsed_s": 0.028
+    },
+    {
+      "profile": "Open-Taxonomy-PascalVOC",
+      "profile_version": "0.1.0",
+      "passed": false,
+      "blocking_failures": [
+        "CAP000_Core.0-1-0"
+      ],
+      "failed_features": [
+        "CAP000_Core.0-1-0"
+      ],
+      "elapsed_s": 0.033
+    },
+    {
+      "profile": "Open-Taxonomy-SUNRGBD",
+      "profile_version": "0.1.0",
+      "passed": false,
+      "blocking_failures": [
+        "CAP000_Core.0-1-0"
+      ],
+      "failed_features": [
+        "CAP000_Core.0-1-0"
+      ],
+      "elapsed_s": 0.037
+    },
+    {
+      "profile": "Package",
+      "result": null,
+      "note": "unavailable_execution (不是 measured failure)"
+    },
+    {
+      "profile": "Package-Candidate",
+      "profile_version": "1.3.0",
+      "passed": true,
+      "blocking_failures": [],
+      "failed_features": [],
+      "elapsed_s": 0.02
+    },
+    {
+      "profile": "Package-NoBOM",
+      "result": null,
+      "note": "unavailable_execution (不是 measured failure)"
+    },
+    {
+      "profile": "Robot-Assembly",
+      "profile_version": "0.1.0",
+      "passed": false,
+      "blocking_failures": [
+        "CAP027_Connections.0-1-0",
+        "CAP029_ConnectionJoint.0-1-0",
+        "FET004_Multibody.0-2-0",
+        "FET022_DrivenJoints.0-2-0"
+      ],
+      "failed_features": [
+        "CAP027_Connections.0-1-0",
+        "CAP029_ConnectionJoint.0-1-0",
+        "FET004_Multibody.0-2-0",
+        "FET022_DrivenJoints.0-2-0"
+      ],
+      "elapsed_s": 0.116
+    },
+    {
+      "profile": "Robot-Body",
+      "profile_version": "4.0.0",
+      "passed": false,
+      "blocking_failures": [
+        "CAP000_Core.Newton.0-2-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP004_Multibody.RobotMuJoCo.0-1-0",
+        "CAP022_DrivenJoints.MuJoCo.0-1-0",
+        "CAP024_BaseArticulation.Newton.0-1-0",
+        "FET004_Multibody.0-2-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.PhysX.0-4-0",
+        "FET004_Multibody.RobotNewton.0-1-0",
+        "FET022_DrivenJoints.0-2-0",
+        "FET022_DrivenJoints.Isaac.0-2-0",
+        "FET022_DrivenJoints.PhysX.0-2-0",
+        "FET022_DrivenJoints.Newton.0-1-0"
+      ],
+      "failed_features": [
+        "CAP000_Core.Isaac.0-2-0",
+        "CAP000_Core.MuJoCo.0-2-0",
+        "CAP000_Core.Newton.0-2-0",
+        "CAP000_Core.PhysX.0-2-0",
+        "CAP003_RigidBody.MuJoCo.0-1-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP004_Multibody.RobotMuJoCo.0-1-0",
+        "CAP021_RobotCore.Isaac.0-3-0",
+        "CAP022_DrivenJoints.MuJoCo.0-1-0",
+        "CAP024_BaseArticulation.Newton.0-1-0",
+        "CAP025_RosBridge.Ros.0-1-0",
+        "CAP100_IsaacComposition.Isaac.0-3-0",
+        "FET004_Multibody.0-2-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.PhysX.0-4-0",
+        "FET004_Multibody.RobotNewton.0-1-0",
+        "FET006_Materials.MDL.0-3-0",
+        "FET006_Materials.Openpbr.0-2-0",
+        "FET010_DisplayColor.0-1-0",
+        "FET022_DrivenJoints.0-2-0",
+        "FET022_DrivenJoints.Isaac.0-2-0",
+        "FET022_DrivenJoints.PhysX.0-2-0",
+        "FET022_DrivenJoints.Newton.0-1-0"
+      ],
+      "elapsed_s": 0.431
+    },
+    {
+      "profile": "Robot-Gripper",
+      "profile_version": "4.0.0",
+      "passed": false,
+      "blocking_failures": [
+        "CAP000_Core.Newton.0-2-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP004_Multibody.RobotMuJoCo.0-1-0",
+        "CAP022_DrivenJoints.MuJoCo.0-1-0",
+        "CAP024_BaseArticulation.Newton.0-1-0",
+        "CAP028_Gripper.MuJoCo.0-1-0",
+        "FET004_Multibody.0-2-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.PhysX.0-4-0",
+        "FET004_Multibody.RobotNewton.0-1-0",
+        "FET004_Multibody.RobotPhysX.0-1-0",
+        "FET022_DrivenJoints.0-2-0",
+        "FET022_DrivenJoints.Isaac.0-1-0",
+        "FET022_DrivenJoints.PhysX.0-1-0",
+        "FET022_DrivenJoints.Isaac.0-2-0",
+        "FET022_DrivenJoints.PhysX.0-2-0",
+        "FET022_DrivenJoints.Newton.0-1-0",
+        "FET028_Gripper.Isaac.0-1-0"
+      ],
+      "failed_features": [
+        "CAP000_Core.MuJoCo.0-2-0",
+        "CAP000_Core.Newton.0-2-0",
+        "CAP000_Core.PhysX.0-2-0",
+        "CAP003_RigidBody.MuJoCo.0-1-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP004_Multibody.RobotMuJoCo.0-1-0",
+        "CAP021_RobotCore.Isaac.0-2-0",
+        "CAP022_DrivenJoints.MuJoCo.0-1-0",
+        "CAP024_BaseArticulation.Newton.0-1-0",
+        "CAP028_Gripper.MuJoCo.0-1-0",
+        "CAP100_IsaacComposition.Isaac.0-3-0",
+        "FET004_Multibody.0-2-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.PhysX.0-4-0",
+        "FET004_Multibody.RobotNewton.0-1-0",
+        "FET004_Multibody.RobotPhysX.0-1-0",
+        "FET006_Materials.MDL.0-3-0",
+        "FET006_Materials.Openpbr.0-2-0",
+        "FET010_DisplayColor.0-1-0",
+        "FET022_DrivenJoints.0-2-0",
+        "FET022_DrivenJoints.Isaac.0-1-0",
+        "FET022_DrivenJoints.PhysX.0-1-0",
+        "FET022_DrivenJoints.Isaac.0-2-0",
+        "FET022_DrivenJoints.PhysX.0-2-0",
+        "FET022_DrivenJoints.Newton.0-1-0",
+        "FET028_Gripper.Isaac.0-1-0"
+      ],
+      "elapsed_s": 0.514
+    },
+    {
+      "profile": "Robotics-Prop",
+      "profile_version": "5.0.0",
+      "passed": true,
+      "blocking_failures": [],
+      "failed_features": [
+        "CAP000_Core.MuJoCo.0-2-0",
+        "CAP000_Core.Newton.0-2-0",
+        "CAP000_Core.PhysX.0-2-0",
+        "CAP003_RigidBody.MuJoCo.0-1-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP007_NonVisualMaterials.0-2-0",
+        "CAP100_IsaacComposition.Isaac.0-4-0",
+        "FET004_Multibody.0-2-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.PhysX.0-4-0",
+        "FET005_Grasp.0-1-0",
+        "FET006_Materials.MDL.0-3-0",
+        "FET006_Materials.Openpbr.0-2-0",
+        "FET010_DisplayColor.0-1-0"
+      ],
+      "elapsed_s": 0.477
+    }
+  ],
+  "not_done": [
+    "RB.001 物理刚体层 / SL.001 官方语义标签层 —— 属资产库产品线 (兄弟仓), 本轮只做打包链合规",
+    "官方 simready-benchmark (需 Isaac Sim 6.1, 本机没有)",
+    "官方 simready-manage 上传 / HF 发布 (未装)"
+  ]
+}

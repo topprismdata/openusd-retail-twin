@@ -15,7 +15,10 @@ AI 字段留空(不是生成式AI产物, 不得伪标); 商品/包装/审批关�
 import argparse, hashlib, json, os, platform, subprocess, sys, time
 
 REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-BLENDER = "/Applications/Blender.app/Contents/MacOS/Blender"
+sys.path.insert(0, REPO)
+from pipelines.common.runtime_env import blender_bin  # noqa: E402
+
+BLENDER = blender_bin()
 
 
 def sha256_file(p):

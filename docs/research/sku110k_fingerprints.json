@@ -1,0 +1,34 @@
+{
+ "train.txt": {
+  "sha256": "a63f1cc02475cac948b85ecdbaf350187679b5ad83886904aac0d6de9559c8eb",
+  "bytes": 204370
+ },
+ "val.txt": {
+  "sha256": "6233ea4c7fa82a93e36e3d8e2bf59a646624184ab45ef86052228bedfe9dd79e",
+  "bytes": 12826
+ },
+ "test.txt": {
+  "sha256": "ec5bcf3343130337f74d3cdf101e74c6af982c148b1972a74ed6f395db3eaeb8",
+  "bytes": 69355
+ },
+ "SKU-110K.yaml": {
+  "sha256": "e469320c2e05f7c9222f3e708d288edd4e242e872660155e26486553d286378a",
+  "bytes": 111
+ },
+ "prep_summary.json": {
+  "sha256": "eb0ab9a276e71331b2fb695b2633c6bc4f7b316a89b72ccd844c5498a9ab42af",
+  "bytes": 296
+ },
+ "labels_train_sample200": {
+  "sha256": "2386b9ecf2965f358f217445c606031301903b6c59f92b10b4e2030e66a3dc1b",
+  "n": 200
+ },
+ "labels_val_sample200": {
+  "sha256": "2a1400bb962e34a606a7352ec93be9280693356b721569a2cd6d36a0334fbfa7",
+  "n": 200
+ },
+ "labels_test_sample200": {
+  "sha256": "74398af879b6f2558474b63abf263e3d997622b050df2e9e30479ad4b946c89f",
+  "n": 200
+ }
+}

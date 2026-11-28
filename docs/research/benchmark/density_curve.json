@@ -1,0 +1,102 @@
+{
+  "schema": "density_curve/2",
+  "generated_by": "pipelines/shelf_sdg/45b_density_report.py",
+  "baseline": "budget_real1_synth0*.json (全量真实, 147.04 框/图)",
+  "linearity_check": {
+    "available": true,
+    "n_points": 3,
+    "monotone_increasing": true,
+    "middle_points": [
+      {
+        "boxes_per_image": 73.76,
+        "n_seeds": 3,
+        "map50_mean": 0.8623,
+        "log_linear_pred": 0.8696,
+        "residual_pp": -0.728
+      }
+    ],
+    "local_slopes": [
+      {
+        "from": 21.99,
+        "to": 73.76,
+        "pp_per_box": 0.03534
+      },
+      {
+        "from": 73.76,
+        "to": 147.04,
+        "pp_per_box": 0.02983
+      }
+    ],
+    "note": "残差 > 0 = 中间点高于两端点连线 (凹: 掉框的代价在低密度端更大); 残差 < 0 = 凸 (代价在高密度端更大)。线性近似成立 <=> |残差| 小 (相对 CI 宽度)。"
+  },
+  "points": [
+    {
+      "boxes_per_image": 147.04,
+      "n_seeds": 3,
+      "map50_mean": 0.8841720556146782,
+      "map50_sd": 0.0022538899651601356,
+      "per_seed": {
+        "42": 0.8861734762591966,
+        "43": 0.8817305966926205,
+        "44": 0.8846120938922174
+      },
+      "paired_diff_pp": null,
+      "paired_mean_pp": 0.0,
+      "paired_ci": [
+        0.0,
+        0.0
+      ],
+      "recall_mean": 0.8048933761668834,
+      "precision_mean": 0.8852841886220799,
+      "is_baseline": true
+    },
+    {
+      "boxes_per_image": 21.99,
+      "n_seeds": 3,
+      "map50_mean": 0.8440141360541185,
+      "map50_sd": 0.003880277048191746,
+      "per_seed": {
+        "42": 0.8459921392951966,
+        "43": 0.8395434426961568,
+        "44": 0.846506826171002
+      },
+      "paired_diff_pp": [
+        -4.018,
+        -4.219,
+        -3.811
+      ],
+      "paired_mean_pp": -4.0158,
+      "paired_ci": [
+        -4.5229,
+        -3.5087
+      ],
+      "recall_mean": 0.7058245736210984,
+      "precision_mean": 0.8987219741380134,
+      "is_baseline": false
+    },
+    {
+      "boxes_per_image": 73.76,
+      "n_seeds": 3,
+      "map50_mean": 0.8623101835866089,
+      "map50_sd": 0.003190901828069349,
+      "per_seed": {
+        "42": 0.8657296297710453,
+        "43": 0.8594120181019358,
+        "44": 0.8617889028868457
+      },
+      "paired_diff_pp": [
+        -2.044,
+        -2.232,
+        -2.282
+      ],
+      "paired_mean_pp": -2.1862,
+      "paired_ci": [
+        -2.4976,
+        -1.8747
+      ],
+      "recall_mean": 0.7865525893454355,
+      "precision_mean": 0.8583790115658196,
+      "is_baseline": false
+    }
+  ]
+}

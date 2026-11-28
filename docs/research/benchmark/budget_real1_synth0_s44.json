@@ -1,0 +1,100 @@
+{
+  "arm": "budget:real1_synth0_s44",
+  "dataset": {
+    "cell": {
+      "real_frac": 1.0,
+      "synth_n": 0
+    },
+    "n_real": 8219,
+    "n_synth": 0,
+    "real_subset_sha256": "9dc3067feafbebc3ebd9a5608b580c4f3820c42a8a726634b2fd0b50f93e3c6d",
+    "synth_subset_sha256": null,
+    "budget_seed": 20261120,
+    "eval_split": "test",
+    "eval_dir": "<SKU110K_ROOT>\\test.txt",
+    "eval_yaml_sha256": "e469320c2e05f7c9222f3e708d288edd4e242e872660155e26486553d286378a"
+  },
+  "actual_train_config": {
+    "epochs": 10,
+    "batch": 4,
+    "workers": 2,
+    "device": "cuda"
+  },
+  "protocol": {
+    "model": "yolo11n.pt",
+    "imgsz": 640,
+    "epochs": 10,
+    "batch": 4,
+    "workers": 2,
+    "cache": false,
+    "seed": 44,
+    "max_det": 1000,
+    "device": "auto",
+    "real_frac": 1.0,
+    "synth_n": 0,
+    "budget_seed": 20261120,
+    "select": "last"
+  },
+  "map50": 0.8846120938922174,
+  "map50_95": 0.529474962763598,
+  "precision": 0.8858500055939715,
+  "recall": 0.8059079456398536,
+  "wall_sec": 6599.5,
+  "checkpoint": {
+    "selection": "last",
+    "path": "output\\benchmark\\budget_runs_real1_synth0_s44\\train\\weights\\last.pt",
+    "sha256": "f8ea43e8d2fe2d833953b196069f24943668955a8fa2d2762e89b78052bf5bf3"
+  },
+  "protocol_manifest": {
+    "protocol": {
+      "model": "yolo11n.pt",
+      "imgsz": 640,
+      "epochs": 10,
+      "batch": 4,
+      "workers": 2,
+      "cache": false,
+      "seed": 44,
+      "max_det": 1000,
+      "device": "auto",
+      "real_frac": 1.0,
+      "synth_n": 0,
+      "budget_seed": 20261120,
+      "select": "last"
+    },
+    "data": {
+      "cell": {
+        "real_frac": 1.0,
+        "synth_n": 0
+      },
+      "n_real": 8219,
+      "n_synth": 0,
+      "real_subset_sha256": "9dc3067feafbebc3ebd9a5608b580c4f3820c42a8a726634b2fd0b50f93e3c6d",
+      "synth_subset_sha256": null,
+      "budget_seed": 20261120,
+      "eval_split": "test",
+      "eval_dir": "<SKU110K_ROOT>\\test.txt",
+      "eval_yaml_sha256": "e469320c2e05f7c9222f3e708d288edd4e242e872660155e26486553d286378a"
+    },
+    "splits": {},
+    "actual": {
+      "epochs": 10,
+      "batch": 4,
+      "workers": 2,
+      "device": "cuda",
+      "wall_sec": 6599.5
+    },
+    "deps": {
+      "python": "3.13.12",
+      "platform": "win32",
+      "torch": "2.6.0+cu124",
+      "ultralytics": "8.4.216",
+      "numpy": "2.5.5",
+      "PIL": "13.0.0"
+    },
+    "checkpoint": {},
+    "extra": {},
+    "protocol_hash": "7241a629c390e146",
+    "protocol_hash_legacy": "6d96800b0f3acb00"
+  },
+  "protocol_hash": "7241a629c390e146"
+}

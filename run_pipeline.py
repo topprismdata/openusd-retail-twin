@@ -28,8 +28,16 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-BLENDER = os.environ.get("BLENDER_BIN", "/Applications/Blender.app/Contents/MacOS/Blender")
+sys.path.insert(0, str(ROOT))
+from pipelines.common.runtime_env import available_memory_gb, blender_bin  # noqa: E402
+
+# Blender 路径: 环境变量 BLENDER_BIN > 平台默认安装位置 > PATH (见 runtime_env.blender_bin)
+BLENDER = blender_bin()
 RUN_DIR = ROOT / "output" / "pipeline_runs"
+
+# 全局随机种子 (2026-11-20): 由 --seed 设定, 透传给 SDG 生成与训练臂。
+# 此前 SDG 用固定 42、训练臂不设种子 -> 同一命令两次跑出不同结果, 不可复现。
+SEED = 42
 
 
 def stage(name):
@@ -68,9 +76,14 @@ def st_gate_ecom(draft):
 
 @stage("sdg")
 def st_sdg(draft):
-    n, s = ("4", "32") if draft else ("20", "64")
+    # 2026-11-20: 草档用 5 张 (不是 4) —— 划分周期为 5 (val_ratio 0.2),
+    # 4 张时 idx 0..3 全部落进 train, 验证集为空 -> YOLO 训练臂无 val 可用。
+    n, s = ("5", "32") if draft else ("20", "64")
+    # 2026-11-21 (审计 F6): 显式声明场景级留出 —— 每 4 张图一个场景,
+    # 一个场景的全部图像同属一个 split, train/val 的场景集合互不相交。
     return [BLENDER, "-b", "-P", "pipelines/shelf_sdg/02_shelf_sdg_inspector.py", "--",
-            "--num-images", n, "--samples", s], ROOT
+            "--num-images", n, "--samples", s, "--seed", str(SEED),
+            "--split-mode", "scene", "--images-per-scene", "4"], ROOT
 
 
 @stage("train")
@@ -86,35 +99,46 @@ def st_train(draft):
         return (None, None)
     free_gb = _avail_mem_gb()
     env = dict(os.environ)
-    note = f"可用内存 {free_gb:.0f}GB"
+    device = _train_device()
+    note = f"可用内存 {free_gb:.0f}GB / 训练设备 {device}"
     if free_gb < 10:
         STAGE_LOG.append({"stage": "train", "exit": 0, "sec": 0.0, "status": "SKIPPED",
                           "note": note + " <10GB, 内存门拒跑"})
         print(f"⏭️  [train] SKIPPED: {note} <10GB (内存硬约束)")
         return (None, None)
-    if free_gb < 18:
-        env["PYTORCH_MPS_HIGH_WATERMARK_RATIO"] = "0.5"
-        note += " <18GB, 已限 MPS watermark 0.5"
+    if free_gb < 18 and device == "cuda":
+        env["PYTORCH_CUDA_ALLOC_CONF"] = env.get("PYTORCH_CUDA_ALLOC_CONF",
+                                                  "max_split_size_mb:512")
+        note += " <18GB, 已限 CUDA 分配上限"
+    elif free_gb < 18 and device == "mps":
+        # 2026-11-18 审计: 仓内自记 (14_sku110k_baseline.py:23-24) 明确"不用 HIGH_WATERMARK_RATIO
+        # (语义为 >=1, 设 <1 会 RuntimeError)", 而此处却设 0.5 -> 自相矛盾且会抛错。
+        # MPS 侧的内存纪律改为沿用 05_train_yolo_mps.py 里的 batch/workers 参数。
+        note += " <18GB, MPS 侧靠 batch/workers 控 footprint (不用 watermark 变量)"
     epochs = "2" if draft else "10"
     print(f"ℹ️  [train] {note}; epochs={epochs} (SDG 数据集: output/sdg_shelf)")
-    return ([sys.executable, "pipelines/shelf_sdg/05_train_yolo_mps.py", "--epochs", epochs], ROOT, env)
+    return ([sys.executable, "pipelines/shelf_sdg/05_train_yolo_mps.py", "--epochs", epochs,
+             "--seed", str(SEED)], ROOT, env)
 
 
 def _avail_mem_gb():
+    """可用物理内存 (GB)。跨平台实现见 runtime_env.available_memory_gb。"""
+    return available_memory_gb()
+
+
+def _train_device():
+    """训练设备: cuda > mps > cpu (与 05_train_yolo_mps.py 的 device 选择一致)。"""
     try:
-        out = subprocess.run(["vm_stat"], capture_output=True, text=True, timeout=10).stdout
-        page = int(out.split("page size of")[1].split()[0])
-        free = inactive = spec = 0
-        for line in out.splitlines():
-            if line.startswith("Pages free"):
-                free = int(line.split(":")[1].strip().rstrip("."))
-            elif line.startswith("Pages inactive"):
-                inactive = int(line.split(":")[1].strip().rstrip("."))
-            elif line.startswith("Pages speculative"):
-                spec = int(line.split(":")[1].strip().rstrip("."))
-        return (free + inactive + spec) * page / 2**30
+        import torch  # noqa: F401
+
+        if torch.cuda.is_available():
+            return "cuda"
+        mps = getattr(torch.backends, "mps", None)
+        if mps is not None and mps.is_available():
+            return "mps"
     except Exception:
-        return 999.0  # 无法探测时不阻拦
+        pass
+    return "cpu"
 
 
 @stage("topprism")
@@ -137,7 +161,29 @@ def st_pack(draft):
 
 @stage("report")
 def st_report(draft):
-    """汇总阶段账目与最近一次 QA 报告 -> output/pipeline_runs/summary.json"""
+    """汇总阶段账目与最近一次 QA 报告 -> output/pipeline_runs/summary.json
+
+    2026-11-21: 审计行动 "把 18_four_arm_report.py 纳入编排" —— 报告生成器原本只能手动跑,
+    容易被忘记, 导致仓里的数字与产物脱节。现在编排的 report 阶段会把
+    (a) 四臂+预算报告 (b) 产物清单 一并重生成 (都是纯 CPU, 无产物时自动跳过)。
+    """
+    units = []
+    # 只有在真的跑过基准 (output/benchmark 存在) 时才重生成报告与清单 ——
+    # 否则 CI 的草档回归会无意义地改写仓内已发布的文件。
+    if (ROOT / "output/benchmark").exists():
+        units.append(([sys.executable, "pipelines/shelf_sdg/18_four_arm_report.py"], ROOT))
+        if (ROOT / "docs/research/benchmark").exists():
+            # 2026-11-22: 先发布 (拷贝 + 行尾归一), 再刷清单 —— 清单里的 sha256 必须
+            # 是**归一后**的文件内容, 顺序反了清单就对不上 (自检 28 会报不一致)。
+            units.append(([sys.executable, "pipelines/shelf_sdg/26_publish_artifacts.py"], ROOT))
+            units.append(([sys.executable, "pipelines/shelf_sdg/24_publish_manifest.py"], ROOT))
+    # 文档一致性自检: 文档里引用的 protocol_hash / 清单 sha256 / 关键数值必须与产物对得上
+    units.append(([sys.executable, "pipelines/shelf_sdg/28_doc_consistency_check.py"], ROOT))
+    return units
+
+
+def write_summary():
+    """阶段账目 + 最近一次 QA 报告 -> output/pipeline_runs/summary_<ts>.json"""
     RUN_DIR.mkdir(parents=True, exist_ok=True)
     qa = ROOT / "output/qa_gate_report.json"
     summary = {"stages": STAGE_LOG, "qa_gate_report": None}
@@ -149,7 +195,6 @@ def st_report(draft):
     out = RUN_DIR / f"summary_{time.strftime('%Y%m%d_%H%M%S')}.json"
     out.write_text(json.dumps(summary, ensure_ascii=False, indent=2))
     print(f"[report] 账目已写 {out}")
-    return None, None
 
 
 STAGE_LOG = []
@@ -179,7 +224,11 @@ def main():
     ap.add_argument("--keep-going", action="store_true")
     ap.add_argument("--only", default="", help="逗号分隔阶段名过滤")
     ap.add_argument("--stage-timeout", type=int, default=900)
+    ap.add_argument("--seed", type=int, default=42,
+                    help="全局随机种子 (SDG 生成 + YOLO 训练臂), 默认 42")
     a = ap.parse_args()
+    global SEED
+    SEED = a.seed
     if not Path(BLENDER).exists():
         sys.exit(f"Blender 不存在: {BLENDER} (可 env BLENDER_BIN 覆盖)")
 
@@ -210,9 +259,10 @@ def main():
                 failed.append(tag)
                 if not a.keep_going:
                     print(f"\n⛔ fail-fast 于 [{tag}] — 后续阶段中止 (--keep-going 可跑完)")
-                    st_report(a.draft)
+                    write_summary()
                     sys.exit(1)
 
+    write_summary()
     print("\n" + "=" * 52)
     for e in STAGE_LOG:
         mark = {"SKIPPED": "⏭️"}.get(e.get("status"), "✅" if e["exit"] == 0 else "❌")

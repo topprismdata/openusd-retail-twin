@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-11-27T23:13:48",
+  "script": "pipelines/shelf_sdg/82_asset_gate_report.py",
+  "reuses": "pipelines/ecommerce/12_asset_spec_gate.py",
+  "sku": "demo_classic",
+  "spec_dims_mm": [
+    48.0,
+    38.0,
+    113.0
+  ],
+  "overall": "PASS",
+  "checks": {
+    "origin_units": {
+      "verdict": "PASS",
+      "detail": "bottom=0.00mm center=(0.0,0.0)mm dims=(48.0,38.0,113.0)mm spec=(48.0, 38.0, 113.0)"
+    },
+    "topology": {
+      "verdict": "PASS",
+      "detail": "ngons=0 nonmanifold_edges=0 tris=188"
+    },
+    "uv_01": {
+      "verdict": "PASS",
+      "detail": "uv range [0.0293,0.9961]"
+    },
+    "uv_atlas": {
+      "verdict": "PASS",
+      "detail": "min_gap=32px overlaps=[] gutter_std=5.9"
+    },
+    "export_targets": {
+      "verdict": "PASS",
+      "detail": "materials=2 mimes=['image/webp'] lights=False size=0.18MB"
+    }
+  },
+  "note": "自研闸门检查的是 GLB/网格侧 (Khronos 发布目标), 不是 USD stage; 官方 SimReady 验的是 USD 资产 -> 两者覆盖面不同, 详见 84 号差异报告"
+}

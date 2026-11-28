@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-11-28T07:31:27",
+  "script": "pipelines/ecommerce/88_asset_consume_check.py",
+  "consumer": "Blender (bpy wheel) 的 USD 导入器 —— 真实下游消费者",
+  "usd": "output/usd/_simready_work/demo_classic_package/demo_classic.usda",
+  "objects": 4,
+  "meshes": 3,
+  "materials": [
+    "M_cap_kraft_lowcarbon",
+    "M_pack_kraft_lowcarbon"
+  ],
+  "material_slots": {
+    "M_cap": [
+      "M_cap_kraft_lowcarbon"
+    ],
+    "M_lip": [
+      "M_cap_kraft_lowcarbon"
+    ],
+    "M_pack": [
+      "M_pack_kraft_lowcarbon"
+    ]
+  },
+  "textures": [
+    "output/usd/_simready_work/demo_classic_package/textures/demo_classic_albedo.png",
+    "output/usd/_simready_work/demo_classic_package/textures/demo_classic_orm.png"
+  ],
+  "tallest_axis_in_consumer_world": "Z",
+  "standing_up": true,
+  "verdict": "materials_bound"
+}

@@ -1,0 +1,71 @@
+{
+  "arm": "real0.05",
+  "n_images": 600,
+  "conf": 0.35,
+  "count_mae": 20.76,
+  "count_mape_pct": 13.76,
+  "pearson_r": 0.7,
+  "mean_pred": 134.1,
+  "mean_gt": 146.1,
+  "conf_sweep": [
+    {
+      "conf": 0.15,
+      "count_mae": 39.19,
+      "count_mape_pct": 28.2,
+      "pearson_r": 0.684,
+      "mean_pred": 183.0
+    },
+    {
+      "conf": 0.25,
+      "count_mae": 20.26,
+      "count_mape_pct": 14.26,
+      "pearson_r": 0.731,
+      "mean_pred": 154.7
+    },
+    {
+      "conf": 0.35,
+      "count_mae": 20.76,
+      "count_mape_pct": 13.76,
+      "pearson_r": 0.7,
+      "mean_pred": 134.1
+    },
+    {
+      "conf": 0.5,
+      "count_mae": 42.62,
+      "count_mape_pct": 27.81,
+      "pearson_r": 0.466,
+      "mean_pred": 104.3
+    },
+    {
+      "conf": 0.65,
+      "count_mae": 81.1,
+      "count_mape_pct": 54.1,
+      "pearson_r": 0.156,
+      "mean_pred": 65.0
+    }
+  ],
+  "sample": {
+    "seed": 20261120,
+    "n_pool": 2936,
+    "n_sampled": 600,
+    "names_sha256": "439017496399f6de51903168a77bfa0f90e619e3b9bff5f756b6781265c077ee",
+    "list_path": "output/benchmark/count_sample_real0.05.txt",
+    "list_sha256": "4c90859c0561fd5c3502f4b93a931847e999d6d5b04debe790b45ffb9d5ace0e",
+    "policy": "random sample with fixed seed (2026-11-20 替代'排序取前600')"
+  },
+  "weights": {
+    "path": "output/benchmark/budget_runs_real0.05_synth0/train/weights/last.pt",
+    "sha256": "cebe040b2c11a67904ad628d6f11a8259bb3bc58db1c80b85c4b42bb6a14f061"
+  },
+  "device": "cuda",
+  "deps": {
+    "python": "3.13.12",
+    "platform": "win32",
+    "torch": "2.6.0+cu124",
+    "ultralytics": "8.4.216",
+    "numpy": "2.5.5",
+    "PIL": "13.0.0"
+  },
+  "arm_renamed_from": "pilot",
+  "arm_label_note": "2026-11-22: 该臂是**预算臂 5% 真实 / 0 合成 / 10 epoch** 的权重(sha256 见 weights.sha256); 原 arm 名 'pilot' 是 2 epoch 冒烟权重的旧称, 为避免与已发布的 count_pilot.json (2ep, MAE 29.13) 混淆而改名。"
+}

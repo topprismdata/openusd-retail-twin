@@ -1,0 +1,30 @@
+{
+  "schema": "paired_image_eval/1",
+  "generated_by": "pipelines/shelf_sdg/25_paired_image_eval.py",
+  "n_images": 2936,
+  "split": "test",
+  "weights": {
+    "5% 真实 (seed 44) 无合成": "output\\benchmark\\budget_runs_real0.05_synth0_s44\\train\\weights\\last.pt",
+    "5% 真实 (seed 44) +160 合成": "output\\benchmark\\budget_runs_real0.05_synth200_s44\\train\\weights\\last.pt"
+  },
+  "per_image_ap50_mean": {
+    "5% 真实 (seed 44) 无合成": 0.7873311285203624,
+    "5% 真实 (seed 44) +160 合成": 0.7906060941953145
+  },
+  "per_image_ap50_std": {
+    "5% 真实 (seed 44) 无合成": 0.17028175090709347,
+    "5% 真实 (seed 44) +160 合成": 0.17177171431379842
+  },
+  "pooled_ap50": {
+    "5% 真实 (seed 44) 无合成": 0.7829884939503879,
+    "5% 真实 (seed 44) +160 合成": 0.7848777111897888
+  },
+  "pooled_ap50_note": "pooled AP@0.5 与 ultralytics 报告的 mAP@0.5 同口径, 用于校验本脚本实现; 逐图 AP 的均值**不等于**数据集级 mAP (聚合方式不同: 每图等权 vs 按检测数加权), 只有配对差值用于推断。",
+  "paired_diff_mean": 0.003274965674952202,
+  "paired_diff_std": 0.037995673132497736,
+  "paired_t": 4.67036298041794,
+  "images_b_better": 1544,
+  "images_worse": 1389,
+  "images_tied": 3,
+  "note": "逐图 AP@0.5 (101 点插值); 配对 t 值按 n=图数 计算。差值的符号: 正= B 更好。这是评测集侧的检验 (n=图数), 与训练 seed 方差是两个独立的噪声源。"
+}

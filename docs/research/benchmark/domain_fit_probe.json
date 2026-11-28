@@ -1,0 +1,581 @@
+{
+  "schema": "domain_fit_probe/1",
+  "generated_by": "pipelines/shelf_sdg/51_domain_fit_probe.py",
+  "measured_at": "2026-11-24",
+  "question": "纯合成臂: 域内(自己池 val)能不能学会? 学会��到真实域还剩多少? -> 决定下一步是修数据生成器还是投渲染真实度",
+  "arms": {
+    "r1": "runs_r1_s{seed}",
+    "r1shape": "runs_r1shape_s{seed}",
+    "r3pm": "runs_R3pm_s{seed}"
+  },
+  "pools": {
+    "pool_r1": {
+      "yaml": "output\\benchmark\\synth_single\\dataset.yaml",
+      "split": "val"
+    },
+    "pool_shape": {
+      "yaml": "output\\benchmark\\synth_single_shape\\dataset.yaml",
+      "split": "val"
+    },
+    "pool_r3pm": {
+      "yaml": "output\\benchmark\\synth_single_R3pm\\dataset.yaml",
+      "split": "val"
+    },
+    "pool_big": {
+      "yaml": "output\\benchmark\\synth_bigpool\\dataset.yaml",
+      "split": "val"
+    },
+    "real_test": {
+      "yaml": "<SKU110K_ROOT>\\SKU-110K.yaml",
+      "split": "test"
+    }
+  },
+  "per_record": [
+    {
+      "arm": "r1",
+      "seed": 43,
+      "ckpt": "best.pt",
+      "checkpoint": "output/benchmark/runs_r1_s43/train/weights/best.pt",
+      "evals": {
+        "pool_r1": {
+          "map50": 0.995,
+          "map50_95": 0.9676156810944665
+        },
+        "pool_shape": {
+          "map50": 0.9147743189361127,
+          "map50_95": 0.7462547673300703
+        },
+        "pool_r3pm": {
+          "map50": 0.9735498651577495,
+          "map50_95": 0.9000878018730163
+        },
+        "pool_big": null,
+        "real_test": {
+          "map50": 0.2436427600965972,
+          "map50_95": 0.08997437329530268
+        }
+      }
+    },
+    {
+      "arm": "r1",
+      "seed": 43,
+      "ckpt": "last.pt",
+      "checkpoint": "output/benchmark/runs_r1_s43/train/weights/last.pt",
+      "evals": {
+        "pool_r1": {
+          "map50": 0.995,
+          "map50_95": 0.9676156810944665
+        },
+        "pool_shape": {
+          "map50": 0.9147743189361127,
+          "map50_95": 0.7462547673300703
+        },
+        "pool_r3pm": {
+          "map50": 0.9735498651577495,
+          "map50_95": 0.9000878018730163
+        },
+        "pool_big": null,
+        "real_test": {
+          "map50": 0.2436427600965972,
+          "map50_95": 0.08997437329530268
+        }
+      }
+    },
+    {
+      "arm": "r1",
+      "seed": 44,
+      "ckpt": "best.pt",
+      "checkpoint": "output/benchmark/runs_r1_s44/train/weights/best.pt",
+      "evals": {
+        "pool_r1": {
+          "map50": 0.995,
+          "map50_95": 0.9705347509633249
+        },
+        "pool_shape": {
+          "map50": 0.9022334046769535,
+          "map50_95": 0.7511035727474307
+        },
+        "pool_r3pm": {
+          "map50": 0.9746370130775325,
+          "map50_95": 0.9035876735921768
+        },
+        "pool_big": null,
+        "real_test": {
+          "map50": 0.253163202268554,
+          "map50_95": 0.09023937265739465
+        }
+      }
+    },
+    {
+      "arm": "r1",
+      "seed": 44,
+      "ckpt": "last.pt",
+      "checkpoint": "output/benchmark/runs_r1_s44/train/weights/last.pt",
+      "evals": {
+        "pool_r1": {
+          "map50": 0.995,
+          "map50_95": 0.9705347509633249
+        },
+        "pool_shape": {
+          "map50": 0.9022334046769535,
+          "map50_95": 0.7511035727474307
+        },
+        "pool_r3pm": {
+          "map50": 0.9746370130775325,
+          "map50_95": 0.9035876735921768
+        },
+        "pool_big": null,
+        "real_test": {
+          "map50": 0.253163202268554,
+          "map50_95": 0.09023937265739465
+        }
+      }
+    },
+    {
+      "arm": "r1shape",
+      "seed": 42,
+      "ckpt": "best.pt",
+      "checkpoint": "output/benchmark/runs_r1shape_s42/train/weights/best.pt",
+      "evals": {
+        "pool_r1": {
+          "map50": 0.995,
+          "map50_95": 0.9496308441707011
+        },
+        "pool_shape": {
+          "map50": 0.9939546785874895,
+          "map50_95": 0.8806090951095813
+        },
+        "pool_r3pm": {
+          "map50": 0.9817643392634778,
+          "map50_95": 0.8947961294021578
+        },
+        "pool_big": null,
+        "real_test": {
+          "map50": 0.2067920163623764,
+          "map50_95": 0.07305633972223678
+        }
+      }
+    },
+    {
+      "arm": "r1shape",
+      "seed": 42,
+      "ckpt": "last.pt",
+      "checkpoint": "output/benchmark/runs_r1shape_s42/train/weights/last.pt",
+      "evals": {
+        "pool_r1": {
+          "map50": 0.995,
+          "map50_95": 0.9496308441707011
+        },
+        "pool_shape": {
+          "map50": 0.9939546785874895,
+          "map50_95": 0.8806090951095813
+        },
+        "pool_r3pm": {
+          "map50": 0.9817643392634778,
+          "map50_95": 0.8947961294021578
+        },
+        "pool_big": null,
+        "real_test": {
+          "map50": 0.2067920163623764,
+          "map50_95": 0.07305633972223678
+        }
+      }
+    },
+    {
+      "arm": "r1shape",
+      "seed": 43,
+      "ckpt": "best.pt",
+      "checkpoint": "output/benchmark/runs_r1shape_s43/train/weights/best.pt",
+      "evals": {
+        "pool_r1": {
+          "map50": 0.995,
+          "map50_95": 0.9498351808067735
+        },
+        "pool_shape": {
+          "map50": 0.9919094140881671,
+          "map50_95": 0.8834668140765911
+        },
+        "pool_r3pm": {
+          "map50": 0.982770885175917,
+          "map50_95": 0.903591600891731
+        },
+        "pool_big": null,
+        "real_test": {
+          "map50": 0.10133430735147916,
+          "map50_95": 0.032609538514197754
+        }
+      }
+    },
+    {
+      "arm": "r1shape",
+      "seed": 43,
+      "ckpt": "last.pt",
+      "checkpoint": "output/benchmark/runs_r1shape_s43/train/weights/last.pt",
+      "evals": {
+        "pool_r1": {
+          "map50": 0.995,
+          "map50_95": 0.9498351808067735
+        },
+        "pool_shape": {
+          "map50": 0.9919094140881671,
+          "map50_95": 0.8834668140765911
+        },
+        "pool_r3pm": {
+          "map50": 0.982770885175917,
+          "map50_95": 0.903591600891731
+        },
+        "pool_big": null,
+        "real_test": {
+          "map50": 0.10133430735147916,
+          "map50_95": 0.032609538514197754
+        }
+      }
+    },
+    {
+      "arm": "r1shape",
+      "seed": 44,
+      "ckpt": "best.pt",
+      "checkpoint": "output/benchmark/runs_r1shape_s44/train/weights/best.pt",
+      "evals": {
+        "pool_r1": {
+          "map50": 0.995,
+          "map50_95": 0.943749936331864
+        },
+        "pool_shape": {
+          "map50": 0.9938732016696524,
+          "map50_95": 0.8884415081338923
+        },
+        "pool_r3pm": {
+          "map50": 0.9813584632149479,
+          "map50_95": 0.8969835060680926
+        },
+        "pool_big": null,
+        "real_test": {
+          "map50": 0.0964087524922534,
+          "map50_95": 0.03003532822467609
+        }
+      }
+    },
+    {
+      "arm": "r1shape",
+      "seed": 44,
+      "ckpt": "last.pt",
+      "checkpoint": "output/benchmark/runs_r1shape_s44/train/weights/last.pt",
+      "evals": {
+        "pool_r1": {
+          "map50": 0.995,
+          "map50_95": 0.943749936331864
+        },
+        "pool_shape": {
+          "map50": 0.9938732016696524,
+          "map50_95": 0.8884415081338923
+        },
+        "pool_r3pm": {
+          "map50": 0.9813584632149479,
+          "map50_95": 0.8969835060680926
+        },
+        "pool_big": null,
+        "real_test": {
+          "map50": 0.0964087524922534,
+          "map50_95": 0.03003532822467609
+        }
+      }
+    },
+    {
+      "arm": "r3pm",
+      "seed": 42,
+      "ckpt": "best.pt",
+      "checkpoint": "output/benchmark/runs_R3pm_s42/train/weights/best.pt",
+      "evals": {
+        "pool_r1": {
+          "map50": 0.995,
+          "map50_95": 0.9591497070913331
+        },
+        "pool_shape": {
+          "map50": 0.799384708317074,
+          "map50_95": 0.6748128183090187
+        },
+        "pool_r3pm": {
+          "map50": 0.9848402181621213,
+          "map50_95": 0.926073684495343
+        },
+        "pool_big": null,
+        "real_test": {
+          "map50": 0.18949299959297206,
+          "map50_95": 0.05337207119291887
+        }
+      }
+    },
+    {
+      "arm": "r3pm",
+      "seed": 42,
+      "ckpt": "last.pt",
+      "checkpoint": "output/benchmark/runs_R3pm_s42/train/weights/last.pt",
+      "evals": {
+        "pool_r1": {
+          "map50": 0.995,
+          "map50_95": 0.9591497070913331
+        },
+        "pool_shape": {
+          "map50": 0.799384708317074,
+          "map50_95": 0.6748128183090187
+        },
+        "pool_r3pm": {
+          "map50": 0.9848402181621213,
+          "map50_95": 0.926073684495343
+        },
+        "pool_big": null,
+        "real_test": {
+          "map50": 0.18949299959297206,
+          "map50_95": 0.05337207119291887
+        }
+      }
+    },
+    {
+      "arm": "r3pm",
+      "seed": 43,
+      "ckpt": "best.pt",
+      "checkpoint": "output/benchmark/runs_R3pm_s43/train/weights/best.pt",
+      "evals": {
+        "pool_r1": {
+          "map50": 0.995,
+          "map50_95": 0.952536938985243
+        },
+        "pool_shape": {
+          "map50": 0.8295593802297525,
+          "map50_95": 0.6897586489863212
+        },
+        "pool_r3pm": {
+          "map50": 0.984838702501611,
+          "map50_95": 0.9278011158587087
+        },
+        "pool_big": null,
+        "real_test": {
+          "map50": 0.13589495529147672,
+          "map50_95": 0.036384407232573024
+        }
+      }
+    },
+    {
+      "arm": "r3pm",
+      "seed": 43,
+      "ckpt": "last.pt",
+      "checkpoint": "output/benchmark/runs_R3pm_s43/train/weights/last.pt",
+      "evals": {
+        "pool_r1": {
+          "map50": 0.995,
+          "map50_95": 0.952536938985243
+        },
+        "pool_shape": {
+          "map50": 0.8295593802297525,
+          "map50_95": 0.6897586489863212
+        },
+        "pool_r3pm": {
+          "map50": 0.984838702501611,
+          "map50_95": 0.9278011158587087
+        },
+        "pool_big": null,
+        "real_test": {
+          "map50": 0.13589495529147672,
+          "map50_95": 0.036384407232573024
+        }
+      }
+    },
+    {
+      "arm": "r3pm",
+      "seed": 44,
+      "ckpt": "best.pt",
+      "checkpoint": "output/benchmark/runs_R3pm_s44/train/weights/best.pt",
+      "evals": {
+        "pool_r1": {
+          "map50": 0.9949891540130152,
+          "map50_95": 0.9592609377549174
+        },
+        "pool_shape": {
+          "map50": 0.7983763792887248,
+          "map50_95": 0.6577853928249656
+        },
+        "pool_r3pm": {
+          "map50": 0.9846835298421468,
+          "map50_95": 0.9248230973550727
+        },
+        "pool_big": null,
+        "real_test": {
+          "map50": 0.17644094251281758,
+          "map50_95": 0.05340043719422768
+        }
+      }
+    },
+    {
+      "arm": "r3pm",
+      "seed": 44,
+      "ckpt": "last.pt",
+      "checkpoint": "output/benchmark/runs_R3pm_s44/train/weights/last.pt",
+      "evals": {
+        "pool_r1": {
+          "map50": 0.9949891540130152,
+          "map50_95": 0.9592609377549174
+        },
+        "pool_shape": {
+          "map50": 0.7983763792887248,
+          "map50_95": 0.6577853928249656
+        },
+        "pool_r3pm": {
+          "map50": 0.9846835298421468,
+          "map50_95": 0.9248230973550727
+        },
+        "pool_big": null,
+        "real_test": {
+          "map50": 0.17644094251281758,
+          "map50_95": 0.05340043719422768
+        }
+      }
+    }
+  ],
+  "summary": {
+    "r1/best.pt": {
+      "pool_r1": {
+        "mean": 0.995,
+        "sd": 0.0,
+        "n": 2
+      },
+      "pool_shape": {
+        "mean": 0.9085,
+        "sd": 0.0089,
+        "n": 2
+      },
+      "pool_r3pm": {
+        "mean": 0.9741,
+        "sd": 0.0008,
+        "n": 2
+      },
+      "pool_big": null,
+      "real_test": {
+        "mean": 0.2484,
+        "sd": 0.0067,
+        "n": 2
+      },
+      "domain_fit_minus_transfer_pp": 74.66
+    },
+    "r1/last.pt": {
+      "pool_r1": {
+        "mean": 0.995,
+        "sd": 0.0,
+        "n": 2
+      },
+      "pool_shape": {
+        "mean": 0.9085,
+        "sd": 0.0089,
+        "n": 2
+      },
+      "pool_r3pm": {
+        "mean": 0.9741,
+        "sd": 0.0008,
+        "n": 2
+      },
+      "pool_big": null,
+      "real_test": {
+        "mean": 0.2484,
+        "sd": 0.0067,
+        "n": 2
+      },
+      "domain_fit_minus_transfer_pp": 74.66
+    },
+    "r1shape/best.pt": {
+      "pool_r1": {
+        "mean": 0.995,
+        "sd": 0.0,
+        "n": 3
+      },
+      "pool_shape": {
+        "mean": 0.9932,
+        "sd": 0.0012,
+        "n": 3
+      },
+      "pool_r3pm": {
+        "mean": 0.982,
+        "sd": 0.0007,
+        "n": 3
+      },
+      "pool_big": null,
+      "real_test": {
+        "mean": 0.1348,
+        "sd": 0.0624,
+        "n": 3
+      },
+      "domain_fit_minus_transfer_pp": 85.84
+    },
+    "r1shape/last.pt": {
+      "pool_r1": {
+        "mean": 0.995,
+        "sd": 0.0,
+        "n": 3
+      },
+      "pool_shape": {
+        "mean": 0.9932,
+        "sd": 0.0012,
+        "n": 3
+      },
+      "pool_r3pm": {
+        "mean": 0.982,
+        "sd": 0.0007,
+        "n": 3
+      },
+      "pool_big": null,
+      "real_test": {
+        "mean": 0.1348,
+        "sd": 0.0624,
+        "n": 3
+      },
+      "domain_fit_minus_transfer_pp": 85.84
+    },
+    "r3pm/best.pt": {
+      "pool_r1": {
+        "mean": 0.995,
+        "sd": 0.0,
+        "n": 3
+      },
+      "pool_shape": {
+        "mean": 0.8091,
+        "sd": 0.0177,
+        "n": 3
+      },
+      "pool_r3pm": {
+        "mean": 0.9848,
+        "sd": 0.0001,
+        "n": 3
+      },
+      "pool_big": null,
+      "real_test": {
+        "mean": 0.1673,
+        "sd": 0.0279,
+        "n": 3
+      },
+      "domain_fit_minus_transfer_pp": 81.75
+    },
+    "r3pm/last.pt": {
+      "pool_r1": {
+        "mean": 0.995,
+        "sd": 0.0,
+        "n": 3
+      },
+      "pool_shape": {
+        "mean": 0.8091,
+        "sd": 0.0177,
+        "n": 3
+      },
+      "pool_r3pm": {
+        "mean": 0.9848,
+        "sd": 0.0001,
+        "n": 3
+      },
+      "pool_big": null,
+      "real_test": {
+        "mean": 0.1673,
+        "sd": 0.0279,
+        "n": 3
+      },
+      "domain_fit_minus_transfer_pp": 81.75
+    }
+  }
+}

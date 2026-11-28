@@ -42,3 +42,40 @@ mlflow.db
 mlruns/
 textures/
 repro_lifestyle_v*.png
+
+# --- 仓库卫生 (2026-11-18 审计新增) ---
+# Blender 自动备份 (每次保存产生, 与 .blend 一一对应, 无审计价值)
+*.blend1
+# Python 环境与缓存
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+# 训练权重不入库: 由 ultralytics 首次运行自动下载 (见 requirements.txt 许可提醒)
+yolo11n.pt
+# 下载的许可证页面快照 (上游页面会变, 不应固化为证据)
+assets/**/license_page.html
+# 临时产物
+*.tmp
+*.npy
+
+# --- 第三方资产: 只留 recipe, 不留载荷 (2026-11-28) ---
+# NVIDIA USDCraft-10K 零售子集: 391 MB / 2527 文件, 带 apache-2.0 许可 (需署名)。
+# 仓内只保留**复现配方**:
+#   pipelines/shelf_sdg/58_fetch_usdcraft.py  (抓取脚本, 重新抓取载荷与清单)
+#   assets/usdcraft/usdcraft_subset.json       (199 个对象的 id/路径/字节数)
+#   assets/usdcraft/ATTRIBUTION.md             (署名与许可)
+# 载荷与 HuggingFace 清单缓存都不入库 (可由脚本重新抓取; 第三方再分发没必要)。
+assets/usdcraft/rigid/
+assets/usdcraft/manifest.csv
+
+# 一次性修补脚本 (无引用, 用完即弃): scripts/tmp_*.py
+scripts/tmp_*.py
+
+# 内部台账与含品牌串的审计稿 (不入公开仓):
+#   AUDIT_LICENSING 里逐条列出了仓内仍带客户品牌串的文件位置 —— 文档本身
+#   就是品牌串的清单, 不能公开。
+#   INSIGHT_QUEUE 是本地研究路线图 (未收敛的假设与下一步), 属于本地台账。
+docs/AUDIT_LICENSING_2026-11-18.md
+docs/research/INSIGHT_QUEUE.md

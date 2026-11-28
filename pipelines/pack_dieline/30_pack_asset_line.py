@@ -6,6 +6,30 @@
 import bpy, bmesh, json, math, os, sys, random, hashlib
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, BASE_DIR)
+from pipelines.common.runtime_env import configure_cycles  # noqa: E402
+
+
+def _configure_pack_cycles(sc):
+    """按平台选择 Cycles 后端; 显式要求 CPU 时才回落 CPU (审计 B-5)。
+
+    返回实际使用的 scene device ('GPU' / 'CPU')。
+    """
+    import os as _os
+    force_cpu = _os.environ.get("PACK_FORCE_CPU", "0") == "1"
+    if force_cpu:
+        sc.cycles.device = 'CPU'
+        return 'CPU'
+    try:
+        backend, ndev = configure_cycles(scene=sc, denoise=True)
+        print(f"[pack] cycles backend={backend} devices={ndev}")
+        return sc.cycles.device
+    except Exception as e:
+        print(f"[pack] GPU 配置失败, 回落 CPU: {type(e).__name__}: {e}")
+        sc.cycles.device = 'CPU'
+        return 'CPU'
+
+
 argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
 spec_path = os.path.join(BASE_DIR, argv[argv.index("--spec") + 1]) if "--spec" in argv else \
     os.path.join(BASE_DIR, "specs/pack_458.json")
@@ -319,10 +343,11 @@ def setup_and_render(ob):
         L.data.size = 0.8; L.data.energy = e
         L.constraints.new("TRACK_TO").target = ob
     sc.cycles.samples = 128
-    try:
-        sc.cycles.device = 'CPU'
-    except Exception:
-        pass
+    # 2026-11-18 审计 B-5: 原代码 try/except pass 静默锁 CPU (except 永不触发, 因为 'CPU' 恒合法),
+    # 与 README 的 "Metal-RT" 声明及按 Metal 标定的门禁阈值 (specs/pack_458.json tol) 矛盾。
+    # 现在: 默认走 GPU (后端由 runtime_env 自动选), 仅在显式要求时回落 CPU, 且必须打印。
+    _dev = _configure_pack_cycles(sc)
+    print(f"[pack] cycles device={_dev}")
     views = {"front": (0, -0.34, 0.08), "side": (0.34, -0.05, 0.08),
              "three_quarter": (0.26, -0.26, 0.16), "top": (0.001, -0.16, 0.30)}
     from mathutils import Vector
@@ -407,10 +432,8 @@ def hero_render(ob):
             L.data.size = size
             L.data.energy = e
             L.constraints.new("TRACK_TO").target = ob
-    try:
-        sc.cycles.device = 'CPU'
-    except Exception:
-        pass
+    _dev = _configure_pack_cycles(sc)
+    print(f"[pack] cycles device={_dev}")
     from mathutils import Vector
     ctr = Vector((0, 0, H / 2))
     views = [("hero_front_ortho", None, 50), ("hero_three_quarter", (0.34, -0.42, H * 0.75), 60),

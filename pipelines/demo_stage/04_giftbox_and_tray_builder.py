@@ -9,11 +9,14 @@
   /Applications/Blender.app/Contents/MacOS/Blender -b -P 04_giftbox_and_tray_builder.py
 """
 import os
+import sys
 import math
 import bpy
 from mathutils import Matrix, Vector
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, BASE_DIR)
+from pipelines.common.runtime_env import configure_cycles  # noqa: E402
 TEX_DIR = os.path.join(BASE_DIR, "assets", "textures")
 OUT_DIR = os.path.join(BASE_DIR, "output", "giftbox")
 os.makedirs(OUT_DIR, exist_ok=True)
@@ -208,15 +211,7 @@ def build_cutcase_tray(loc=(0, 0, 0), sku="demo_organic"):
 
 def setup_render(samples=64):
     scene = bpy.context.scene
-    scene.render.engine = "CYCLES"
-    prefs = bpy.context.preferences.addons["cycles"].preferences
-    prefs.compute_device_type = "METAL"
-    prefs.get_devices()
-    for d in prefs.devices:
-        d.use = True
-    scene.cycles.device = "GPU"
-    scene.cycles.samples = samples
-    scene.cycles.use_denoising = True
+    configure_cycles(scene=scene, samples=samples, denoise=True)
     scene.render.resolution_x, scene.render.resolution_y = 1600, 1200
     world = bpy.data.worlds.new("Studio")
     world.use_nodes = True

@@ -1,0 +1,6 @@
+[SHAPE-PROBE 11-23 13:34:53] RUN -b -t 6 -P pipelines/shelf_sdg/02_shelf_sdg_inspector.py -- --num-images 4 --seed 42 --val-ratio 0.2 --images-per-scene 4 --split-mode scene --samples 64 --cam-mult 1.0 --lens 28.0 --misalign 0.1 --bays 1 --shape-profile real --shape-aspect-gain 1.1 --out output\benchmark\sdg_shape_probe
+[SHAPE-PROBE 11-23 13:36:58] 渲染完成 2.1 min (日志 output\benchmark\chain_steps\shape_probe_render.log)
+[SHAPE-PROBE 11-23 13:36:58] 探针逐图中位宽高比 mean 0.559 (p10 0.41765, p50 0.64923, p90 0.66932), 单框面积 mean 0.004948
+[SHAPE-PROBE 11-23 13:36:58] 对照 R1 逐图中位宽高比 mean 0.3231, 单框面积 mean 0.005346
+[SHAPE-PROBE 11-23 13:36:58] 真实   逐图中位宽高比 mean 1.0544, 单框面积 mean 0.002866
+[SHAPE-PROBE 11-23 13:36:58] -> output\benchmark\shape_probe.json

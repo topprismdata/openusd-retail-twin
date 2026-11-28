@@ -1,0 +1,2558 @@
+{
+  "generated_at": "2026-11-28T00:01:13",
+  "script": "pipelines/shelf_sdg/84_simready_vs_self_gate.py",
+  "official_tool": {
+    "package": "simready-validate",
+    "version": "2026.10.0",
+    "license": "Apache-2.0",
+    "env": "隔离 venv (Temp/srvenv) —— 官方 wheel 需要 usd-core, 不装进训练 venv"
+  },
+  "official_profiles_available": [
+    "Assembly",
+    "Material",
+    "NuRec",
+    "Open-Taxonomy-ADE20K",
+    "Open-Taxonomy-COCO",
+    "Open-Taxonomy-Cityscapes",
+    "Open-Taxonomy-ImageNet1K",
+    "Open-Taxonomy-PascalVOC",
+    "Open-Taxonomy-SUNRGBD",
+    "Package",
+    "Package-Candidate",
+    "Package-NoBOM",
+    "Robot-Assembly",
+    "Robot-Body",
+    "Robot-Gripper",
+    "Robotics-Prop"
+  ],
+  "official_results": [
+    {
+      "tag": "ours",
+      "profile": "Assembly",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP027_Connections.0-1-0",
+        "CAP029_ConnectionJoint.0-1-0",
+        "CAP029_ConnectionJoint.MuJoCo.0-1-0",
+        "CAP029_ConnectionJoint.Newton.0-1-0",
+        "CAP029_ConnectionJoint.PhysX.0-1-0",
+        "FET003_RigidBody.0-2-0",
+        "FET004_Multibody.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP027_Connections.0-1-0",
+        "CAP029_ConnectionJoint.0-1-0",
+        "CAP029_ConnectionJoint.MuJoCo.0-1-0",
+        "CAP029_ConnectionJoint.Newton.0-1-0",
+        "CAP029_ConnectionJoint.PhysX.0-1-0",
+        "FET003_RigidBody.0-2-0",
+        "FET004_Multibody.0-2-0"
+      ],
+      "n_features": 8,
+      "elapsed_s": 0.11
+    },
+    {
+      "tag": "ours",
+      "profile": "Material",
+      "profile_version": "1.0.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-2-0",
+        "CAP031_SelfContainedPackage.0-1-0",
+        "CAP033_SimReadyPackage.0-4-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-2-0",
+        "CAP031_SelfContainedPackage.0-1-0",
+        "CAP033_SimReadyPackage.0-4-0"
+      ],
+      "n_features": 6,
+      "elapsed_s": 0.233
+    },
+    {
+      "tag": "ours",
+      "profile": "NuRec",
+      "profile_version": "1.0.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-2-0",
+        "FET012_GaussianSplat.0-1-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-2-0",
+        "FET012_GaussianSplat.0-1-0"
+      ],
+      "n_features": 2,
+      "elapsed_s": 0.035
+    },
+    {
+      "tag": "ours",
+      "profile": "Open-Taxonomy-ADE20K",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "n_features": 3,
+      "elapsed_s": 0.022
+    },
+    {
+      "tag": "ours",
+      "profile": "Open-Taxonomy-COCO",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "n_features": 3,
+      "elapsed_s": 0.026
+    },
+    {
+      "tag": "ours",
+      "profile": "Open-Taxonomy-Cityscapes",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "n_features": 3,
+      "elapsed_s": 0.023
+    },
+    {
+      "tag": "ours",
+      "profile": "Open-Taxonomy-ImageNet1K",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "n_features": 3,
+      "elapsed_s": 0.03
+    },
+    {
+      "tag": "ours",
+      "profile": "Open-Taxonomy-PascalVOC",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "n_features": 3,
+      "elapsed_s": 0.024
+    },
+    {
+      "tag": "ours",
+      "profile": "Open-Taxonomy-SUNRGBD",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "n_features": 3,
+      "elapsed_s": 0.023
+    },
+    {
+      "tag": "ours",
+      "profile": "Package",
+      "status": "UNAVAILABLE",
+      "detail": "unavailable_execution (不是 measured failure)"
+    },
+    {
+      "tag": "ours",
+      "profile": "Package-Candidate",
+      "profile_version": "1.3.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP031_SelfContainedPackage.0-1-0",
+        "CAP033_SimReadyPackage.0-4-0"
+      ],
+      "blocking_failures": [
+        "CAP031_SelfContainedPackage.0-1-0",
+        "CAP033_SimReadyPackage.0-4-0"
+      ],
+      "n_features": 2,
+      "elapsed_s": 0.016
+    },
+    {
+      "tag": "ours",
+      "profile": "Package-NoBOM",
+      "status": "UNAVAILABLE",
+      "detail": "unavailable_execution (不是 measured failure)"
+    },
+    {
+      "tag": "ours",
+      "profile": "Robot-Assembly",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP027_Connections.0-1-0",
+        "CAP029_ConnectionJoint.0-1-0",
+        "FET003_RigidBody.0-2-0",
+        "FET004_Multibody.0-2-0",
+        "FET022_DrivenJoints.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP027_Connections.0-1-0",
+        "CAP029_ConnectionJoint.0-1-0",
+        "FET003_RigidBody.0-2-0",
+        "FET004_Multibody.0-2-0",
+        "FET022_DrivenJoints.0-2-0"
+      ],
+      "n_features": 7,
+      "elapsed_s": 0.058
+    },
+    {
+      "tag": "ours",
+      "profile": "Robot-Body",
+      "profile_version": "4.0.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-2-0",
+        "CAP000_Core.Isaac.0-2-0",
+        "CAP000_Core.MuJoCo.0-2-0",
+        "CAP000_Core.Newton.0-2-0",
+        "CAP000_Core.PhysX.0-2-0",
+        "CAP003_RigidBody.MuJoCo.0-1-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP004_Multibody.RobotMuJoCo.0-1-0",
+        "CAP021_RobotCore.Isaac.0-3-0",
+        "CAP022_DrivenJoints.MuJoCo.0-1-0",
+        "CAP024_BaseArticulation.Newton.0-1-0",
+        "CAP025_RosBridge.Ros.0-1-0",
+        "CAP031_SelfContainedPackage.0-1-0",
+        "CAP033_SimReadyPackage.0-4-0",
+        "CAP100_IsaacComposition.Isaac.0-3-0",
+        "FET001_MinimalPlaceableVisual.1-0-1",
+        "FET003_RigidBody.0-2-0",
+        "FET003_RigidBody.Newton.0-1-0",
+        "FET003_RigidBody.PhysX.0-4-0",
+        "FET004_Multibody.0-2-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.PhysX.0-4-0",
+        "FET004_Multibody.RobotNewton.0-1-0",
+        "FET008_ObjectForward.0-1-0",
+        "FET009_MaterialCoverage.0-1-0",
+        "FET010_DisplayColor.0-1-0",
+        "FET022_DrivenJoints.0-2-0",
+        "FET022_DrivenJoints.Isaac.0-2-0",
+        "FET022_DrivenJoints.PhysX.0-2-0",
+        "FET022_DrivenJoints.Newton.0-1-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-2-0",
+        "CAP000_Core.Isaac.0-2-0",
+        "CAP000_Core.MuJoCo.0-2-0",
+        "CAP000_Core.Newton.0-2-0",
+        "CAP000_Core.PhysX.0-2-0",
+        "CAP003_RigidBody.MuJoCo.0-1-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP004_Multibody.RobotMuJoCo.0-1-0",
+        "CAP022_DrivenJoints.MuJoCo.0-1-0",
+        "CAP024_BaseArticulation.Newton.0-1-0",
+        "CAP031_SelfContainedPackage.0-1-0",
+        "CAP033_SimReadyPackage.0-4-0",
+        "FET001_MinimalPlaceableVisual.1-0-1",
+        "FET003_RigidBody.0-2-0",
+        "FET003_RigidBody.Newton.0-1-0",
+        "FET003_RigidBody.PhysX.0-4-0",
+        "FET004_Multibody.0-2-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.PhysX.0-4-0",
+        "FET004_Multibody.RobotNewton.0-1-0",
+        "FET008_ObjectForward.0-1-0",
+        "FET009_MaterialCoverage.0-1-0",
+        "FET022_DrivenJoints.0-2-0",
+        "FET022_DrivenJoints.Isaac.0-2-0",
+        "FET022_DrivenJoints.PhysX.0-2-0",
+        "FET022_DrivenJoints.Newton.0-1-0"
+      ],
+      "n_features": 36,
+      "elapsed_s": 0.292
+    },
+    {
+      "tag": "ours",
+      "profile": "Robot-Gripper",
+      "profile_version": "4.0.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-2-0",
+        "CAP000_Core.MuJoCo.0-2-0",
+        "CAP000_Core.Newton.0-2-0",
+        "CAP000_Core.PhysX.0-2-0",
+        "CAP003_RigidBody.MuJoCo.0-1-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP004_Multibody.RobotMuJoCo.0-1-0",
+        "CAP021_RobotCore.Isaac.0-2-0",
+        "CAP022_DrivenJoints.MuJoCo.0-1-0",
+        "CAP024_BaseArticulation.Newton.0-1-0",
+        "CAP028_Gripper.MuJoCo.0-1-0",
+        "CAP031_SelfContainedPackage.0-1-0",
+        "CAP033_SimReadyPackage.0-4-0",
+        "CAP100_IsaacComposition.Isaac.0-3-0",
+        "FET001_MinimalPlaceableVisual.1-0-1",
+        "FET003_RigidBody.0-2-0",
+        "FET003_RigidBody.Newton.0-1-0",
+        "FET003_RigidBody.PhysX.0-4-0",
+        "FET004_Multibody.0-2-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.PhysX.0-4-0",
+        "FET004_Multibody.RobotNewton.0-1-0",
+        "FET004_Multibody.RobotPhysX.0-1-0",
+        "FET009_MaterialCoverage.0-1-0",
+        "FET010_DisplayColor.0-1-0",
+        "FET022_DrivenJoints.0-2-0",
+        "FET022_DrivenJoints.Isaac.0-1-0",
+        "FET022_DrivenJoints.PhysX.0-1-0",
+        "FET022_DrivenJoints.Isaac.0-2-0",
+        "FET022_DrivenJoints.PhysX.0-2-0",
+        "FET022_DrivenJoints.Newton.0-1-0",
+        "FET028_Gripper.Isaac.0-1-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-2-0",
+        "CAP000_Core.MuJoCo.0-2-0",
+        "CAP000_Core.Newton.0-2-0",
+        "CAP000_Core.PhysX.0-2-0",
+        "CAP003_RigidBody.MuJoCo.0-1-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP004_Multibody.RobotMuJoCo.0-1-0",
+        "CAP022_DrivenJoints.MuJoCo.0-1-0",
+        "CAP024_BaseArticulation.Newton.0-1-0",
+        "CAP028_Gripper.MuJoCo.0-1-0",
+        "CAP031_SelfContainedPackage.0-1-0",
+        "CAP033_SimReadyPackage.0-4-0",
+        "FET001_MinimalPlaceableVisual.1-0-1",
+        "FET003_RigidBody.0-2-0",
+        "FET003_RigidBody.Newton.0-1-0",
+        "FET003_RigidBody.PhysX.0-4-0",
+        "FET004_Multibody.0-2-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.PhysX.0-4-0",
+        "FET004_Multibody.RobotNewton.0-1-0",
+        "FET004_Multibody.RobotPhysX.0-1-0",
+        "FET009_MaterialCoverage.0-1-0",
+        "FET022_DrivenJoints.0-2-0",
+        "FET022_DrivenJoints.Isaac.0-1-0",
+        "FET022_DrivenJoints.PhysX.0-1-0",
+        "FET022_DrivenJoints.Isaac.0-2-0",
+        "FET022_DrivenJoints.PhysX.0-2-0",
+        "FET022_DrivenJoints.Newton.0-1-0",
+        "FET028_Gripper.Isaac.0-1-0"
+      ],
+      "n_features": 39,
+      "elapsed_s": 0.258
+    },
+    {
+      "tag": "ours",
+      "profile": "Robotics-Prop",
+      "profile_version": "5.0.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-2-0",
+        "CAP000_Core.MuJoCo.0-2-0",
+        "CAP000_Core.Newton.0-2-0",
+        "CAP000_Core.PhysX.0-2-0",
+        "CAP003_RigidBody.MuJoCo.0-1-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP031_SelfContainedPackage.0-1-0",
+        "CAP033_SimReadyPackage.0-4-0",
+        "CAP100_IsaacComposition.Isaac.0-4-0",
+        "FET001_MinimalPlaceableVisual.1-0-1",
+        "FET003_RigidBody.0-2-0",
+        "FET003_RigidBody.Newton.0-1-0",
+        "FET003_RigidBody.PhysX.0-4-0",
+        "FET004_Multibody.0-2-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.PhysX.0-4-0",
+        "FET005_Grasp.0-1-0",
+        "FET008_ObjectForward.0-1-0",
+        "FET009_MaterialCoverage.0-1-0",
+        "FET010_DisplayColor.0-1-0",
+        "FET011_SemanticLabels.0-2-0",
+        "FET011_SemanticLabels.RTX.0-1-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-2-0",
+        "CAP000_Core.MuJoCo.0-2-0",
+        "CAP000_Core.Newton.0-2-0",
+        "CAP000_Core.PhysX.0-2-0",
+        "CAP003_RigidBody.MuJoCo.0-1-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP031_SelfContainedPackage.0-1-0",
+        "CAP033_SimReadyPackage.0-4-0",
+        "FET001_MinimalPlaceableVisual.1-0-1",
+        "FET003_RigidBody.0-2-0",
+        "FET003_RigidBody.Newton.0-1-0",
+        "FET003_RigidBody.PhysX.0-4-0",
+        "FET004_Multibody.0-2-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.PhysX.0-4-0",
+        "FET008_ObjectForward.0-1-0",
+        "FET009_MaterialCoverage.0-1-0",
+        "FET011_SemanticLabels.0-2-0",
+        "FET011_SemanticLabels.RTX.0-1-0"
+      ],
+      "n_features": 27,
+      "elapsed_s": 0.232
+    },
+    {
+      "tag": "usdcraft_a",
+      "profile": "Assembly",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP027_Connections.0-1-0",
+        "CAP029_ConnectionJoint.0-1-0",
+        "CAP029_ConnectionJoint.MuJoCo.0-1-0",
+        "CAP029_ConnectionJoint.Newton.0-1-0",
+        "CAP029_ConnectionJoint.PhysX.0-1-0"
+      ],
+      "blocking_failures": [
+        "CAP027_Connections.0-1-0",
+        "CAP029_ConnectionJoint.0-1-0",
+        "CAP029_ConnectionJoint.MuJoCo.0-1-0",
+        "CAP029_ConnectionJoint.Newton.0-1-0",
+        "CAP029_ConnectionJoint.PhysX.0-1-0"
+      ],
+      "n_features": 8,
+      "elapsed_s": 0.062
+    },
+    {
+      "tag": "usdcraft_a",
+      "profile": "Material",
+      "profile_version": "1.0.0",
+      "status": "PASS",
+      "failed_features": [
+        "FET006_Materials.MDL.0-3-0",
+        "FET006_Materials.Openpbr.0-2-0"
+      ],
+      "blocking_failures": [],
+      "n_features": 6,
+      "elapsed_s": 0.112
+    },
+    {
+      "tag": "usdcraft_a",
+      "profile": "NuRec",
+      "profile_version": "1.0.0",
+      "status": "FAIL",
+      "failed_features": [
+        "FET012_GaussianSplat.0-1-0"
+      ],
+      "blocking_failures": [
+        "FET012_GaussianSplat.0-1-0"
+      ],
+      "n_features": 2,
+      "elapsed_s": 0.029
+    },
+    {
+      "tag": "usdcraft_a",
+      "profile": "Open-Taxonomy-ADE20K",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "n_features": 3,
+      "elapsed_s": 0.032
+    },
+    {
+      "tag": "usdcraft_a",
+      "profile": "Open-Taxonomy-COCO",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "n_features": 3,
+      "elapsed_s": 0.035
+    },
+    {
+      "tag": "usdcraft_a",
+      "profile": "Open-Taxonomy-Cityscapes",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "n_features": 3,
+      "elapsed_s": 0.033
+    },
+    {
+      "tag": "usdcraft_a",
+      "profile": "Open-Taxonomy-ImageNet1K",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "n_features": 3,
+      "elapsed_s": 0.029
+    },
+    {
+      "tag": "usdcraft_a",
+      "profile": "Open-Taxonomy-PascalVOC",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "n_features": 3,
+      "elapsed_s": 0.038
+    },
+    {
+      "tag": "usdcraft_a",
+      "profile": "Open-Taxonomy-SUNRGBD",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "n_features": 3,
+      "elapsed_s": 0.029
+    },
+    {
+      "tag": "usdcraft_a",
+      "profile": "Package",
+      "status": "UNAVAILABLE",
+      "detail": "unavailable_execution (不是 measured failure)"
+    },
+    {
+      "tag": "usdcraft_a",
+      "profile": "Package-Candidate",
+      "profile_version": "1.3.0",
+      "status": "PASS",
+      "failed_features": [],
+      "blocking_failures": [],
+      "n_features": 2,
+      "elapsed_s": 0.009
+    },
+    {
+      "tag": "usdcraft_a",
+      "profile": "Package-NoBOM",
+      "status": "UNAVAILABLE",
+      "detail": "unavailable_execution (不是 measured failure)"
+    },
+    {
+      "tag": "usdcraft_a",
+      "profile": "Robot-Assembly",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP027_Connections.0-1-0",
+        "CAP029_ConnectionJoint.0-1-0",
+        "FET022_DrivenJoints.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP027_Connections.0-1-0",
+        "CAP029_ConnectionJoint.0-1-0"
+      ],
+      "n_features": 7,
+      "elapsed_s": 0.064
+    },
+    {
+      "tag": "usdcraft_a",
+      "profile": "Robot-Body",
+      "profile_version": "4.0.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.Isaac.0-2-0",
+        "CAP000_Core.MuJoCo.0-2-0",
+        "CAP000_Core.Newton.0-2-0",
+        "CAP000_Core.PhysX.0-2-0",
+        "CAP003_RigidBody.MuJoCo.0-1-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP004_Multibody.RobotMuJoCo.0-1-0",
+        "CAP021_RobotCore.Isaac.0-3-0",
+        "CAP022_DrivenJoints.MuJoCo.0-1-0",
+        "CAP024_BaseArticulation.Newton.0-1-0",
+        "CAP025_RosBridge.Ros.0-1-0",
+        "CAP100_IsaacComposition.Isaac.0-3-0",
+        "FET001_MinimalPlaceableVisual.1-0-1",
+        "FET003_RigidBody.Newton.0-1-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.RobotNewton.0-1-0",
+        "FET006_Materials.MDL.0-3-0",
+        "FET006_Materials.Openpbr.0-2-0",
+        "FET008_ObjectForward.0-1-0",
+        "FET010_DisplayColor.0-1-0",
+        "FET022_DrivenJoints.0-2-0",
+        "FET022_DrivenJoints.Isaac.0-2-0",
+        "FET022_DrivenJoints.PhysX.0-2-0",
+        "FET022_DrivenJoints.Newton.0-1-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.Newton.0-2-0",
+        "CAP024_BaseArticulation.Newton.0-1-0",
+        "FET001_MinimalPlaceableVisual.1-0-1",
+        "FET003_RigidBody.Newton.0-1-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.RobotNewton.0-1-0",
+        "FET008_ObjectForward.0-1-0",
+        "FET022_DrivenJoints.Newton.0-1-0"
+      ],
+      "n_features": 36,
+      "elapsed_s": 0.46
+    },
+    {
+      "tag": "usdcraft_a",
+      "profile": "Robot-Gripper",
+      "profile_version": "4.0.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.MuJoCo.0-2-0",
+        "CAP000_Core.Newton.0-2-0",
+        "CAP000_Core.PhysX.0-2-0",
+        "CAP003_RigidBody.MuJoCo.0-1-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP004_Multibody.RobotMuJoCo.0-1-0",
+        "CAP021_RobotCore.Isaac.0-2-0",
+        "CAP022_DrivenJoints.MuJoCo.0-1-0",
+        "CAP024_BaseArticulation.Newton.0-1-0",
+        "CAP028_Gripper.MuJoCo.0-1-0",
+        "CAP100_IsaacComposition.Isaac.0-3-0",
+        "FET001_MinimalPlaceableVisual.1-0-1",
+        "FET003_RigidBody.Newton.0-1-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.RobotNewton.0-1-0",
+        "FET006_Materials.MDL.0-3-0",
+        "FET006_Materials.Openpbr.0-2-0",
+        "FET010_DisplayColor.0-1-0",
+        "FET022_DrivenJoints.0-2-0",
+        "FET022_DrivenJoints.Isaac.0-1-0",
+        "FET022_DrivenJoints.PhysX.0-1-0",
+        "FET022_DrivenJoints.Isaac.0-2-0",
+        "FET022_DrivenJoints.PhysX.0-2-0",
+        "FET022_DrivenJoints.Newton.0-1-0",
+        "FET028_Gripper.Isaac.0-1-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.Newton.0-2-0",
+        "CAP024_BaseArticulation.Newton.0-1-0",
+        "FET001_MinimalPlaceableVisual.1-0-1",
+        "FET003_RigidBody.Newton.0-1-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.RobotNewton.0-1-0",
+        "FET022_DrivenJoints.Newton.0-1-0"
+      ],
+      "n_features": 39,
+      "elapsed_s": 0.469
+    },
+    {
+      "tag": "usdcraft_a",
+      "profile": "Robotics-Prop",
+      "profile_version": "5.0.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.MuJoCo.0-2-0",
+        "CAP000_Core.Newton.0-2-0",
+        "CAP000_Core.PhysX.0-2-0",
+        "CAP003_RigidBody.MuJoCo.0-1-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP007_NonVisualMaterials.0-2-0",
+        "CAP100_IsaacComposition.Isaac.0-4-0",
+        "FET001_MinimalPlaceableVisual.1-0-1",
+        "FET003_RigidBody.Newton.0-1-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET005_Grasp.0-1-0",
+        "FET006_Materials.MDL.0-3-0",
+        "FET006_Materials.Openpbr.0-2-0",
+        "FET008_ObjectForward.0-1-0",
+        "FET010_DisplayColor.0-1-0",
+        "FET011_SemanticLabels.0-2-0",
+        "FET011_SemanticLabels.RTX.0-1-0"
+      ],
+      "blocking_failures": [
+        "FET001_MinimalPlaceableVisual.1-0-1",
+        "FET008_ObjectForward.0-1-0",
+        "FET011_SemanticLabels.0-2-0",
+        "FET011_SemanticLabels.RTX.0-1-0"
+      ],
+      "n_features": 27,
+      "elapsed_s": 0.467
+    },
+    {
+      "tag": "usdcraft_b",
+      "profile": "Assembly",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP027_Connections.0-1-0",
+        "CAP029_ConnectionJoint.0-1-0",
+        "CAP029_ConnectionJoint.MuJoCo.0-1-0",
+        "CAP029_ConnectionJoint.Newton.0-1-0",
+        "CAP029_ConnectionJoint.PhysX.0-1-0",
+        "FET004_Multibody.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP027_Connections.0-1-0",
+        "CAP029_ConnectionJoint.0-1-0",
+        "CAP029_ConnectionJoint.MuJoCo.0-1-0",
+        "CAP029_ConnectionJoint.Newton.0-1-0",
+        "CAP029_ConnectionJoint.PhysX.0-1-0"
+      ],
+      "n_features": 8,
+      "elapsed_s": 0.075
+    },
+    {
+      "tag": "usdcraft_b",
+      "profile": "Material",
+      "profile_version": "1.0.0",
+      "status": "PASS",
+      "failed_features": [
+        "FET006_Materials.MDL.0-3-0",
+        "FET006_Materials.Openpbr.0-2-0"
+      ],
+      "blocking_failures": [],
+      "n_features": 6,
+      "elapsed_s": 0.195
+    },
+    {
+      "tag": "usdcraft_b",
+      "profile": "NuRec",
+      "profile_version": "1.0.0",
+      "status": "FAIL",
+      "failed_features": [
+        "FET012_GaussianSplat.0-1-0"
+      ],
+      "blocking_failures": [
+        "FET012_GaussianSplat.0-1-0"
+      ],
+      "n_features": 2,
+      "elapsed_s": 0.036
+    },
+    {
+      "tag": "usdcraft_b",
+      "profile": "Open-Taxonomy-ADE20K",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "n_features": 3,
+      "elapsed_s": 0.034
+    },
+    {
+      "tag": "usdcraft_b",
+      "profile": "Open-Taxonomy-COCO",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "n_features": 3,
+      "elapsed_s": 0.034
+    },
+    {
+      "tag": "usdcraft_b",
+      "profile": "Open-Taxonomy-Cityscapes",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "n_features": 3,
+      "elapsed_s": 0.047
+    },
+    {
+      "tag": "usdcraft_b",
+      "profile": "Open-Taxonomy-ImageNet1K",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "n_features": 3,
+      "elapsed_s": 0.045
+    },
+    {
+      "tag": "usdcraft_b",
+      "profile": "Open-Taxonomy-PascalVOC",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "n_features": 3,
+      "elapsed_s": 0.039
+    },
+    {
+      "tag": "usdcraft_b",
+      "profile": "Open-Taxonomy-SUNRGBD",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "n_features": 3,
+      "elapsed_s": 0.035
+    },
+    {
+      "tag": "usdcraft_b",
+      "profile": "Package",
+      "status": "UNAVAILABLE",
+      "detail": "unavailable_execution (不是 measured failure)"
+    },
+    {
+      "tag": "usdcraft_b",
+      "profile": "Package-Candidate",
+      "profile_version": "1.3.0",
+      "status": "PASS",
+      "failed_features": [],
+      "blocking_failures": [],
+      "n_features": 2,
+      "elapsed_s": 0.013
+    },
+    {
+      "tag": "usdcraft_b",
+      "profile": "Package-NoBOM",
+      "status": "UNAVAILABLE",
+      "detail": "unavailable_execution (不是 measured failure)"
+    },
+    {
+      "tag": "usdcraft_b",
+      "profile": "Robot-Assembly",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP027_Connections.0-1-0",
+        "CAP029_ConnectionJoint.0-1-0",
+        "FET004_Multibody.0-2-0",
+        "FET022_DrivenJoints.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP027_Connections.0-1-0",
+        "CAP029_ConnectionJoint.0-1-0",
+        "FET004_Multibody.0-2-0",
+        "FET022_DrivenJoints.0-2-0"
+      ],
+      "n_features": 7,
+      "elapsed_s": 0.062
+    },
+    {
+      "tag": "usdcraft_b",
+      "profile": "Robot-Body",
+      "profile_version": "4.0.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.Isaac.0-2-0",
+        "CAP000_Core.MuJoCo.0-2-0",
+        "CAP000_Core.Newton.0-2-0",
+        "CAP000_Core.PhysX.0-2-0",
+        "CAP003_RigidBody.MuJoCo.0-1-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP004_Multibody.RobotMuJoCo.0-1-0",
+        "CAP021_RobotCore.Isaac.0-3-0",
+        "CAP022_DrivenJoints.MuJoCo.0-1-0",
+        "CAP024_BaseArticulation.Newton.0-1-0",
+        "CAP025_RosBridge.Ros.0-1-0",
+        "CAP100_IsaacComposition.Isaac.0-3-0",
+        "FET001_MinimalPlaceableVisual.1-0-1",
+        "FET003_RigidBody.Newton.0-1-0",
+        "FET004_Multibody.0-2-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.PhysX.0-4-0",
+        "FET004_Multibody.RobotNewton.0-1-0",
+        "FET006_Materials.MDL.0-3-0",
+        "FET006_Materials.Openpbr.0-2-0",
+        "FET008_ObjectForward.0-1-0",
+        "FET010_DisplayColor.0-1-0",
+        "FET022_DrivenJoints.0-2-0",
+        "FET022_DrivenJoints.Isaac.0-2-0",
+        "FET022_DrivenJoints.PhysX.0-2-0",
+        "FET022_DrivenJoints.Newton.0-1-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.Newton.0-2-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP004_Multibody.RobotMuJoCo.0-1-0",
+        "CAP022_DrivenJoints.MuJoCo.0-1-0",
+        "CAP024_BaseArticulation.Newton.0-1-0",
+        "FET001_MinimalPlaceableVisual.1-0-1",
+        "FET003_RigidBody.Newton.0-1-0",
+        "FET004_Multibody.0-2-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.PhysX.0-4-0",
+        "FET004_Multibody.RobotNewton.0-1-0",
+        "FET008_ObjectForward.0-1-0",
+        "FET022_DrivenJoints.0-2-0",
+        "FET022_DrivenJoints.Isaac.0-2-0",
+        "FET022_DrivenJoints.PhysX.0-2-0",
+        "FET022_DrivenJoints.Newton.0-1-0"
+      ],
+      "n_features": 36,
+      "elapsed_s": 4.009
+    },
+    {
+      "tag": "usdcraft_b",
+      "profile": "Robot-Gripper",
+      "profile_version": "4.0.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.MuJoCo.0-2-0",
+        "CAP000_Core.Newton.0-2-0",
+        "CAP000_Core.PhysX.0-2-0",
+        "CAP003_RigidBody.MuJoCo.0-1-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP004_Multibody.RobotMuJoCo.0-1-0",
+        "CAP021_RobotCore.Isaac.0-2-0",
+        "CAP022_DrivenJoints.MuJoCo.0-1-0",
+        "CAP024_BaseArticulation.Newton.0-1-0",
+        "CAP028_Gripper.MuJoCo.0-1-0",
+        "CAP100_IsaacComposition.Isaac.0-3-0",
+        "FET001_MinimalPlaceableVisual.1-0-1",
+        "FET003_RigidBody.Newton.0-1-0",
+        "FET004_Multibody.0-2-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.PhysX.0-4-0",
+        "FET004_Multibody.RobotNewton.0-1-0",
+        "FET004_Multibody.RobotPhysX.0-1-0",
+        "FET006_Materials.MDL.0-3-0",
+        "FET006_Materials.Openpbr.0-2-0",
+        "FET010_DisplayColor.0-1-0",
+        "FET022_DrivenJoints.0-2-0",
+        "FET022_DrivenJoints.Isaac.0-1-0",
+        "FET022_DrivenJoints.PhysX.0-1-0",
+        "FET022_DrivenJoints.Isaac.0-2-0",
+        "FET022_DrivenJoints.PhysX.0-2-0",
+        "FET022_DrivenJoints.Newton.0-1-0",
+        "FET028_Gripper.Isaac.0-1-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.Newton.0-2-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP004_Multibody.RobotMuJoCo.0-1-0",
+        "CAP022_DrivenJoints.MuJoCo.0-1-0",
+        "CAP024_BaseArticulation.Newton.0-1-0",
+        "CAP028_Gripper.MuJoCo.0-1-0",
+        "FET001_MinimalPlaceableVisual.1-0-1",
+        "FET003_RigidBody.Newton.0-1-0",
+        "FET004_Multibody.0-2-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.PhysX.0-4-0",
+        "FET004_Multibody.RobotNewton.0-1-0",
+        "FET004_Multibody.RobotPhysX.0-1-0",
+        "FET022_DrivenJoints.0-2-0",
+        "FET022_DrivenJoints.Isaac.0-1-0",
+        "FET022_DrivenJoints.PhysX.0-1-0",
+        "FET022_DrivenJoints.Isaac.0-2-0",
+        "FET022_DrivenJoints.PhysX.0-2-0",
+        "FET022_DrivenJoints.Newton.0-1-0",
+        "FET028_Gripper.Isaac.0-1-0"
+      ],
+      "n_features": 39,
+      "elapsed_s": 3.964
+    },
+    {
+      "tag": "usdcraft_b",
+      "profile": "Robotics-Prop",
+      "profile_version": "5.0.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.MuJoCo.0-2-0",
+        "CAP000_Core.Newton.0-2-0",
+        "CAP000_Core.PhysX.0-2-0",
+        "CAP003_RigidBody.MuJoCo.0-1-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP007_NonVisualMaterials.0-2-0",
+        "CAP100_IsaacComposition.Isaac.0-4-0",
+        "FET001_MinimalPlaceableVisual.1-0-1",
+        "FET003_RigidBody.Newton.0-1-0",
+        "FET004_Multibody.0-2-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.PhysX.0-4-0",
+        "FET005_Grasp.0-1-0",
+        "FET006_Materials.MDL.0-3-0",
+        "FET006_Materials.Openpbr.0-2-0",
+        "FET008_ObjectForward.0-1-0",
+        "FET010_DisplayColor.0-1-0",
+        "FET011_SemanticLabels.0-2-0",
+        "FET011_SemanticLabels.RTX.0-1-0"
+      ],
+      "blocking_failures": [
+        "FET001_MinimalPlaceableVisual.1-0-1",
+        "FET008_ObjectForward.0-1-0",
+        "FET011_SemanticLabels.0-2-0",
+        "FET011_SemanticLabels.RTX.0-1-0"
+      ],
+      "n_features": 27,
+      "elapsed_s": 3.926
+    },
+    {
+      "tag": "usdcraft_c",
+      "profile": "Assembly",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP027_Connections.0-1-0",
+        "CAP029_ConnectionJoint.0-1-0",
+        "CAP029_ConnectionJoint.MuJoCo.0-1-0",
+        "CAP029_ConnectionJoint.Newton.0-1-0",
+        "CAP029_ConnectionJoint.PhysX.0-1-0"
+      ],
+      "blocking_failures": [
+        "CAP027_Connections.0-1-0",
+        "CAP029_ConnectionJoint.0-1-0",
+        "CAP029_ConnectionJoint.MuJoCo.0-1-0",
+        "CAP029_ConnectionJoint.Newton.0-1-0",
+        "CAP029_ConnectionJoint.PhysX.0-1-0"
+      ],
+      "n_features": 8,
+      "elapsed_s": 0.085
+    },
+    {
+      "tag": "usdcraft_c",
+      "profile": "Material",
+      "profile_version": "1.0.0",
+      "status": "FAIL",
+      "failed_features": [
+        "FET006_Materials.0-3-0",
+        "FET006_Materials.MDL.0-3-0",
+        "FET006_Materials.Openpbr.0-2-0"
+      ],
+      "blocking_failures": [
+        "FET006_Materials.0-3-0"
+      ],
+      "n_features": 6,
+      "elapsed_s": 0.232
+    },
+    {
+      "tag": "usdcraft_c",
+      "profile": "NuRec",
+      "profile_version": "1.0.0",
+      "status": "FAIL",
+      "failed_features": [
+        "FET012_GaussianSplat.0-1-0"
+      ],
+      "blocking_failures": [
+        "FET012_GaussianSplat.0-1-0"
+      ],
+      "n_features": 2,
+      "elapsed_s": 0.053
+    },
+    {
+      "tag": "usdcraft_c",
+      "profile": "Open-Taxonomy-ADE20K",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "n_features": 3,
+      "elapsed_s": 0.051
+    },
+    {
+      "tag": "usdcraft_c",
+      "profile": "Open-Taxonomy-COCO",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "n_features": 3,
+      "elapsed_s": 0.052
+    },
+    {
+      "tag": "usdcraft_c",
+      "profile": "Open-Taxonomy-Cityscapes",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "n_features": 3,
+      "elapsed_s": 0.056
+    },
+    {
+      "tag": "usdcraft_c",
+      "profile": "Open-Taxonomy-ImageNet1K",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "n_features": 3,
+      "elapsed_s": 0.053
+    },
+    {
+      "tag": "usdcraft_c",
+      "profile": "Open-Taxonomy-PascalVOC",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "n_features": 3,
+      "elapsed_s": 0.051
+    },
+    {
+      "tag": "usdcraft_c",
+      "profile": "Open-Taxonomy-SUNRGBD",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.0-1-0",
+        "FET011_SemanticLabels.0-2-0"
+      ],
+      "n_features": 3,
+      "elapsed_s": 0.055
+    },
+    {
+      "tag": "usdcraft_c",
+      "profile": "Package",
+      "status": "UNAVAILABLE",
+      "detail": "unavailable_execution (不是 measured failure)"
+    },
+    {
+      "tag": "usdcraft_c",
+      "profile": "Package-Candidate",
+      "profile_version": "1.3.0",
+      "status": "PASS",
+      "failed_features": [],
+      "blocking_failures": [],
+      "n_features": 2,
+      "elapsed_s": 0.014
+    },
+    {
+      "tag": "usdcraft_c",
+      "profile": "Package-NoBOM",
+      "status": "UNAVAILABLE",
+      "detail": "unavailable_execution (不是 measured failure)"
+    },
+    {
+      "tag": "usdcraft_c",
+      "profile": "Robot-Assembly",
+      "profile_version": "0.1.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP027_Connections.0-1-0",
+        "CAP029_ConnectionJoint.0-1-0",
+        "FET022_DrivenJoints.0-2-0"
+      ],
+      "blocking_failures": [
+        "CAP027_Connections.0-1-0",
+        "CAP029_ConnectionJoint.0-1-0"
+      ],
+      "n_features": 7,
+      "elapsed_s": 0.096
+    },
+    {
+      "tag": "usdcraft_c",
+      "profile": "Robot-Body",
+      "profile_version": "4.0.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.Isaac.0-2-0",
+        "CAP000_Core.MuJoCo.0-2-0",
+        "CAP000_Core.Newton.0-2-0",
+        "CAP000_Core.PhysX.0-2-0",
+        "CAP003_RigidBody.MuJoCo.0-1-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP004_Multibody.RobotMuJoCo.0-1-0",
+        "CAP021_RobotCore.Isaac.0-3-0",
+        "CAP022_DrivenJoints.MuJoCo.0-1-0",
+        "CAP024_BaseArticulation.Newton.0-1-0",
+        "CAP025_RosBridge.Ros.0-1-0",
+        "CAP100_IsaacComposition.Isaac.0-3-0",
+        "FET003_RigidBody.Newton.0-1-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.RobotNewton.0-1-0",
+        "FET006_Materials.0-3-0",
+        "FET006_Materials.MDL.0-3-0",
+        "FET006_Materials.Openpbr.0-2-0",
+        "FET008_ObjectForward.0-1-0",
+        "FET009_MaterialCoverage.0-1-0",
+        "FET010_DisplayColor.0-1-0",
+        "FET022_DrivenJoints.0-2-0",
+        "FET022_DrivenJoints.Isaac.0-2-0",
+        "FET022_DrivenJoints.PhysX.0-2-0",
+        "FET022_DrivenJoints.Newton.0-1-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.Newton.0-2-0",
+        "CAP024_BaseArticulation.Newton.0-1-0",
+        "FET003_RigidBody.Newton.0-1-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.RobotNewton.0-1-0",
+        "FET006_Materials.0-3-0",
+        "FET009_MaterialCoverage.0-1-0",
+        "FET022_DrivenJoints.Newton.0-1-0"
+      ],
+      "n_features": 36,
+      "elapsed_s": 0.743
+    },
+    {
+      "tag": "usdcraft_c",
+      "profile": "Robot-Gripper",
+      "profile_version": "4.0.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.MuJoCo.0-2-0",
+        "CAP000_Core.Newton.0-2-0",
+        "CAP000_Core.PhysX.0-2-0",
+        "CAP003_RigidBody.MuJoCo.0-1-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP004_Multibody.RobotMuJoCo.0-1-0",
+        "CAP021_RobotCore.Isaac.0-2-0",
+        "CAP022_DrivenJoints.MuJoCo.0-1-0",
+        "CAP024_BaseArticulation.Newton.0-1-0",
+        "CAP028_Gripper.MuJoCo.0-1-0",
+        "CAP100_IsaacComposition.Isaac.0-3-0",
+        "FET003_RigidBody.Newton.0-1-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.RobotNewton.0-1-0",
+        "FET006_Materials.0-3-0",
+        "FET006_Materials.MDL.0-3-0",
+        "FET006_Materials.Openpbr.0-2-0",
+        "FET009_MaterialCoverage.0-1-0",
+        "FET010_DisplayColor.0-1-0",
+        "FET022_DrivenJoints.0-2-0",
+        "FET022_DrivenJoints.Isaac.0-1-0",
+        "FET022_DrivenJoints.PhysX.0-1-0",
+        "FET022_DrivenJoints.Isaac.0-2-0",
+        "FET022_DrivenJoints.PhysX.0-2-0",
+        "FET022_DrivenJoints.Newton.0-1-0",
+        "FET028_Gripper.Isaac.0-1-0"
+      ],
+      "blocking_failures": [
+        "CAP000_Core.Newton.0-2-0",
+        "CAP024_BaseArticulation.Newton.0-1-0",
+        "FET003_RigidBody.Newton.0-1-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET004_Multibody.RobotNewton.0-1-0",
+        "FET006_Materials.0-3-0",
+        "FET009_MaterialCoverage.0-1-0",
+        "FET022_DrivenJoints.Newton.0-1-0"
+      ],
+      "n_features": 39,
+      "elapsed_s": 0.739
+    },
+    {
+      "tag": "usdcraft_c",
+      "profile": "Robotics-Prop",
+      "profile_version": "5.0.0",
+      "status": "FAIL",
+      "failed_features": [
+        "CAP000_Core.MuJoCo.0-2-0",
+        "CAP000_Core.Newton.0-2-0",
+        "CAP000_Core.PhysX.0-2-0",
+        "CAP003_RigidBody.MuJoCo.0-1-0",
+        "CAP004_Multibody.MuJoCo.0-1-0",
+        "CAP007_NonVisualMaterials.0-2-0",
+        "CAP100_IsaacComposition.Isaac.0-4-0",
+        "FET003_RigidBody.Newton.0-1-0",
+        "FET004_Multibody.Newton.0-1-0",
+        "FET005_Grasp.0-1-0",
+        "FET006_Materials.0-3-0",
+        "FET006_Materials.MDL.0-3-0",
+        "FET006_Materials.Openpbr.0-2-0",
+        "FET008_ObjectForward.0-1-0",
+        "FET009_MaterialCoverage.0-1-0",
+        "FET010_DisplayColor.0-1-0",
+        "FET011_SemanticLabels.0-2-0",
+        "FET011_SemanticLabels.RTX.0-1-0"
+      ],
+      "blocking_failures": [
+        "FET006_Materials.0-3-0",
+        "FET008_ObjectForward.0-1-0",
+        "FET009_MaterialCoverage.0-1-0",
+        "FET011_SemanticLabels.0-2-0",
+        "FET011_SemanticLabels.RTX.0-1-0"
+      ],
+      "n_features": 27,
+      "elapsed_s": 0.693
+    }
+  ],
+  "our_asset_requirement_gaps": [
+    {
+      "profile": "Assembly",
+      "feature": "CAP027_Connections.0-1-0",
+      "requirement": "com.nvidia.simready.CN.001",
+      "message": "Assembly default prim '/Product' has no 'Connections' Scope."
+    },
+    {
+      "profile": "Assembly",
+      "feature": "CAP027_Connections.0-1-0",
+      "requirement": "com.nvidia.simready.CN.008",
+      "message": "Assembly default prim '/Product' does not author 'simready:mate:assemblyType'."
+    },
+    {
+      "profile": "Assembly",
+      "feature": "CAP027_Connections.0-1-0",
+      "requirement": "com.nvidia.simready.CN.012",
+      "message": "Assembly default prim '/Product' has kind 'component'; it must be 'assembly'."
+    },
+    {
+      "profile": "Assembly",
+      "feature": "CAP029_ConnectionJoint.0-1-0",
+      "requirement": "com.nvidia.simready.CN.001",
+      "message": "Assembly default prim '/Product' has no 'Connections' Scope."
+    },
+    {
+      "profile": "Assembly",
+      "feature": "CAP029_ConnectionJoint.0-1-0",
+      "requirement": "com.nvidia.simready.CN.008",
+      "message": "Assembly default prim '/Product' does not author 'simready:mate:assemblyType'."
+    },
+    {
+      "profile": "Assembly",
+      "feature": "CAP029_ConnectionJoint.0-1-0",
+      "requirement": "com.nvidia.simready.CN.012",
+      "message": "Assembly default prim '/Product' has kind 'component'; it must be 'assembly'."
+    },
+    {
+      "profile": "Assembly",
+      "feature": "CAP029_ConnectionJoint.MuJoCo.0-1-0",
+      "requirement": "com.nvidia.simready.CN.001",
+      "message": "Assembly default prim '/Product' has no 'Connections' Scope."
+    },
+    {
+      "profile": "Assembly",
+      "feature": "CAP029_ConnectionJoint.MuJoCo.0-1-0",
+      "requirement": "com.nvidia.simready.CN.008",
+      "message": "Assembly default prim '/Product' does not author 'simready:mate:assemblyType'."
+    },
+    {
+      "profile": "Assembly",
+      "feature": "CAP029_ConnectionJoint.MuJoCo.0-1-0",
+      "requirement": "com.nvidia.simready.CN.012",
+      "message": "Assembly default prim '/Product' has kind 'component'; it must be 'assembly'."
+    },
+    {
+      "profile": "Assembly",
+      "feature": "CAP029_ConnectionJoint.Newton.0-1-0",
+      "requirement": "com.nvidia.simready.CN.001",
+      "message": "Assembly default prim '/Product' has no 'Connections' Scope."
+    },
+    {
+      "profile": "Assembly",
+      "feature": "CAP029_ConnectionJoint.Newton.0-1-0",
+      "requirement": "com.nvidia.simready.CN.008",
+      "message": "Assembly default prim '/Product' does not author 'simready:mate:assemblyType'."
+    },
+    {
+      "profile": "Assembly",
+      "feature": "CAP029_ConnectionJoint.Newton.0-1-0",
+      "requirement": "com.nvidia.simready.CN.012",
+      "message": "Assembly default prim '/Product' has kind 'component'; it must be 'assembly'."
+    },
+    {
+      "profile": "Assembly",
+      "feature": "CAP029_ConnectionJoint.PhysX.0-1-0",
+      "requirement": "com.nvidia.simready.CN.001",
+      "message": "Assembly default prim '/Product' has no 'Connections' Scope."
+    },
+    {
+      "profile": "Assembly",
+      "feature": "CAP029_ConnectionJoint.PhysX.0-1-0",
+      "requirement": "com.nvidia.simready.CN.008",
+      "message": "Assembly default prim '/Product' does not author 'simready:mate:assemblyType'."
+    },
+    {
+      "profile": "Assembly",
+      "feature": "CAP029_ConnectionJoint.PhysX.0-1-0",
+      "requirement": "com.nvidia.simready.CN.012",
+      "message": "Assembly default prim '/Product' has kind 'component'; it must be 'assembly'."
+    },
+    {
+      "profile": "Assembly",
+      "feature": "FET003_RigidBody.0-2-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Assembly",
+      "feature": "FET004_Multibody.0-2-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Material",
+      "feature": "CAP000_Core.0-2-0",
+      "requirement": "com.nvidia.simready.NP.005",
+      "message": "Exactly one USD file is allowed in the intermediate folder 'demo_classic' (the main asset file). Found 3: Product.usda, geometry.usdc, materials.usda"
+    },
+    {
+      "profile": "Material",
+      "feature": "CAP031_SelfContainedPackage.0-1-0",
+      "requirement": "com.nvidia.usd.AA.001",
+      "message": "Dependent Reference \"../../../assets/textures/demo_classic_albedo.png\" (resolved to \"assets\\textures\\demo_classic_albedo.png\") is outside of the asset root."
+    },
+    {
+      "profile": "Material",
+      "feature": "CAP033_SimReadyPackage.0-4-0",
+      "requirement": "com.nvidia.simready.SR.002",
+      "message": "No thumbnail found at output/usd/demo_classic/.thumbs/256x256/Product.usda.png for SimReady asset <output/usd/demo_classic/Product.usda>"
+    },
+    {
+      "profile": "Material",
+      "feature": "CAP033_SimReadyPackage.0-4-0",
+      "requirement": "com.nvidia.simready.SR.004",
+      "message": "Required metadata fields are missing: author, asset_name, asset_type, asset_license, category, source_file, usd_date_generated, qcode, rigid_body_count, asset_extents, mass. Fields may be authored in root-layer customLayerData (including SimReady_Metadata) and/or the same-directory sidecar JSON."
+    },
+    {
+      "profile": "Material",
+      "feature": "CAP033_SimReadyPackage.0-4-0",
+      "requirement": "com.nvidia.usd.AA.001",
+      "message": "Dependent Reference \"../../../assets/textures/demo_classic_albedo.png\" (resolved to \"assets\\textures\\demo_classic_albedo.png\") is outside of the asset root."
+    },
+    {
+      "profile": "NuRec",
+      "feature": "CAP000_Core.0-2-0",
+      "requirement": "com.nvidia.simready.NP.005",
+      "message": "Exactly one USD file is allowed in the intermediate folder 'demo_classic' (the main asset file). Found 3: Product.usda, geometry.usdc, materials.usda"
+    },
+    {
+      "profile": "NuRec",
+      "feature": "FET012_GaussianSplat.0-1-0",
+      "requirement": "com.nvidia.simready.SPL.001",
+      "message": "No 'ParticleField3DGaussianSplat' prim found. FET_012 requires the asset's visual representation to be a 3D Gaussian Splat."
+    },
+    {
+      "profile": "NuRec",
+      "feature": "FET012_GaussianSplat.0-1-0",
+      "requirement": "com.nvidia.simready.UN.006",
+      "message": "Stage has upAxis of 'Y', not 'Z'."
+    },
+    {
+      "profile": "NuRec",
+      "feature": "FET012_GaussianSplat.0-1-0",
+      "requirement": "com.nvidia.usd.AA.001",
+      "message": "Dependent Reference \"../../../assets/textures/demo_classic_albedo.png\" (resolved to \"assets\\textures\\demo_classic_albedo.png\") is outside of the asset root."
+    },
+    {
+      "profile": "Open-Taxonomy-ADE20K",
+      "feature": "CAP000_Core.0-1-0",
+      "requirement": "com.nvidia.simready.NP.005",
+      "message": "Exactly one USD file is allowed in the intermediate folder 'demo_classic' (the main asset file). Found 3: Product.usda, geometry.usdc, materials.usda"
+    },
+    {
+      "profile": "Open-Taxonomy-ADE20K",
+      "feature": "CAP000_Core.0-1-0",
+      "requirement": "com.nvidia.simready.NP.006",
+      "message": "Asset 'Product' has no metadata. Metadata must be stored in custom layer data as 'SimReady_Metadata' or a sidecar JSON file."
+    },
+    {
+      "profile": "Open-Taxonomy-ADE20K",
+      "feature": "CAP000_Core.0-1-0",
+      "requirement": "com.nvidia.simready.SR.001",
+      "message": "Required metadata fields are missing: SimReady_Metadata, asset_name, asset_type, source_file, usd_date_generated. Fields must be authored directly in the root layer's customLayerData."
+    },
+    {
+      "profile": "Open-Taxonomy-ADE20K",
+      "feature": "FET011_SemanticLabels.0-2-0",
+      "requirement": "com.nvidia.simready.SL.001",
+      "message": "Unlabeled prim: no SemanticsLabelsAPI semantics found on the prim, its ancestors, its bound material, or its GeomSubsets."
+    },
+    {
+      "profile": "Open-Taxonomy-COCO",
+      "feature": "CAP000_Core.0-1-0",
+      "requirement": "com.nvidia.simready.NP.005",
+      "message": "Exactly one USD file is allowed in the intermediate folder 'demo_classic' (the main asset file). Found 3: Product.usda, geometry.usdc, materials.usda"
+    },
+    {
+      "profile": "Open-Taxonomy-COCO",
+      "feature": "CAP000_Core.0-1-0",
+      "requirement": "com.nvidia.simready.NP.006",
+      "message": "Asset 'Product' has no metadata. Metadata must be stored in custom layer data as 'SimReady_Metadata' or a sidecar JSON file."
+    },
+    {
+      "profile": "Open-Taxonomy-COCO",
+      "feature": "CAP000_Core.0-1-0",
+      "requirement": "com.nvidia.simready.SR.001",
+      "message": "Required metadata fields are missing: SimReady_Metadata, asset_name, asset_type, source_file, usd_date_generated. Fields must be authored directly in the root layer's customLayerData."
+    },
+    {
+      "profile": "Open-Taxonomy-COCO",
+      "feature": "FET011_SemanticLabels.0-2-0",
+      "requirement": "com.nvidia.simready.SL.001",
+      "message": "Unlabeled prim: no SemanticsLabelsAPI semantics found on the prim, its ancestors, its bound material, or its GeomSubsets."
+    },
+    {
+      "profile": "Open-Taxonomy-Cityscapes",
+      "feature": "CAP000_Core.0-1-0",
+      "requirement": "com.nvidia.simready.NP.005",
+      "message": "Exactly one USD file is allowed in the intermediate folder 'demo_classic' (the main asset file). Found 3: Product.usda, geometry.usdc, materials.usda"
+    },
+    {
+      "profile": "Open-Taxonomy-Cityscapes",
+      "feature": "CAP000_Core.0-1-0",
+      "requirement": "com.nvidia.simready.NP.006",
+      "message": "Asset 'Product' has no metadata. Metadata must be stored in custom layer data as 'SimReady_Metadata' or a sidecar JSON file."
+    },
+    {
+      "profile": "Open-Taxonomy-Cityscapes",
+      "feature": "CAP000_Core.0-1-0",
+      "requirement": "com.nvidia.simready.SR.001",
+      "message": "Required metadata fields are missing: SimReady_Metadata, asset_name, asset_type, source_file, usd_date_generated. Fields must be authored directly in the root layer's customLayerData."
+    },
+    {
+      "profile": "Open-Taxonomy-Cityscapes",
+      "feature": "FET011_SemanticLabels.0-2-0",
+      "requirement": "com.nvidia.simready.SL.001",
+      "message": "Unlabeled prim: no SemanticsLabelsAPI semantics found on the prim, its ancestors, its bound material, or its GeomSubsets."
+    },
+    {
+      "profile": "Open-Taxonomy-ImageNet1K",
+      "feature": "CAP000_Core.0-1-0",
+      "requirement": "com.nvidia.simready.NP.005",
+      "message": "Exactly one USD file is allowed in the intermediate folder 'demo_classic' (the main asset file). Found 3: Product.usda, geometry.usdc, materials.usda"
+    },
+    {
+      "profile": "Open-Taxonomy-ImageNet1K",
+      "feature": "CAP000_Core.0-1-0",
+      "requirement": "com.nvidia.simready.NP.006",
+      "message": "Asset 'Product' has no metadata. Metadata must be stored in custom layer data as 'SimReady_Metadata' or a sidecar JSON file."
+    },
+    {
+      "profile": "Open-Taxonomy-ImageNet1K",
+      "feature": "CAP000_Core.0-1-0",
+      "requirement": "com.nvidia.simready.SR.001",
+      "message": "Required metadata fields are missing: SimReady_Metadata, asset_name, asset_type, source_file, usd_date_generated. Fields must be authored directly in the root layer's customLayerData."
+    },
+    {
+      "profile": "Open-Taxonomy-ImageNet1K",
+      "feature": "FET011_SemanticLabels.0-2-0",
+      "requirement": "com.nvidia.simready.SL.001",
+      "message": "Unlabeled prim: no SemanticsLabelsAPI semantics found on the prim, its ancestors, its bound material, or its GeomSubsets."
+    },
+    {
+      "profile": "Open-Taxonomy-PascalVOC",
+      "feature": "CAP000_Core.0-1-0",
+      "requirement": "com.nvidia.simready.NP.005",
+      "message": "Exactly one USD file is allowed in the intermediate folder 'demo_classic' (the main asset file). Found 3: Product.usda, geometry.usdc, materials.usda"
+    },
+    {
+      "profile": "Open-Taxonomy-PascalVOC",
+      "feature": "CAP000_Core.0-1-0",
+      "requirement": "com.nvidia.simready.NP.006",
+      "message": "Asset 'Product' has no metadata. Metadata must be stored in custom layer data as 'SimReady_Metadata' or a sidecar JSON file."
+    },
+    {
+      "profile": "Open-Taxonomy-PascalVOC",
+      "feature": "CAP000_Core.0-1-0",
+      "requirement": "com.nvidia.simready.SR.001",
+      "message": "Required metadata fields are missing: SimReady_Metadata, asset_name, asset_type, source_file, usd_date_generated. Fields must be authored directly in the root layer's customLayerData."
+    },
+    {
+      "profile": "Open-Taxonomy-PascalVOC",
+      "feature": "FET011_SemanticLabels.0-2-0",
+      "requirement": "com.nvidia.simready.SL.001",
+      "message": "Unlabeled prim: no SemanticsLabelsAPI semantics found on the prim, its ancestors, its bound material, or its GeomSubsets."
+    },
+    {
+      "profile": "Open-Taxonomy-SUNRGBD",
+      "feature": "CAP000_Core.0-1-0",
+      "requirement": "com.nvidia.simready.NP.005",
+      "message": "Exactly one USD file is allowed in the intermediate folder 'demo_classic' (the main asset file). Found 3: Product.usda, geometry.usdc, materials.usda"
+    },
+    {
+      "profile": "Open-Taxonomy-SUNRGBD",
+      "feature": "CAP000_Core.0-1-0",
+      "requirement": "com.nvidia.simready.NP.006",
+      "message": "Asset 'Product' has no metadata. Metadata must be stored in custom layer data as 'SimReady_Metadata' or a sidecar JSON file."
+    },
+    {
+      "profile": "Open-Taxonomy-SUNRGBD",
+      "feature": "CAP000_Core.0-1-0",
+      "requirement": "com.nvidia.simready.SR.001",
+      "message": "Required metadata fields are missing: SimReady_Metadata, asset_name, asset_type, source_file, usd_date_generated. Fields must be authored directly in the root layer's customLayerData."
+    },
+    {
+      "profile": "Open-Taxonomy-SUNRGBD",
+      "feature": "FET011_SemanticLabels.0-2-0",
+      "requirement": "com.nvidia.simready.SL.001",
+      "message": "Unlabeled prim: no SemanticsLabelsAPI semantics found on the prim, its ancestors, its bound material, or its GeomSubsets."
+    },
+    {
+      "profile": "Package-Candidate",
+      "feature": "CAP031_SelfContainedPackage.0-1-0",
+      "requirement": "com.nvidia.usd.AA.001",
+      "message": "Dependent Reference \"../../../assets/textures/demo_classic_albedo.png\" (resolved to \"assets\\textures\\demo_classic_albedo.png\") is outside of the asset root."
+    },
+    {
+      "profile": "Package-Candidate",
+      "feature": "CAP033_SimReadyPackage.0-4-0",
+      "requirement": "com.nvidia.simready.SR.002",
+      "message": "No thumbnail found at output/usd/demo_classic/.thumbs/256x256/Product.usda.png for SimReady asset <output/usd/demo_classic/Product.usda>"
+    },
+    {
+      "profile": "Package-Candidate",
+      "feature": "CAP033_SimReadyPackage.0-4-0",
+      "requirement": "com.nvidia.simready.SR.004",
+      "message": "Required metadata fields are missing: author, asset_name, asset_type, asset_license, category, source_file, usd_date_generated, qcode, rigid_body_count, asset_extents, mass. Fields may be authored in root-layer customLayerData (including SimReady_Metadata) and/or the same-directory sidecar JSON."
+    },
+    {
+      "profile": "Package-Candidate",
+      "feature": "CAP033_SimReadyPackage.0-4-0",
+      "requirement": "com.nvidia.usd.AA.001",
+      "message": "Dependent Reference \"../../../assets/textures/demo_classic_albedo.png\" (resolved to \"assets\\textures\\demo_classic_albedo.png\") is outside of the asset root."
+    },
+    {
+      "profile": "Robot-Assembly",
+      "feature": "CAP027_Connections.0-1-0",
+      "requirement": "com.nvidia.simready.CN.001",
+      "message": "Assembly default prim '/Product' has no 'Connections' Scope."
+    },
+    {
+      "profile": "Robot-Assembly",
+      "feature": "CAP027_Connections.0-1-0",
+      "requirement": "com.nvidia.simready.CN.008",
+      "message": "Assembly default prim '/Product' does not author 'simready:mate:assemblyType'."
+    },
+    {
+      "profile": "Robot-Assembly",
+      "feature": "CAP027_Connections.0-1-0",
+      "requirement": "com.nvidia.simready.CN.012",
+      "message": "Assembly default prim '/Product' has kind 'component'; it must be 'assembly'."
+    },
+    {
+      "profile": "Robot-Assembly",
+      "feature": "CAP029_ConnectionJoint.0-1-0",
+      "requirement": "com.nvidia.simready.CN.001",
+      "message": "Assembly default prim '/Product' has no 'Connections' Scope."
+    },
+    {
+      "profile": "Robot-Assembly",
+      "feature": "CAP029_ConnectionJoint.0-1-0",
+      "requirement": "com.nvidia.simready.CN.008",
+      "message": "Assembly default prim '/Product' does not author 'simready:mate:assemblyType'."
+    },
+    {
+      "profile": "Robot-Assembly",
+      "feature": "CAP029_ConnectionJoint.0-1-0",
+      "requirement": "com.nvidia.simready.CN.012",
+      "message": "Assembly default prim '/Product' has kind 'component'; it must be 'assembly'."
+    },
+    {
+      "profile": "Robot-Assembly",
+      "feature": "FET003_RigidBody.0-2-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Assembly",
+      "feature": "FET004_Multibody.0-2-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Assembly",
+      "feature": "FET004_Multibody.0-2-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Assembly",
+      "feature": "FET022_DrivenJoints.0-2-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Assembly",
+      "feature": "FET022_DrivenJoints.0-2-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "CAP000_Core.0-2-0",
+      "requirement": "com.nvidia.simready.NP.005",
+      "message": "Exactly one USD file is allowed in the intermediate folder 'demo_classic' (the main asset file). Found 3: Product.usda, geometry.usdc, materials.usda"
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "CAP000_Core.Isaac.0-2-0",
+      "requirement": "com.nvidia.simready.NP.005",
+      "message": "Exactly one USD file is allowed in the intermediate folder 'demo_classic' (the main asset file). Found 3: Product.usda, geometry.usdc, materials.usda"
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "CAP000_Core.MuJoCo.0-2-0",
+      "requirement": "com.nvidia.simready.NP.005",
+      "message": "Exactly one USD file is allowed in the intermediate folder 'demo_classic' (the main asset file). Found 3: Product.usda, geometry.usdc, materials.usda"
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "CAP000_Core.Newton.0-2-0",
+      "requirement": "com.nvidia.simready.NP.005",
+      "message": "Exactly one USD file is allowed in the intermediate folder 'demo_classic' (the main asset file). Found 3: Product.usda, geometry.usdc, materials.usda"
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "CAP000_Core.Newton.0-2-0",
+      "requirement": "com.nvidia.simready.RV.004",
+      "message": "Default prim </Product> must declare a 'Newton' physics runtime variant set."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "CAP000_Core.PhysX.0-2-0",
+      "requirement": "com.nvidia.simready.NP.005",
+      "message": "Exactly one USD file is allowed in the intermediate folder 'demo_classic' (the main asset file). Found 3: Product.usda, geometry.usdc, materials.usda"
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "CAP003_RigidBody.MuJoCo.0-1-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "CAP004_Multibody.MuJoCo.0-1-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "CAP004_Multibody.MuJoCo.0-1-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "CAP004_Multibody.RobotMuJoCo.0-1-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "CAP004_Multibody.RobotMuJoCo.0-1-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "CAP022_DrivenJoints.MuJoCo.0-1-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "CAP022_DrivenJoints.MuJoCo.0-1-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "CAP024_BaseArticulation.Newton.0-1-0",
+      "requirement": "com.nvidia.simready.NEWTON.BA.001",
+      "message": "Newton articulation configuration requires exactly one UsdPhysics.ArticulationRootAPI prim; found 0."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "CAP031_SelfContainedPackage.0-1-0",
+      "requirement": "com.nvidia.usd.AA.001",
+      "message": "Dependent Reference \"../../../assets/textures/demo_classic_albedo.png\" (resolved to \"assets\\textures\\demo_classic_albedo.png\") is outside of the asset root."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "CAP033_SimReadyPackage.0-4-0",
+      "requirement": "com.nvidia.simready.SR.002",
+      "message": "No thumbnail found at output/usd/demo_classic/.thumbs/256x256/Product.usda.png for SimReady asset <output/usd/demo_classic/Product.usda>"
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "CAP033_SimReadyPackage.0-4-0",
+      "requirement": "com.nvidia.simready.SR.004",
+      "message": "Required metadata fields are missing: author, asset_name, asset_type, asset_license, category, source_file, usd_date_generated, qcode, rigid_body_count, asset_extents, mass. Fields may be authored in root-layer customLayerData (including SimReady_Metadata) and/or the same-directory sidecar JSON."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "CAP033_SimReadyPackage.0-4-0",
+      "requirement": "com.nvidia.usd.AA.001",
+      "message": "Dependent Reference \"../../../assets/textures/demo_classic_albedo.png\" (resolved to \"assets\\textures\\demo_classic_albedo.png\") is outside of the asset root."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "FET001_MinimalPlaceableVisual.1-0-1",
+      "requirement": "com.nvidia.simready.UN.006",
+      "message": "Stage has upAxis of 'Y', not 'Z'."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "FET001_MinimalPlaceableVisual.1-0-1",
+      "requirement": "com.nvidia.usd.AA.001",
+      "message": "Dependent Reference \"../../../assets/textures/demo_classic_albedo.png\" (resolved to \"assets\\textures\\demo_classic_albedo.png\") is outside of the asset root."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "FET003_RigidBody.0-2-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "FET003_RigidBody.Newton.0-1-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "FET003_RigidBody.PhysX.0-4-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "FET004_Multibody.0-2-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "FET004_Multibody.0-2-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "FET004_Multibody.Newton.0-1-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "FET004_Multibody.Newton.0-1-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "FET004_Multibody.PhysX.0-4-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "FET004_Multibody.PhysX.0-4-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "FET004_Multibody.RobotNewton.0-1-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "FET004_Multibody.RobotNewton.0-1-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "FET008_ObjectForward.0-1-0",
+      "requirement": "com.nvidia.simready.UN.006",
+      "message": "Stage has upAxis of 'Y', not 'Z'."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "FET008_ObjectForward.0-1-0",
+      "requirement": "com.nvidia.usd.AA.001",
+      "message": "Dependent Reference \"../../../assets/textures/demo_classic_albedo.png\" (resolved to \"assets\\textures\\demo_classic_albedo.png\") is outside of the asset root."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "FET009_MaterialCoverage.0-1-0",
+      "requirement": "com.nvidia.simready.VM.MAT.001",
+      "message": "GPrim '/Product/Carton_demo_classic/CapLip_demo_classic/Cylinder_001' does not have a material binding"
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "FET022_DrivenJoints.0-2-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "FET022_DrivenJoints.0-2-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "FET022_DrivenJoints.Isaac.0-2-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "FET022_DrivenJoints.Isaac.0-2-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "FET022_DrivenJoints.PhysX.0-2-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "FET022_DrivenJoints.PhysX.0-2-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "FET022_DrivenJoints.Newton.0-1-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Body",
+      "feature": "FET022_DrivenJoints.Newton.0-1-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "CAP000_Core.0-2-0",
+      "requirement": "com.nvidia.simready.NP.005",
+      "message": "Exactly one USD file is allowed in the intermediate folder 'demo_classic' (the main asset file). Found 3: Product.usda, geometry.usdc, materials.usda"
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "CAP000_Core.MuJoCo.0-2-0",
+      "requirement": "com.nvidia.simready.NP.005",
+      "message": "Exactly one USD file is allowed in the intermediate folder 'demo_classic' (the main asset file). Found 3: Product.usda, geometry.usdc, materials.usda"
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "CAP000_Core.Newton.0-2-0",
+      "requirement": "com.nvidia.simready.NP.005",
+      "message": "Exactly one USD file is allowed in the intermediate folder 'demo_classic' (the main asset file). Found 3: Product.usda, geometry.usdc, materials.usda"
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "CAP000_Core.Newton.0-2-0",
+      "requirement": "com.nvidia.simready.RV.004",
+      "message": "Default prim </Product> must declare a 'Newton' physics runtime variant set."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "CAP000_Core.PhysX.0-2-0",
+      "requirement": "com.nvidia.simready.NP.005",
+      "message": "Exactly one USD file is allowed in the intermediate folder 'demo_classic' (the main asset file). Found 3: Product.usda, geometry.usdc, materials.usda"
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "CAP003_RigidBody.MuJoCo.0-1-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "CAP004_Multibody.MuJoCo.0-1-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "CAP004_Multibody.MuJoCo.0-1-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "CAP004_Multibody.RobotMuJoCo.0-1-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "CAP004_Multibody.RobotMuJoCo.0-1-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "CAP022_DrivenJoints.MuJoCo.0-1-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "CAP022_DrivenJoints.MuJoCo.0-1-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "CAP024_BaseArticulation.Newton.0-1-0",
+      "requirement": "com.nvidia.simready.NEWTON.BA.001",
+      "message": "Newton articulation configuration requires exactly one UsdPhysics.ArticulationRootAPI prim; found 0."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "CAP028_Gripper.MuJoCo.0-1-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "CAP028_Gripper.MuJoCo.0-1-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "CAP031_SelfContainedPackage.0-1-0",
+      "requirement": "com.nvidia.usd.AA.001",
+      "message": "Dependent Reference \"../../../assets/textures/demo_classic_albedo.png\" (resolved to \"assets\\textures\\demo_classic_albedo.png\") is outside of the asset root."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "CAP033_SimReadyPackage.0-4-0",
+      "requirement": "com.nvidia.simready.SR.002",
+      "message": "No thumbnail found at output/usd/demo_classic/.thumbs/256x256/Product.usda.png for SimReady asset <output/usd/demo_classic/Product.usda>"
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "CAP033_SimReadyPackage.0-4-0",
+      "requirement": "com.nvidia.simready.SR.004",
+      "message": "Required metadata fields are missing: author, asset_name, asset_type, asset_license, category, source_file, usd_date_generated, qcode, rigid_body_count, asset_extents, mass. Fields may be authored in root-layer customLayerData (including SimReady_Metadata) and/or the same-directory sidecar JSON."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "CAP033_SimReadyPackage.0-4-0",
+      "requirement": "com.nvidia.usd.AA.001",
+      "message": "Dependent Reference \"../../../assets/textures/demo_classic_albedo.png\" (resolved to \"assets\\textures\\demo_classic_albedo.png\") is outside of the asset root."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET001_MinimalPlaceableVisual.1-0-1",
+      "requirement": "com.nvidia.simready.UN.006",
+      "message": "Stage has upAxis of 'Y', not 'Z'."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET001_MinimalPlaceableVisual.1-0-1",
+      "requirement": "com.nvidia.usd.AA.001",
+      "message": "Dependent Reference \"../../../assets/textures/demo_classic_albedo.png\" (resolved to \"assets\\textures\\demo_classic_albedo.png\") is outside of the asset root."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET003_RigidBody.0-2-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET003_RigidBody.Newton.0-1-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET003_RigidBody.PhysX.0-4-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET004_Multibody.0-2-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET004_Multibody.0-2-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET004_Multibody.Newton.0-1-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET004_Multibody.Newton.0-1-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET004_Multibody.PhysX.0-4-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET004_Multibody.PhysX.0-4-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET004_Multibody.RobotNewton.0-1-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET004_Multibody.RobotNewton.0-1-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET004_Multibody.RobotPhysX.0-1-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET004_Multibody.RobotPhysX.0-1-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET009_MaterialCoverage.0-1-0",
+      "requirement": "com.nvidia.simready.VM.MAT.001",
+      "message": "GPrim '/Product/Carton_demo_classic/CapLip_demo_classic/Cylinder_001' does not have a material binding"
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET022_DrivenJoints.0-2-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET022_DrivenJoints.0-2-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET022_DrivenJoints.Isaac.0-1-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET022_DrivenJoints.Isaac.0-1-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET022_DrivenJoints.PhysX.0-1-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET022_DrivenJoints.PhysX.0-1-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET022_DrivenJoints.Isaac.0-2-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET022_DrivenJoints.Isaac.0-2-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET022_DrivenJoints.PhysX.0-2-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET022_DrivenJoints.PhysX.0-2-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET022_DrivenJoints.Newton.0-1-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET022_DrivenJoints.Newton.0-1-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET028_Gripper.Isaac.0-1-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robot-Gripper",
+      "feature": "FET028_Gripper.Isaac.0-1-0",
+      "requirement": "com.nvidia.simready.RB.MB.001",
+      "message": "Not enough physics rigid bodies found under the default prim. Found 0, expected at least 2."
+    },
+    {
+      "profile": "Robotics-Prop",
+      "feature": "CAP000_Core.0-2-0",
+      "requirement": "com.nvidia.simready.NP.005",
+      "message": "Exactly one USD file is allowed in the intermediate folder 'demo_classic' (the main asset file). Found 3: Product.usda, geometry.usdc, materials.usda"
+    },
+    {
+      "profile": "Robotics-Prop",
+      "feature": "CAP000_Core.MuJoCo.0-2-0",
+      "requirement": "com.nvidia.simready.NP.005",
+      "message": "Exactly one USD file is allowed in the intermediate folder 'demo_classic' (the main asset file). Found 3: Product.usda, geometry.usdc, materials.usda"
+    },
+    {
+      "profile": "Robotics-Prop",
+      "feature": "CAP000_Core.Newton.0-2-0",
+      "requirement": "com.nvidia.simready.NP.005",
+      "message": "Exactly one USD file is allowed in the intermediate folder 'demo_classic' (the main asset file). Found 3: Product.usda, geometry.usdc, materials.usda"
+    },
+    {
+      "profile": "Robotics-Prop",
+      "feature": "CAP000_Core.PhysX.0-2-0",
+      "requirement": "com.nvidia.simready.NP.005",
+      "message": "Exactly one USD file is allowed in the intermediate folder 'demo_classic' (the main asset file). Found 3: Product.usda, geometry.usdc, materials.usda"
+    },
+    {
+      "profile": "Robotics-Prop",
+      "feature": "CAP003_RigidBody.MuJoCo.0-1-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robotics-Prop",
+      "feature": "CAP004_Multibody.MuJoCo.0-1-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robotics-Prop",
+      "feature": "CAP031_SelfContainedPackage.0-1-0",
+      "requirement": "com.nvidia.usd.AA.001",
+      "message": "Dependent Reference \"../../../assets/textures/demo_classic_albedo.png\" (resolved to \"assets\\textures\\demo_classic_albedo.png\") is outside of the asset root."
+    },
+    {
+      "profile": "Robotics-Prop",
+      "feature": "CAP033_SimReadyPackage.0-4-0",
+      "requirement": "com.nvidia.simready.SR.002",
+      "message": "No thumbnail found at output/usd/demo_classic/.thumbs/256x256/Product.usda.png for SimReady asset <output/usd/demo_classic/Product.usda>"
+    },
+    {
+      "profile": "Robotics-Prop",
+      "feature": "CAP033_SimReadyPackage.0-4-0",
+      "requirement": "com.nvidia.simready.SR.004",
+      "message": "Required metadata fields are missing: author, asset_name, asset_type, asset_license, category, source_file, usd_date_generated, qcode, rigid_body_count, asset_extents, mass. Fields may be authored in root-layer customLayerData (including SimReady_Metadata) and/or the same-directory sidecar JSON."
+    },
+    {
+      "profile": "Robotics-Prop",
+      "feature": "CAP033_SimReadyPackage.0-4-0",
+      "requirement": "com.nvidia.usd.AA.001",
+      "message": "Dependent Reference \"../../../assets/textures/demo_classic_albedo.png\" (resolved to \"assets\\textures\\demo_classic_albedo.png\") is outside of the asset root."
+    },
+    {
+      "profile": "Robotics-Prop",
+      "feature": "FET001_MinimalPlaceableVisual.1-0-1",
+      "requirement": "com.nvidia.simready.UN.006",
+      "message": "Stage has upAxis of 'Y', not 'Z'."
+    },
+    {
+      "profile": "Robotics-Prop",
+      "feature": "FET001_MinimalPlaceableVisual.1-0-1",
+      "requirement": "com.nvidia.usd.AA.001",
+      "message": "Dependent Reference \"../../../assets/textures/demo_classic_albedo.png\" (resolved to \"assets\\textures\\demo_classic_albedo.png\") is outside of the asset root."
+    },
+    {
+      "profile": "Robotics-Prop",
+      "feature": "FET003_RigidBody.0-2-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robotics-Prop",
+      "feature": "FET003_RigidBody.Newton.0-1-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robotics-Prop",
+      "feature": "FET003_RigidBody.PhysX.0-4-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robotics-Prop",
+      "feature": "FET004_Multibody.0-2-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robotics-Prop",
+      "feature": "FET004_Multibody.Newton.0-1-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robotics-Prop",
+      "feature": "FET004_Multibody.PhysX.0-4-0",
+      "requirement": "com.nvidia.simready.RB.001",
+      "message": "No physics rigid bodies found under the default prim."
+    },
+    {
+      "profile": "Robotics-Prop",
+      "feature": "FET008_ObjectForward.0-1-0",
+      "requirement": "com.nvidia.simready.AF.001",
+      "message": "/Product must author simready:assetFrame:forwardDirection"
+    },
+    {
+      "profile": "Robotics-Prop",
+      "feature": "FET008_ObjectForward.0-1-0",
+      "requirement": "com.nvidia.simready.UN.006",
+      "message": "Stage has upAxis of 'Y', not 'Z'."
+    },
+    {
+      "profile": "Robotics-Prop",
+      "feature": "FET008_ObjectForward.0-1-0",
+      "requirement": "com.nvidia.usd.AA.001",
+      "message": "Dependent Reference \"../../../assets/textures/demo_classic_albedo.png\" (resolved to \"assets\\textures\\demo_classic_albedo.png\") is outside of the asset root."
+    },
+    {
+      "profile": "Robotics-Prop",
+      "feature": "FET009_MaterialCoverage.0-1-0",
+      "requirement": "com.nvidia.simready.VM.MAT.001",
+      "message": "GPrim '/Product/Carton_demo_classic/CapLip_demo_classic/Cylinder_001' does not have a material binding"
+    },
+    {
+      "profile": "Robotics-Prop",
+      "feature": "FET011_SemanticLabels.0-2-0",
+      "requirement": "com.nvidia.simready.SL.001",
+      "message": "Unlabeled prim: no SemanticsLabelsAPI semantics found on the prim, its ancestors, its bound material, or its GeomSubsets."
+    },
+    {
+      "profile": "Robotics-Prop",
+      "feature": "FET011_SemanticLabels.RTX.0-1-0",
+      "requirement": "com.nvidia.simready.SL.001",
+      "message": "Unlabeled prim: no SemanticsLabelsAPI semantics found on the prim, its ancestors, its bound material, or its GeomSubsets."
+    }
+  ],
+  "self_gate": {
+    "sku": "demo_classic",
+    "overall": "PASS",
+    "checks": {
+      "origin_units": {
+        "verdict": "PASS",
+        "detail": "bottom=0.00mm center=(0.0,0.0)mm dims=(48.0,38.0,113.0)mm spec=(48.0, 38.0, 113.0)"
+      },
+      "topology": {
+        "verdict": "PASS",
+        "detail": "ngons=0 nonmanifold_edges=0 tris=188"
+      },
+      "uv_01": {
+        "verdict": "PASS",
+        "detail": "uv range [0.0293,0.9961]"
+      },
+      "uv_atlas": {
+        "verdict": "PASS",
+        "detail": "min_gap=32px overlaps=[] gutter_std=5.9"
+      },
+      "export_targets": {
+        "verdict": "PASS",
+        "detail": "materials=2 mimes=['image/webp'] lights=False size=0.18MB"
+      }
+    }
+  },
+  "coverage_map": [
+    {
+      "self_check": "origin_units",
+      "what": "原点落在底面中心 + 尺寸符合规格 (mm)",
+      "official_coverage": "部分",
+      "why": "官方有单位/尺度/原点类 requirement (以 profile 为准); 但官方**不校验具体毫米数是否符合本仓 SKU 规格**"
+    },
+    {
+      "self_check": "topology",
+      "what": "ngon=0 / 非流形边=0 / 三角面数 <= 100k",
+      "official_coverage": "部分",
+      "why": "官方几何 feature 覆盖三角化与流形类要求; **100k 上限是 Khronos 发布目标, 官方不管**"
+    },
+    {
+      "self_check": "uv_01",
+      "what": "UV 落在 [0,1]",
+      "official_coverage": "部分",
+      "why": "官方材质/UV feature 覆盖 UV 合法性与绑定"
+    },
+    {
+      "self_check": "uv_atlas",
+      "what": "atlas 岛间 >=32px 间隙 + 零重叠 + 16px gutter",
+      "official_coverage": "不覆盖",
+      "why": "这是 **glTF/Khronos atlas 规范**, 与 SimReady profile 无关 -> 官方工具不会替我们查"
+    },
+    {
+      "self_check": "export_targets",
+      "what": "材质数 <=3 / 贴图 mime 限定 / 无灯光 / 文件 <=5MB",
+      "official_coverage": "不覆盖",
+      "why": "这是 **glTF 发布目标**, 与 SimReady profile 无关 -> 官方工具不会替我们查"
+    }
+  ],
+  "official_only": [
+    {
+      "area": "物理属性",
+      "detail": "mass / inertia / 碰撞代理 / 关节 (profile 依类型而定)"
+    },
+    {
+      "area": "语义与元数据",
+      "detail": "sem:brand / sem:skuId / sem:productCategory / render:* / phys:*"
+    },
+    {
+      "area": "分层 profile",
+      "detail": "按 Profile 选 requirement 集合 (Robotics-Prop / Package / ...)"
+    },
+    {
+      "area": "验证回执",
+      "detail": "validation receipt (可 --audit 比对上次结果)"
+    }
+  ],
+  "verdict": {
+    "replaceable": [],
+    "keep": [
+      "atlas 间隙/重叠/gutter",
+      "glTF 发布目标(材质数/mime/体积)"
+    ],
+    "reason": "自研闸里 **atlas 间隙/重叠/gutter** 与 **glTF 发布目标** 两项官方工具不管 -> 官方工具不能替代自研闸, 只能**叠加**一层 USD 侧合规校验; 自研闸守的是渲染/发布面, 官方验的是仿真面"
+  },
+  "not_done": [
+    "未跑 simready-benchmark (需 Isaac Sim 6.1 + Linux/Windows x86-64, 本机没有)",
+    "未跑官方 simready-manage (未安装) —— simready-package 已在 85/86 号跑过 ✓",
+    "未对全部 200 件 USDCraft 资产跑全量 (只取样例)",
+    "未安装 usd-profiles-nvidia 的其它 tier wheel (只用默认 catalog)",
+    "本仓资产的单文件合规包在 86 号脚本里另做 (Package-Candidate 已 PASS) —— 这份差异报告评的是**原始三文件资产** output/usd/demo_classic/Product.usda"
+  ]
+}

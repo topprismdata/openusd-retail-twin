@@ -1,7 +1,7 @@
 # 33_topprism_yogurt_cup.py — 虚拟品牌 Topprism 酸奶杯 3D + 渲染 (GitHub 展示)
 # 杯型: 160g 锥度圆杯 (顶Ø88 底Ø66 高98mm) + 铝箔易撕盖 (Ø94, 拱顶+褶边)
 # 复用已验证纪律: view_layer.update / FOV横向拟合(无-c.z) / AgX-Punchy / pixel-stat 验收
-import bpy, bmesh, math, os
+import bpy, bmesh, math, os, sys
 from mathutils import Vector, Matrix
 
 TOP_R, BOT_R, CUP_H = 0.044, 0.033, 0.098
@@ -10,6 +10,9 @@ LID_DOMe = 0.006
 WALL_T = 0.0012
 SEG = 96
 HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, HERE)
+from pipelines.common.runtime_env import configure_cycles  # noqa: E402
+
 OUT = os.path.join(HERE, "output", "github_topprism")
 os.makedirs(OUT, exist_ok=True)
 
@@ -206,13 +209,8 @@ try:
 except Exception as e:
     print("look:", e)
 try:
-    prefs = bpy.context.preferences.addons['cycles'].preferences
-    prefs.compute_device_type = 'METAL'
-    prefs.get_devices()
-    for d in prefs.devices:
-        d.use = (d.type == 'METAL')
-    sc.cycles.device = 'GPU'
-    print("METAL GPU on")
+    backend, ndev = configure_cycles(scene=sc, denoise=False)
+    print(f"Cycles backend={backend} devices={ndev}")
 except Exception as e:
     print("GPU fail, CPU:", e)
 

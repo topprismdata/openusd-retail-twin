@@ -5,7 +5,7 @@ v136 教训落实: 贴图立刻解包成实体文件(packed blob 空存根曾致
 - 合并 主体+85种子+6花萼 -> 单 mesh 多材质槽
 - 烘焙 matrix_world(资产级), 原点=包围盒中心, zmin=0
 """
-import bpy, os, sys
+import bpy, os, sys, tempfile
 
 BASE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 GLB = os.path.join(BASE, "assets", "models", "strawberry", "strawberry.glb")
@@ -105,6 +105,6 @@ sc = bpy.context.scene
 sc.render.engine = 'CYCLES'
 sc.cycles.device = 'GPU'; sc.cycles.samples = 96
 sc.render.resolution_x = 640; sc.render.resolution_y = 640
-sc.render.filepath = '/tmp/straw_solo.png'
+sc.render.filepath = os.path.join(tempfile.gettempdir(), 'straw_solo.png')
 bpy.ops.render.render(write_still=True)
 print("[STRAW] solo render done")

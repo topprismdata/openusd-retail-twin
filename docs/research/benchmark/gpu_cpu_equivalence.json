@@ -1,0 +1,11 @@
+{
+  "measured_at": "2026-11-24",
+  "method": "同一批次场景, CPU (38.7 s/图) 与 GPU/OPTIX (18 s/图) 各渲 160 张, 逐像素比对",
+  "n_images": 160,
+  "max_channel_diff": 1,
+  "mean_abs_diff": 0.0,
+  "frac_pixels_diff_gt_2": 0.0,
+  "device_before": "CPU",
+  "device_after": "GPU (OPTIX/CUDA, GTX 1050 Ti)",
+  "conclusion": "换 GPU 渲染不引入渲染侧混淆项, 恢复无损; 但逐字节 sha256 会把 ±1 的浮点舍入判成'不一致' (2026-11-24 误报一次), 所以重建判据改用容差指纹"
+}

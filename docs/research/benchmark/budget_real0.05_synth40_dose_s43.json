@@ -1,0 +1,100 @@
+{
+  "arm": "budget:real0.05_synth40_dose_s43",
+  "dataset": {
+    "cell": {
+      "real_frac": 0.05,
+      "synth_n": 40
+    },
+    "n_real": 411,
+    "n_synth": 40,
+    "real_subset_sha256": "1d674796211e644f36520bfbbf1653bfe5e3f6011f702871068bcaac4c9c46c3",
+    "synth_subset_sha256": "2da2528276a4cffc9391a526ce7fd262ec670d484576fb64cebebfab06620f09",
+    "budget_seed": 20261120,
+    "eval_split": "test",
+    "eval_dir": "<SKU110K_ROOT>\\test.txt",
+    "eval_yaml_sha256": "e469320c2e05f7c9222f3e708d288edd4e242e872660155e26486553d286378a"
+  },
+  "actual_train_config": {
+    "epochs": 10,
+    "batch": 4,
+    "workers": 2,
+    "device": "cuda"
+  },
+  "protocol": {
+    "model": "yolo11n.pt",
+    "imgsz": 640,
+    "epochs": 10,
+    "batch": 4,
+    "workers": 2,
+    "cache": false,
+    "seed": 43,
+    "max_det": 1000,
+    "device": "auto",
+    "real_frac": 0.05,
+    "synth_n": 40,
+    "budget_seed": 20261120,
+    "select": "last"
+  },
+  "map50": 0.7828607461700856,
+  "map50_95": 0.4322205235480979,
+  "precision": 0.7960860376190677,
+  "recall": 0.7154628114089797,
+  "wall_sec": 845.4,
+  "checkpoint": {
+    "selection": "last",
+    "path": "output\\benchmark\\budget_runs_real0.05_synth40_dose_s43\\train\\weights\\last.pt",
+    "sha256": "3a1e020653956b380c2e99b101e9e86f2bb477ba38002e35510438419cffe6e8"
+  },
+  "protocol_manifest": {
+    "protocol": {
+      "model": "yolo11n.pt",
+      "imgsz": 640,
+      "epochs": 10,
+      "batch": 4,
+      "workers": 2,
+      "cache": false,
+      "seed": 43,
+      "max_det": 1000,
+      "device": "auto",
+      "real_frac": 0.05,
+      "synth_n": 40,
+      "budget_seed": 20261120,
+      "select": "last"
+    },
+    "data": {
+      "cell": {
+        "real_frac": 0.05,
+        "synth_n": 40
+      },
+      "n_real": 411,
+      "n_synth": 40,
+      "real_subset_sha256": "1d674796211e644f36520bfbbf1653bfe5e3f6011f702871068bcaac4c9c46c3",
+      "synth_subset_sha256": "2da2528276a4cffc9391a526ce7fd262ec670d484576fb64cebebfab06620f09",
+      "budget_seed": 20261120,
+      "eval_split": "test",
+      "eval_dir": "<SKU110K_ROOT>\\test.txt",
+      "eval_yaml_sha256": "e469320c2e05f7c9222f3e708d288edd4e242e872660155e26486553d286378a"
+    },
+    "splits": {},
+    "actual": {
+      "epochs": 10,
+      "batch": 4,
+      "workers": 2,
+      "device": "cuda",
+      "wall_sec": 845.4
+    },
+    "deps": {
+      "python": "3.13.12",
+      "platform": "win32",
+      "torch": "2.6.0+cu124",
+      "ultralytics": "8.4.216",
+      "numpy": "2.5.5",
+      "PIL": "13.0.0"
+    },
+    "checkpoint": {},
+    "extra": {},
+    "protocol_hash": "13859eddd4319dc0",
+    "protocol_hash_legacy": "ece4520ec2bfac29"
+  },
+  "protocol_hash": "13859eddd4319dc0"
+}

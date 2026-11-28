@@ -25,7 +25,7 @@ def _font(sz):
     return ImageFont.load_default()
 f_h = _font(30)
 f_c = _font(24)
-d.text((PAD, 12), "开源零售资产动物园 · Sketchfab CC × Topprism 徽章化 (CC-BY/CC0, 2026-11-18)", fill=(26, 28, 38), font=f_h)
+d.text((PAD, 12), "开源零售资产动物园 · Sketchfab CC-BY-4.0 × Topprism 徽章化 (2026-11-18)", fill=(26, 28, 38), font=f_h)
 for i, a in enumerate(man):
     p = os.path.join(OUT, a["key"] + ".png")
     if not os.path.exists(p):
@@ -35,7 +35,16 @@ for i, a in enumerate(man):
     y = PAD + BAR + (i // cols) * (CELL + 34 + PAD)
     board.paste(im, (x, y))
     d.rectangle([x, y, x+CELL, y+CELL], outline=(210, 213, 218), width=1)
-    lic = "CC0" if "CC0" in a.get("license", "") else "CC-BY"
+    # 2026-11-18 审计 B-4: 旧写法 `"CC0" in license` 会把**标题**里的 "CC0 - Candies"
+    # 误判为许可 (两者的许可正文其实是 CC-BY-4.0), 从而在公开看板上错误免除署名义务。
+    # 现在只认 "license type:" 之后的许可字段。
+    _lic_field = ""
+    for _ln in str(a.get("license", "")).splitlines():
+        if "license type:" in _ln:
+            _lic_field = _ln.split("license type:", 1)[1].strip()
+            break
+    _is_cc0 = _lic_field.upper().startswith("CC0")
+    lic = "CC0" if _is_cc0 else "CC-BY-4.0"
     # 角标 TOPPRISM 徽章 (白底渐变三角+字标)
     bs = int(CELL * 0.13)
     bx, by = x + CELL - int(bs*2.05), y + CELL - bs - 6

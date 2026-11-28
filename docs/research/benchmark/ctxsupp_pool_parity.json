@@ -1,0 +1,29 @@
+{
+  "schema": "ctxsupp_pool_parity/1",
+  "generated_by": "pipelines/shelf_sdg/70_ctxsupp_pool_parity.py",
+  "src_pool": "output\\benchmark\\synth_single",
+  "pool": "output\\benchmark\\synth_ctxsupp",
+  "splits": {
+    "train": {
+      "n": 160,
+      "label_identical": 160,
+      "size_identical": 160,
+      "inside_identical": 160,
+      "outside_flat": 91,
+      "flat_checked": 91,
+      "byte_identical_to_src": 69
+    },
+    "val": {
+      "n": 40,
+      "label_identical": 40,
+      "size_identical": 40,
+      "inside_identical": 0,
+      "outside_flat": 0,
+      "flat_checked": 0,
+      "byte_identical_to_src": 40
+    }
+  },
+  "n_masked_detected": 91,
+  "problems": [],
+  "ok": true
+}

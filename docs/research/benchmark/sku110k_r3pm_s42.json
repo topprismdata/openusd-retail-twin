@@ -1,0 +1,143 @@
+{
+  "arm": "r3pm",
+  "run_id": "r3pm_s42",
+  "dataset": {
+    "arm": "r3pm",
+    "sources": [
+      {
+        "kind": "synthetic_only",
+        "path": "output\\benchmark\\synth_single_R3pm\\images\\train",
+        "n_images": 160,
+        "fingerprint": {
+          "path": "output\\benchmark\\synth_single_R3pm\\images\\train",
+          "exists": true,
+          "n_files": 160,
+          "total_bytes": 250735169,
+          "sha256": "15b3d9951efe8e6d71ba739eda21d0a8f8169fbb353515c2c76940a38d5d78b3",
+          "sampled": false
+        }
+      }
+    ],
+    "note": "协议对齐的 R3-full (域对齐配方); 对照臂 = 当前协议的 R1 (同图数同划分同种子)"
+  },
+  "protocol": {
+    "model": "yolo11n.pt",
+    "imgsz": 640,
+    "epochs": 10,
+    "batch": 4,
+    "workers": 2,
+    "cache": false,
+    "seed": 42,
+    "max_det": 1000,
+    "device": "auto"
+  },
+  "protocol_hash": "a8eb80b147a5ca5f",
+  "actual_train_config": {
+    "epochs": 10,
+    "batch": 4,
+    "workers": 2,
+    "device": "cuda"
+  },
+  "map50": 0.18947488624140196,
+  "map50_95": 0.05336354268312454,
+  "precision": 0.32263699419112696,
+  "recall": 0.2538112600511336,
+  "checkpoint": {
+    "selection": "best",
+    "path": "output/benchmark/weights/r3pm/best_s42.pt",
+    "sha256": "22f3c12a7d6b4c22dbbc690b5780ae129ba01a2ed65b2af5d8a1beb41c3387b9",
+    "bytes": 5486931,
+    "exists": true
+  },
+  "model_weights": {
+    "path": "yolo11n.pt",
+    "name": "yolo11n.pt",
+    "exists": true,
+    "sha256": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1",
+    "bytes": 5613764
+  },
+  "protocol_manifest": {
+    "protocol": {
+      "model": "yolo11n.pt",
+      "imgsz": 640,
+      "epochs": 10,
+      "batch": 4,
+      "workers": 2,
+      "cache": false,
+      "seed": 42,
+      "max_det": 1000,
+      "device": "auto"
+    },
+    "data": {
+      "treatment": {
+        "cam_mult": 1.6,
+        "lens": 40.0,
+        "misalign": 0.35,
+        "bays": 5
+      },
+      "split_protocol": {
+        "num_images": 200,
+        "seed": 42,
+        "val_ratio": 0.2,
+        "images_per_scene": 4,
+        "split_mode": "scene",
+        "samples": 64
+      },
+      "synth_dir": "output/benchmark/synth_single_R3pm"
+    },
+    "splits": {
+      "train": {
+        "n": 160,
+        "total_bytes": 250735169,
+        "names_sha256": "d8048fe393d9928142dafe65f0569575e9d9f066f4be0255dffdad49d144a2b2",
+        "sha256": "85ba48697ab81763d84b9e00818091da27941273ce697a10e3f5df106afb3244"
+      },
+      "val": {
+        "n": 40,
+        "total_bytes": 62307835,
+        "names_sha256": "5a9902ad09f6ffcb9e914615e1ae619633961049ac9a9bed1f123efbc8b59ac1",
+        "sha256": "ee8825eb5514b0dc891defb40baa4d63222cb5cb05a895355141f5b832845aa5"
+      }
+    },
+    "actual": {
+      "epochs": 10,
+      "batch": 4,
+      "workers": 2,
+      "device": "cuda"
+    },
+    "deps": {
+      "python": "3.13.12",
+      "platform": "win32",
+      "torch": "2.6.0+cu124",
+      "ultralytics": "8.4.216",
+      "numpy": "2.5.5",
+      "PIL": "13.0.0"
+    },
+    "checkpoint": {},
+    "extra": {
+      "model_weights": {
+        "path": "yolo11n.pt",
+        "name": "yolo11n.pt",
+        "exists": true,
+        "sha256": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1",
+        "bytes": 5613764
+      }
+    },
+    "protocol_hash": "5599ed033f866464",
+    "protocol_hash_legacy": "a8eb80b147a5ca5f"
+  },
+  "treatment": {
+    "cam_mult": 1.6,
+    "lens": 40.0,
+    "misalign": 0.35,
+    "bays": 5
+  },
+  "split_protocol": {
+    "num_images": 200,
+    "seed": 42,
+    "val_ratio": 0.2,
+    "images_per_scene": 4,
+    "split_mode": "scene",
+    "samples": 64
+  }
+}

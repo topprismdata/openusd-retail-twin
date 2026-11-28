@@ -19,11 +19,13 @@
 # 注意: Mantaflow 每次重烘顶点数不同(实测31494/31928/31032), 无法逐位复现;
 #       指标级噪声地板 glass periodic 0.001 / col_std 0.242 / 纸盒span 0.017
 set -e
-cd "$(dirname "$0")"
+# 仓库根 (两个 render_*.sh 统一 cwd, 避免同类路径错位)
+ROOT_DIR="$(cd "$(dirname "$0")/../.." && pwd)"
+cd "$ROOT_DIR"
 # 输出到独立名, 不覆盖已盲评的交付图 (Mantaflow非确定性: 重渲与已评审图差~2/255,
 # 交付必须保留"被评审的那张"; 要采纳新渲图须重新盲评后再手动cp)
 PYTHONUNBUFFERED=1 ALBEDO_V67=1 POUR=1 POUR_LOW=1 POUR_1L=1 WALL_FIX=1 \
-  /Applications/Blender.app/Contents/MacOS/Blender -b -P 34_commercial_repro.py \
+  "${BLENDER_BIN:-/Applications/Blender.app/Contents/MacOS/Blender}" -b -P pipelines/commercial/34_commercial_repro.py \
   -- --res 1920 --samples 256 --out pour_1l_repro
 echo "重渲图: output/commercial/repro_pour_1l_repro.png"
 echo "现交付图(已双轮盲评44/45.5): output/commercial/repro_pour_1l_kv.png — 未被覆盖"

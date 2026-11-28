@@ -1,0 +1,144 @@
+{
+  "schema": "delivery_audit/1",
+  "generated_by": "pipelines/shelf_sdg/91_delivery_audit.py",
+  "measured_at": "2026-11-28",
+  "integrity": {
+    "manifest": "docs/research/benchmark/MANIFEST.json",
+    "n_files": 198,
+    "ok": 198,
+    "missing": [],
+    "hash_mismatch": [],
+    "size_mismatch": [],
+    "generated_at": "2026-11-28 11:37:12",
+    "self_excluded": true,
+    "manifest_changed_during_check": false,
+    "verdict": "全部对得上 ✓",
+    "note": "本产物自身不参与完整性校验 ✓ (自引用: 下一轮发布会改写它的哈希 ✓)"
+  },
+  "cleanroom": {
+    "package": "output/usd/_simready_work/demo_classic_package",
+    "usd_files": [
+      "demo_classic.usda"
+    ],
+    "meshes": 3,
+    "materials": 4,
+    "mesh_names": [
+      "M_pack",
+      "M_cap",
+      "M_lip"
+    ],
+    "texture_refs": [
+      "./textures/demo_classic_albedo.png",
+      "./textures/demo_classic_orm.png",
+      "./textures/demo_organic_albedo.png"
+    ],
+    "unresolved_texture_refs": [],
+    "unbound_meshes": [],
+    "sidecar": "demo_classic.json",
+    "sr004_missing_fields": [],
+    "sr004_mass": 0.2061,
+    "extents_vs_source": {
+      "source_phys_dimensions_mm": [
+        48.0,
+        38.0,
+        117.5
+      ],
+      "sidecar_asset_extents_mm": [
+        48.0,
+        38.0,
+        117.52
+      ],
+      "max_delta_mm": 0.02,
+      "ok": true
+    },
+    "thumbs": [
+      "demo_classic.usda.png",
+      "demo_classic.usda_light.png"
+    ],
+    "verdict": "净室可打开 ✓"
+  },
+  "counting": {
+    "definitions": {
+      "structure_families": "结构家族: 几何生成器**不同的结构母本**数 (不同模具/不同形体)",
+      "topologies": "拓扑: 已产出资产里**不同的网格拓扑**数 (同结构不同网格细分算不同拓扑)",
+      "spec_variants": "规格变体: 同一结构下**尺寸/规格**不同的变体数",
+      "print_variants": "印刷变体: 同一结构+规格下**印刷/贴图**不同的变体数",
+      "asset_packages": "资产包: 打完包、可交付的资产个数 (一个包 = 一个交付单元)",
+      "renders": "渲染图: **图片张数** (同一资产的十张图 = 十张图, 不是十个资产)",
+      "real_products": "真实商品: 指向真实在售商品的个数 (本仓全为虚拟演示 = 0)"
+    },
+    "library": {
+      "print_variants_available": 13,
+      "print_variant_list": [
+        "demo_a2",
+        "demo_classic",
+        "demo_cny",
+        "demo_dream38",
+        "demo_dream40",
+        "demo_jersey",
+        "demo_lowfat",
+        "demo_meadow",
+        "demo_organic",
+        "demo_skim",
+        "demo_yogurt_gift",
+        "demo_yogurt_gold",
+        "demo_yogurt_original"
+      ],
+      "print_variants_source": "pipelines/bootstrap/00_bootstrap_textures.py :: SKU_PROFILES",
+      "material_colorways": 2,
+      "material_colorways_source": "pipelines/ecommerce/13_usd_asset.py :: COLORWAYS"
+    },
+    "produced": {
+      "materialized_assets": [
+        "demo_classic"
+      ],
+      "asset_packages": [
+        "demo_classic_package"
+      ],
+      "control_packages": [
+        "control_package"
+      ]
+    },
+    "structure_families": 1,
+    "structure_families_source": "pipelines/ecommerce/01_comfy_usd_compositor.py :: build_carton_twin (唯一的结构母本 ✓)",
+    "spec_variants": 1,
+    "spec_variants_source": "output/usd/demo_classic/Product.usda :: phys:dimensions",
+    "topologies": 3,
+    "topologies_source": "由已产出资产的网格 prim 数现算 (见 topology_detail)",
+    "topology_detail": [
+      {
+        "mesh": "M_pack",
+        "vertices": 24,
+        "face_vertex_counts": 12
+      },
+      {
+        "mesh": "M_cap",
+        "vertices": 288,
+        "face_vertex_counts": 188
+      },
+      {
+        "mesh": "M_lip",
+        "vertices": 288,
+        "face_vertex_counts": 188
+      }
+    ],
+    "renders": {
+      "asset_renders": 16,
+      "shelf_sdg_renders": 202,
+      "published_figures": 6,
+      "package_thumbs": 2,
+      "source": "os.walk 现算 (output/usd, output/sdg_shelf, docs/research/benchmark, 包内 .thumbs)"
+    },
+    "materialized_print_variants": 1,
+    "materialized_print_variants_source": "已落盘的 USD 资产目录数 ✓ (output/usd/*/Product.usda ✓)",
+    "real_products": 0,
+    "real_products_source": "全部 SKU 的标题与条码都是虚拟演示 ✓ (README「虚拟演示 SKU, 不代表在售商品或客户关系」 ✓)",
+    "data": {
+      "note": "数据/标注量**不是**资产数 ✓, 单列 ✓",
+      "real_labeled_subset": 411,
+      "real_labeled_subset_source": "output/benchmark/budget/real0.05_synth0_real.txt",
+      "synthetic_pool_manifest": 200,
+      "synthetic_pool_manifest_source": "output/sdg_shelf/dataset_summary.json"
+    }
+  }
+}

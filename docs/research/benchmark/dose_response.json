@@ -1,0 +1,1030 @@
+{
+  "schema": "dose_response/2",
+  "synth_pool_sha256": "9f15b624a77d3509eef16811ff10fc1c51c90d66bdd5dd4a8ab3e2c72eb20493",
+  "generated_by": "pipelines/shelf_sdg/31_dose_response.py",
+  "baseline_full_real_map50": 0.8861734762591966,
+  "design": "同一合成池上的嵌套子集 (sample_subset 同种子 shuffle → 40 ⊂ 80 ⊂ 160); 剂量轴干净, 池子不变; 每个池的 0 档锚点按产物记的 synth_pool 归属",
+  "pools": {
+    "9f15b624a77d3509eef16811ff10fc1c51c90d66bdd5dd4a8ab3e2c72eb20493": {
+      "label": "大池 (2240 张)",
+      "pool_sha256": "9f15b624a77d3509eef16811ff10fc1c51c90d66bdd5dd4a8ab3e2c72eb20493",
+      "is_headline": true,
+      "artifact_files": [
+        "budget_real0.02_synth0_big_s42.json",
+        "budget_real0.02_synth0_big_s43.json",
+        "budget_real0.02_synth0_big_s44.json",
+        "budget_real0.02_synth1280_big_s42.json",
+        "budget_real0.02_synth1280_big_s43.json",
+        "budget_real0.02_synth1280_big_s44.json",
+        "budget_real0.02_synth160_big_s42.json",
+        "budget_real0.02_synth160_big_s43.json",
+        "budget_real0.02_synth160_big_s44.json",
+        "budget_real0.02_synth2240_big_s42.json",
+        "budget_real0.02_synth2240_big_s43.json",
+        "budget_real0.02_synth2240_big_s44.json",
+        "budget_real0.02_synth320_big_s42.json",
+        "budget_real0.02_synth320_big_s43.json",
+        "budget_real0.02_synth320_big_s44.json",
+        "budget_real0.02_synth40_big_s42.json",
+        "budget_real0.02_synth40_big_s43.json",
+        "budget_real0.02_synth40_big_s44.json",
+        "budget_real0.02_synth640_big_s42.json",
+        "budget_real0.02_synth640_big_s43.json",
+        "budget_real0.02_synth640_big_s44.json",
+        "budget_real0.02_synth80_big_s42.json",
+        "budget_real0.02_synth80_big_s43.json",
+        "budget_real0.02_synth80_big_s44.json",
+        "budget_real0.05_synth0_big_s42.json",
+        "budget_real0.05_synth0_big_s43.json",
+        "budget_real0.05_synth0_big_s44.json",
+        "budget_real0.05_synth1280_big_s42.json",
+        "budget_real0.05_synth1280_big_s43.json",
+        "budget_real0.05_synth1280_big_s44.json",
+        "budget_real0.05_synth160_big_s42.json",
+        "budget_real0.05_synth160_big_s43.json",
+        "budget_real0.05_synth160_big_s44.json",
+        "budget_real0.05_synth2240_big_s42.json",
+        "budget_real0.05_synth2240_big_s43.json",
+        "budget_real0.05_synth2240_big_s44.json",
+        "budget_real0.05_synth320_big_s42.json",
+        "budget_real0.05_synth320_big_s43.json",
+        "budget_real0.05_synth320_big_s44.json",
+        "budget_real0.05_synth40_big_s42.json",
+        "budget_real0.05_synth40_big_s43.json",
+        "budget_real0.05_synth40_big_s44.json",
+        "budget_real0.05_synth640_big_s42.json",
+        "budget_real0.05_synth640_big_s43.json",
+        "budget_real0.05_synth640_big_s44.json",
+        "budget_real0.05_synth80_big_s42.json",
+        "budget_real0.05_synth80_big_s43.json",
+        "budget_real0.05_synth80_big_s44.json"
+      ],
+      "n_artifacts": 48,
+      "budgets": {
+        "0.05": {
+          "n_synth_levels": [
+            0,
+            40,
+            80,
+            160,
+            320,
+            640,
+            1280,
+            2240
+          ],
+          "dose_rows": [
+            {
+              "dose": 40,
+              "n_seeds": 3,
+              "seeds": [
+                42,
+                43,
+                44
+              ],
+              "map50_mean": 0.7805,
+              "map50_sd": 0.0021,
+              "paired_diff_pp": [
+                -1.585,
+                0.55,
+                -0.304
+              ],
+              "diff_mean_pp": -0.446,
+              "diff_sd_pp": 1.074,
+              "t": -0.719,
+              "ci95_pp": [
+                -3.115,
+                2.223
+              ],
+              "gap_to_full_real_pp": 10.56,
+              "recovery_rate": -0.0422
+            },
+            {
+              "dose": 80,
+              "n_seeds": 3,
+              "seeds": [
+                42,
+                43,
+                44
+              ],
+              "map50_mean": 0.78,
+              "map50_sd": 0.0036,
+              "paired_diff_pp": [
+                -1.126,
+                0.608,
+                -0.966
+              ],
+              "diff_mean_pp": -0.495,
+              "diff_sd_pp": 0.959,
+              "t": -0.894,
+              "ci95_pp": [
+                -2.876,
+                1.887
+              ],
+              "gap_to_full_real_pp": 10.61,
+              "recovery_rate": -0.0466
+            },
+            {
+              "dose": 160,
+              "n_seeds": 3,
+              "seeds": [
+                42,
+                43,
+                44
+              ],
+              "map50_mean": 0.7845,
+              "map50_sd": 0.0016,
+              "paired_diff_pp": [
+                -1.159,
+                0.991,
+                0.036
+              ],
+              "diff_mean_pp": -0.044,
+              "diff_sd_pp": 1.078,
+              "t": -0.071,
+              "ci95_pp": [
+                -2.721,
+                2.633
+              ],
+              "gap_to_full_real_pp": 10.16,
+              "recovery_rate": -0.0043
+            },
+            {
+              "dose": 320,
+              "n_seeds": 3,
+              "seeds": [
+                42,
+                43,
+                44
+              ],
+              "map50_mean": 0.7858,
+              "map50_sd": 0.0058,
+              "paired_diff_pp": [
+                -1.493,
+                1.189,
+                0.534
+              ],
+              "diff_mean_pp": 0.077,
+              "diff_sd_pp": 1.398,
+              "t": 0.095,
+              "ci95_pp": [
+                -3.397,
+                3.55
+              ],
+              "gap_to_full_real_pp": 10.04,
+              "recovery_rate": 0.0076
+            },
+            {
+              "dose": 640,
+              "n_seeds": 3,
+              "seeds": [
+                42,
+                43,
+                44
+              ],
+              "map50_mean": 0.7952,
+              "map50_sd": 0.0021,
+              "paired_diff_pp": [
+                0.05,
+                1.858,
+                1.141
+              ],
+              "diff_mean_pp": 1.016,
+              "diff_sd_pp": 0.91,
+              "t": 1.934,
+              "ci95_pp": [
+                -1.245,
+                3.278
+              ],
+              "gap_to_full_real_pp": 9.1,
+              "recovery_rate": 0.1117
+            },
+            {
+              "dose": 1280,
+              "n_seeds": 3,
+              "seeds": [
+                42,
+                43,
+                44
+              ],
+              "map50_mean": 0.7844,
+              "map50_sd": 0.0094,
+              "paired_diff_pp": [
+                -1.407,
+                0.306,
+                0.922
+              ],
+              "diff_mean_pp": -0.06,
+              "diff_sd_pp": 1.207,
+              "t": -0.086,
+              "ci95_pp": [
+                -3.058,
+                2.939
+              ],
+              "gap_to_full_real_pp": 10.18,
+              "recovery_rate": -0.0059
+            },
+            {
+              "dose": 2240,
+              "n_seeds": 3,
+              "seeds": [
+                42,
+                43,
+                44
+              ],
+              "map50_mean": 0.7616,
+              "map50_sd": 0.0119,
+              "paired_diff_pp": [
+                -4.386,
+                -0.025,
+                -2.598
+              ],
+              "diff_mean_pp": -2.336,
+              "diff_sd_pp": 2.192,
+              "t": -1.846,
+              "ci95_pp": [
+                -7.782,
+                3.11
+              ],
+              "gap_to_full_real_pp": 12.46,
+              "recovery_rate": -0.1876
+            }
+          ],
+          "slope_pp_per_100_synth": -0.0859,
+          "note": "斜率 = 剂量每加 100 张合成, 配对差值变化多少 pp; 斜率接近 0 → 剂量-反应平坦 (加大合成不产生正收益)"
+        },
+        "0.02": {
+          "n_synth_levels": [
+            0,
+            40,
+            80,
+            160,
+            320,
+            640,
+            1280,
+            2240
+          ],
+          "dose_rows": [
+            {
+              "dose": 40,
+              "n_seeds": 3,
+              "seeds": [
+                42,
+                43,
+                44
+              ],
+              "map50_mean": 0.7038,
+              "map50_sd": 0.0065,
+              "paired_diff_pp": [
+                0.203,
+                -0.774,
+                -2.081
+              ],
+              "diff_mean_pp": -0.884,
+              "diff_sd_pp": 1.146,
+              "t": -1.336,
+              "ci95_pp": [
+                -3.731,
+                1.963
+              ],
+              "gap_to_full_real_pp": 18.24,
+              "recovery_rate": -0.0485
+            },
+            {
+              "dose": 80,
+              "n_seeds": 3,
+              "seeds": [
+                42,
+                43,
+                44
+              ],
+              "map50_mean": 0.7164,
+              "map50_sd": 0.013,
+              "paired_diff_pp": [
+                -0.376,
+                0.294,
+                1.205
+              ],
+              "diff_mean_pp": 0.374,
+              "diff_sd_pp": 0.794,
+              "t": 0.817,
+              "ci95_pp": [
+                -1.597,
+                2.346
+              ],
+              "gap_to_full_real_pp": 16.98,
+              "recovery_rate": 0.022
+            },
+            {
+              "dose": 160,
+              "n_seeds": 3,
+              "seeds": [
+                42,
+                43,
+                44
+              ],
+              "map50_mean": 0.709,
+              "map50_sd": 0.011,
+              "paired_diff_pp": [
+                -1.187,
+                0.721,
+                -0.618
+              ],
+              "diff_mean_pp": -0.361,
+              "diff_sd_pp": 0.98,
+              "t": -0.639,
+              "ci95_pp": [
+                -2.795,
+                2.073
+              ],
+              "gap_to_full_real_pp": 17.72,
+              "recovery_rate": -0.0204
+            },
+            {
+              "dose": 320,
+              "n_seeds": 3,
+              "seeds": [
+                42,
+                43,
+                44
+              ],
+              "map50_mean": 0.7329,
+              "map50_sd": 0.002,
+              "paired_diff_pp": [
+                2.593,
+                2.262,
+                1.218
+              ],
+              "diff_mean_pp": 2.024,
+              "diff_sd_pp": 0.718,
+              "t": 4.885,
+              "ci95_pp": [
+                0.241,
+                3.808
+              ],
+              "gap_to_full_real_pp": 15.33,
+              "recovery_rate": 0.132
+            },
+            {
+              "dose": 640,
+              "n_seeds": 3,
+              "seeds": [
+                42,
+                43,
+                44
+              ],
+              "map50_mean": 0.7369,
+              "map50_sd": 0.0118,
+              "paired_diff_pp": [
+                1.763,
+                3.884,
+                1.63
+              ],
+              "diff_mean_pp": 2.426,
+              "diff_sd_pp": 1.265,
+              "t": 3.323,
+              "ci95_pp": [
+                -0.716,
+                5.568
+              ],
+              "gap_to_full_real_pp": 14.93,
+              "recovery_rate": 0.1625
+            },
+            {
+              "dose": 1280,
+              "n_seeds": 3,
+              "seeds": [
+                42,
+                43,
+                44
+              ],
+              "map50_mean": 0.7068,
+              "map50_sd": 0.0603,
+              "paired_diff_pp": [
+                3.291,
+                3.101,
+                -8.127
+              ],
+              "diff_mean_pp": -0.578,
+              "diff_sd_pp": 6.538,
+              "t": -0.153,
+              "ci95_pp": [
+                -16.821,
+                15.664
+              ],
+              "gap_to_full_real_pp": 17.93,
+              "recovery_rate": -0.0322
+            },
+            {
+              "dose": 2240,
+              "n_seeds": 3,
+              "seeds": [
+                42,
+                43,
+                44
+              ],
+              "map50_mean": 0.667,
+              "map50_sd": 0.071,
+              "paired_diff_pp": [
+                -0.336,
+                -0.02,
+                -13.34
+              ],
+              "diff_mean_pp": -4.565,
+              "diff_sd_pp": 7.6,
+              "t": -1.04,
+              "ci95_pp": [
+                -23.448,
+                14.317
+              ],
+              "gap_to_full_real_pp": 21.92,
+              "recovery_rate": -0.2083
+            }
+          ],
+          "slope_pp_per_100_synth": -0.1673,
+          "note": "斜率 = 剂量每加 100 张合成, 配对差值变化多少 pp; 斜率接近 0 → 剂量-反应平坦 (加大合成不产生正收益)"
+        }
+      }
+    },
+    "legacy:c27cd95d49ef43db06ac672a5557a073cbc4dcddaa1b07c1025ce0b25ded8a70": {
+      "label": "历史主池 (160 张)",
+      "pool_sha256": "legacy:c27cd95d49ef43db06ac672a5557a073cbc4dcddaa1b07c1025ce0b25ded8a70",
+      "is_headline": false,
+      "artifact_files": [
+        "budget_real0.02_synth0.json",
+        "budget_real0.02_synth0_s43.json",
+        "budget_real0.02_synth0_s44.json",
+        "budget_real0.02_synth200.json",
+        "budget_real0.02_synth200_s43.json",
+        "budget_real0.02_synth200_s44.json",
+        "budget_real0.02_synth40_dose_s42.json",
+        "budget_real0.02_synth40_dose_s43.json",
+        "budget_real0.02_synth80_dose_s42.json",
+        "budget_real0.02_synth80_dose_s43.json",
+        "budget_real0.05_synth0.json",
+        "budget_real0.05_synth0_s43.json",
+        "budget_real0.05_synth0_s44.json",
+        "budget_real0.05_synth200.json",
+        "budget_real0.05_synth200_s43.json",
+        "budget_real0.05_synth200_s44.json",
+        "budget_real0.05_synth40_dose_s42.json",
+        "budget_real0.05_synth40_dose_s43.json",
+        "budget_real0.05_synth80_dose_s42.json",
+        "budget_real0.05_synth80_dose_s43.json"
+      ],
+      "n_artifacts": 20,
+      "budgets": {
+        "0.05": {
+          "n_synth_levels": [
+            0,
+            40,
+            80,
+            160
+          ],
+          "dose_rows": [
+            {
+              "dose": 40,
+              "n_seeds": 2,
+              "seeds": [
+                42,
+                43
+              ],
+              "map50_mean": 0.7874,
+              "map50_sd": 0.0064,
+              "paired_diff_pp": [
+                -0.261,
+                0.835
+              ],
+              "diff_mean_pp": 0.287,
+              "diff_sd_pp": 0.775,
+              "t": 0.524,
+              "ci95_pp": [
+                -6.675,
+                7.249
+              ],
+              "gap_to_full_real_pp": 9.88,
+              "recovery_rate": 0.0291
+            },
+            {
+              "dose": 80,
+              "n_seeds": 2,
+              "seeds": [
+                42,
+                43
+              ],
+              "map50_mean": 0.7763,
+              "map50_sd": 0.0061,
+              "paired_diff_pp": [
+                -1.396,
+                -0.259
+              ],
+              "diff_mean_pp": -0.827,
+              "diff_sd_pp": 0.804,
+              "t": -1.455,
+              "ci95_pp": [
+                -8.05,
+                6.396
+              ],
+              "gap_to_full_real_pp": 10.99,
+              "recovery_rate": -0.0753
+            },
+            {
+              "dose": 160,
+              "n_seeds": 3,
+              "seeds": [
+                42,
+                43,
+                44
+              ],
+              "map50_mean": 0.786,
+              "map50_sd": 0.0017,
+              "paired_diff_pp": [
+                -0.905,
+                1.001,
+                0.199
+              ],
+              "diff_mean_pp": 0.098,
+              "diff_sd_pp": 0.957,
+              "t": 0.178,
+              "ci95_pp": [
+                -2.28,
+                2.477
+              ],
+              "gap_to_full_real_pp": 10.02,
+              "recovery_rate": 0.0098
+            }
+          ],
+          "slope_pp_per_100_synth": -0.1575,
+          "note": "斜率 = 剂量每加 100 张合成, 配对差值变化多少 pp; 斜率接近 0 → 剂量-反应平坦 (加大合成不产生正收益)"
+        },
+        "0.02": {
+          "n_synth_levels": [
+            0,
+            40,
+            80,
+            160
+          ],
+          "dose_rows": [
+            {
+              "dose": 40,
+              "n_seeds": 2,
+              "seeds": [
+                42,
+                43
+              ],
+              "map50_mean": 0.7133,
+              "map50_sd": 0.0045,
+              "paired_diff_pp": [
+                0.791,
+                -0.059
+              ],
+              "diff_mean_pp": 0.366,
+              "diff_sd_pp": 0.601,
+              "t": 0.861,
+              "ci95_pp": [
+                -5.03,
+                5.762
+              ],
+              "gap_to_full_real_pp": 17.28,
+              "recovery_rate": 0.0212
+            },
+            {
+              "dose": 80,
+              "n_seeds": 2,
+              "seeds": [
+                42,
+                43
+              ],
+              "map50_mean": 0.7121,
+              "map50_sd": 0.0137,
+              "paired_diff_pp": [
+                -0.621,
+                1.103
+              ],
+              "diff_mean_pp": 0.241,
+              "diff_sd_pp": 1.219,
+              "t": 0.279,
+              "ci95_pp": [
+                -10.712,
+                11.194
+              ],
+              "gap_to_full_real_pp": 17.41,
+              "recovery_rate": 0.0138
+            },
+            {
+              "dose": 160,
+              "n_seeds": 3,
+              "seeds": [
+                42,
+                43,
+                44
+              ],
+              "map50_mean": 0.704,
+              "map50_sd": 0.022,
+              "paired_diff_pp": [
+                -2.994,
+                0.344,
+                0.054
+              ],
+              "diff_mean_pp": -0.866,
+              "diff_sd_pp": 1.849,
+              "t": -0.811,
+              "ci95_pp": [
+                -5.459,
+                3.728
+              ],
+              "gap_to_full_real_pp": 18.22,
+              "recovery_rate": -0.0475
+            }
+          ],
+          "slope_pp_per_100_synth": -1.0267,
+          "note": "斜率 = 剂量每加 100 张合成, 配对差值变化多少 pp; 斜率接近 0 → 剂量-反应平坦 (加大合成不产生正收益)"
+        }
+      }
+    }
+  },
+  "conflicts": [],
+  "budgets": {
+    "0.05": {
+      "n_synth_levels": [
+        0,
+        40,
+        80,
+        160,
+        320,
+        640,
+        1280,
+        2240
+      ],
+      "dose_rows": [
+        {
+          "dose": 40,
+          "n_seeds": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "map50_mean": 0.7805,
+          "map50_sd": 0.0021,
+          "paired_diff_pp": [
+            -1.585,
+            0.55,
+            -0.304
+          ],
+          "diff_mean_pp": -0.446,
+          "diff_sd_pp": 1.074,
+          "t": -0.719,
+          "ci95_pp": [
+            -3.115,
+            2.223
+          ],
+          "gap_to_full_real_pp": 10.56,
+          "recovery_rate": -0.0422
+        },
+        {
+          "dose": 80,
+          "n_seeds": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "map50_mean": 0.78,
+          "map50_sd": 0.0036,
+          "paired_diff_pp": [
+            -1.126,
+            0.608,
+            -0.966
+          ],
+          "diff_mean_pp": -0.495,
+          "diff_sd_pp": 0.959,
+          "t": -0.894,
+          "ci95_pp": [
+            -2.876,
+            1.887
+          ],
+          "gap_to_full_real_pp": 10.61,
+          "recovery_rate": -0.0466
+        },
+        {
+          "dose": 160,
+          "n_seeds": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "map50_mean": 0.7845,
+          "map50_sd": 0.0016,
+          "paired_diff_pp": [
+            -1.159,
+            0.991,
+            0.036
+          ],
+          "diff_mean_pp": -0.044,
+          "diff_sd_pp": 1.078,
+          "t": -0.071,
+          "ci95_pp": [
+            -2.721,
+            2.633
+          ],
+          "gap_to_full_real_pp": 10.16,
+          "recovery_rate": -0.0043
+        },
+        {
+          "dose": 320,
+          "n_seeds": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "map50_mean": 0.7858,
+          "map50_sd": 0.0058,
+          "paired_diff_pp": [
+            -1.493,
+            1.189,
+            0.534
+          ],
+          "diff_mean_pp": 0.077,
+          "diff_sd_pp": 1.398,
+          "t": 0.095,
+          "ci95_pp": [
+            -3.397,
+            3.55
+          ],
+          "gap_to_full_real_pp": 10.04,
+          "recovery_rate": 0.0076
+        },
+        {
+          "dose": 640,
+          "n_seeds": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "map50_mean": 0.7952,
+          "map50_sd": 0.0021,
+          "paired_diff_pp": [
+            0.05,
+            1.858,
+            1.141
+          ],
+          "diff_mean_pp": 1.016,
+          "diff_sd_pp": 0.91,
+          "t": 1.934,
+          "ci95_pp": [
+            -1.245,
+            3.278
+          ],
+          "gap_to_full_real_pp": 9.1,
+          "recovery_rate": 0.1117
+        },
+        {
+          "dose": 1280,
+          "n_seeds": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "map50_mean": 0.7844,
+          "map50_sd": 0.0094,
+          "paired_diff_pp": [
+            -1.407,
+            0.306,
+            0.922
+          ],
+          "diff_mean_pp": -0.06,
+          "diff_sd_pp": 1.207,
+          "t": -0.086,
+          "ci95_pp": [
+            -3.058,
+            2.939
+          ],
+          "gap_to_full_real_pp": 10.18,
+          "recovery_rate": -0.0059
+        },
+        {
+          "dose": 2240,
+          "n_seeds": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "map50_mean": 0.7616,
+          "map50_sd": 0.0119,
+          "paired_diff_pp": [
+            -4.386,
+            -0.025,
+            -2.598
+          ],
+          "diff_mean_pp": -2.336,
+          "diff_sd_pp": 2.192,
+          "t": -1.846,
+          "ci95_pp": [
+            -7.782,
+            3.11
+          ],
+          "gap_to_full_real_pp": 12.46,
+          "recovery_rate": -0.1876
+        }
+      ],
+      "slope_pp_per_100_synth": -0.0859,
+      "note": "斜率 = 剂量每加 100 张合成, 配对差值变化多少 pp; 斜率接近 0 → 剂量-反应平坦 (加大合成不产生正收益)"
+    },
+    "0.02": {
+      "n_synth_levels": [
+        0,
+        40,
+        80,
+        160,
+        320,
+        640,
+        1280,
+        2240
+      ],
+      "dose_rows": [
+        {
+          "dose": 40,
+          "n_seeds": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "map50_mean": 0.7038,
+          "map50_sd": 0.0065,
+          "paired_diff_pp": [
+            0.203,
+            -0.774,
+            -2.081
+          ],
+          "diff_mean_pp": -0.884,
+          "diff_sd_pp": 1.146,
+          "t": -1.336,
+          "ci95_pp": [
+            -3.731,
+            1.963
+          ],
+          "gap_to_full_real_pp": 18.24,
+          "recovery_rate": -0.0485
+        },
+        {
+          "dose": 80,
+          "n_seeds": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "map50_mean": 0.7164,
+          "map50_sd": 0.013,
+          "paired_diff_pp": [
+            -0.376,
+            0.294,
+            1.205
+          ],
+          "diff_mean_pp": 0.374,
+          "diff_sd_pp": 0.794,
+          "t": 0.817,
+          "ci95_pp": [
+            -1.597,
+            2.346
+          ],
+          "gap_to_full_real_pp": 16.98,
+          "recovery_rate": 0.022
+        },
+        {
+          "dose": 160,
+          "n_seeds": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "map50_mean": 0.709,
+          "map50_sd": 0.011,
+          "paired_diff_pp": [
+            -1.187,
+            0.721,
+            -0.618
+          ],
+          "diff_mean_pp": -0.361,
+          "diff_sd_pp": 0.98,
+          "t": -0.639,
+          "ci95_pp": [
+            -2.795,
+            2.073
+          ],
+          "gap_to_full_real_pp": 17.72,
+          "recovery_rate": -0.0204
+        },
+        {
+          "dose": 320,
+          "n_seeds": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "map50_mean": 0.7329,
+          "map50_sd": 0.002,
+          "paired_diff_pp": [
+            2.593,
+            2.262,
+            1.218
+          ],
+          "diff_mean_pp": 2.024,
+          "diff_sd_pp": 0.718,
+          "t": 4.885,
+          "ci95_pp": [
+            0.241,
+            3.808
+          ],
+          "gap_to_full_real_pp": 15.33,
+          "recovery_rate": 0.132
+        },
+        {
+          "dose": 640,
+          "n_seeds": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "map50_mean": 0.7369,
+          "map50_sd": 0.0118,
+          "paired_diff_pp": [
+            1.763,
+            3.884,
+            1.63
+          ],
+          "diff_mean_pp": 2.426,
+          "diff_sd_pp": 1.265,
+          "t": 3.323,
+          "ci95_pp": [
+            -0.716,
+            5.568
+          ],
+          "gap_to_full_real_pp": 14.93,
+          "recovery_rate": 0.1625
+        },
+        {
+          "dose": 1280,
+          "n_seeds": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "map50_mean": 0.7068,
+          "map50_sd": 0.0603,
+          "paired_diff_pp": [
+            3.291,
+            3.101,
+            -8.127
+          ],
+          "diff_mean_pp": -0.578,
+          "diff_sd_pp": 6.538,
+          "t": -0.153,
+          "ci95_pp": [
+            -16.821,
+            15.664
+          ],
+          "gap_to_full_real_pp": 17.93,
+          "recovery_rate": -0.0322
+        },
+        {
+          "dose": 2240,
+          "n_seeds": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "map50_mean": 0.667,
+          "map50_sd": 0.071,
+          "paired_diff_pp": [
+            -0.336,
+            -0.02,
+            -13.34
+          ],
+          "diff_mean_pp": -4.565,
+          "diff_sd_pp": 7.6,
+          "t": -1.04,
+          "ci95_pp": [
+            -23.448,
+            14.317
+          ],
+          "gap_to_full_real_pp": 21.92,
+          "recovery_rate": -0.2083
+        }
+      ],
+      "slope_pp_per_100_synth": -0.1673,
+      "note": "斜率 = 剂量每加 100 张合成, 配对差值变化多少 pp; 斜率接近 0 → 剂量-反应平坦 (加大合成不产生正收益)"
+    }
+  }
+}
