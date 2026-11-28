@@ -702,7 +702,7 @@ Unilever OpenUSD 商品孪生库官方口径（提速 ~2× / 成本 −50%）、
 
 治理制度沉淀：判决原文逐轮归档（gpt_* 裁决/评审文件 64 份）/ 八终态语义 / 负证据 sha256 登记（VOID 存储隔离禁止消费）/ 运行预算与产物预算两分 / 零虚构登记（NOT_RECORDED·NULL·0/48 照实报）/ 证据清单哈希索引。
 
-完整链路（外部评审于 [photo-dieline 研究仓](https://github.com/topprismdata/photo-dieline/tree/main/docs/research/evidence)）：[总汇报 rwi_overall_report_l1_l2_l3.md](https://github.com/topprismdata/photo-dieline/blob/main/docs/research/evidence/rwi_overall_report_l1_l2_l3.md) · [执行摘要](https://github.com/topprismdata/photo-dieline/blob/main/docs/research/evidence/rwi_l3_executive_summary.md) · [29 文件证据清单](https://github.com/topprismdata/photo-dieline/blob/main/docs/research/evidence/rwi_l3_final_evidence_manifest.json)。
+完整链路（外部评审于 [photo-dieline 研究仓](https://github.com/topprismdata/photo-dieline/tree/main/docs/research/evidence)）：[总汇报 rwi_overall_report_l1_l2_l3.md](https://github.com/topprismdata/photo-dieline/blob/main/docs/research/evidence/rwi_overall_report_l1_l2_l3.md) · [执行摘要](https://github.com/topprismdata/photo-dieline/blob/main/docs/research/evidence/rwi_l3_executive_summary.md) · [29 文件证据清单](https://github.com/topprismdata/photo-dieline/blob/main/docs/research/evidence/rwi_l3_final_evidence_manifest.json)。本仓公开版（去标识化）：[docs/research/RWI_OVERALL_REPORT_L1_L2_L3.md](docs/research/RWI_OVERALL_REPORT_L1_L2_L3.md) · [docs/research/RWI_L3_EXECUTIVE_SUMMARY.md](docs/research/RWI_L3_EXECUTIVE_SUMMARY.md)。
 
 ## 快速开始
 
