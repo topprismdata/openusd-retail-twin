@@ -681,6 +681,29 @@ Unilever OpenUSD 商品孪生库官方口径（提速 ~2× / 成本 −50%）、
 <p><img src="docs/images/cases/zoo/zoo_board.png" width="640" alt="开源资产动物园"/></p>
 6 类零售品类（咖啡袋扫描/喷雾瓶/时装人台/糖果组 CC0/谷物盒/梅森玻璃罐）批量接入：Emission→Principled 重建、真实尺度定标、焦距感知取景、**TOPPRISM 徽章化**（贴图级+角标级）。全链采购-验货-清洗-定标-渲染-署名存证于 `output/zoo/zoo_manifest.json`（源 URL 可复取，大包不入库）。管线：`pipelines/bootstrap/36_open_asset_zoo.py`。
 
+**⑧ RWI 三阶段研究计划收官（L1→L2→L3）：从"能造资产"到"知道何时不造资产"**
+
+以 GPT 外部评审治理回路驱动的 54 轮研究循环（R1–R54，每轮裁决原文归档），三阶段认知修正曲线：
+
+| 阶段 | 研究目标 | 核心知识产出 | 终裁 |
+|---|---|---|---|
+| L1 规模化生产 | 参数化编译能力 | 生产契约与质量治理（见案例⑥b：9,386 件 / 77 发行类全量校验） | R18 技术收口 |
+| L2 消费验证 | 资产的业务价值 | 任务导向保真度框架；**资产合规 ≠ 业务验证**（S1 能加载✓ / S3 正确接触 NOT_ESTABLISHED / S4 可信真实商品 BLOCKED） | R45 冻结 |
+| L3 可信绑定 | 真实商品↔数字资产绑定 | 证据治理 + 最低充分表示 + 决策一致性 | R54 APPROVED WITH LIMITATIONS（7.3/10 探索性研发评价） |
+
+**L3 七轮决策链（无实物、零采购预算约束下完成）**：两个真实在售商品案例覆盖三个核心绑定决策分支——公开证据不足→**诚实结项**（EVIDENCE_INSUFFICIENT）、在售规格超差→**拒绝绑定**、限定外尺寸层→**BINDING_ACCEPTED（披露适用域）**。
+
+**标志性实证 F-L3-002（容差通过 ≠ 决策一致）**：派生件外尺寸 66.8583mm vs 文档 67mm（Δ=0.1417mm≈0.21%，通过 1mm 研究容差），但在 133.8mm 货架宽的临界场景中双件 133.7166 vs 134.0mm 一侧放得下一侧放不下——**容量计算 +100% 翻面**。尺寸误差与业务决策误差是两回事。
+
+**NEG-T1-MSR（限定负结果）**：在测试的单排货架容量任务上，"可信规格 + 简单 BBox" 6/6 胜过参数化适配件 5/6——三维编译不是所有任务类别的必要前置。评审特别认可："能证明技术什么时候无效，同样是研发体系的能力。"
+
+**沉淀的五项架构原则 v1.0**：真实知识优先 / 任务导向保真 / 最低充分表示 / 独立业务验收 / 时间有效性治理。
+**战略定位修正（终裁采纳）**：零售数字资产生成平台 → **零售任务驱动的数字表示引擎**。
+
+治理制度沉淀：判决原文逐轮归档（50+ 份）/ 八终态语义 / 负证据 sha256 登记（VOID 存储隔离禁止消费）/ 运行预算与产物预算两分 / 零虚构登记（NOT_RECORDED·NULL·0/48 照实报）/ 证据清单哈希索引。
+
+完整链路（外部评审于 [photo-dieline 研究仓](https://github.com/topprismdata/photo-dieline/tree/main/docs/research/evidence)）：[总汇报 rwi_overall_report_l1_l2_l3.md](https://github.com/topprismdata/photo-dieline/blob/main/docs/research/evidence/rwi_overall_report_l1_l2_l3.md) · [执行摘要](https://github.com/topprismdata/photo-dieline/blob/main/docs/research/evidence/rwi_l3_executive_summary.md) · [29 文件证据清单](https://github.com/topprismdata/photo-dieline/blob/main/docs/research/evidence/rwi_l3_final_evidence_manifest.json)。
+
 ## 快速开始
 
 ```bash
